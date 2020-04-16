@@ -9,6 +9,12 @@ import Char_HP from "./char_hp"
 import Char_DeathSave from "./char_deathsave"
 import Char_Modifier from "./char_modifier"
 import Char_Skill from "./char_skill"
+import Char_Attack from "./char_attack"
+import Char_Feat from "./char_feat"
+import Char_Equip from "./char_equip"
+import Char_Coin from "./char_coin"
+import Characteristics from "./characteristics"
+import Char_Notes from "./char_notes"
 
 function Player_Detail() {
     return(
@@ -24,12 +30,12 @@ function Player_Detail() {
                 <Char_DeathSave />
                 <Char_Modifier />
                 <Char_Skill />
-                {/* Char Attack */}
-                {/* Char Feats */}
-                {/* Char Equip */}
-                {/* Char Coin */}
-                {/* Characteristics */}
-                {/* Char Notes */}
+                <Char_Attack />
+                <Char_Feat />
+                <Char_Equip />
+                <Char_Coin />
+                <Characteristics />
+                <Char_Notes />
             </div>
         </div>
     )
