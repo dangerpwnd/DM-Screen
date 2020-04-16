@@ -16,7 +16,7 @@ import CharCoin from "./char_coin"
 import Characteristics from "./characteristics"
 import CharNotes from "./char_notes"
 
-function Player_Detail() {
+function PlayerDetail() {
     return(
         <div>
             <div className="playerDetailGrid">
@@ -41,4 +41,4 @@ function Player_Detail() {
     )
 }
 
-export default Player_Detail
+export default PlayerDetail
