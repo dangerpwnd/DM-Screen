@@ -1,41 +1,41 @@
 import React from "react"
-import Char_Img from "./char_img"
-import Char_Name from "./char_name"
-import Char_Class from "./char_class"
-import Char_Speed from "./char_speed"
-import Char_AC from "./char_ac"
-import Char_Attr from "./char_attr"
-import Char_HP from "./char_hp"
-import Char_DeathSave from "./char_deathsave"
-import Char_Modifier from "./char_modifier"
-import Char_Skill from "./char_skill"
-import Char_Attack from "./char_attack"
-import Char_Feat from "./char_feat"
-import Char_Equip from "./char_equip"
-import Char_Coin from "./char_coin"
+import CharImg from "./char_img"
+import CharName from "./char_name"
+import CharClass from "./char_class"
+import CharSpeed from "./char_speed"
+import CharAc from "./char_ac"
+import CharAttr from "./char_attr"
+import CharHp from "./char_hp"
+import CharDeathSave from "./char_deathsave"
+import CharModifier from "./char_modifier"
+import CharSkill from "./char_skill"
+import CharAttack from "./char_attack"
+import CharFeat from "./char_feat"
+import CharEquip from "./char_equip"
+import CharCoin from "./char_coin"
 import Characteristics from "./characteristics"
-import Char_Notes from "./char_notes"
+import CharNotes from "./char_notes"
 
 function Player_Detail() {
     return(
         <div>
             <div className="playerDetailGrid">
-                <Char_Img />
-                <Char_Name />
-                <Char_Class />
-                <Char_Speed />
-                <Char_AC />
-                <Char_Attr />
-                <Char_HP />
-                <Char_DeathSave />
-                <Char_Modifier />
-                <Char_Skill />
-                <Char_Attack />
-                <Char_Feat />
-                <Char_Equip />
-                <Char_Coin />
+                <CharImg />
+                <CharName />
+                <CharClass />
+                <CharSpeed />
+                <CharAc />
+                <CharAttr />
+                <CharHp />
+                <CharDeathSave />
+                <CharModifier />
+                <CharSkill />
+                <CharAttack />
+                <CharFeat />
+                <CharEquip />
+                <CharCoin />
                 <Characteristics />
-                <Char_Notes />
+                <CharNotes />
             </div>
         </div>
     )

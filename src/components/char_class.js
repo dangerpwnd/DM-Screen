@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Class() {
+function CharClass() {
     return(
         <div className="playerFlexRow">
             <h2>Class: Barbarian</h2>
@@ -9,4 +9,4 @@ function Char_Class() {
     )
 }
 
-export default Char_Class
+export default CharClass

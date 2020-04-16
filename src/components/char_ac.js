@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_AC() {
+function CharAc() {
     return(
         <div className="playerFlexRow">
             <h3>Regular: 15</h3>
@@ -10,4 +10,4 @@ function Char_AC() {
     )
 }
 
-export default Char_AC
+export default CharAc

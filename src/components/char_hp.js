@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_HP() {
+function CharHp() {
     return(
         <div className="playerFlexRow">
             <h3>Current: 16</h3>
@@ -10,4 +10,4 @@ function Char_HP() {
     )
 }
 
-export default Char_HP
+export default CharHp

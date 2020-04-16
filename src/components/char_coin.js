@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Coin() {
+function CharCoin() {
     return(
         <div className="playerFlexRow">
             <h3>PP: 16</h3>
@@ -11,4 +11,4 @@ function Char_Coin() {
     )
 }
 
-export default Char_Coin
+export default CharCoin

@@ -1,10 +1,10 @@
 import React from "react"
 import image from "../assets/img/AYBase.jpg"
 
-function Char_Img() {
+function CharImg() {
     return(
         <img className="playerImgGrid" src={image} />
     )
 }
 
-export default Char_Img
+export default CharImg

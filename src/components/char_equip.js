@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Equip() {
+function CharEquip() {
     return(
         <div className="playerFlexCol">
             <h3>Item 1</h3>
@@ -10,4 +10,4 @@ function Char_Equip() {
     )
 }
 
-export default Char_Equip
+export default CharEquip

@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Modifier() {
+function CharModifier() {
     return(
         <div className="playerFlexRow">
             <h3>Prof Bonus: 2</h3>
@@ -10,4 +10,4 @@ function Char_Modifier() {
     )
 }
 
-export default Char_Modifier
+export default CharModifier

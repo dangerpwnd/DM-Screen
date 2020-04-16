@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Attr() {
+function CharAttr() {
     return(
         <div className="playerFlexCol playerAttrCol">
             <h3>Str: 14</h3>
@@ -13,4 +13,4 @@ function Char_Attr() {
     )
 }
 
-export default Char_Attr
+export default CharAttr

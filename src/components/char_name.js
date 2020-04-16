@@ -1,9 +1,9 @@
 import React from "react"
 
-function Char_Name() {
+function CharName() {
     return(
         <h1>Bartos Donadarion</h1>
     )
 }
 
-export default Char_Name
+export default CharName

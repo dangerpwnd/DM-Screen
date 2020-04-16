@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Weapon() {
+function CharWeapon() {
     return(
         <div className="playerFlexRow">
             <h3>Name:Scimitar</h3>
@@ -10,4 +10,4 @@ function Char_Weapon() {
     )
 }
 
-export default Char_Weapon
+export default CharWeapon

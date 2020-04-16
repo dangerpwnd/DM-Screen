@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Speed() {
+function CharSpeed() {
     return(
         <div className="playerFlexRow">
             <h3>Speed: 30ft</h3>
@@ -9,4 +9,4 @@ function Char_Speed() {
     )
 }
 
-export default Char_Speed
+export default CharSpeed

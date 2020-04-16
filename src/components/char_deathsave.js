@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_DeathSave() {
+function CharDeathSave() {
     return(
         <div className="playerFlexRow">
             <h3>Success</h3>
@@ -9,4 +9,4 @@ function Char_DeathSave() {
     )
 }
 
-export default Char_DeathSave
+export default CharDeathSave

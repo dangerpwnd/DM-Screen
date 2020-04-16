@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Notes() {
+function CharNotes() {
     return(
         <div className="playerFlexCol">
             <h3>Factions: </h3>
@@ -13,4 +13,4 @@ function Char_Notes() {
     )
 }
 
-export default Char_Notes
+export default CharNotes

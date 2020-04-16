@@ -1,6 +1,6 @@
 import React from "react"
 
-function Char_Skill() {
+function CharSkill() {
     return(
         <div className="playerFlexRow">
             <h3>Skill 1: 2</h3>
@@ -10,4 +10,4 @@ function Char_Skill() {
     )
 }
 
-export default Char_Skill
+export default CharSkill

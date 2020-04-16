@@ -1,7 +1,7 @@
 import React from "react"
 import Char_Weapon from "./char_weapon"
 
-function Char_Attack() {
+function CharAttack() {
     return(
         <div>
             <Char_Weapon />
@@ -11,4 +11,4 @@ function Char_Attack() {
     )
 }
 
-export default Char_Attack
+export default CharAttack
