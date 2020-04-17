@@ -3,10 +3,12 @@ import Char_Weapon from "./char_weapon"
 
 function CharAttack() {
     return(
-        <div>
-            <Char_Weapon />
-            <Char_Weapon />
-            <Char_Weapon />
+        <div className="playerFlexCol">
+            <div className="border">
+                <Char_Weapon />
+                <Char_Weapon />
+                <Char_Weapon />
+            </div>
         </div>
     )
 }

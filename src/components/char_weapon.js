@@ -3,9 +3,9 @@ import React from "react"
 function CharWeapon() {
     return(
         <div className="playerFlexRow">
-            <h3>Name:Scimitar</h3>
-            <h3>Damage/Critical:1d8+2/x2</h3>
-            <h3>Type:Slashing</h3>
+            <h4>Name:Scimitar</h4>
+            <h4>Damage/Critical:1d8+2/x2</h4>
+            <h4>Type:Slashing</h4>
         </div>
     )
 }

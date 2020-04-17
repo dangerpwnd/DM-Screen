@@ -10,22 +10,30 @@
   color: white;
 }
 
+.border {
+  border: 1px solid white;
+}
+
 .playerDetailGrid {
   display: grid;
-  grid-template-columns: 40vw 40vw;
-  grid-template-rows: 8(1fr);
+  grid-template-columns: repeat(2,45vw);
+  grid-template-rows: repeat(8,1fr);
 }
 
 .playerImgGrid {
-  grid-row: 1 / span 2;
+  grid-row: span 2;
 }
 
 .playerStatRow {
-  grid-column: 1 / span 2;
+  grid-column: span 2;
+}
+
+.playerAttackRow {
+  grid-row: span 3;
 }
 
 .playerAttrCol {
-  grid-row: 4 / span 4
+  grid-row:  span 4
 }
 
 .playerFlexRow {

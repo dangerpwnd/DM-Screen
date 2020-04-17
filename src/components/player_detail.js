@@ -1,9 +1,6 @@
 import React from "react"
 import CharImg from "./char_img"
-import CharName from "./char_name"
-import CharClass from "./char_class"
-import CharSpeed from "./char_speed"
-import CharAc from "./char_ac"
+import CharMain from "./char_main"
 import CharAttr from "./char_attr"
 import CharHp from "./char_hp"
 import CharDeathSave from "./char_deathsave"
@@ -21,10 +18,7 @@ function PlayerDetail() {
         <div>
             <div className="playerDetailGrid">
                 <CharImg />
-                <CharName />
-                <CharClass />
-                <CharSpeed />
-                <CharAc />
+                <CharMain />
                 <CharAttr />
                 <CharHp />
                 <CharDeathSave />
