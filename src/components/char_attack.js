@@ -3,7 +3,7 @@ import Char_Weapon from "./char_weapon"
 
 function CharAttack() {
     return(
-        <div className="playerFlexCol">
+        <div className="playerAttackGrid playerFlexCol">
             <div className="border">
                 <Char_Weapon />
                 <Char_Weapon />

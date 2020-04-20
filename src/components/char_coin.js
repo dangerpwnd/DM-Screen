@@ -2,8 +2,8 @@ import React from "react"
 
 function CharCoin() {
     return(
-        <div className="playerFlexRow">
-            <div className="border">
+        <div className="playerCoinGrid">
+            <div className="border playerFlexRow">
                 <h3>PP: 16</h3>
                 <h3>GP: 20</h3>
                 <h3>SP: 10</h3> 

@@ -16,24 +16,73 @@
 
 .playerDetailGrid {
   display: grid;
-  grid-template-columns: repeat(2,45vw);
-  grid-template-rows: repeat(8,1fr);
+  grid-template-columns: repeat(4,22vw);
+  grid-template-areas:
+    "img img main main"
+    "hp hp save save"
+    "attr mod mod mod"
+    "attr stat stat stat"
+    "attack attack attack attack"
+    "feat feat feat feat"
+    "item item item item"
+    "coin coin coin coin"
+    "char char char char"
+    "note note note note";
+    gap: 10px;
 }
 
 .playerImgGrid {
-  grid-row: span 2;
+  grid-area: img;
+  justify-self: center;
 }
 
-.playerStatRow {
-  grid-column: span 2;
+.playerMainGrid {
+  grid-area: main;
+  grid-column: 3 / span 2;
 }
 
-.playerAttackRow {
-  grid-row: span 3;
+.playerHpGrid {
+  grid-area: hp;
 }
 
-.playerAttrCol {
-  grid-row:  span 4
+.playerSaveGrid {
+  grid-area: save;
+}
+
+.playerAttrGrid {
+  grid-area: attr;
+}
+
+.playerModGrid {
+  grid-area: mod;
+}
+
+.playerStatGrid {
+  grid-area: stat;
+}
+
+.playerAttackGrid {
+  grid-area: attack;
+}
+
+.playerFeatGrid {
+  grid-area: feat;
+}
+
+.playerItemGrid {
+  grid-area: item;
+}
+
+.playerCoinGrid {
+  grid-area: coin;
+}
+
+.playerCharGrid {
+  grid-area: char;
+}
+
+.playerNoteGrid {
+  grid-area: note;
 }
 
 .playerFlexRow {

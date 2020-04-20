@@ -5,12 +5,12 @@ import CharAc from "./char_ac"
 
 function CharMain() {
     return(
-        <div>
-            <h1>Bartos Donadarion</h1>
-            <CharClass />
-            <CharSpeed />
-            <CharAc />
-        </div>
+            <div className="playerMainGrid">
+                    <h1 className="border">Bartos Donadarion</h1>
+                    <CharClass />
+                    <CharSpeed />
+                    <CharAc />
+            </div>
     )
 }
 
