@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharSpeed() {
+const CharSpeed = () => {
     return(
         <div>
             <div className="border playerFlexRow">

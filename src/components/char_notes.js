@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharNotes() {
+const CharNotes = () => {
     return(
         <div className="playerNoteGrid playerFlexCol">
             <div className="border">

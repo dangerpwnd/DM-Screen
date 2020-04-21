@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharSkill() {
+const CharSkill = () => {
     return(
         <div className="playerStatGrid">
             <div className="border">

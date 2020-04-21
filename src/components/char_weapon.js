@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharWeapon() {
+const CharWeapon = () => {
     return(
         <div>
             <div className="border playerFlexRow">

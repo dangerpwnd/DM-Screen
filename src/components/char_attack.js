@@ -1,7 +1,7 @@
 import React from "react"
 import Char_Weapon from "./char_weapon"
 
-function CharAttack() {
+const CharAttack = () => {
     return(
         <div className="playerAttackGrid playerFlexCol">
             <div className="border">

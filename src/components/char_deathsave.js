@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharDeathSave() {
+const CharDeathSave = () => {
     return(
         <div className="playerSaveGrid">
             <div className="border playerFlexRow">

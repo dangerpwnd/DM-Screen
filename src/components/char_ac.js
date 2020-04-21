@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharAc() {
+const CharAc = () => {
     return(
         <div>
             <div className="border playerFlexRow">

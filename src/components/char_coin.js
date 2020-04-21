@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharCoin() {
+const CharCoin = () => {
     return(
         <div className="playerCoinGrid">
             <div className="border playerFlexRow">

@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharEquip() {
+const CharEquip = () => {
     return(
         <div className="playerItemGrid playerFlexCol">
             <div className="border">

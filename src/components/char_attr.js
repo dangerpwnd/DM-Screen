@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharAttr() {
+const CharAttr = () => {
     return(
         <div className="playerAttrGrid">
             <div className="border">

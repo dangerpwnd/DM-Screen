@@ -1,6 +1,6 @@
 import React from "react"
 
-function CharHp() {
+const CharHp = () => {
     return(
         <div className="playerHpGrid">
             <div className="border playerFlexRow">

@@ -13,7 +13,7 @@ import CharCoin from "./char_coin"
 import Characteristics from "./characteristics"
 import CharNotes from "./char_notes"
 
-function PlayerDetail() {
+const PlayerDetail = () => {
     return(
         <div>
             <div className="playerDetailGrid">

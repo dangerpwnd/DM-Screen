@@ -1,6 +1,6 @@
 import React from "react"
 
-function Characteristics() {
+const Characteristics = () => {
     return(
         <div className="playerCharGrid playerFlexCol">
             <div className="border">
