@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Api
+from flask_jwt import JWT, jwt_required, current_identity
 
-from item import Item, ItemList
+from resources.item import Item, ItemList
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
