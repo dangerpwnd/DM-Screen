@@ -4,7 +4,7 @@ from flask_jwt import JWT
 
 from resources.item import Item, ItemList
 from security import authenticate, identity
-from user import UserRegister
+from resources.user import UserRegister
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
