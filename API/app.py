@@ -1,6 +1,6 @@
-from flask import Flask, request
+from flask import Flask
 from flask_restful import Api
-from flask_jwt import JWT, jwt_required, current_identity
+from flask_jwt import JWT
 
 from resources.item import Item, ItemList
 from security import authenticate, identity
@@ -9,6 +9,8 @@ from user import UserRegister
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
 api = Api(app)
+
+jwt = JWT(app, authenticate, identity) # /auth
 
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')

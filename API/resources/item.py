@@ -1,4 +1,5 @@
 from flask_restful import Resource, reqparse
+from flask_jwt import jwt_required
 import sqlite3
 
 
@@ -11,7 +12,7 @@ class Item(Resource):
                         required=True,
                         help="This field cannot be left blank!"
                         )
-
+    @jwt_required()
     def get(self, name):
         item = self.find_by_name(name)
         if item:
@@ -58,6 +59,7 @@ class Item(Resource):
         connection.commit()
         connection.close()
 
+    @jwt_required()
     def delete(self, name):
         connection = sqlite3.connect('player.db')
         cursor = connection.cursor()
@@ -71,6 +73,7 @@ class Item(Resource):
 
         return {'message': 'Item deleted'}
 
+    @jwt_required()
     def put(self, name):
         data = Item.parser.parse_args()
         item = self.find_by_name(name)
@@ -103,6 +106,7 @@ class Item(Resource):
 class ItemList(Resource):
     TABLE_NAME = 'items'
 
+    @jwt_required()
     def get(self):
         connection = sqlite3.connect('player.db')
         cursor = connection.cursor()

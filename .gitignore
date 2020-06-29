@@ -25,3 +25,4 @@ yarn-error.log*
 # virtualenv
 /charAPI
 __pycache__
+/dm-screen
