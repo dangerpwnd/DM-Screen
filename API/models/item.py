@@ -1,6 +1,13 @@
-import sqlite3
+from db import db
 
-class ItemModel:
+class ItemModel(db.Model):
+
+    __tablename__ = 'items'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    descrip = db.Column(db.String(80))
+
     def __init__(self, name, descrip):
         self.name = name
         self.descrip = descrip
@@ -10,35 +17,12 @@ class ItemModel:
 
     @classmethod
     def find_by_name(cls, name):
-        connection = sqlite3.connect('player.db')
-        cursor = connection.cursor()
+        return cls.query.filter_by(name=name).first() # SELECT * FROM items WHERE name=name LIMIT 1
 
-        query = "SELECT * FROM {table} WHERE name=?".format(
-            table=cls.TABLE_NAME)
-        result = cursor.execute(query, (name,))
-        row = result.fetchone()
-        connection.close()
+    def save_to_db(self): # Handles insert and update
+        db.session.add(self)
+        db.session.commit()
 
-        if row:
-            return cls(*row)
-
-    def insert(self):
-        connection = sqlite3.connect('player.db')
-        cursor = connection.cursor()
-
-        query = "INSERT INTO {table} VALUE(?,?)".format(table=cls.TABLE_NAME)
-        cursor.execute(query, (self.name, self.descrip))
-
-        connection.commit()
-        connection.close()
-
-    def update(self):
-        connection = sqlite3.connect('player.db')
-        cursor = connection.cursor()
-
-        query = "UPDATE {table} SET descrip=? WHERE name=?".format(
-            table=cls.TABLE_NAME)
-        cursor.execute(query, (self.descrip, self.name))
-
-        connection.commit()
-        connection.close()
+    def delete_from_db(self):
+        db.session.delete(self)
+        db.sessions.commit()
