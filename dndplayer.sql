@@ -18,7 +18,7 @@ CREATE SCHEMA IF NOT EXISTS `DnD` DEFAULT CHARACTER SET utf8 ;
 USE `DnD` ;
 
 -- -----------------------------------------------------
--- Table `DnD`.`Background`
+-- Table `DnD`.`Background` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
   `idBackground` INT NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
   `BackDescrip` VARCHAR(250) NOT NULL,
   `EquipmentId` INT NULL,
   `ToolId` INT NULL,
-  `ProficienciesId` INT NULL,
+  `ProficiencyId` INT NULL,
   PRIMARY KEY (`idBackground`))
 ENGINE = InnoDB;
 
@@ -208,10 +208,10 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Factions`
+-- Table `DnD`.`Faction`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DnD`.`Factions` (
-  `idFactions` INT NOT NULL,
+  `idFaction` INT NOT NULL,
   `FactionName` VARCHAR(75) NULL,
   `FactionDescrip` VARCHAR(250) NULL,
   PRIMARY KEY (`idFactions`))
@@ -219,7 +219,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Equipment`
+-- Table `DnD`.`Equipment` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (
   `idEquipment` INT NOT NULL,
@@ -231,13 +231,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Proficiencies`
+-- Table `DnD`.`Proficiency` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DnD`.`Proficiencies` (
-  `idProficiencies` INT NOT NULL,
+  `idProficiency` INT NOT NULL,
   `ProficiencyName` VARCHAR(100) NOT NULL,
   `ProficiencyDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idProficiencies`))
+  PRIMARY KEY (`idProficiency`))
 ENGINE = InnoDB;
 
 
@@ -254,8 +254,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `DnD`.`Weapons`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Weapons` (
-  `idWeapons` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (
+  `idWeapon` INT NOT NULL,
   `WeapName` VARCHAR(100) NOT NULL,
   `WeapDescrip` VARCHAR(250) NOT NULL,
   `WeapDmg` VARCHAR(75) NOT NULL,
@@ -303,13 +303,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Tools`
+-- Table `DnD`.`Tools` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Tools` (
-  `idTools` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (
+  `idTool` INT NOT NULL,
   `ToolName` VARCHAR(100) NOT NULL,
   `ToolDescrip` VARCHAR(250) NOT NULL,
   `ToolWeight` INT NOT NULL,
+  `ToolSkill`
   PRIMARY KEY (`idTools`))
 ENGINE = InnoDB;
 

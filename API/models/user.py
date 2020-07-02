@@ -10,7 +10,7 @@ class UserModel(db.Model):
     def __init__(self, username, password):
         self.username = username
         self.password = password
-        
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()

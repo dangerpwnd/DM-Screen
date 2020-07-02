@@ -25,4 +25,4 @@ class PlayerModel(db.Model):
 
     def delete_from_db(self):
         db.session.delete(self)
-        db.sessions.commit()
+        db.session.commit()
