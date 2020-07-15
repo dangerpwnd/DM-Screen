@@ -4,27 +4,26 @@ from models.background import BackgroundModel
 
 class Background(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('descrip',
+    parser.add_argument('back_descrip',
                          type=str,
                          required=True,
                          help="Background requires descriptions!"
                          )
     @jwt_required
-    def get(self, name):
-        background = BackgroundModel.find_by_name(name)
-
+    def get(self, back_name):
+        background = BackgroundModel.find_by_name(back_name)
         if background:
             return background.json()
-        return {"message": "Background not found"}, 404
+        return {'message': 'Background not found'}, 404
 
     @jwt_required
-    def post(self, name):
-        if BackgroundModel.find_by_name(name):
-            return {"message": "A background with name '{}' already exists.".format(name)}
+    def post(self, back_name):
+        if BackgroundModel.find_by_name(back_name):
+            return {'message': 'A background with name "{}" already exists.'.format(back_name)}
 
         data = Background.parser.parse_args()
 
-        background = BackgroundModel(name, **data)
+        background = BackgroundModel(back_name, **data)
 
         try:
             background.save_to_db()
@@ -34,8 +33,8 @@ class Background(Resource):
         return background.json(), 201
 
     @jwt_required
-    def delete(self, name):
-        background = BackgroundModel.find_by_name(name)
+    def delete(self, back_name):
+        background = BackgroundModel.find_by_name(back_name)
 
         if background:
             background.delete_from_db()
@@ -44,15 +43,15 @@ class Background(Resource):
         return {"message": "Background not found"}
 
     @jwt_required
-    def put(self, name):
+    def put(self, back_name):
         data = Background.parser.parse_args()
 
-        background = BackgroundModel.find_by_name(name)
+        background = BackgroundModel.find_by_name(back_name)
 
         if background is None:
-            background = BackgroundModel(name, **data)
+            background = BackgroundModel(back_name, **data)
         else:
-            background.descrip = data['descrip']
+            background.descrip = data['back_descrip']
 
         background.save_to_db()
 
@@ -61,4 +60,4 @@ class Background(Resource):
 class BackgroundList(Resource):
     @jwt_required
     def get(self):
-        return {'Backgrounds': [background.json() for background in BackgroundModel.query.all()]}
+        return {"backgrounds": [background.json() for background in BackgroundModel.query.all()]}

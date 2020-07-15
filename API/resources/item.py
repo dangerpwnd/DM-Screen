@@ -4,26 +4,26 @@ from models.item import ItemModel
 
 class Item(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('descrip',
+    parser.add_argument('item_descrip',
                         type= str,
                         required=True,
                         help="This field cannot be left blank!"
                         )
     @jwt_required()
-    def get(self, name):
-        item = ItemModel.find_by_name(name)
+    def get(self, item_name):
+        item = ItemModel.find_by_name(item_name)
         if item:
             return item.json()
         return {'message': 'Item not found'}, 404
 
     @jwt_required()
-    def post(self, name):
-        if ItemModel.find_by_name(name):
-            return {'message': "An item with name '{}' already exists.".format(name)}
+    def post(self, item_name):
+        if ItemModel.find_by_name(item_name):
+            return {'message': "An item with name '{}' already exists.".format(item_name)}
 
         data = Item.parser.parse_args()
 
-        item = ItemModel(name, **data)
+        item = ItemModel(item_name, **data)
 
         try:
             item.save_to_db()
@@ -33,8 +33,8 @@ class Item(Resource):
         return item.json(), 201
 
     @jwt_required()
-    def delete(self, name):
-        item = ItemModel.find_by_name(name)
+    def delete(self, item_name):
+        item = ItemModel.find_by_name(item_name)
         if item:
             item.delete_from_db()
             return {'message': 'Item deleted.'}
@@ -42,15 +42,15 @@ class Item(Resource):
         return {'message': 'Item not found.'}, 404
 
     @jwt_required()
-    def put(self, name):
+    def put(self, item_name):
         data = Item.parser.parse_args()
 
-        item = ItemModel.find_by_name(name)
+        item = ItemModel.find_by_name(item_name)
 
         if item is None:
-            item = ItemModel(name, **data)
+            item = ItemModel(item_name, **data)
         else:
-            item.descrip = data['descrip']
+            item.item_descrip = data['item_descrip']
 
         item.save_to_db()
 

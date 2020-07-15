@@ -28,7 +28,7 @@ def create_tables():
 jwt = JWT(app, authenticate, identity) # /auth
 
 # Backgrounds
-api.add_resource(Background, '/background/<string:name>')
+api.add_resource(Background, '/background/<string:back_name>')
 api.add_resource(BackgroundList, '/backgrounds')
 
 # Equipment
@@ -36,7 +36,7 @@ api.add_resource(Equipment, '/equipment/<string:name>')
 api.add_resource(EquipmentList, '/equipment')
 
 # Items
-api.add_resource(Item, '/item/<string:name>')
+api.add_resource(Item, '/item/<string:item_name>')
 api.add_resource(ItemList, '/items')
 
 # Proficiencies

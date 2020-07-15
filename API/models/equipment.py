@@ -10,17 +10,17 @@ class EquipmentModel(db.Model):
     equip_descrip = db.Column(db.String(250), nullable=False)
     equip_weight = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, name, descrip, weight):
-        self.name = equip_name
-        self.descrip = equip_descrip
-        self.weight = equip_weight
+    def __init__(self, equip_name, equip_descrip, equip_weight):
+        self.equip_name = equip_name
+        self.equip_descrip = equip_descrip
+        self.equip_weight = equip_weight
 
     def json(self):
-        return {'name': self.name, 'descrip': self.descrip, 'weight': self.weight}
+        return {'name': self.equip_name, 'descrip': self.equip_descrip, 'weight': self.equip_weight}
 
     @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
+    def find_by_name(cls, equip_name):
+        return cls.query.filter_by(equip_name=equip_name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     def save_to_db(self): # Handles insert and update
         db.session.add(self)
