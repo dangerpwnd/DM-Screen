@@ -15,6 +15,9 @@ class EquipmentModel(db.Model):
         self.equip_descrip = equip_descrip
         self.equip_weight = equip_weight
 
+    def __repr__(self):
+        return f"<Equipment {self.equip_name}, {self.equip_descrip}, weighs {self.equip_weight}>"
+
     def json(self):
         return {'name': self.equip_name, 'descrip': self.equip_descrip, 'weight': self.equip_weight}
 
