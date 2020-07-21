@@ -26,6 +26,10 @@ class BackgroundModel(db.Model):
     def find_by_name(cls, background_name):
         return cls.query.filter_by(background_name=background_name).first()
 
+    @classmethod
+    def find_all(cls):
+        return cls.query.all();
+
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
@@ -46,7 +50,7 @@ tool_helper = db.Table('Background_has_Tools',
     db.Column('background_id', db.Integer, db.ForeignKey('Background.id_background'), primary_key=True)
 )
 
-# proficiency_helper = db.Table('Background_has_Proficiencies',
-#     db.Column('proficiency_id', db.Integer, db.ForeignKey('Proficiency.id_proficiency'), primary_key=True),
-#     db.Column('background_id', db.Integer, db.ForeignKey('Background.id_background'), primary_key=True)
-# )
+proficiency_helper = db.Table('Background_has_Proficiencies',
+    db.Column('proficiency_id', db.Integer, db.ForeignKey('Proficiency.id_proficiency'), primary_key=True),
+    db.Column('background_id', db.Integer, db.ForeignKey('Background.id_background'), primary_key=True)
+)

@@ -62,4 +62,4 @@ class Proficiency(Resource):
 class ProficiencyList(Resource):
     @jwt_required
     def get(self):
-        return {'Proficiency': [proficiency.json() for proficiency in ProficiencyModel.query.all()]}
+        return {'Proficiency': [proficiency.json() for proficiency in ProficiencyModel.find_all()]}

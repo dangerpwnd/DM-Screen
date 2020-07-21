@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from flask_jwt import JWT
+from flask_marshmallow import Marshmallow
 from db import db
 
 from resources.background import Background, BackgroundList
@@ -8,7 +9,6 @@ from resources.equipment import Equipment, EquipmentList
 from resources.item import Item, ItemList
 from resources.proficiency import Proficiency, ProficiencyList
 from resources.tool import Tool, ToolList
-
 
 from security import authenticate, identity
 from resources.user import UserRegister
@@ -18,6 +18,15 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///player.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'DMrules'
+
+# Marshmallow Schemas
+ma = Marshmallow(app)
+
+class BackgroundSchema(ma.Schema):
+    class Meta:
+        fields = ('id_background', 'background_name', 'background_descrip')
+
+
 api = Api(app)
 
 # Flask decorator

@@ -23,6 +23,10 @@ class ProficiencyModel(db.Model):
     def find_by_name(cls, proficiency_name):
         return cls.query.filter_by(proficiency_name=proficiency_name).first() # SELECT * FROM Equipment WHERE name=name LIMIT 1
 
+    @classmethod
+    def find_all(cls):
+        return cls.query.all();
+
     def save_to_db(self): # Handles insert and update
         db.session.add(self)
         db.session.commit()

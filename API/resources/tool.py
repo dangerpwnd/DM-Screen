@@ -68,4 +68,4 @@ class Tool(Resource):
 class ToolList(Resource):
     @jwt_required
     def get(self):
-        return {'Tools': [tool.json() for tool in ToolModel.query.all()]}
+        return {'Tools': [tool.json() for tool in ToolModel.find_all()]}

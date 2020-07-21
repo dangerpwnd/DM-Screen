@@ -1,6 +1,12 @@
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
 from models.background import BackgroundModel
+from app import BackgroundSchema
+
+
+# Variables
+background_schema = BackgroundSchema()
+backgrounds_schema = BackgroundSchema(many=True)
 
 class Background(Resource):
     parser = reqparse.RequestParser()
@@ -60,4 +66,4 @@ class Background(Resource):
 class BackgroundList(Resource):
     @jwt_required
     def get(self):
-        return {'backgrounds': [background.json() for background in BackgroundModel.query.all()]}
+        return {'backgrounds': [background.json() for background in BackgroundModel.find_all()]}

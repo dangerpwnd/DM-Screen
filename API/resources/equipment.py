@@ -67,4 +67,4 @@ class Equipment(Resource):
 class EquipmentList(Resource):
     @jwt_required
     def get(self):
-        return {'equipment': [equipment.json() for equipment in EquipmentModel.query.all()]}
+        return {'equipment': [equipment.json() for equipment in EquipmentModel.find_all()]}
