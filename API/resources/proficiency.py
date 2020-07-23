@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
-from models.equipment import EquipmentModel
+from flask_jwt_extended import jwt_required, get_jwt_claims
+from models.proficiency import ProficiencyModel
 
 class Proficiency(Resource):
     parser = reqparse.RequestParser()
@@ -20,6 +20,10 @@ class Proficiency(Resource):
 
     @jwt_required
     def post(self,name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         if ProficiencyModel.find_by_name(name):
             return {"message": "Proficiency with name '{}' already exists.".format(name)}
 
@@ -36,6 +40,10 @@ class Proficiency(Resource):
 
     @jwt_required
     def delete(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         proficiency = ProficiencyModel.find_by_name(name)
 
         if proficiency:
@@ -46,6 +54,10 @@ class Proficiency(Resource):
 
     @jwt_required
     def put(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         data = Equipment.parser.parse_args()
 
         proficiency = ProficiencyModel.find_by_name(name)

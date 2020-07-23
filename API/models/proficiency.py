@@ -17,7 +17,7 @@ class ProficiencyModel(db.Model):
         return {"name": self.proficiency_name, "descrip": self.proficiency_descrip}
 
     def __repr__(self):
-        return f"<Proficiency {self.proficiency_name}, {self.proficiency_descrip}>""
+        return f"<Proficiency {self.proficiency_name}, {self.proficiency_descrip}>"
 
     @classmethod
     def find_by_name(cls, proficiency_name):

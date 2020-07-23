@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from models.equipment import EquipmentModel
 
 class Equipment(Resource):
@@ -24,6 +24,10 @@ class Equipment(Resource):
 
     @jwt_required
     def post(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         if EquipmentModel.find_by_name(equip_name):
             return {"message": "Equipment with name '{}' already exists.".format(equip_name)}
 
@@ -40,6 +44,10 @@ class Equipment(Resource):
 
     @jwt_required
     def delete(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         equipment = EquipmentModel.find_by_name(equip_name)
 
         if equipment:
@@ -50,6 +58,10 @@ class Equipment(Resource):
 
     @jwt_required
     def put(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         data = Equipment.parser.parse_args()
 
         equipment = EquipmentModel.find_by_name(equip_name)

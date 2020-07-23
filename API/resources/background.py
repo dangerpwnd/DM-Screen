@@ -1,12 +1,11 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from models.background import BackgroundModel
-from app import BackgroundSchema
-
+# from app import BackgroundSchema
 
 # Variables
-background_schema = BackgroundSchema()
-backgrounds_schema = BackgroundSchema(many=True)
+# background_schema = BackgroundSchema()
+# backgrounds_schema = BackgroundSchema(many=True)
 
 class Background(Resource):
     parser = reqparse.RequestParser()
@@ -24,6 +23,10 @@ class Background(Resource):
 
     @jwt_required
     def post(self, back_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         if BackgroundModel.find_by_name(background_name):
             return {'message': 'A background with name "{}" already exists.'.format(background_name)}
 
@@ -40,6 +43,10 @@ class Background(Resource):
 
     @jwt_required
     def delete(self, background_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         background = BackgroundModel.find_by_name(background_name)
 
         if background:
@@ -50,6 +57,10 @@ class Background(Resource):
 
     @jwt_required
     def put(self, background_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         data = Background.parser.parse_args()
 
         background = BackgroundModel.find_by_name(background_name)

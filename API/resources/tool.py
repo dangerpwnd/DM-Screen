@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from models.tool import ToolModel
 
 class Tool(Resource):
@@ -25,6 +25,10 @@ class Tool(Resource):
 
     @jwt_required
     def post(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         if ToolModel.find_by_name(name):
             return {"message": "Tool with name '{}' already exists.".format(name)}
 
@@ -41,6 +45,10 @@ class Tool(Resource):
 
     @jwt_required
     def delete(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         tool = ToolModel.find_by_name(name)
 
         if tool:
@@ -51,6 +59,10 @@ class Tool(Resource):
 
     @jwt_required
     def put(self, name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         data = Tool.parser.parse_args()
 
         tool = ToolModel.find_by_name(name)

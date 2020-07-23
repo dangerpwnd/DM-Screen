@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from flask_jwt import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_claims
 from models.item import ItemModel
 
 class Item(Resource):
@@ -9,15 +9,19 @@ class Item(Resource):
                         required=True,
                         help="This field cannot be left blank!"
                         )
-    @jwt_required()
+    @jwt_required
     def get(self, item_name):
         item = ItemModel.find_by_name(item_name)
         if item:
             return item.json()
         return {'message': 'Item not found'}, 404
 
-    @jwt_required()
+    @jwt_required
     def post(self, item_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         if ItemModel.find_by_name(item_name):
             return {'message': "An item with name '{}' already exists.".format(item_name)}
 
@@ -32,8 +36,11 @@ class Item(Resource):
 
         return item.json(), 201
 
-    @jwt_required()
+    @jwt_required
     def delete(self, item_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
         item = ItemModel.find_by_name(item_name)
         if item:
             item.delete_from_db()
@@ -41,8 +48,12 @@ class Item(Resource):
 
         return {'message': 'Item not found.'}, 404
 
-    @jwt_required()
+    @jwt_required
     def put(self, item_name):
+        claims = get_jwt_claims()
+        if not claims['is_admin']:
+            return {'message': 'Admin privilege required.'}, 401
+
         data = Item.parser.parse_args()
 
         item = ItemModel.find_by_name(item_name)
@@ -57,7 +68,7 @@ class Item(Resource):
         return item.json()
 
 class ItemList(Resource):
-    @jwt_required()
+    @jwt_required
     def get(self):
         return {'items': [item.json() for item in ItemModel.find_all()]}
         # could also do list(map(lambda x: x.json(), ItemModel.query.all()))
