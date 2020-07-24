@@ -1,38 +1,29 @@
-from flask_restful import Resource, reqparse
+from flask_restful import Resource, request
 from flask_jwt_extended import jwt_required, get_jwt_claims
+from marshmallow import ValidationError
 from models.background import BackgroundModel
-# from app import BackgroundSchema
+from schemas.background import BackgroundSchema
 
-# Variables
-# background_schema = BackgroundSchema()
-# backgrounds_schema = BackgroundSchema(many=True)
+background_schema = BackgroundSchema()
+background_list_schema = BackgroundSchema(many=True)
 
 class Background(Resource):
-    parser = reqparse.RequestParser()
-    parser.add_argument('background_descrip',
-                         type=str,
-                         required=True,
-                         help="Background requires descriptions!"
-                         )
     @jwt_required
-    def get(self, background_name):
-        background = BackgroundModel.find_by_name(background_name)
-        if background:
-            return background.json()
-        return {'message': 'Background not found'}, 404
+    @classmethod
+    def get(cls, name: str):
+        background = BackgroundModel.find_by_name(name)
+        if not background:
+            return {'message': 'Background not found'}, 404
+        return background_schema.dump(background), 200
 
     @jwt_required
-    def post(self, back_name):
-        claims = get_jwt_claims()
-        if not claims['is_admin']:
-            return {'message': 'Admin privilege required.'}, 401
+    @classmethod
+    def post(cls, name: str):
+        if BackgroundModel.find_by_name(name):
+            return {'message': 'A background with name "{}" already exists.'.format(name)}, 400
 
-        if BackgroundModel.find_by_name(background_name):
-            return {'message': 'A background with name "{}" already exists.'.format(background_name)}
-
-        data = Background.parser.parse_args()
-
-        background = BackgroundModel(background_name, **data)
+        background_json = request.get_json()
+        background
 
         try:
             background.save_to_db()
@@ -57,10 +48,6 @@ class Background(Resource):
 
     @jwt_required
     def put(self, background_name):
-        claims = get_jwt_claims()
-        if not claims['is_admin']:
-            return {'message': 'Admin privilege required.'}, 401
-
         data = Background.parser.parse_args()
 
         background = BackgroundModel.find_by_name(background_name)

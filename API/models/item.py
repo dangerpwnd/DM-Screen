@@ -8,16 +8,6 @@ class ItemModel(db.Model):
     item_name = db.Column(db.String(80))
     item_descrip = db.Column(db.String(80))
 
-    def __init__(self, item_name, item_descrip):
-        self.item_name = item_name
-        self.item_descrip = item_descrip
-
-    def __repr__(self):
-        return f"<Item {self.item_name}, {self.item_descrip}>"
-
-    def json(self):
-        return {'name': self.item_name, 'descrip': self.item_descrip}
-
     @classmethod
     def find_by_name(cls, item_name):
         return cls.query.filter_by(item_name=item_name).first() # SELECT * FROM items WHERE name=name LIMIT 1

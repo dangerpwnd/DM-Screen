@@ -7,24 +7,14 @@ class BackgroundModel(db.Model):
 
     # Columns
     id_background = db.Column(db.Integer, primary_key=True)
-    background_name = db.Column(db.String(50), nullable=False)
+    background_name = db.Column(db.String(50), nullable=False, unique=True)
     background_descrip = db.Column(db.String(250), nullable=False)
     #Relationship to PlayerChar
     # player_char = db.relationship('PlayerCharModel', backref='background', lazy=True, uselist=False)
 
-    def __init__(self, background_name, background_descrip):
-        self.background_name = background_name
-        self.background_descrip = background_descrip
-
-    def __repr__(self):
-        return f"<Background {self.background_name}, {self.background_descrip}>"
-
-    def json(self):
-        return {'name': self.background_name, 'descrip': self.background_descrip}
-
     @classmethod
-    def find_by_name(cls, background_name):
-        return cls.query.filter_by(background_name=background_name).first()
+    def find_by_name(cls, name):
+        return cls.query.filter_by(name=name).first()
 
     @classmethod
     def find_all(cls):
