@@ -9,8 +9,17 @@ class BackgroundModel(db.Model):
     id_background = db.Column(db.Integer, primary_key=True)
     background_name = db.Column(db.String(50), nullable=False, unique=True)
     background_descrip = db.Column(db.String(250), nullable=False)
+	#Foreign Keys
+	bref = db.backref('background', lazy='joined')
+	equipment_id = db.Column(db.Integer, db.ForeignKey('Equipment.id_equipment'))
+	equipment = db.relationship('Equipment', lazy='select',
+		backref = bref)
+	tool_id
+	tool = db.relationship('Tool', lazy='select',
+		backref = bref)
+	proficiency = db.relationship('Proficiency', lazy='select',
+		backref = bref)
     #Relationship to PlayerChar
-    # player_char = db.relationship('PlayerCharModel', backref='background', lazy=True, uselist=False)
 
     @classmethod
     def find_by_name(cls, name):
