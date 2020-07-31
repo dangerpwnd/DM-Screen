@@ -1,25 +1,23 @@
 from flask_restful import Resource, reqparse
 from flask_jwt_extended import jwt_required, get_jwt_claims
 from models.proficiency import ProficiencyModel
+from schemas.proficiency import ProficiencySchema
+
+proficiency_schema = ProficiencySchema()
+proficiency_list_schema = ProficiencySchema(many=True)
 
 class Proficiency(Resource):
-    parser = reqparse.RequestParser()
-    parser.add_argument('descrip',
-                        type=str,
-                        required=True,
-                        help="Proficiency requires descriptions!"
-                        )
-
     @jwt_required
-    def get(self, name):
+    @classmethod
+    def get(cls, name: str):
         proficiency = ProficiencyModel.find_by_name(name)
-
-        if proficiency:
-            return proficiency.json()
-        return {"message": "Proficiency not found."}, 404
+        if not proficiency:
+            return {"message": "Proficiency not found."}, 404
+        return proficiency_schema.dump(proficiency), 200
 
     @jwt_required
-    def post(self,name):
+    @classmethod
+    def post(cls, name: str):
         claims = get_jwt_claims()
         if not claims['is_admin']:
             return {'message': 'Admin privilege required.'}, 401
@@ -27,19 +25,20 @@ class Proficiency(Resource):
         if ProficiencyModel.find_by_name(name):
             return {"message": "Proficiency with name '{}' already exists.".format(name)}
 
-        data = Proficiency.parser.parse_args()
-
-        proficiency = ProficiencyModel(name, **data)
+        proficiency_json = request.get_json()
+        proficiency_json['proficiency_name'] = name
+        proficiency = proficiency_schema.load(proficiency)
 
         try:
             proficiency.save_to_db()
         except:
             return {"message": "An error occurred inserting the proficiency."}, 500
 
-        return proficiency.json(), 201
+        return proficiency_schema.dump(proficiency), 201
 
     @jwt_required
-    def delete(self, name):
+    @classmethod
+    def delete(cls, name: str):
         claims = get_jwt_claims()
         if not claims['is_admin']:
             return {'message': 'Admin privilege required.'}, 401
@@ -53,25 +52,27 @@ class Proficiency(Resource):
         return {"message": "Proficiency not found"}
 
     @jwt_required
-    def put(self, name):
+    @classmethod
+    def put(cls, name: str):
         claims = get_jwt_claims()
         if not claims['is_admin']:
             return {'message': 'Admin privilege required.'}, 401
 
-        data = Equipment.parser.parse_args()
-
+        proficiency_json = request.get_json()
         proficiency = ProficiencyModel.find_by_name(name)
 
-        if proficiency is None:
-            proficiency = ProficiencyModel(name, **data)
+        if proficiency:
+            proficiency.proficiency_descrip = proficiency_json['proficiency_descrip']
         else:
-            proficiency.descrip = data['descrip']
+            proficiency_json['proficiency_name'] = name
+            proficiency = proficiency_schema.load(proficiency_json)
 
         proficiency.save_to_db()
 
-        return proficiency.json()
+        return proficiency_schema.dump(proficiency), 200
 
 class ProficiencyList(Resource):
     @jwt_required
-    def get(self):
-        return {'Proficiency': [proficiency.json() for proficiency in ProficiencyModel.find_all()]}
+    @classmethod
+    def get(cls):
+        return {'Proficiency': proficiency_list_schema.dump(ProficiencyModel.find_all())}

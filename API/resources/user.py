@@ -1,5 +1,4 @@
-from flask_restful import Resource
-from flask import request
+from flask_restful import Resource, request
 from werkzeug.security import safe_str_cmp
 from flask_jwt_extended import (
     create_access_token,
@@ -26,6 +25,7 @@ class UserRegister(Resource):
 
         if UserModel.find_by_username(user.username):
             return {"message": "A user with that username already exists."}, 400
+
 
         user.save_to_db()
 
