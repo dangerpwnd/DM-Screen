@@ -3,7 +3,7 @@ from flask_restful import Api
 from flask_jwt_extended import JWTManager
 from marshmallow import ValidationError
 
-from db import db
+from db import db_session
 from blacklist import BLACKLIST
 
 from resources.background import Background, BackgroundList
@@ -13,7 +13,7 @@ from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///player.db'
+app.config['SQLALCHEMY_DATABASE_URI'] =
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.secret_key = 'DMRules' #app.config['JWT_SECRET_KEY']
@@ -22,10 +22,13 @@ app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access', 'refresh']
 
 api = Api(app)
 
-# Flask decorator
 @app.before_first_request
-def create_tables():
-    db.create_all()
+def create_player_db():
+    db.init_db()
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db_session.remove()
 
 @app.errorhandler(ValidationError)
 def handle_marshmallow_validation(err):
