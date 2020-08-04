@@ -19,6 +19,10 @@ class PlayerModel(db.Model):
     def find_by_name(cls, name):
         return cls.query.filter_by(name=name).first() # SELECT * FROM items WHERE name=name LIMIT 1
 
+    @classmethod
+    def find_all(cls):
+        return cls.query.all();
+
     def save_to_db(self): # Handles insert and update
         db.session.add(self)
         db.session.commit()

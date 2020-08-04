@@ -13,7 +13,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "JWT {{jwt_token}}",
+						"value": "Bearer {{jwt_token}}",
 						"type": "text"
 					}
 				],
@@ -31,24 +31,72 @@
 			"response": []
 		},
 		{
-			"name": "/item/<name>",
+			"name": "/backgrounds",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "JWT {{jwt_token}}",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/backgrounds",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"backgrounds"
+					]
+				},
+				"description": "GET list of all backgrounds"
+			},
+			"response": []
+		},
+		{
+			"name": "/equipment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/equipment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"equipment"
+					]
+				},
+				"description": "GET list of all equipment"
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<item_name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "{{url}}/item/<name>",
+					"raw": "{{url}}/item/clocks",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"item",
-						"<name>"
+						"clocks"
 					]
 				},
 				"description": "GET single item"
@@ -56,13 +104,63 @@
 			"response": []
 		},
 		{
-			"name": "/item/<name>",
+			"name": "/background/<background_name> ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/background/wanderer",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"background",
+						"wanderer"
+					]
+				},
+				"description": "GET single background"
+			},
+			"response": []
+		},
+		{
+			"name": "/equipment/<equip_name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/equipment/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"equipment",
+						"test"
+					]
+				},
+				"description": "GET single equipment"
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<item_name>",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "JWT {{jwt_token}}",
+						"value": "Bearer {{jwt_token}}",
 						"type": "text"
 					},
 					{
@@ -73,7 +171,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"descrip\": \"It'll tell the time.\"\n}",
+					"raw": "{\n    \"item_descrip\": \"They'll tell the time.\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,13 +179,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/item/clock",
+					"raw": "{{url}}/item/clocks",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"item",
-						"clock"
+						"clocks"
 					]
 				},
 				"description": "POST new item"
@@ -95,38 +193,13 @@
 			"response": []
 		},
 		{
-			"name": "/item/<name>",
+			"name": "/background/<background_name>",
 			"request": {
-				"method": "DELETE",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "JWT {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/item/<name>",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"item",
-						"<name>"
-					]
-				},
-				"description": "DEL single item"
-			},
-			"response": []
-		},
-		{
-			"name": "/item/<name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "JWT {{jwt_token}}",
+						"value": "Bearer {{jwt_token}}",
 						"type": "text"
 					},
 					{
@@ -137,7 +210,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"descrip\": \"It'll tell the time.\"\n}",
+					"raw": "{\n    \"descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -145,32 +218,38 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/item/clock",
+					"raw": "{{url}}/background/wanderer",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"item",
-						"clock"
+						"background",
+						"wanderer"
 					]
 				},
-				"description": "Update or create item"
+				"description": "POST new background"
 			},
 			"response": []
 		},
 		{
-			"name": "/auth",
+			"name": "/login",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"id": "70864e17-7dd2-4757-b48f-bb125a14e815",
 						"exec": [
-							"pm.test(\"Access token was not empty\", function () {",
+							"pm.test(\"Access token was not empty\", function() {",
 							"    let jsonData = pm.response.json();",
 							"    pm.expect(jsonData.access_token).not.equal(undefined);",
 							"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
 							"});",
+							"",
+							"pm.test(\"Refresh token was not empty\", function() {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.refresh_token).not.equal(undefined);",
+							"    pm.environment.set(\"refresh_token\", jsonData.refresh_token);",
+							"})",
 							""
 						],
 						"type": "text/javascript"
@@ -196,15 +275,39 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/auth",
+					"raw": "{{url}}/login",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"auth"
+						"login"
 					]
 				},
 				"description": "Authorization for JWT Token"
+			},
+			"response": []
+		},
+		{
+			"name": "/logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout"
+					]
+				},
+				"description": "Logout user"
 			},
 			"response": []
 		},
@@ -238,6 +341,154 @@
 					]
 				},
 				"description": "Register new users"
+			},
+			"response": []
+		},
+		{
+			"name": "/refresh",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2469c4da-b410-4fd3-84d9-e5ac0a1ed9b4",
+						"exec": [
+							"pm.test(\"Access token was not empty\", function() {\r",
+							"    let jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.access_token).not.equal(undefined);\r",
+							"    pm.environment.set(\"jwt_token\", jsonData.access_token);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{refresh_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/refresh",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"refresh"
+					]
+				},
+				"description": "Pull refresh token"
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<item_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/item/clocks",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"item",
+						"clocks"
+					]
+				},
+				"description": "DEL single item"
+			},
+			"response": []
+		},
+		{
+			"name": "/background/<background_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/item/clock",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"item",
+						"clock"
+					]
+				},
+				"description": "DEL single background"
+			},
+			"response": []
+		},
+		{
+			"name": "/user/<user_id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "Delete a single user"
+			},
+			"response": []
+		},
+		{
+			"name": "/item/<item_name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"item_descrip\": \"It'll tell the time.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/item/clock",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"item",
+						"clock"
+					]
+				},
+				"description": "Update or create background"
 			},
 			"response": []
 		}
