@@ -3,9 +3,9 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+-- SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+-- SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+-- SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema DnD
@@ -14,21 +14,21 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema DnD
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `DnD` DEFAULT CHARACTER SET utf8 ;
-USE `DnD` ;
+-- CREATE SCHEMA IF NOT EXISTS `DnD` DEFAULT CHARACTER SET utf8 ;
+-- USE `DnD` ;
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Background` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
-  `idBackground` INT NOT NULL,
-  `BackName` VARCHAR(50) NOT NULL,
-  `BackDescrip` VARCHAR(250) NOT NULL,
-  `EquipmentId` INT NULL,
-  `ToolId` INT NULL,
-  `ProficiencyId` INT NULL,
-  PRIMARY KEY (`idBackground`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
+--   `idBackground` INT NOT NULL,
+--   `BackName` VARCHAR(50) NOT NULL,
+--   `BackDescrip` VARCHAR(250) NOT NULL,
+--   `EquipmentId` INT NULL,
+--   `ToolId` INT NULL,
+--   `ProficiencyId` INT NULL,
+--   PRIMARY KEY (`idBackground`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -221,24 +221,24 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `DnD`.`Equipment` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (
-  `idEquipment` INT NOT NULL,
-  `EquipName` VARCHAR(100) NOT NULL,
-  `EquipDescrip` VARCHAR(250) NOT NULL,
-  `EquipWeight` INT NOT NULL,
-  PRIMARY KEY (`idEquipment`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (
+--   `idEquipment` INT NOT NULL,
+--   `EquipName` VARCHAR(100) NOT NULL,
+--   `EquipDescrip` VARCHAR(250) NOT NULL,
+--   `EquipWeight` INT NOT NULL,
+--   PRIMARY KEY (`idEquipment`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Proficiency` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Proficiencies` (
-  `idProficiency` INT NOT NULL,
-  `ProficiencyName` VARCHAR(100) NOT NULL,
-  `ProficiencyDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idProficiency`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Proficiencies` (
+--   `idProficiency` INT NOT NULL,
+--   `ProficiencyName` VARCHAR(100) NOT NULL,
+--   `ProficiencyDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idProficiency`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -305,14 +305,14 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `DnD`.`Tools` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (
-  `idTool` INT NOT NULL,
-  `ToolName` VARCHAR(100) NOT NULL,
-  `ToolDescrip` VARCHAR(250) NOT NULL,
-  `ToolWeight` INT NOT NULL,
-  `ToolSkill`
-  PRIMARY KEY (`idTools`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (
+--   `idTool` INT NOT NULL,
+--   `ToolName` VARCHAR(100) NOT NULL,
+--   `ToolDescrip` VARCHAR(250) NOT NULL,
+--   `ToolWeight` INT NOT NULL,
+--   `ToolSkill`
+--   PRIMARY KEY (`idTools`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -592,25 +592,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Background_has_Proficiencies`
+-- Table `DnD`.`Background_has_Proficiencies` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background_has_Proficiencies` (
-  `Background_idBackground` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`Background_idBackground`, `Proficiencies_idProficiencies`),
-  INDEX `fk_Background_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_Background_has_Proficiencies_Background1_idx` (`Background_idBackground` ASC) VISIBLE,
-  CONSTRAINT `fk_Background_has_Proficiencies_Background1`
-    FOREIGN KEY (`Background_idBackground`)
-    REFERENCES `DnD`.`Background` (`idBackground`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Background_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background_has_Proficiencies` (
+--   `Background_idBackground` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`Background_idBackground`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_Background_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_Background_has_Proficiencies_Background1_idx` (`Background_idBackground` ASC) VISIBLE,
+--   CONSTRAINT `fk_Background_has_Proficiencies_Background1`
+--     FOREIGN KEY (`Background_idBackground`)
+--     REFERENCES `DnD`.`Background` (`idBackground`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Background_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -1048,344 +1048,344 @@ CREATE TABLE IF NOT EXISTS `DnD`.`Character_has_Speed` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-USE `DnD` ;
+-- USE `DnD` ;
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Alignment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (`AlignName` INT, `AlignDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (`AlignName` INT, `AlignDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Armor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (`ArmorName` INT, `ArmorDescrip` INT, `ArmorTypeId` INT, `ArmorAC` INT, `ArmorWeight` INT, `ArmorMaxDex` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (`ArmorName` INT, `ArmorDescrip` INT, `ArmorTypeId` INT, `ArmorAC` INT, `ArmorWeight` INT, `ArmorMaxDex` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Attribute`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Attribute` (`AttrName` INT, `AttrDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Attribute` (`AttrName` INT, `AttrDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Background`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background` (`BackName` INT, `BackDescrip` INT, `EquipmentId` INT, `ToolId` INT, `ProficienciesId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background` (`BackName` INT, `BackDescrip` INT, `EquipmentId` INT, `ToolId` INT, `ProficienciesId` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Character`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character` (`CharName` INT, `CharBackgroundId` INT, `CharRaceId` INT, `CharSubRaceId` INT, `CharAlignmentId` INT, `CharEyesId` INT, `CharHairId` INT, `CharSkinId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Character` (`CharName` INT, `CharBackgroundId` INT, `CharRaceId` INT, `CharSubRaceId` INT, `CharAlignmentId` INT, `CharEyesId` INT, `CharHairId` INT, `CharSkinId` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Equipment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (`EquipName` INT, `EquipDescrip` INT, `EquipWeight` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (`EquipName` INT, `EquipDescrip` INT, `EquipWeight` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Feat`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feat` (`FeatName` INT, `FeatDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feat` (`FeatName` INT, `FeatDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Feature`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feature` (`FeatureName` INT, `FeatureDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feature` (`FeatureName` INT, `FeatureDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Race`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race` (`RaceName` INT, `RaceDescrip` INT, `RaceminAge` INT, `RacemaxAge` INT, `RaceminHeight` INT, `RacemaxHeight` INT, `Size_idSize` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race` (`RaceName` INT, `RaceDescrip` INT, `RaceminAge` INT, `RacemaxAge` INT, `RaceminHeight` INT, `RacemaxHeight` INT, `Size_idSize` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Class`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class` (`ClassName` INT, `ClassDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class` (`ClassName` INT, `ClassDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Coin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Coin` (`CoinName` INT, `CoinDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Coin` (`CoinName` INT, `CoinDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Eye`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Eye` (`EyeColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Eye` (`EyeColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Faction`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Faction` (`FactionName` INT, `FactionDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Faction` (`FactionName` INT, `FactionDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Hair`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (`HairColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (`HairColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Language`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Language` (`LangName` INT, `LangDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Language` (`LangName` INT, `LangDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Proficiency`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Proficiency` (`ProficiencyName` INT, `ProficiencyDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Proficiency` (`ProficiencyName` INT, `ProficiencyDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Skill`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skill` (`SkillName` INT, `SkillDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skill` (`SkillName` INT, `SkillDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Skin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (`SkinColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (`SkinColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Spell`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Spell` (`SpellName` INT, `SpellDescrip` INT, `SpellType_idSpellType` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Spell` (`SpellName` INT, `SpellDescrip` INT, `SpellType_idSpellType` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`SubClass`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (`SubClassName` INT, `SubClassDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (`SubClassName` INT, `SubClassDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`SubRace`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (`SubRaceName` INT, `SubRaceDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (`SubRaceName` INT, `SubRaceDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Tool`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (`ToolName` INT, `ToolDescrip` INT, `ToolWeight` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (`ToolName` INT, `ToolDescrip` INT, `ToolWeight` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Weapon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (`WeapName` INT, `WeapDescrip` INT, `WeapWeight` INT, `WeapDmg` INT, `WeapDmgTypeId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (`WeapName` INT, `WeapDescrip` INT, `WeapWeight` INT, `WeapDmg` INT, `WeapDmgTypeId` INT);
 
 -- -----------------------------------------------------
 -- View `DnD`.`Alignment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Alignment`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Alignment` AS
-Select AlignName, AlignDescrip
-FROM Alignment;
+-- DROP TABLE IF EXISTS `DnD`.`Alignment`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Alignment` AS
+-- Select AlignName, AlignDescrip
+-- FROM Alignment;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Armor`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Armor`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Armor` AS
-SELECT ArmorName, ArmorDescrip, ArmorTypeId, ArmorAC, ArmorWeight, ArmorMaxDex
-FROM Armor
-JOIN ArmorType ON Armor.ArmorTypeId = ArmorType.idArmorType;
+-- DROP TABLE IF EXISTS `DnD`.`Armor`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Armor` AS
+-- SELECT ArmorName, ArmorDescrip, ArmorTypeId, ArmorAC, ArmorWeight, ArmorMaxDex
+-- FROM Armor
+-- JOIN ArmorType ON Armor.ArmorTypeId = ArmorType.idArmorType;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Attribute`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Attribute`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Attribute` AS
-SELECT AttrName, AttrDescrip
-FROM Attributes;
+-- DROP TABLE IF EXISTS `DnD`.`Attribute`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Attribute` AS
+-- SELECT AttrName, AttrDescrip
+-- FROM Attributes;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Background`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Background`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Background` AS
-SELECT BackName, BackDescrip, EquipmentId, ToolId, ProficienciesId
-FROM Background
-JOIN Equipment ON Background.EquipmentId = Equipment.idEquipment
-JOIN Tools ON Background.ToolId = Tools.idTools
-JOIN Proficiencies ON Background.ProficienciesId = Proficiences.idProficiences;
+-- DROP TABLE IF EXISTS `DnD`.`Background`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Background` AS
+-- SELECT BackName, BackDescrip, EquipmentId, ToolId, ProficienciesId
+-- FROM Background
+-- JOIN Equipment ON Background.EquipmentId = Equipment.idEquipment
+-- JOIN Tools ON Background.ToolId = Tools.idTools
+-- JOIN Proficiencies ON Background.ProficienciesId = Proficiences.idProficiences;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Character`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Character`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Character` AS
-SELECT CharName, CharBackgroundId, CharRaceId, CharSubRaceId, CharAlignmentId, CharEyesId, CharHairId, CharSkinId
-FROM PlayerChar
-JOIN Background ON Background.idBackground = PlayerChar.CharBackgroundId
-JOIN Race ON Race.idRace = PlayerChar.CharRaceId
-JOIN SubRace ON SubRace.idSubRace = PlayerChar.CharSubRaceId
-JOIN Alignment ON Alignment.idAlignment = PlayerChar.CharAlignmentId
-JOIN Eyes ON Eyes.idEyes = PlayerChar.CharEyesId
-JOIN Hair ON Hair.idHair = PlayerChar.CharHairId
-JOIN Skin ON Skin.idSkin = PlayerChar.CharSkinId;
+-- DROP TABLE IF EXISTS `DnD`.`Character`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Character` AS
+-- SELECT CharName, CharBackgroundId, CharRaceId, CharSubRaceId, CharAlignmentId, CharEyesId, CharHairId, CharSkinId
+-- FROM PlayerChar
+-- JOIN Background ON Background.idBackground = PlayerChar.CharBackgroundId
+-- JOIN Race ON Race.idRace = PlayerChar.CharRaceId
+-- JOIN SubRace ON SubRace.idSubRace = PlayerChar.CharSubRaceId
+-- JOIN Alignment ON Alignment.idAlignment = PlayerChar.CharAlignmentId
+-- JOIN Eyes ON Eyes.idEyes = PlayerChar.CharEyesId
+-- JOIN Hair ON Hair.idHair = PlayerChar.CharHairId
+-- JOIN Skin ON Skin.idSkin = PlayerChar.CharSkinId;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Equipment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Equipment`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Equipment` AS
-SELECT EquipName, EquipDescrip, EquipWeight
-FROM Equipment;
+-- DROP TABLE IF EXISTS `DnD`.`Equipment`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Equipment` AS
+-- SELECT EquipName, EquipDescrip, EquipWeight
+-- FROM Equipment;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Feat`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Feat`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Feat` AS
-SELECT FeatName, FeatDescrip
-FROM Feats;
+-- DROP TABLE IF EXISTS `DnD`.`Feat`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Feat` AS
+-- SELECT FeatName, FeatDescrip
+-- FROM Feats;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Feature`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Feature`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Feature` AS
-SELECT FeatureName, FeatureDescrip
-FROM Features;
+-- DROP TABLE IF EXISTS `DnD`.`Feature`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Feature` AS
+-- SELECT FeatureName, FeatureDescrip
+-- FROM Features;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Race`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Race`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Race` AS
-SELECT RaceName, RaceDescrip, RaceminAge, RacemaxAge, RaceminHeight, RacemaxHeight, Size_idSize
-FROM Race
-JOIN Size ON Race.Size_idsize = Size.idSize;
+-- DROP TABLE IF EXISTS `DnD`.`Race`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Race` AS
+-- SELECT RaceName, RaceDescrip, RaceminAge, RacemaxAge, RaceminHeight, RacemaxHeight, Size_idSize
+-- FROM Race
+-- JOIN Size ON Race.Size_idsize = Size.idSize;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Class`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Class`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Class` AS
-SELECT ClassName, ClassDescrip
-FROM Class;
+-- DROP TABLE IF EXISTS `DnD`.`Class`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Class` AS
+-- SELECT ClassName, ClassDescrip
+-- FROM Class;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Coin`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Coin`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Coin` AS
-SELECT CoinName, CoinDescrip
-FROM Coins;
+-- DROP TABLE IF EXISTS `DnD`.`Coin`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Coin` AS
+-- SELECT CoinName, CoinDescrip
+-- FROM Coins;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Eye`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Eye`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Eye` AS
-SELECT EyeColor
-FROM Eyes;
+-- DROP TABLE IF EXISTS `DnD`.`Eye`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Eye` AS
+-- SELECT EyeColor
+-- FROM Eyes;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Faction`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Faction`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Faction` AS
-SELECT FactionName, FactionDescrip
-FROM Factions;
+-- DROP TABLE IF EXISTS `DnD`.`Faction`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Faction` AS
+-- SELECT FactionName, FactionDescrip
+-- FROM Factions;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Hair`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Hair`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Hair` AS
-SELECT HairColor
-FROM Hair;
+-- DROP TABLE IF EXISTS `DnD`.`Hair`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Hair` AS
+-- SELECT HairColor
+-- FROM Hair;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Language`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Language`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Language` AS
-SELECT LangName, LangDescrip
-FROM Languages;
+-- DROP TABLE IF EXISTS `DnD`.`Language`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Language` AS
+-- SELECT LangName, LangDescrip
+-- FROM Languages;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Proficiency`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Proficiency`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Proficiency` AS
-SELECT ProficiencyName, ProficiencyDescrip
-FROM Proficiencies;
+-- DROP TABLE IF EXISTS `DnD`.`Proficiency`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Proficiency` AS
+-- SELECT ProficiencyName, ProficiencyDescrip
+-- FROM Proficiencies;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Skill`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Skill`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Skill` AS
-SELECT SkillName, SkillDescrip
-FROM Skills;
+-- DROP TABLE IF EXISTS `DnD`.`Skill`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Skill` AS
+-- SELECT SkillName, SkillDescrip
+-- FROM Skills;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Skin`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Skin`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Skin` AS
-SELECT SkinColor
-FROM Skin;
+-- DROP TABLE IF EXISTS `DnD`.`Skin`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Skin` AS
+-- SELECT SkinColor
+-- FROM Skin;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Spell`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Spell`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Spell` AS
-SELECT SpellName, SpellDescrip, SpellType_idSpellType
-FROM Spells
-JOIN Spell_Type ON Spells.SpellTypeId = SpellType.idSpellType;
+-- DROP TABLE IF EXISTS `DnD`.`Spell`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Spell` AS
+-- SELECT SpellName, SpellDescrip, SpellType_idSpellType
+-- FROM Spells
+-- JOIN Spell_Type ON Spells.SpellTypeId = SpellType.idSpellType;
 
 -- -----------------------------------------------------
 -- View `DnD`.`SubClass`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`SubClass`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `SubClass` AS
-SELECT SubClassName, SubClassDescrip
-FROM SubClass;
+-- DROP TABLE IF EXISTS `DnD`.`SubClass`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `SubClass` AS
+-- SELECT SubClassName, SubClassDescrip
+-- FROM SubClass;
 
 -- -----------------------------------------------------
 -- View `DnD`.`SubRace`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`SubRace`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `SubRace` AS
-SELECT SubRaceName, SubRaceDescrip
-FROM SubRace;
+-- DROP TABLE IF EXISTS `DnD`.`SubRace`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `SubRace` AS
+-- SELECT SubRaceName, SubRaceDescrip
+-- FROM SubRace;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Tool`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Tool`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Tool` AS
-SELECT ToolName, ToolDescrip, ToolWeight
-FROM Tools;
+-- DROP TABLE IF EXISTS `DnD`.`Tool`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Tool` AS
+-- SELECT ToolName, ToolDescrip, ToolWeight
+-- FROM Tools;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Weapon`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Weapon`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Weapon` AS
-SELECT WeapName, WeapDescrip, WeapWeight, WeapDmg, WeapDmgTypeId
-FROM Weapons
-JOIN DmgType ON Weapons.WeapDmgTypeId = WeaponType.idWeaponType;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- DROP TABLE IF EXISTS `DnD`.`Weapon`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Weapon` AS
+-- SELECT WeapName, WeapDescrip, WeapWeight, WeapDmg, WeapDmgTypeId
+-- FROM Weapons
+-- JOIN DmgType ON Weapons.WeapDmgTypeId = WeaponType.idWeaponType;
+--
+-- SET SQL_MODE=@OLD_SQL_MODE;
+-- SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+-- SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
