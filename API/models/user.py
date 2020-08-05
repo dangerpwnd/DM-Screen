@@ -1,19 +1,23 @@
-from db import db
+from db import Base, session
+from sqlalchemy import Column, Integer, String
 
-class UserModel(db.Model):
+class UserModel(Base):
     __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), nullable=False, unique=True)
-    password = db.Column(db.String(80), nullable=False)
+    id = Column(Integer, primary_key=True)
+    username = Column(String(80), nullable=False, unique=True)
+    password = Column(String(80), nullable=False)
+
+    def __repr__(self):
+        return "<User (username='%s')>" % (self.username)
 
     def save_to_db(self) -> None:
-        db.session.add(self)
-        db.session.commit()
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self) -> None:
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()
 
     @classmethod
     def find_by_username(cls, username: str) -> "UserModel":

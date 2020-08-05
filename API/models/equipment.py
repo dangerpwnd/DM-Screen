@@ -1,27 +1,38 @@
-from db import db
+from db import Base, session
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-class EquipmentModel(db.Model):
+class EquipmentModel(Base):
 
     __tablename__ = 'Equipment'
 
     # Columns
-    id_equipment = db.Column(db.Integer, primary_key=True)
-    equip_name = db.Column(db.String(100), nullable=False)
-    equip_descrip = db.Column(db.String(250), nullable=False)
-    equip_weight = db.Column(db.Integer, nullable=False)
+    id_equipment = Column(Integer, primary_key=True)
+    equip_name = Column(String(100), nullable=False)
+    equip_descrip = Column(String(250), nullable=False)
+    equip_weight = Column(Integer, nullable=False)
 
+    backgrounds = relationship('BackgroundModel',
+                                  secondary='Background_has_Equipment',
+                                  back_populates='equipment')
+
+    def __repr__(self):
+        return "<Equipment (name='%s', description='%s', weight='%s')>" % (
+                                        self.equip_name,
+                                        self.equip_descrip,
+                                        self.equip_weight)
     @classmethod
-    def find_by_name(cls, equip_name):
-        return cls.query.filter_by(equip_name=equip_name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
+    def find_by_name(cls, name):
+        return cls.query.filter_by(name=name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     @classmethod
     def find_all(cls):
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update
-        db.session.add(self)
-        db.session.commit()
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()

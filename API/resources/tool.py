@@ -26,7 +26,6 @@ class Tool(Resource):
             return {"message": "Tool with name '{}' already exists.".format(name)}
 
         tool_json = request.get_json()
-        tool_json['tool_name'] = name
         tool = tool_schema.load(tool_json)
 
         try:
@@ -65,7 +64,6 @@ class Tool(Resource):
             tool.tool_descrip = tool_json['tool_descrip']
             tool.tool_weight = tool_json['tool_weight']
         else:
-            tool_json['tool_name'] = name
             tool = tool_schema.load(tool_json)
 
         tool.save_to_db()

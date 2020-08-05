@@ -1,15 +1,27 @@
-from db import db
+from db import Base, session
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-class ToolModel(db.Model):
+class ToolModel(Base):
 
     # Set table name with class Attribute
     __tablename__ = "Tool"
 
     # Columns
-    id_tool = db.Column(db.Integer, primary_key=True)
-    tool_name = db.Column(db.String(100), nullable=False)
-    tool_descrip = db.Column(db.String(250), nullable=False)
-    tool_weight = db.Column(db.Integer, nullable=False)
+    id_tool = Column(Integer, primary_key=True)
+    tool_name = Column(String(100), nullable=False)
+    tool_descrip = Column(String(250), nullable=False)
+    tool_weight = Column(Integer, nullable=False)
+
+    backgrounds = relationship('BackgroundModel',
+                                  secondary='Background_has_Tools',
+                                  back_populates='tools')
+
+    def __repr__(self):
+        return "<Tool (name='%s', description='%s', weight='%s')>" % (
+                                        self.tool_name,
+                                        self.tool_descrip,
+                                        self.tool_weight)
 
     @classmethod
     def find_by_name(cls, tool_name):
@@ -20,9 +32,9 @@ class ToolModel(db.Model):
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update
-        db.session.add(self)
-        db.session.commit()
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()

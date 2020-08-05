@@ -1,10 +1,11 @@
-from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
+from marshmallow import Schema, fields, post_load
 from models.user import UserModel
 
-class UserSchema(SQLAlchemySchema):
-    class Meta:
-        model = UserModel
-        load_instance = True
-    id = auto_field(dump_only=True)
-    username = auto_field()
-    password = auto_field(load_only=True)
+class UserSchema(Schema):
+    id = fields.Integer(dump_only=True)
+    username = fields.Str()
+    password = fields.Str(load_only=True)
+
+    @post_load
+    def make_user(self, data, **kwargs):
+        return UserModel(**data)

@@ -1,16 +1,14 @@
-from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
-from marshmallow_sqlalchemy.fields import Nested
+from marshmallow import Schema, fields, post_load
 from models.background import BackgroundModel
-from schemas.equipment import EquipmentSchema
-from schemas.tool import ToolSchema
-from schemas.proficiency import ProficiencySchema
 
-class BackgroundSchema(SQLAlchemySchema):
-    class Meta:
-        model = BackgroundModel
-    id_background = auto_field(dump_only=True)
-    background_name = auto_field()
-    background_descrip = auto_field()
-    equipment = Nested('EquipmentSchema', many=True)
-    tools = Nested('ToolSchema', many=True)
-    proficiencies = Nested('ProficiencySchema', many=True)
+class BackgroundSchema(Schema):
+    id_background = fields.Integer(dump_only=True)
+    background_name = fields.Str()
+    background_descrip = fields.Str()
+    equipment = fields.Nested('EquipmentSchema', many=True)
+    tools = fields.Nested('ToolSchema', many=True)
+    proficiencies = fields.Nested('ProficiencySchema', many=True)
+
+    @post_load
+    def make_background(self, data, **kwargs):
+        return BackgroundModel(**data)

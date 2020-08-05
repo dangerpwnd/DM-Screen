@@ -1,10 +1,12 @@
-from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
+from marshmallow import Schema, fields, post_load
 from models.equipment import EquipmentModel
 
-class EquipmentSchema(SQLAlchemySchema):
-    class Meta:
-        model = EquipmentModel
-    id_equipment = auto_field(dump_only=True)
-    equip_name = auto_field()
-    equip_descrip = auto_field()
-    equip_weight = auto_field()
+class EquipmentSchema(Schema):
+    id_equipment = fields.Integer(dump_only=True)
+    equip_name = fields.Str()
+    equip_descrip = fields.Str()
+    equip_weight = fields.Integer()
+
+    @post_load
+    def make_equipment(self, data, **kwargs):
+        return EquipmentModel(**data)

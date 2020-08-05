@@ -27,7 +27,6 @@ class Equipment(Resource):
             return {"message": "Equipment with name '{}' already exists.".format(name)}, 400
 
         equipment_json = request.get_json()
-        equipment_json['equip_name'] = name
         equipment = equipment_schema.load(equipment_json)
 
         try:
@@ -66,7 +65,6 @@ class Equipment(Resource):
             equipment.equip_descrip = equipment_json['equip_descrip']
             equipment.equip_weight = equipment_json['equip_weight']
         else:
-            equipment_json['equip_name'] = name
             equipment = equipment_schema.load(equipment_json)
 
         equipment.save_to_db()

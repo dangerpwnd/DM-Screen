@@ -1,13 +1,24 @@
-from db import db
+from db import Base, session
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-class ProficiencyModel(db.Model):
+class ProficiencyModel(Base):
 
     __tablename__ = 'Proficiency'
 
     # Columns
-    id_proficiency = db.Column(db.Integer, primary_key=True)
-    proficiency_name = db.Column(db.String(100), nullable=False)
-    proficiency_descrip = db.Column(db.String(250), nullable=False)
+    id_proficiency = Column(Integer, primary_key=True)
+    proficiency_name = Column(String(100), nullable=False)
+    proficiency_descrip = Column(String(250), nullable=False)
+
+    backgrounds = relationship('BackgroundModel',
+                                  secondary='Background_has_Proficiencies',
+                                  back_populates='proficiencies')
+
+    def __repr__(self):
+        return "<Proficiency (name='%s', description='%s')>" % (
+                                        self.proficiency_name,
+                                        self.proficiency_descrip)
 
     @classmethod
     def find_by_name(cls, name):
@@ -18,9 +29,9 @@ class ProficiencyModel(db.Model):
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update
-        db.session.add(self)
-        db.session.commit()
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()

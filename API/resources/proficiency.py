@@ -26,7 +26,6 @@ class Proficiency(Resource):
             return {"message": "Proficiency with name '{}' already exists.".format(name)}
 
         proficiency_json = request.get_json()
-        proficiency_json['proficiency_name'] = name
         proficiency = proficiency_schema.load(proficiency)
 
         try:
@@ -64,7 +63,6 @@ class Proficiency(Resource):
         if proficiency:
             proficiency.proficiency_descrip = proficiency_json['proficiency_descrip']
         else:
-            proficiency_json['proficiency_name'] = name
             proficiency = proficiency_schema.load(proficiency_json)
 
         proficiency.save_to_db()
