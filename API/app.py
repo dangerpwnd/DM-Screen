@@ -43,15 +43,15 @@ api.add_resource(Background, '/background/<string:background_name>')
 api.add_resource(BackgroundList, '/backgrounds')
 
 # Equipment
-api.add_resource(Equipment, '/equipment/<string:name>')
+api.add_resource(Equipment, '/equipment/<string:equip_name>')
 api.add_resource(EquipmentList, '/equipment')
 
 # Proficiencies
-api.add_resource(Proficiency, '/proficiency/<string:name>')
+api.add_resource(Proficiency, '/proficiency/<string:proficiency_name>')
 api.add_resource(ProficiencyList, '/proficiencies')
 
 # Tools
-api.add_resource(Tool, '/tool/<string:name>')
+api.add_resource(Tool, '/tool/<string:tool_name>')
 api.add_resource(ToolList, '/tools')
 
 # User Registration

@@ -1,4 +1,7 @@
+from typing import List
 from db import Base, session
+from models.background import BackgroundModel as background
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
@@ -9,12 +12,12 @@ class ToolModel(Base):
 
     # Columns
     id_tool = Column(Integer, primary_key=True)
-    tool_name = Column(String(100), nullable=False)
+    tool_name = Column(String(100), nullable=False, unique=True)
     tool_descrip = Column(String(250), nullable=False)
     tool_weight = Column(Integer, nullable=False)
 
     backgrounds = relationship('BackgroundModel',
-                                  secondary='Background_has_Tools',
+                                  secondary=background.tool_assoc,
                                   back_populates='tools')
 
     def __repr__(self):
@@ -24,11 +27,11 @@ class ToolModel(Base):
                                         self.tool_weight)
 
     @classmethod
-    def find_by_name(cls, tool_name):
+    def find_by_name(cls, tool_name) -> "ToolModel":
         return cls.query.filter_by(tool_name=tool_name).first() # SELECT * FROM Tool WHERE name=name LIMIT 1
 
     @classmethod
-    def find_all(cls):
+    def find_all(cls) -> List["ToolModel"]:
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update

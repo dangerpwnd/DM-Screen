@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "/items",
+			"name": "/background/<background_name> ",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -18,15 +18,16 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}/items",
+					"raw": "{{url}}/background/wanderer",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"items"
+						"background",
+						"wanderer"
 					]
 				},
-				"description": "GET list of all items"
+				"description": "GET single background"
 			},
 			"response": []
 		},
@@ -56,6 +57,9 @@
 		},
 		{
 			"name": "/equipment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -65,6 +69,10 @@
 						"value": "Bearer {{jwt_token}}"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{url}}/equipment",
 					"host": [
@@ -75,56 +83,6 @@
 					]
 				},
 				"description": "GET list of all equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/item/<item_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/item/clocks",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"item",
-						"clocks"
-					]
-				},
-				"description": "GET single item"
-			},
-			"response": []
-		},
-		{
-			"name": "/background/<background_name> ",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/background/wanderer",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"background",
-						"wanderer"
-					]
-				},
-				"description": "GET single background"
 			},
 			"response": []
 		},
@@ -140,13 +98,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}/equipment/test",
+					"raw": "{{url}}/equipment/rope",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"equipment",
-						"test"
+						"rope"
 					]
 				},
 				"description": "GET single equipment"
@@ -154,80 +112,119 @@
 			"response": []
 		},
 		{
-			"name": "/item/<item_name>",
+			"name": "/proficiency/<proficiency_name>",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"item_descrip\": \"They'll tell the time.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{url}}/item/clocks",
+					"raw": "{{url}}/proficiency/martial_weapons",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"item",
-						"clocks"
+						"proficiency",
+						"martial_weapons"
 					]
 				},
-				"description": "POST new item"
+				"description": "GET single proficiency"
 			},
 			"response": []
 		},
 		{
-			"name": "/background/<background_name>",
+			"name": "/proficiencies",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "{{url}}/background/wanderer",
+					"raw": "{{url}}/proficiencies",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"background",
-						"wanderer"
+						"proficiencies"
 					]
 				},
-				"description": "POST new background"
+				"description": "GET list of all proficiences"
+			},
+			"response": []
+		},
+		{
+			"name": "/tool/<tool_name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/tool/thieves_tools",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tool",
+						"thieves_tools"
+					]
+				},
+				"description": "GET single tool"
+			},
+			"response": []
+		},
+		{
+			"name": "/tools",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/tools",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tools"
+					]
+				},
+				"description": "GET list of all tools"
+			},
+			"response": []
+		},
+		{
+			"name": "/user/<int:user_id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				},
+				"description": "Get one user by user_id"
 			},
 			"response": []
 		},
@@ -385,27 +382,158 @@
 			"response": []
 		},
 		{
-			"name": "/item/<item_name>",
+			"name": "/background/<background_name>",
 			"request": {
-				"method": "DELETE",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
 						"value": "Bearer {{jwt_token}}",
 						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"background_descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{url}}/item/clocks",
+					"raw": "{{url}}/background/wanderer",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"item",
-						"clocks"
+						"background",
+						"wanderer"
 					]
 				},
-				"description": "DEL single item"
+				"description": "POST new background"
+			},
+			"response": []
+		},
+		{
+			"name": "/equipment/<equip_name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"equip_descrip\": \"Used for tieing, safety, and a number of other uses.\",\n    \"equip_weight\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/equipment/rope",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"equipment",
+						"rope"
+					]
+				},
+				"description": "POST new equipment"
+			},
+			"response": []
+		},
+		{
+			"name": "/proficiency/<proficiency_name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proficiency_descrip\": \"Weapons more advanced than simple weapons.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/proficiency/martial_weapons",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"proficiency",
+						"martial_weapons"
+					]
+				},
+				"description": "POST new proficiency"
+			},
+			"response": []
+		},
+		{
+			"name": "/tool/<tool_name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tool_descrip\": \"Helps pick a lock in a flash!\",\n    \"tool_weight\": 12\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tool/thieves_tools",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tool",
+						"thieves_tools"
+					]
+				},
+				"description": "POST new tool"
 			},
 			"response": []
 		},
@@ -421,16 +549,121 @@
 					}
 				],
 				"url": {
-					"raw": "{{url}}/item/clock",
+					"raw": "{{url}}/background/wanderer",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"item",
-						"clock"
+						"background",
+						"wanderer"
 					]
 				},
 				"description": "DEL single background"
+			},
+			"response": []
+		},
+		{
+			"name": "/equipment/<equip_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/equipment/rope",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"equipment",
+						"rope"
+					]
+				},
+				"description": "DELETE single equipment"
+			},
+			"response": []
+		},
+		{
+			"name": "/proficiency/<proficiency_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/proficiency/martial_weapons",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"proficiency",
+						"martial_weapons"
+					]
+				},
+				"description": "DELETE single proficiency"
+			},
+			"response": []
+		},
+		{
+			"name": "/tool/<tool_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tool/thieves_tools",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tool",
+						"thieves_tools"
+					]
+				},
+				"description": "DELETE single tool"
 			},
 			"response": []
 		},
@@ -454,41 +687,138 @@
 			"response": []
 		},
 		{
-			"name": "/item/<item_name>",
+			"name": "/background/<background_name>",
 			"request": {
 				"method": "PUT",
 				"header": [
 					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
 					},
 					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"item_descrip\": \"It'll tell the time.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": "{\r\n    \"background_descrip\": \"Not all those who wander are lost.\"\r\n}"
 				},
 				"url": {
-					"raw": "{{url}}/item/clock",
+					"raw": "{{url}}/background/wanderer",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
-						"item",
-						"clock"
+						"background",
+						"wanderer"
 					]
 				},
 				"description": "Update or create background"
+			},
+			"response": []
+		},
+		{
+			"name": "/equipment/<equip_name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"equip_descrip\": \"For kinky stuff.\",\r\n    \"equip_weight\": 15\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/equipment/rope",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"equipment",
+						"rope"
+					]
+				},
+				"description": "Update or create equipment"
+			},
+			"response": []
+		},
+		{
+			"name": "/proficiency/<proficiency_name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"proficiency_descrip\": \"A new type of weapon superior to those shitty simple weapons.\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/proficiency/martial_weapons",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"proficiency",
+						"martial_weapons"
+					]
+				},
+				"description": "Update or create proficiency"
+			},
+			"response": []
+		},
+		{
+			"name": "/tool/<tool_name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tool_descrip\": \"Includes lockpick set, grappling hooks, etc\",\r\n    \"tool_weight\": 12\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/tool/thieves_tools",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tool",
+						"thieves_tools"
+					]
+				},
+				"description": "Update or create tool"
 			},
 			"response": []
 		}

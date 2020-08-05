@@ -1,4 +1,7 @@
+from typing import List
 from db import Base, session
+from models.background import BackgroundModel as background
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
@@ -8,11 +11,11 @@ class ProficiencyModel(Base):
 
     # Columns
     id_proficiency = Column(Integer, primary_key=True)
-    proficiency_name = Column(String(100), nullable=False)
+    proficiency_name = Column(String(100), nullable=False, unique=True)
     proficiency_descrip = Column(String(250), nullable=False)
 
     backgrounds = relationship('BackgroundModel',
-                                  secondary='Background_has_Proficiencies',
+                                  secondary=background.prof_assoc,
                                   back_populates='proficiencies')
 
     def __repr__(self):
@@ -21,11 +24,11 @@ class ProficiencyModel(Base):
                                         self.proficiency_descrip)
 
     @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first() # SELECT * FROM Equipment WHERE name=name LIMIT 1
+    def find_by_name(cls, proficiency_name) -> "ProficiencyModel":
+        return cls.query.filter_by(proficiency_name=proficiency_name).first() # SELECT * FROM Equipment WHERE name=name LIMIT 1
 
     @classmethod
-    def find_all(cls):
+    def find_all(cls) -> List["ProficiencyModel"]:
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update

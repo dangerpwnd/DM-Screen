@@ -1,4 +1,7 @@
+from typing import List
 from db import Base, session
+from models.background import BackgroundModel as background
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
@@ -8,12 +11,12 @@ class EquipmentModel(Base):
 
     # Columns
     id_equipment = Column(Integer, primary_key=True)
-    equip_name = Column(String(100), nullable=False)
+    equip_name = Column(String(100), nullable=False, unique=True)
     equip_descrip = Column(String(250), nullable=False)
     equip_weight = Column(Integer, nullable=False)
 
     backgrounds = relationship('BackgroundModel',
-                                  secondary='Background_has_Equipment',
+                                  secondary=background.equip_assoc,
                                   back_populates='equipment')
 
     def __repr__(self):
@@ -22,11 +25,11 @@ class EquipmentModel(Base):
                                         self.equip_descrip,
                                         self.equip_weight)
     @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
+    def find_by_name(cls, equip_name) -> "EquipmentModel":
+        return cls.query.filter_by(equip_name=equip_name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     @classmethod
-    def find_all(cls):
+    def find_all(cls) -> List["EquipmentModel"]:
         return cls.query.all();
 
     def save_to_db(self): # Handles insert and update

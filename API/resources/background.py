@@ -21,7 +21,9 @@ class Background(Resource):
             return {'message': 'A background with name "{}" already exists.'.format(background_name)}, 400
 
         background_json = request.get_json()
-        background = BackgroundModel(background_name=background_name, background_descrip=background_json.keys(background_descrip))
+        background_json["background_name"] = background_name
+
+        background = background_schema.load(background_json)
 
         background.save_to_db()
 
@@ -55,6 +57,7 @@ class Background(Resource):
         return background_schema.dump(background), 200
 
 class BackgroundList(Resource):
+    
     @classmethod
     def get(cls):
         return {'backgrounds': background_list_schema.dump(BackgroundModel.find_all())}
