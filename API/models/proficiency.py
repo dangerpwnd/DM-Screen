@@ -1,6 +1,7 @@
 from typing import List
 from db import Base, session
 from models.background import BackgroundModel as background
+from models.race import RaceModel as race
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -15,8 +16,12 @@ class ProficiencyModel(Base):
     proficiency_descrip = Column(String(250), nullable=False)
 
     backgrounds = relationship('BackgroundModel',
-                                  secondary=background.prof_assoc,
-                                  back_populates='proficiencies')
+        secondary=background.prof_assoc,
+        back_populates='proficiencies')
+    races = relationship('RaceModel',
+        secondary=race.prof_assoc,
+        back_populates='proficiencies'
+    )
 
     def __repr__(self):
         return "<Proficiency (name='%s', description='%s')>" % (

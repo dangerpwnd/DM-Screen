@@ -42,25 +42,25 @@
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race`
+-- Table `DnD`.`Race` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race` (
-  `idRace` INT NOT NULL,
-  `RaceName` VARCHAR(50) NOT NULL,
-  `RaceDescrip` VARCHAR(250) NOT NULL,
-  `RaceminAge` INT NOT NULL,
-  `RacemaxAge` INT NOT NULL,
-  `RaceminHeight` INT NOT NULL,
-  `RacemaxHeight` INT NOT NULL,
-  `Size_idSize` INT NOT NULL,
-  PRIMARY KEY (`idRace`),
-  INDEX `fk_Race_Size1_idx` (`Size_idSize` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_Size1`
-    FOREIGN KEY (`Size_idSize`)
-    REFERENCES `DnD`.`Size` (`idSize`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race` (
+--   `idRace` INT NOT NULL,
+--   `RaceName` VARCHAR(50) NOT NULL,
+--   `RaceDescrip` VARCHAR(250) NOT NULL,
+--   `RaceminAge` INT NOT NULL,
+--   `RacemaxAge` INT NOT NULL,
+--   `RaceminHeight` INT NOT NULL,
+--   `RacemaxHeight` INT NOT NULL,
+--   `Size_idSize` INT NOT NULL,
+--   PRIMARY KEY (`idRace`),
+--   INDEX `fk_Race_Size1_idx` (`Size_idSize` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_Size1`
+--     FOREIGN KEY (`Size_idSize`)
+--     REFERENCES `DnD`.`Size` (`idSize`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -548,25 +548,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race_has_Proficiencies`
+-- Table `DnD`.`Race_has_Proficiencies` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Proficiencies` (
-  `Race_idRace` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Proficiencies_idProficiencies`),
-  INDEX `fk_Race_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_Race_has_Proficiencies_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Proficiencies_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Proficiencies` (
+--   `Race_idRace` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`Race_idRace`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_Race_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_Race_has_Proficiencies_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_has_Proficiencies_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Race_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -757,25 +757,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_Race`
+-- Table `DnD`.`Features_has_Race` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Race` (
-  `Features_idFeatures` INT NOT NULL,
-  `Race_idRace` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `Race_idRace`),
-  INDEX `fk_Features_has_Race_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  INDEX `fk_Features_has_Race_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_Race_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_Race_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Race` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `Race_idRace` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `Race_idRace`),
+--   INDEX `fk_Features_has_Race_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   INDEX `fk_Features_has_Race_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_Race_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_Race_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -929,25 +929,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race_has_Languages`
+-- Table `DnD`.`Race_has_Languages` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Languages` (
-  `Race_idRace` INT NOT NULL,
-  `Languages_idLanguages` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Languages_idLanguages`),
-  INDEX `fk_Race_has_Languages1_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
-  INDEX `fk_Race_has_Languages1_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Languages1_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Languages1_Languages1`
-    FOREIGN KEY (`Languages_idLanguages`)
-    REFERENCES `DnD`.`Languages` (`idLanguages`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Languages` (
+--   `Race_idRace` INT NOT NULL,
+--   `Languages_idLanguages` INT NOT NULL,
+--   PRIMARY KEY (`Race_idRace`, `Languages_idLanguages`),
+--   INDEX `fk_Race_has_Languages1_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
+--   INDEX `fk_Race_has_Languages1_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_has_Languages1_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Race_has_Languages1_Languages1`
+--     FOREIGN KEY (`Languages_idLanguages`)
+--     REFERENCES `DnD`.`Languages` (`idLanguages`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -994,59 +994,9 @@ CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Languages` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `DnD`.`Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Speed` (
-  `idSpeed` INT NOT NULL,
-  `SpeedAmt` INT NOT NULL,
-  `AffectByHeavyArm` TINYINT NOT NULL,
-  PRIMARY KEY (`idSpeed`))
-ENGINE = InnoDB;
+-- Speed needs to be integer column, armor logic needs to handle if the speed
+-- drops due to heavy armor
 
-
--- -----------------------------------------------------
--- Table `DnD`.`Race_has_Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Speed` (
-  `Race_idRace` INT NOT NULL,
-  `Speed_idSpeed` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Speed_idSpeed`),
-  INDEX `fk_Race_has_Speed_Speed1_idx` (`Speed_idSpeed` ASC) VISIBLE,
-  INDEX `fk_Race_has_Speed_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Speed_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Speed_Speed1`
-    FOREIGN KEY (`Speed_idSpeed`)
-    REFERENCES `DnD`.`Speed` (`idSpeed`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Character_has_Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character_has_Speed` (
-  `Character_idCharacter` INT NOT NULL,
-  `Speed_idSpeed` INT NOT NULL,
-  PRIMARY KEY (`Character_idCharacter`, `Speed_idSpeed`),
-  INDEX `fk_Character_has_Speed_Speed1_idx` (`Speed_idSpeed` ASC) VISIBLE,
-  INDEX `fk_Character_has_Speed_Character1_idx` (`Character_idCharacter` ASC) VISIBLE,
-  CONSTRAINT `fk_Character_has_Speed_Character1`
-    FOREIGN KEY (`Character_idCharacter`)
-    REFERENCES `DnD`.`PlayerChar` (`idCharacter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Character_has_Speed_Speed1`
-    FOREIGN KEY (`Speed_idSpeed`)
-    REFERENCES `DnD`.`Speed` (`idSpeed`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 -- USE `DnD` ;
 

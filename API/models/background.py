@@ -15,18 +15,18 @@ class BackgroundModel(Base):
 
     # Association Tables
     equip_assoc = Table('Background_has_Equipment', Base.metadata,
-        Column('equipment_id', Integer, ForeignKey('Equipment.id_equipment'), primary_key=True, nullable=False),
-        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True, nullable=False)
+        Column('equip_id', Integer, ForeignKey('Equipment.id_equip'), primary_key=True),
+        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True)
     )
 
     prof_assoc = Table('Background_has_Proficiencies', Base.metadata,
-        Column('proficiency_id', Integer, ForeignKey('Proficiency.id_proficiency'), primary_key=True, nullable=False),
-        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True, nullable=False)
+        Column('proficiency_id', Integer, ForeignKey('Proficiency.id_proficiency'), primary_key=True),
+        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True)
     )
 
     tool_assoc = Table('Background_has_Tools', Base.metadata,
-        Column('tool_id', Integer, ForeignKey('Tool.id_tool'), primary_key=True, nullable=False),
-        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True, nullable=False)
+        Column('tool_id', Integer, ForeignKey('Tool.id_tool'), primary_key=True),
+        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True)
     )
 
     # Relationships linked to association tables

@@ -2,7 +2,7 @@ from marshmallow import Schema, fields, post_load
 from models.equipment import EquipmentModel
 
 class EquipmentSchema(Schema):
-    id_equipment = fields.Integer(dump_only=True)
+    id_equip = fields.Integer(dump_only=True)
     equip_name = fields.Str()
     equip_descrip = fields.Str()
     equip_weight = fields.Integer()

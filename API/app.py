@@ -9,6 +9,7 @@ from blacklist import BLACKLIST
 from resources.background import Background, BackgroundList
 from resources.equipment import Equipment, EquipmentList
 from resources.proficiency import Proficiency, ProficiencyList
+from resources.race import Race, RaceList
 from resources.size import Size, SizeList
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
@@ -50,6 +51,10 @@ api.add_resource(EquipmentList, '/equipment')
 # Proficiencies
 api.add_resource(Proficiency, '/proficiency/<string:proficiency_name>')
 api.add_resource(ProficiencyList, '/proficiencies')
+
+# Races
+api.add_resource(Race, '/race/<string:race_name>')
+api.add_resource(RaceList, '/races')
 
 # Size
 api.add_resource(Size, '/size/<string:size_name>')

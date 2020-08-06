@@ -161,6 +161,104 @@
 			"response": []
 		},
 		{
+			"name": "/race/<race_name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/race/dwarf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"race",
+						"dwarf"
+					]
+				},
+				"description": "GET single race"
+			},
+			"response": []
+		},
+		{
+			"name": "/races",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/races",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"races"
+					]
+				},
+				"description": "GET list of all races"
+			},
+			"response": []
+		},
+		{
+			"name": "/size/<size_name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/size/small",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"size",
+						"small"
+					]
+				},
+				"description": "GET single size"
+			},
+			"response": []
+		},
+		{
+			"name": "/sizes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/sizes",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"sizes"
+					]
+				},
+				"description": "GET list of all sizes"
+			},
+			"response": []
+		},
+		{
 			"name": "/tool/<tool_name>",
 			"request": {
 				"method": "GET",
@@ -499,6 +597,79 @@
 			"response": []
 		},
 		{
+			"name": "/race/<race_name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"race_descrip\": \"Small, hardy, alcoholic\",\n    \"race_min_age\": 15,\n    \"race_max_age\": 280,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/race/dwarf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"race",
+						"dwarf"
+					]
+				},
+				"description": "POST new race"
+			},
+			"response": []
+		},
+		{
+			"name": "/size/<size_name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/size/small",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"size",
+						"small"
+					]
+				},
+				"description": "POST new size"
+			},
+			"response": []
+		},
+		{
 			"name": "/tool/<tool_name>",
 			"request": {
 				"method": "POST",
@@ -624,6 +795,80 @@
 					]
 				},
 				"description": "DELETE single proficiency"
+			},
+			"response": []
+		},
+		{
+			"name": "/race/<race_name> ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/race/dwarf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"race",
+						"dwarf"
+					]
+				},
+				"description": "DELETE single race"
+			},
+			"response": []
+		},
+		{
+			"name": "/size/<size_name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/size/small",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"size",
+						"small"
+					]
+				},
+				"description": "DELETE single size"
 			},
 			"response": []
 		},
@@ -785,6 +1030,45 @@
 					]
 				},
 				"description": "Update or create proficiency"
+			},
+			"response": []
+		},
+		{
+			"name": "/race/<race_name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"race_descrip\": \"Enjoys gold, beards, and brews\",\n    \"race_min_age\": 20,\n    \"race_max_age\": 275,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/race/dwarf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"race",
+						"dwarf"
+					]
+				},
+				"description": "Update or create race"
 			},
 			"response": []
 		},

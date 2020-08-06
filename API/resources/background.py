@@ -16,12 +16,11 @@ class Background(Resource):
 
     @classmethod
     def post(cls, background_name: str):
-
         if BackgroundModel.find_by_name(background_name):
             return {'message': 'A background with name "{}" already exists.'.format(background_name)}, 400
 
         background_json = request.get_json()
-        background_json["background_name"] = background_name
+        background_json['background_name'] = background_name
 
         background = background_schema.load(background_json)
 
@@ -31,18 +30,16 @@ class Background(Resource):
 
     @classmethod
     def delete(cls, background_name: str):
-
         background = BackgroundModel.find_by_name(background_name)
 
         if background:
             background.delete_from_db()
-            return {"message": "Background deleted"}
+            return {'message': 'Background deleted'}, 200
 
-        return {"message": "Background not found"}
+        return {'message': 'Background not found'}, 404
 
     @classmethod
     def put(cls, background_name: str):
-
         background_json = request.get_json()
         background = BackgroundModel.find_by_name(background_name)
 
@@ -57,7 +54,7 @@ class Background(Resource):
         return background_schema.dump(background), 200
 
 class BackgroundList(Resource):
-    
+
     @classmethod
     def get(cls):
-        return {'backgrounds': background_list_schema.dump(BackgroundModel.find_all())}
+        return {'backgrounds': background_list_schema.dump(BackgroundModel.find_all())}, 200
