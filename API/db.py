@@ -15,6 +15,8 @@ def init_db():
     import models.equipment
     import models.player
     import models.proficiency
+    import models.race
+    import models.size
     import models.tool
     import models.user
 
