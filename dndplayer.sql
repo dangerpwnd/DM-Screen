@@ -32,13 +32,13 @@
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Size`
+-- Table `DnD`.`Size` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Size` (
-  `idSize` INT NOT NULL,
-  `SizeName` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idSize`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Size` (
+--   `idSize` INT NOT NULL,
+--   `SizeName` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idSize`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

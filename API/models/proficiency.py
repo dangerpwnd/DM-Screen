@@ -29,7 +29,7 @@ class ProficiencyModel(Base):
 
     @classmethod
     def find_all(cls) -> List["ProficiencyModel"]:
-        return cls.query.all();
+        return cls.query.all()
 
     def save_to_db(self): # Handles insert and update
         session.add(self)
