@@ -11,6 +11,7 @@ Base.query = session.query_property()
 
 def init_db():
     # Import all models first before creation to register properly on the metadata
+    import models.alignment
     import models.background
     import models.equipment
     import models.feature

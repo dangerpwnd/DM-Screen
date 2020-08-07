@@ -75,14 +75,14 @@
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Alignment`
+-- Table `DnD`.`Alignment` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (
-  `idAlignment` INT NOT NULL,
-  `AlignName` VARCHAR(50) NOT NULL,
-  `AlignDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idAlignment`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (
+--   `idAlignment` INT NOT NULL,
+--   `AlignName` VARCHAR(50) NOT NULL,
+--   `AlignDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idAlignment`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

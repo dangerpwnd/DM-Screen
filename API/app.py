@@ -6,8 +6,11 @@ from marshmallow import ValidationError
 import db
 from blacklist import BLACKLIST
 
+from resources.alignment import Alignment, AlignmentList
 from resources.background import Background, BackgroundList
 from resources.equipment import Equipment, EquipmentList
+from resources.feature import Feature, FeatureList
+from resources.language import Language, LanguageList
 from resources.proficiency import Proficiency, ProficiencyList
 from resources.race import Race, RaceList
 from resources.size import Size, SizeList
@@ -39,6 +42,10 @@ jwt = JWTManager(app)
 @jwt.token_in_blacklist_loader
 def check_if_token_in_blacklist(decrypted_token):
     return decrypted_token['jti'] in BLACKLIST
+
+# Alignments
+api.add_resource(Alignment, '/alignment/<string:alignment_name>')
+api.add_resource(AlignmentList, '/alignments')
 
 # Backgrounds
 api.add_resource(Background, '/background/<string:background_name>')

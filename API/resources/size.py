@@ -43,4 +43,4 @@ class Size(Resource):
 class SizeList(Resource):
 
     def get(cls):
-        return {'Size': size_list_schema.dump(SizeModel.find_all())}
+        return {'Sizes': size_list_schema.dump(SizeModel.find_all())}
