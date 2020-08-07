@@ -2,6 +2,7 @@ from typing import List
 from db import Base, session
 from models.background import BackgroundModel as background
 from models.race import RaceModel as race
+from models.subrace import SubraceModel as subrace
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -20,6 +21,10 @@ class ProficiencyModel(Base):
         back_populates='proficiencies')
     races = relationship('RaceModel',
         secondary=race.prof_assoc,
+        back_populates='proficiencies'
+    )
+    subraces = relationship('SubraceModel',
+        secondary=subrace.prof_assoc,
         back_populates='proficiencies'
     )
 

@@ -64,14 +64,14 @@
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubRace`
+-- Table `DnD`.`SubRace`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (
-  `idSubRace` INT NOT NULL,
-  `SubRaceName` VARCHAR(50) NOT NULL,
-  `SubRaceDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSubRace`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (
+--   `idSubRace` INT NOT NULL,
+--   `SubRaceName` VARCHAR(50) NOT NULL,
+--   `SubRaceDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSubRace`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -570,25 +570,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubRace_has_Proficiencies`
+-- Table `DnD`.`SubRace_has_Proficiencies`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace_has_Proficiencies` (
-  `SubRace_idSubRace` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`SubRace_idSubRace`, `Proficiencies_idProficiencies`),
-  INDEX `fk_SubRace_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_SubRace_has_Proficiencies_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
-  CONSTRAINT `fk_SubRace_has_Proficiencies_SubRace1`
-    FOREIGN KEY (`SubRace_idSubRace`)
-    REFERENCES `DnD`.`SubRace` (`idSubRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubRace_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace_has_Proficiencies` (
+--   `SubRace_idSubRace` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`SubRace_idSubRace`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_SubRace_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_SubRace_has_Proficiencies_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubRace_has_Proficiencies_SubRace1`
+--     FOREIGN KEY (`SubRace_idSubRace`)
+--     REFERENCES `DnD`.`SubRace` (`idSubRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubRace_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -801,25 +801,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_SubRace`
+-- Table `DnD`.`Features_has_SubRace`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubRace` (
-  `Features_idFeatures` INT NOT NULL,
-  `SubRace_idSubRace` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `SubRace_idSubRace`),
-  INDEX `fk_Features_has_SubRace_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
-  INDEX `fk_Features_has_SubRace_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_SubRace_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_SubRace_SubRace1`
-    FOREIGN KEY (`SubRace_idSubRace`)
-    REFERENCES `DnD`.`SubRace` (`idSubRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubRace` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `SubRace_idSubRace` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `SubRace_idSubRace`),
+--   INDEX `fk_Features_has_SubRace_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
+--   INDEX `fk_Features_has_SubRace_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_SubRace_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_SubRace_SubRace1`
+--     FOREIGN KEY (`SubRace_idSubRace`)
+--     REFERENCES `DnD`.`SubRace` (`idSubRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

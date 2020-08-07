@@ -1,6 +1,7 @@
 from typing import List
 from db import Base, session
 from models.race import RaceModel as race
+from models.subrace import SubraceModel as subrace
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -17,6 +18,9 @@ class FeatureModel(Base):
     # Relationships
     races = relationship('RaceModel',
         secondary=race.feature_assoc,
+        back_populates='features')
+    subraces = relationship('SubraceModel',
+        secondary=subrace.feature_assoc,
         back_populates='features')
 
     def __repr__ = '<Feature (name=%s, descrip=%s)>' %
