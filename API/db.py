@@ -14,12 +14,15 @@ def init_db():
     import models.alignment
     import models.background
     import models.equipment
+    import models.eye
     import models.feature
+    import models.hair
     import models.language
     import models.player
     import models.proficiency
     import models.race
     import models.size
+    import models.skin
     import models.tool
     import models.user
 

@@ -86,33 +86,33 @@
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Eyes`
+-- Table `DnD`.`Eyes` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Eyes` (
-  `idEyes` INT NOT NULL,
-  `EyeColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idEyes`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Eyes` (
+--   `idEyes` INT NOT NULL,
+--   `EyeColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idEyes`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Hair`
+-- Table `DnD`.`Hair` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (
-  `idHair` INT NOT NULL,
-  `HairColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idHair`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (
+--   `idHair` INT NOT NULL,
+--   `HairColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idHair`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skin`
+-- Table `DnD`.`Skin` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (
-  `idSkin` INT NOT NULL,
-  `SkinColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idSkin`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (
+--   `idSkin` INT NOT NULL,
+--   `SkinColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idSkin`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

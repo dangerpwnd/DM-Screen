@@ -9,11 +9,14 @@ from blacklist import BLACKLIST
 from resources.alignment import Alignment, AlignmentList
 from resources.background import Background, BackgroundList
 from resources.equipment import Equipment, EquipmentList
+from resources.eye import Eye, EyeList
 from resources.feature import Feature, FeatureList
+from resources.hair import Hair, HairList
 from resources.language import Language, LanguageList
 from resources.proficiency import Proficiency, ProficiencyList
 from resources.race import Race, RaceList
 from resources.size import Size, SizeList
+from resources.skin import Skin, SkinList
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 
@@ -55,9 +58,17 @@ api.add_resource(BackgroundList, '/backgrounds')
 api.add_resource(Equipment, '/equipment/<string:equip_name>')
 api.add_resource(EquipmentList, '/equipment')
 
+# Eye Color
+api.add_resource(Eye, '/eye/<string:eye_color>')
+api.add_resource(EyeList, '/eyes')
+
 # Features
 api.add_resource(Feature, '/feature/<string:feature_name>')
 api.add_resource(FeatureList, '/features')
+
+# Hair Color
+api.add_resource(Hair, '/hair/<string:hair_color>')
+api.add_resource(HairList, '/hairs')
 
 # Languages
 api.add_resource(Language, '/language/<string:language_name>')
@@ -74,6 +85,10 @@ api.add_resource(RaceList, '/races')
 # Size
 api.add_resource(Size, '/size/<string:size_name>')
 api.add_resource(SizeList, '/sizes')
+
+# Skin Color
+api.add_resource(Skin, '/skin/<string:skin_color>')
+api.add_resource(SkinList, '/skins')
 
 # Tools
 api.add_resource(Tool, '/tool/<string:tool_name>')
