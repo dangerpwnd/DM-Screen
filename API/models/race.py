@@ -29,7 +29,7 @@ class RaceModel(Base):
         Column('race_id', Integer, ForeignKey('Race.id_race'), primary_key=True)
     )
     lang_assoc = Table('Race_has_Languages', Base.metadata,
-        Column('lang_id', Integer, ForeignKey('Language.id_lang'), primary_key=True),
+        Column('language_id', Integer, ForeignKey('Language.id_language'), primary_key=True),
         Column('race_id', Integer, ForeignKey('Race.id_race'), primary_key=True)
     )
 

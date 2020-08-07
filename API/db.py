@@ -14,6 +14,7 @@ def init_db():
     import models.background
     import models.equipment
     import models.feature
+    import models.language
     import models.player
     import models.proficiency
     import models.race

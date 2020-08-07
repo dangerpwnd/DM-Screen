@@ -918,14 +918,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Languages`
+-- Table `DnD`.`Languages`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Languages` (
-  `idLanguages` INT NOT NULL,
-  `LangName` VARCHAR(75) NOT NULL,
-  `LangDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idLanguages`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Languages` (
+--   `idLanguages` INT NOT NULL,
+--   `LangName` VARCHAR(75) NOT NULL,
+--   `LangDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idLanguages`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

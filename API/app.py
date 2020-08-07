@@ -52,6 +52,10 @@ api.add_resource(EquipmentList, '/equipment')
 api.add_resource(Feature, '/feature/<string:feature_name>')
 api.add_resource(FeatureList, '/features')
 
+# Languages
+api.add_resource(Language, '/language/<string:language_name>')
+api.add_resource(LanguageList, '/languages')
+
 # Proficiencies
 api.add_resource(Proficiency, '/proficiency/<string:proficiency_name>')
 api.add_resource(ProficiencyList, '/proficiencies')
