@@ -724,7 +724,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features`
+-- Table `DnD`.`Features` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `DnD`.`Features` (
   `idFeatures` INT NOT NULL,

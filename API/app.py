@@ -48,6 +48,10 @@ api.add_resource(BackgroundList, '/backgrounds')
 api.add_resource(Equipment, '/equipment/<string:equip_name>')
 api.add_resource(EquipmentList, '/equipment')
 
+# Features
+api.add_resource(Feature, '/feature/<string:feature_name>')
+api.add_resource(FeatureList, '/features')
+
 # Proficiencies
 api.add_resource(Proficiency, '/proficiency/<string:proficiency_name>')
 api.add_resource(ProficiencyList, '/proficiencies')

@@ -60,4 +60,4 @@ class ProficiencyList(Resource):
 
     @classmethod
     def get(cls):
-        return {'Proficiency': proficiency_list_schema.dump(ProficiencyModel.find_all())}
+        return {'Proficiencies': proficiency_list_schema.dump(ProficiencyModel.find_all())}
