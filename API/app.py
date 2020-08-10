@@ -9,6 +9,7 @@ from blacklist import BLACKLIST
 from resources.alignment import Alignment, AlignmentList
 from resources.attribute import Attribute, AttributeList
 from resources.background import Background, BackgroundList
+from resources.coin import Coin, CoinList
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
 from resources.faction import Faction, FactionList
@@ -60,6 +61,10 @@ api.add_resource(AttributeList, '/attributes')
 # Backgrounds
 api.add_resource(Background, '/background/<string:background_name>')
 api.add_resource(BackgroundList, '/backgrounds')
+
+# Coins
+api.add_resource(Coin, '/coin/<string:coin_name>')
+api.add_resource(CoinList, '/coins')
 
 # Equipment
 api.add_resource(Equipment, '/equipment/<string:equip_name>')

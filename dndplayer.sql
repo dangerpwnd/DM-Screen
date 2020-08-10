@@ -691,14 +691,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Coins`
+-- Table `DnD`.`Coins` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Coins` (
-  `idCoins` INT NOT NULL,
-  `CoinName` VARCHAR(50) NOT NULL,
-  `CoinDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idCoins`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Coins` (
+--   `idCoins` INT NOT NULL,
+--   `CoinName` VARCHAR(50) NOT NULL,
+--   `CoinDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idCoins`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
