@@ -208,14 +208,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Faction`
+-- Table `DnD`.`Faction` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Factions` (
-  `idFaction` INT NOT NULL,
-  `FactionName` VARCHAR(75) NULL,
-  `FactionDescrip` VARCHAR(250) NULL,
-  PRIMARY KEY (`idFactions`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Factions` (
+--   `idFaction` INT NOT NULL,
+--   `FactionName` VARCHAR(75) NULL,
+--   `FactionDescrip` VARCHAR(250) NULL,
+--   PRIMARY KEY (`idFactions`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
