@@ -658,14 +658,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Attributes`
+-- Table `DnD`.`Attributes` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Attributes` (
-  `idAttr` INT NOT NULL,
-  `AttrName` VARCHAR(50) NOT NULL,
-  `AttrDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idAttr`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Attributes` (
+--   `idAttr` INT NOT NULL,
+--   `AttrName` VARCHAR(50) NOT NULL,
+--   `AttrDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idAttr`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

@@ -7,6 +7,7 @@ import db
 from blacklist import BLACKLIST
 
 from resources.alignment import Alignment, AlignmentList
+from resources.attribute import Attribute, AttributeList
 from resources.background import Background, BackgroundList
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
@@ -51,6 +52,10 @@ def check_if_token_in_blacklist(decrypted_token):
 # Alignments
 api.add_resource(Alignment, '/alignment/<string:alignment_name>')
 api.add_resource(AlignmentList, '/alignments')
+
+# Attributes
+api.add_resource(Attribute, '/alignment/<string:attribute_name>')
+api.add_resource(AttributeList, '/attributes')
 
 # Backgrounds
 api.add_resource(Background, '/background/<string:background_name>')
