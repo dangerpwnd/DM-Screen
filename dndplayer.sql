@@ -186,14 +186,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skills`
+-- Table `DnD`.`Skills` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skills` (
-  `idSkills` INT NOT NULL,
-  `SkillName` VARCHAR(50) NULL,
-  `SkillDescrip` VARCHAR(250) NULL,
-  PRIMARY KEY (`idSkills`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skills` (
+--   `idSkills` INT NOT NULL,
+--   `SkillName` VARCHAR(50) NULL,
+--   `SkillDescrip` VARCHAR(250) NULL,
+--   PRIMARY KEY (`idSkills`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

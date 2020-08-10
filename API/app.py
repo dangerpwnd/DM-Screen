@@ -91,6 +91,10 @@ api.add_resource(RaceList, '/races')
 api.add_resource(Size, '/size/<string:size_name>')
 api.add_resource(SizeList, '/sizes')
 
+# Skills
+api.add_resource(Skill, '/skill/<string:skill_name')
+api.add_resource(SkillList, '/skills')
+
 # Skin Color
 api.add_resource(Skin, '/skin/<string:skin_color>')
 api.add_resource(SkinList, '/skins')

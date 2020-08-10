@@ -23,6 +23,7 @@ def init_db():
     import models.proficiency
     import models.race
     import models.size
+    import models.skill
     import models.skin
     import models.tool
     import models.user
