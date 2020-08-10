@@ -15,6 +15,7 @@ def init_db():
     import models.background
     import models.equipment
     import models.eye
+    import models.feat
     import models.feature
     import models.hair
     import models.language

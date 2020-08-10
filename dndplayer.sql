@@ -175,14 +175,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Feats`
+-- Table `DnD`.`Feats` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feats` (
-  `idFeats` INT NOT NULL,
-  `FeatName` VARCHAR(100) NOT NULL,
-  `FeatDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idFeats`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feats` (
+--   `idFeats` INT NOT NULL,
+--   `FeatName` VARCHAR(100) NOT NULL,
+--   `FeatDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idFeats`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -726,12 +726,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `DnD`.`Features` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features` (
-  `idFeatures` INT NOT NULL,
-  `FeatureName` VARCHAR(75) NOT NULL,
-  `FeatureDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idFeatures`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features` (
+--   `idFeatures` INT NOT NULL,
+--   `FeatureName` VARCHAR(75) NOT NULL,
+--   `FeatureDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idFeatures`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

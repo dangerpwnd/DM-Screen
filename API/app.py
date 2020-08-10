@@ -10,6 +10,7 @@ from resources.alignment import Alignment, AlignmentList
 from resources.background import Background, BackgroundList
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
+from resources.feat import Feat, FeatList
 from resources.feature import Feature, FeatureList
 from resources.hair import Hair, HairList
 from resources.language import Language, LanguageList
@@ -61,6 +62,10 @@ api.add_resource(EquipmentList, '/equipment')
 # Eye Color
 api.add_resource(Eye, '/eye/<string:eye_color>')
 api.add_resource(EyeList, '/eyes')
+
+# Feats
+api.add_resource(Feat, '/feat/<string:feat_name>')
+api.add_resource(FeatList, '/feats')
 
 # Features
 api.add_resource(Feature, '/feature/<string:feature_name>')
