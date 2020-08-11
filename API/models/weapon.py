@@ -18,8 +18,8 @@ Class WeaponModel(Base):
     # Relationships
     weapon_types = relationship('WeaponTypeModel', back_populates='weapons')
 
-    def __repr__ = '<Weapon (name=%s, descrip=%s)>' %
-        (self.weapon_name, self.weapon_descrip)
+    def __repr__ = '<Weapon (name=%s, descrip=%s, damage=%s, weight=%s)>' %
+        (self.weapon_name, self.weapon_descrip, self.weapon_damage, self.weapon_weight)
 
     @classmethod
     find_by_name(cls, weapon_name: str) -> WeaponModel:

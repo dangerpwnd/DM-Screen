@@ -282,24 +282,24 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Armor`
+-- Table `DnD`.`Armor` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (
-  `idArmor` INT NOT NULL,
-  `ArmorName` VARCHAR(100) NOT NULL,
-  `ArmorDescrip` VARCHAR(45) NOT NULL,
-  `ArmorTypeId` INT NOT NULL,
-  `ArmorAC` INT NOT NULL,
-  `ArmorWeight` INT NOT NULL,
-  `ArmorMaxDex` INT NULL,
-  PRIMARY KEY (`idArmor`),
-  INDEX `fk_Armor_ArmorType1_idx` (`ArmorTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Armor_ArmorType1`
-    FOREIGN KEY (`ArmorTypeId`)
-    REFERENCES `DnD`.`ArmorType` (`idArmorType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (
+--   `idArmor` INT NOT NULL,
+--   `ArmorName` VARCHAR(100) NOT NULL,
+--   `ArmorDescrip` VARCHAR(45) NOT NULL,
+--   `ArmorTypeId` INT NOT NULL,
+--   `ArmorAC` INT NOT NULL,
+--   `ArmorWeight` INT NOT NULL,
+--   `ArmorMaxDex` INT NULL,
+--   PRIMARY KEY (`idArmor`),
+--   INDEX `fk_Armor_ArmorType1_idx` (`ArmorTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Armor_ArmorType1`
+--     FOREIGN KEY (`ArmorTypeId`)
+--     REFERENCES `DnD`.`ArmorType` (`idArmorType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
