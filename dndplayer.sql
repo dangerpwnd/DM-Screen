@@ -272,13 +272,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`ArmorType`
+-- Table `DnD`.`ArmorType` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`ArmorType` (
-  `idArmorType` INT NOT NULL,
-  `ATypeName` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idArmorType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`ArmorType` (
+--   `idArmorType` INT NOT NULL,
+--   `ATypeName` VARCHAR(50) NOT NULL,
+--   PRIMARY KEY (`idArmorType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
