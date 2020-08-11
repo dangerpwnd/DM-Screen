@@ -242,13 +242,13 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`WeaponType`
+-- Table `DnD`.`WeaponType` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`WeaponType` (
-  `idWeaponType` INT NOT NULL,
-  `WTypeName` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idWeaponType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`WeaponType` (
+--   `idWeaponType` INT NOT NULL,
+--   `WTypeName` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idWeaponType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

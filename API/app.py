@@ -136,5 +136,9 @@ api.add_resource(TokenRefresh, '/refresh')
 api.add_resource(Weapon, '/weapon/<string:weapon_name>')
 api.add_resource(WeaponList, '/weapons')
 
+# Weapon Types
+api.add_resource(WeaponType, '/weapontype/<string:weapontype_name>')
+api.add_resource(WeaponTypeList, '/weapontypes')
+
 if __name__ == '__main__':
     app.run(debug=True)
