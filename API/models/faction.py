@@ -10,7 +10,7 @@ Class factionModel(Base):
 
     # Columns
     id_faction = Column(Integer, primary_key=True)
-    faction_name = Column(String(75), nullable=False)
+    faction_name = Column(String(75), nullable=False, unique=True)
     faction_descrip = Column(String(250), nullable=False)
 
     # Relationships

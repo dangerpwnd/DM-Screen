@@ -10,7 +10,7 @@ Class FeatModel(Base):
 
     # Columns
     id_feat = Column(Integer, primary_key=True)
-    feat_name = Column(String(75), nullable=False)
+    feat_name = Column(String(75), nullable=False, unique=True)
     feat_descrip = Column(String(250), nullable=False)
 
     # Relationships

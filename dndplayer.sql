@@ -252,23 +252,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Weapons`
+-- Table `DnD`.`Weapons` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (
-  `idWeapon` INT NOT NULL,
-  `WeapName` VARCHAR(100) NOT NULL,
-  `WeapDescrip` VARCHAR(250) NOT NULL,
-  `WeapDmg` VARCHAR(75) NOT NULL,
-  `WeapDmgTypeId` INT NOT NULL,
-  `WeapWeight` INT NOT NULL,
-  PRIMARY KEY (`idWeapons`, `WeapDmgTypeId`),
-  INDEX `fk_Weapons_WeaponType1_idx` (`WeapDmgTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Weapons_WeaponType1`
-    FOREIGN KEY (`WeapDmgTypeId`)
-    REFERENCES `DnD`.`WeaponType` (`idWeaponType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (
+--   `idWeapon` INT NOT NULL,
+--   `WeapName` VARCHAR(100) NOT NULL,
+--   `WeapDescrip` VARCHAR(250) NOT NULL,
+--   `WeapDmg` VARCHAR(75) NOT NULL,
+--   `WeapDmgTypeId` INT NOT NULL,
+--   `WeapWeight` INT NOT NULL,
+--   PRIMARY KEY (`idWeapons`, `WeapDmgTypeId`),
+--   INDEX `fk_Weapons_WeaponType1_idx` (`WeapDmgTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Weapons_WeaponType1`
+--     FOREIGN KEY (`WeapDmgTypeId`)
+--     REFERENCES `DnD`.`WeaponType` (`idWeaponType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

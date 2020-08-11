@@ -10,7 +10,7 @@ Class CoinModel(Base):
 
     # Columns
     id_coin = Column(Integer, primary_key=True)
-    coin_name = Column(String(75), nullable=False)
+    coin_name = Column(String(75), nullable=False, unique=True)
     coin_descrip = Column(String(250), nullable=False)
 
     # Relationships

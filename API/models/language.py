@@ -12,7 +12,7 @@ class LanuageModel(Base):
 
     # Columns
     id_language = Column(Integer, primary_key=True)
-    language_name = Column(String(75), nullable=False)
+    language_name = Column(String(75), nullable=False, unique=True)
     language_descrip = Column(String(250), nullable=False)
 
     # Relationships

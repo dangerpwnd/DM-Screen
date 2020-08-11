@@ -16,6 +16,8 @@ class EquipmentModel(Base):
     equip_descrip = Column(String(250), nullable=False)
     equip_weight = Column(Integer, nullable=False)
 
+    # Relationships
+    
     backgrounds = relationship('BackgroundModel',
                                   secondary=background.equip_assoc,
                                   back_populates='equipment')

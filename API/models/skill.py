@@ -12,7 +12,7 @@ Class SkillModel(Base):
 
     # Columns
     id_skill = Column(Integer, primary_key=True)
-    skill_name = Column(String(75), nullable=False)
+    skill_name = Column(String(75), nullable=False, unique=True)
     skill_descrip = Column(String(250), nullable=False)
 
     # Relationships

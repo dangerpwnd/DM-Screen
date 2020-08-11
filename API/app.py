@@ -24,6 +24,7 @@ from resources.size import Size, SizeList
 from resources.skin import Skin, SkinList
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
+from resources.weapon import Weapon, WeaponList
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True
@@ -129,6 +130,10 @@ api.add_resource(User, '/user/<int:user_id>')
 api.add_resource(UserLogin, '/login')
 api.add_resource(UserLogout, '/logout')
 api.add_resource(TokenRefresh, '/refresh')
+
+# Weapons
+api.add_resource(Weapon, '/weapon/<string:weapon_name>')
+api.add_resource(WeaponList, '/weapons')
 
 if __name__ == '__main__':
     app.run(debug=True)

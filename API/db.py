@@ -31,5 +31,6 @@ def init_db():
     import models.skin
     import models.tool
     import models.user
+    import models.weapon
 
     Base.metadata.create_all(bind=engine)

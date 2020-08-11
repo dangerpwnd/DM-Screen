@@ -13,7 +13,7 @@ class FeatureModel(Base):
 
     # Columns
     id_feature = Column(Integer, primary_key=True)
-    feature_name = Column(String(75), nullable=False)
+    feature_name = Column(String(75), nullable=False, unique=True)
     feature_descrip = Column(String(250), nullable=False)
 
     # Association tables
