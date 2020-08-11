@@ -10,7 +10,7 @@ Class AttributeModel(Base):
 
     # Columns
     id_attribute = Column(Integer, primary_key=True)
-    attribute_name = Column(String(75), nullable=False)
+    attribute_name = Column(String(75), nullable=False, unique=True)
     attribute_descrip = Column(String(250), nullable=False)
 
     # Relationships
