@@ -25,6 +25,7 @@ from resources.skin import Skin, SkinList
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 from resources.weapon import Weapon, WeaponList
+from resources.weapontype import WeaponType, WeaponTypeList
 
 app = Flask(__name__)
 app.config['PROPAGATE_EXCEPTIONS'] = True

@@ -16,7 +16,7 @@ Class WeaponModel(Base):
     weapon_weight = Column(Integer, nullable=False)
 
     # Relationships
-    weapon_types = relationship('WeaponTypeModel')
+    weapon_types = relationship('WeaponTypeModel', back_populates='weapons')
 
     def __repr__ = '<Weapon (name=%s, descrip=%s)>' %
         (self.weapon_name, self.weapon_descrip)

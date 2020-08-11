@@ -32,5 +32,6 @@ def init_db():
     import models.tool
     import models.user
     import models.weapon
+    import models.weapontype
 
     Base.metadata.create_all(bind=engine)
