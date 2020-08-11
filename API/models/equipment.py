@@ -1,6 +1,7 @@
 from typing import List
 from db import Base, session
 from models.background import BackgroundModel as background
+from models.charclass import CharClassModel as classm
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -17,6 +18,10 @@ class EquipmentModel(Base):
 
     backgrounds = relationship('BackgroundModel',
                                   secondary=background.equip_assoc,
+                                  back_populates='equipment')
+
+    classes = relationship('ClassModel',
+                                  secondary=classm.equip_assoc,
                                   back_populates='equipment')
 
     def __repr__(self):

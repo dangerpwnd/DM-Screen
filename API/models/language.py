@@ -1,6 +1,7 @@
 from typing import List
 from db import Base, session
 from models.race import RaceModel as race
+from models.charclass import CharClassModel as classm
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -16,8 +17,12 @@ class LanuageModel(Base):
 
     # Relationships
     races = relationship('RaceModel',
-        secondary=race.lang_assoc,
-        back_populates='languages')
+                                secondary=race.lang_assoc,
+                                back_populates='languages')
+
+    classes = relationship('ClassModel',
+                                  secondary=classm.skill_assoc,
+                                  back_populates='languages')
 
     def __repr__ = '<Language (name=%s, descrip=%s)>' %
         (self.language_name, self.language_descrip)

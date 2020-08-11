@@ -15,6 +15,7 @@ def init_db():
     import models.attribute
     import models.background
     import models.coin
+    import models.charclass
     import models.equipment
     import models.eye
     import models.faction

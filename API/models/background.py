@@ -24,18 +24,11 @@ class BackgroundModel(Base):
         Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True)
     )
 
-    tool_assoc = Table('Background_has_Tools', Base.metadata,
-        Column('tool_id', Integer, ForeignKey('Tool.id_tool'), primary_key=True),
-        Column('background_id', Integer, ForeignKey('Background.id_background'), primary_key=True)
-    )
-
     # Relationships linked to association tables
     equipment = relationship("EquipmentModel",
                               secondary=equip_assoc,
                               back_populates='backgrounds')
-    tools = relationship("ToolModel",
-                              secondary=tool_assoc,
-                              back_populates='backgrounds')
+                              
     proficiencies = relationship("ProficiencyModel",
                               secondary=prof_assoc,
                               back_populates='backgrounds')

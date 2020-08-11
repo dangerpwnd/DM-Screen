@@ -46,7 +46,7 @@ class RaceModel(Base):
     )
     languages = relationship('LanguageModel',
         secondary=lang_assoc,
-        back_populates='languages'
+        back_populates='races'
     )
 
     def __repr__(self):

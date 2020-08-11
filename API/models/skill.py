@@ -2,7 +2,9 @@ from typing import List
 from db import Base, session
 
 from sqlalchemy import Column, Integer, String
-# from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship
+
+from models.charclass import CharClassModel as classm
 
 Class SkillModel(Base):
 
@@ -14,6 +16,10 @@ Class SkillModel(Base):
     skill_descrip = Column(String(250), nullable=False)
 
     # Relationships
+
+    classes = relationship('ClassModel',
+                                  secondary=classm.skill_assoc,
+                                  back_populates='skills')
 
     def __repr__ = '<skill (name=%s, descrip=%s)>' %
         (self.skill_name, self.skill_descrip)

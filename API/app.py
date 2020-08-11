@@ -10,6 +10,7 @@ from resources.alignment import Alignment, AlignmentList
 from resources.attribute import Attribute, AttributeList
 from resources.background import Background, BackgroundList
 from resources.coin import Coin, CoinList
+from resources.charclass import CharClass, CharClassList
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
 from resources.faction import Faction, FactionList
@@ -61,6 +62,10 @@ api.add_resource(AttributeList, '/attributes')
 # Backgrounds
 api.add_resource(Background, '/background/<string:background_name>')
 api.add_resource(BackgroundList, '/backgrounds')
+
+# Character Classes
+api.add_resource(CharClass, '/charclass/<string:class_name>')
+api.add_resource(CharClassList, '/charclasses')
 
 # Coins
 api.add_resource(Coin, '/coin/<string:coin_name>')

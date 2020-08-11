@@ -6,7 +6,6 @@ class BackgroundSchema(Schema):
     background_name = fields.Str()
     background_descrip = fields.Str()
     equipment = fields.Nested('EquipmentSchema', many=True)
-    tools = fields.Nested('ToolSchema', many=True)
     proficiencies = fields.Nested('ProficiencySchema', many=True)
 
     @post_load
