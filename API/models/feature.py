@@ -3,6 +3,7 @@ from db import Base, session
 from models.race import RaceModel as race
 from models.subrace import SubraceModel as subrace
 from models.charclass import CharClassModel as classm
+from models.subclass import SubClassModel as subclass
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -33,7 +34,11 @@ class FeatureModel(Base):
 
     classes = relationship('ClassModel',
                                   secondary=classm.feature_assoc,
-                                  back_populates='equipment')
+                                  back_populates='features')
+
+    subclasses = relationship('SubClassModel',
+                                  secondary=subclass.feature_assoc,
+                                  back_populates='features')
 
     spells = relationship('SpellModel',
                             secondary=spell_assoc,

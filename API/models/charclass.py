@@ -44,9 +44,9 @@ class CharClassModel(Base):
         Column('class_id', Integer, ForeignKey('Class.id_class'), primary_key=True)
     )
 
+    # Relationships
+    subclasses = relationship('SubClassModel', back_populates='charclass')
 
-
-    # Relationships linked to association tables
     equipment = relationship("EquipmentModel",
                               secondary=equip_assoc,
                               back_populates='classes')

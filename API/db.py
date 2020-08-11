@@ -31,6 +31,7 @@ def init_db():
     import models.size
     import models.skill
     import models.skin
+    import models.subclass
     import models.tool
     import models.user
     import models.weapon

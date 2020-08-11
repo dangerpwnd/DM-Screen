@@ -316,14 +316,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass`
+-- Table `DnD`.`SubClass` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (
-  `idSubClass` INT NOT NULL,
-  `SubClassName` VARCHAR(75) NOT NULL,
-  `SubClassDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSubClass`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (
+--   `idSubClass` INT NOT NULL,
+--   `SubClassName` VARCHAR(75) NOT NULL,
+--   `SubClassDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSubClass`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -504,25 +504,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass_has_Proficiencies`
+-- Table `DnD`.`SubClass_has_Proficiencies` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Proficiencies` (
-  `SubClass_idSubClass` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`SubClass_idSubClass`, `Proficiencies_idProficiencies`),
-  INDEX `fk_SubClass_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_SubClass_has_Proficiencies_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  CONSTRAINT `fk_SubClass_has_Proficiencies_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubClass_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Proficiencies` (
+--   `SubClass_idSubClass` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`SubClass_idSubClass`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_SubClass_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_SubClass_has_Proficiencies_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubClass_has_Proficiencies_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubClass_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -614,47 +614,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skills_has_Class` --DONE Model(Including Helper Tables), Resources, Routes
--- -----------------------------------------------------
--- CREATE TABLE IF NOT EXISTS `DnD`.`Skills_has_Class` (
---   `Skills_idSkills` INT NOT NULL,
---   `Class_idClass` INT NOT NULL,
---   PRIMARY KEY (`Skills_idSkills`, `Class_idClass`),
---   INDEX `fk_Skills_has_Class_Class1_idx` (`Class_idClass` ASC) VISIBLE,
---   INDEX `fk_Skills_has_Class_Skills1_idx` (`Skills_idSkills` ASC) VISIBLE,
---   CONSTRAINT `fk_Skills_has_Class_Skills1`
---     FOREIGN KEY (`Skills_idSkills`)
---     REFERENCES `DnD`.`Skills` (`idSkills`)
---     ON DELETE NO ACTION
---     ON UPDATE NO ACTION,
---   CONSTRAINT `fk_Skills_has_Class_Class1`
---     FOREIGN KEY (`Class_idClass`)
---     REFERENCES `DnD`.`Class` (`idClass`)
---     ON DELETE NO ACTION
---     ON UPDATE NO ACTION)
--- ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Skills_has_SubClass`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skills_has_SubClass` (
-  `Skills_idSkills` INT NOT NULL,
-  `SubClass_idSubClass` INT NOT NULL,
-  PRIMARY KEY (`Skills_idSkills`, `SubClass_idSubClass`),
-  INDEX `fk_Skills_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  INDEX `fk_Skills_has_SubClass_Skills1_idx` (`Skills_idSkills` ASC) VISIBLE,
-  CONSTRAINT `fk_Skills_has_SubClass_Skills1`
-    FOREIGN KEY (`Skills_idSkills`)
-    REFERENCES `DnD`.`Skills` (`idSkills`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Skills_has_SubClass_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -779,25 +738,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_SubClass`
+-- Table `DnD`.`Features_has_SubClass` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubClass` (
-  `Features_idFeatures` INT NOT NULL,
-  `SubClass_idSubClass` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `SubClass_idSubClass`),
-  INDEX `fk_Features_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  INDEX `fk_Features_has_SubClass_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_SubClass_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_SubClass_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubClass` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `SubClass_idSubClass` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `SubClass_idSubClass`),
+--   INDEX `fk_Features_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   INDEX `fk_Features_has_SubClass_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_SubClass_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_SubClass_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -896,25 +855,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass_has_Spells`
+-- Table `DnD`.`SubClass_has_Spells` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Spells` (
-  `SubClass_idSubClass` INT NOT NULL,
-  `Spells_idSpells` INT NOT NULL,
-  PRIMARY KEY (`SubClass_idSubClass`, `Spells_idSpells`),
-  INDEX `fk_SubClass_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
-  INDEX `fk_SubClass_has_Spells_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  CONSTRAINT `fk_SubClass_has_Spells_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubClass_has_Spells_Spells1`
-    FOREIGN KEY (`Spells_idSpells`)
-    REFERENCES `DnD`.`Spells` (`idSpells`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Spells` (
+--   `SubClass_idSubClass` INT NOT NULL,
+--   `Spells_idSpells` INT NOT NULL,
+--   PRIMARY KEY (`SubClass_idSubClass`, `Spells_idSpells`),
+--   INDEX `fk_SubClass_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
+--   INDEX `fk_SubClass_has_Spells_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubClass_has_Spells_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubClass_has_Spells_Spells1`
+--     FOREIGN KEY (`Spells_idSpells`)
+--     REFERENCES `DnD`.`Spells` (`idSpells`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

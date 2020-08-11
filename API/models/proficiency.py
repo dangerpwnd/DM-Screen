@@ -4,6 +4,7 @@ from models.background import BackgroundModel as background
 from models.race import RaceModel as race
 from models.subrace import SubraceModel as subrace
 from models.charclass import CharClassModel as classm
+from models.subclass import SubClassModel as subclass
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -23,17 +24,19 @@ class ProficiencyModel(Base):
 
     races = relationship('RaceModel',
                             secondary=race.prof_assoc,
-                            back_populates='proficiencies'
-    )
+                            back_populates='proficiencies')
 
     subraces = relationship('SubraceModel',
                                 secondary=subrace.prof_assoc,
-                                back_populates='proficiencies'
-    )
+                                back_populates='proficiencies')
 
     classes = relationship('ClassModel',
                                   secondary=classm.prof_assoc,
-                                  back_populates='equipment')
+                                  back_populates='proficiencies')
+
+    subclasses = relationship('SubClassModel',
+                                  secondary=subclass.feature_assoc,
+                                  back_populates='proficiencies')
 
     def __repr__(self):
         return "<Proficiency (name='%s', description='%s')>" % (
