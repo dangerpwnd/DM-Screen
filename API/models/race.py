@@ -76,7 +76,7 @@ class RaceModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, race_name: str) -> RaceModel:
+    def find_by_name(cls, race_name: str) -> 'RaceModel':
         return cls.query.filter_by(race_name=race_name).first()
 
     @classmethod

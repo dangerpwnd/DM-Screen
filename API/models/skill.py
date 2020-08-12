@@ -29,7 +29,7 @@ class SkillModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, skill_name: str) -> SkillModel:
+    def find_by_name(cls, skill_name: str) -> 'SkillModel':
         return cls.query.filter_by(skill_name=skill_name).first()
 
     @classmethod

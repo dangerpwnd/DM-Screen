@@ -907,28 +907,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Character_has_Languages`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character_has_Languages` (
-  `Character_idCharacter` INT NOT NULL,
-  `Languages_idLanguages` INT NOT NULL,
-  PRIMARY KEY (`Character_idCharacter`, `Languages_idLanguages`),
-  INDEX `fk_Character_has_Languages_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
-  INDEX `fk_Character_has_Languages_Character1_idx` (`Character_idCharacter` ASC) VISIBLE,
-  CONSTRAINT `fk_Character_has_Languages_Character1`
-    FOREIGN KEY (`Character_idCharacter`)
-    REFERENCES `DnD`.`PlayerChar` (`idCharacter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Character_has_Languages_Languages1`
-    FOREIGN KEY (`Languages_idLanguages`)
-    REFERENCES `DnD`.`Languages` (`idLanguages`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `DnD`.`Class_has_Languages` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
 -- CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Languages` (

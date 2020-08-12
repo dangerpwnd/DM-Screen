@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
 
 from models.feature import FeatureModel as feature
@@ -17,8 +17,8 @@ class SpellModel(Base):
     id_spell = Column(Integer, primary_key=True)
     spell_name = Column(String(75), nullable=False, unique=True)
     spell_descrip = Column(String(250), nullable=False)
-    spell_amount = Column(String(25))
-    is_racial = Column(Boolean)
+    spell_amount = Column(String(25), nullable=False)
+    is_racial = Column(Boolean, nullable=False)
 
     # Relationships
     spell_types = relationship("SpellTypeModel", back_populates="spells")
@@ -40,7 +40,7 @@ class SpellModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, spell_name: str) -> SpellModel:
+    def find_by_name(cls, spell_name: str) -> 'SpellModel':
         return cls.query.filter_by(spell_name=spell_name).first()
 
     @classmethod

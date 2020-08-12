@@ -7,7 +7,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 
-class LanuageModel(Base):
+class LanguageModel(Base):
 
     __tablename__ = "Language"
 
@@ -32,7 +32,7 @@ class LanuageModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, language_name: str) -> LanguageModel:
+    def find_by_name(cls, language_name: str) -> 'LanguageModel':
         return cls.query.filter_by(language_name=language_name).first()
 
     @classmethod

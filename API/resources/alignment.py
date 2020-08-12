@@ -3,7 +3,7 @@ from models.alignment import AlignmentModel
 from schemas.alignment import AlignmentSchema
 
 alignment_schema = AlignmentSchema()
-alignment_list_schema = AlignmentModel(many=True)
+alignment_list_schema = AlignmentSchema(many=True)
 
 class Alignment(Resource):
 

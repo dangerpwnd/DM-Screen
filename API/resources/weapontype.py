@@ -1,6 +1,6 @@
 from flask_restful import Resource, request
-from models.weapon import WeaponTypeModel
-from schemas.weapon import WeaponTypeSchema
+from models.weapontype import WeaponTypeModel
+from schemas.weapontype import WeaponTypeSchema
 
 weapontype_schema = WeaponTypeSchema()
 weapontype_list_schema = WeaponTypeSchema(many=True)

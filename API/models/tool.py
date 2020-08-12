@@ -1,10 +1,7 @@
 from typing import List
 from db import Base, session
-from models.background import BackgroundModel as background
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
-
 
 class ToolModel(Base):
 
@@ -16,10 +13,6 @@ class ToolModel(Base):
     tool_name = Column(String(100), nullable=False, unique=True)
     tool_descrip = Column(String(250), nullable=False)
     tool_weight = Column(Integer, nullable=False)
-
-    backgrounds = relationship(
-        "BackgroundModel", secondary=background.tool_assoc, back_populates="tools"
-    )
 
     def __repr__(self):
         return "<Tool (name='%s', description='%s', weight='%s')>" % (

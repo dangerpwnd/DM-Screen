@@ -7,7 +7,7 @@ class SpellSchema(Schema):
     spell_descrip = fields.Str()
     spell_amount = fields.Str()
     is_racial = fields.Boolean()
-    spell_type = fields.Nested(SpellTypeSchema)
+    spell_type = fields.Nested('SpellTypeSchema')
 
     @post_load
     def make_spell(self, data, **kwargs):

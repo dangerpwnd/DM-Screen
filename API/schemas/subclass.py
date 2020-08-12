@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields, post_load
-from models.subclass import SubclassModel
+from models.subclass import SubClassModel
 
 class SubClassSchema(Schema):
     id_subclass = fields.Integer(dump_only=True)

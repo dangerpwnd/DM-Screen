@@ -5,7 +5,7 @@ from schemas.hair import HairSchema
 hair_schema = HairSchema()
 hair_list_schema = HairSchema(many=True)
 
-class hair(Resource):
+class Hair(Resource):
 
     @classmethod
     def get(cls, hair_color: str):
@@ -43,4 +43,4 @@ class hair(Resource):
 class HairList(Resource):
 
     def get(cls):
-        return {'Hairs': hair_list_schema.dump(hairModel.find_all())}
+        return {'Hair colors': hair_list_schema.dump(HairModel.find_all())}

@@ -1,6 +1,6 @@
 from flask_restful import Resource, request
-from models.weapon import ArmorTypeModel
-from schemas.weapon import ArmorTypeSchema
+from models.armortype import ArmorTypeModel
+from schemas.armortype import ArmorTypeSchema
 
 armortype_schema = ArmorTypeSchema()
 armortype_list_schema = ArmorTypeSchema(many=True)
@@ -37,8 +37,8 @@ class ArmorType(Resource):
 
     # Put method not needed as only single attribute
 
-class armortypeList(Resource):
+class ArmorTypeList(Resource):
 
     @classmethod
     def get(cls):
-        return {'Armor Types': armortype_list_schema.dump(ArmortypeModel.find_all())}
+        return {'Armor Types': armortype_list_schema.dump(ArmorTypeModel.find_all())}

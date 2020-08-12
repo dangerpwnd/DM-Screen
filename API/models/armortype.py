@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -21,7 +21,7 @@ class ArmorTypeModel(Base):
         return '<Armor Type (name="%s">' % (self.armortype_name)
 
     @classmethod
-    def find_by_name(cls, armortype_name: str) -> ArmortypeModel:
+    def find_by_name(cls, armortype_name: str) -> 'ArmorTypeModel':
         return cls.query.filter_by(armortype_name=armortype_name).first()
 
     @classmethod

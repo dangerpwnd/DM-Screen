@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -18,10 +18,10 @@ class SpellTypeModel(Base):
     spells = relationship("SpellModel", back_populates="spell_types")
 
     def __repr__(self):
-        return '<Spell Type (name="%s">' % (self.spelltype_name)
+        return '<Spell Type (name="%s")>' % (self.spelltype_name)
 
     @classmethod
-    def find_by_name(cls, spelltype_name: str) -> SpellTypeModel:
+    def find_by_name(cls, spelltype_name: str) -> 'SpellTypeModel':
         return cls.query.filter_by(spelltype_name=spelltype_name).first()
 
     @classmethod

@@ -8,7 +8,7 @@ class ArmorSchema(Schema):
     armor_ac = fields.Integer()
     armor_weight = fields.Integer()
     armor_maxdex = fields.Integer()
-    armor_type = fields.Nested(ArmorTypeSchema)
+    armor_type = fields.Nested('ArmorTypeSchema')
 
     @post_load
     def make_armor(self, data, **kwargs):

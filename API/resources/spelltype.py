@@ -1,6 +1,6 @@
 from flask_restful import Resource, request
-from models.spell import SpellTypeModel
-from schemas.spell import SpellTypeSchema
+from models.spelltype import SpellTypeModel
+from schemas.spelltype import SpellTypeSchema
 
 spelltype_schema = SpellTypeSchema()
 spelltype_list_schema = SpellTypeSchema(many=True)

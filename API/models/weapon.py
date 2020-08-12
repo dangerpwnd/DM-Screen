@@ -28,7 +28,7 @@ class WeaponModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, weapon_name: str) -> WeaponModel:
+    def find_by_name(cls, weapon_name: str) -> 'WeaponModel':
         return cls.query.filter_by(weapon_name=weapon_name).first()
 
     @classmethod
