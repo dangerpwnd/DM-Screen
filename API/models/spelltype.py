@@ -16,7 +16,7 @@ Class SpellTypeModel(Base):
     # Relationships
     spells = relationship('SpellModel', back_populates='spell_types')
 
-    def __repr__ = '<Spell Type (name=%s>' %
+    def __repr__(self):  '<Spell Type (name=%s>' %
         (self.spelltype_name)
 
     @classmethod

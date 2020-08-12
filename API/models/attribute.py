@@ -15,7 +15,7 @@ Class AttributeModel(Base):
 
     # Relationships
 
-    def __repr__ = '<Attribute (name=%s, descrip=%s)>' %
+    def __repr__(self):  '<Attribute (name=%s, descrip=%s)>' %
         (self.attribute_name, self.attribute_descrip)
 
     @classmethod

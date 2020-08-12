@@ -16,7 +16,7 @@ Class WeaponTypeModel(Base):
     # Relationships
     weapons = relationship('WeaponModel', back_populates='weapon_types')
 
-    def __repr__ = '<Weapon Type (name=%s>' %
+    def __repr__(self): '<Weapon Type (name=%s>' %
         (self.weapontype_name)
 
     @classmethod

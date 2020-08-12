@@ -15,7 +15,7 @@ Class CoinModel(Base):
 
     # Relationships
 
-    def __repr__ = '<Coin (name=%s, descrip=%s)>' %
+    def __repr__(self):  '<Coin (name=%s, descrip=%s)>' %
         (self.coin_name, self.coin_descrip)
 
     @classmethod

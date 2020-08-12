@@ -4,7 +4,7 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
-Class ArmorModel(Base):
+class ArmorModel(Base):
 
     __tablename__ = 'Armor'
 
@@ -19,7 +19,7 @@ Class ArmorModel(Base):
     # Relationships
     armor_types = relationship('ArmorTypeModel', back_populates='armor')
 
-    def __repr__ = '<armor (name=%s, descrip=%s, AC=%s, weight=%s, Max Dex=%s)>' %
+    def __repr__(self): '<armor (name=%s, descrip=%s, AC=%s, weight=%s, Max Dex=%s)>' %
         (self.armor_name, self.armor_descrip, self.armor_ac, self.armor_weight, self.armor_maxdex)
 
     @classmethod

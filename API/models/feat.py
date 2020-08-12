@@ -15,7 +15,7 @@ Class FeatModel(Base):
 
     # Relationships
 
-    def __repr__ = '<Feat (name=%s, descrip=%s)>' %
+    def __repr__(self):  '<Feat (name=%s, descrip=%s)>' %
         (self.feat_name, self.feat_descrip)
 
     @classmethod
