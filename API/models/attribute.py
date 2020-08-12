@@ -2,11 +2,13 @@ from typing import List
 from db import Base, session
 
 from sqlalchemy import Column, Integer, String
+
 # from sqlalchemy.orm import relationship
 
-Class AttributeModel(Base):
 
-    __tablename__ = 'attribute'
+class AttributeModel(Base):
+
+    __tablename__ = "attribute"
 
     # Columns
     id_attribute = Column(Integer, primary_key=True)
@@ -15,21 +17,24 @@ Class AttributeModel(Base):
 
     # Relationships
 
-    def __repr__(self):  '<Attribute (name="%s", descrip="%s")>' %
-        (self.attribute_name, self.attribute_descrip)
+    def __repr__(self):
+        return '<Attribute (name="%s", descrip="%s")>' % (
+            self.attribute_name,
+            self.attribute_descrip,
+        )
 
     @classmethod
-    find_by_name(cls, attribute_name: str) -> AttributeModel:
+    def find_by_name(cls, attribute_name: str) -> AttributeModel:
         return cls.query.filter_by(attribute_name=attribute_name).first()
 
     @classmethod
-    find_all(cls) -> List['AttributeModel']:
+    def find_all(cls) -> List["AttributeModel"]:
         return cls.query.all()
 
-    save_to_db(self):
+    def save_to_db(self):
         session.add(self)
         session.commit()
 
-    delete_from_db(self):
+    def delete_from_db(self):
         session.delete(self)
         session.commit()

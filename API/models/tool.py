@@ -5,6 +5,7 @@ from models.background import BackgroundModel as background
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
+
 class ToolModel(Base):
 
     # Set table name with class Attribute
@@ -16,25 +17,28 @@ class ToolModel(Base):
     tool_descrip = Column(String(250), nullable=False)
     tool_weight = Column(Integer, nullable=False)
 
-    backgrounds = relationship('BackgroundModel',
-                                  secondary=background.tool_assoc,
-                                  back_populates='tools')
+    backgrounds = relationship(
+        "BackgroundModel", secondary=background.tool_assoc, back_populates="tools"
+    )
 
     def __repr__(self):
         return "<Tool (name='%s', description='%s', weight='%s')>" % (
-                                        self.tool_name,
-                                        self.tool_descrip,
-                                        self.tool_weight)
+            self.tool_name,
+            self.tool_descrip,
+            self.tool_weight,
+        )
 
     @classmethod
     def find_by_name(cls, tool_name) -> "ToolModel":
-        return cls.query.filter_by(tool_name=tool_name).first() # SELECT * FROM Tool WHERE name=name LIMIT 1
+        return cls.query.filter_by(
+            tool_name=tool_name
+        ).first()  # SELECT * FROM Tool WHERE name=name LIMIT 1
 
     @classmethod
     def find_all(cls) -> List["ToolModel"]:
-        return cls.query.all();
+        return cls.query.all()
 
-    def save_to_db(self): # Handles insert and update
+    def save_to_db(self):  # Handles insert and update
         session.add(self)
         session.commit()
 

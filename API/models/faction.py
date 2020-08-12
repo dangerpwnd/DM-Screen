@@ -2,11 +2,13 @@ from typing import List
 from db import Base, session
 
 from sqlalchemy import Column, Integer, String
+
 # from sqlalchemy.orm import relationship
 
-Class factionModel(Base):
 
-    __tablename__ = 'Faction'
+class factionModel(Base):
+
+    __tablename__ = "Faction"
 
     # Columns
     id_faction = Column(Integer, primary_key=True)
@@ -15,21 +17,24 @@ Class factionModel(Base):
 
     # Relationships
 
-    def __repr__(self):  '<Faction (name="%s", descrip="%s")>' %
-        (self.faction_name, self.faction_descrip)
+    def __repr__(self):
+        '<Faction (name="%s", descrip="%s")>' % (
+            self.faction_name,
+            self.faction_descrip,
+        )
 
     @classmethod
-    find_by_name(cls, faction_name: str) -> FactionModel:
+    def find_by_name(cls, faction_name: str) -> FactionModel:
         return cls.query.filter_by(faction_name=faction_name).first()
 
     @classmethod
-    find_all(cls) -> List['FactionModel']:
+    def find_all(cls) -> List["FactionModel"]:
         return cls.query.all()
 
-    save_to_db(self):
+    def save_to_db(self):
         session.add(self)
         session.commit()
 
-    delete_from_db(self):
+    def delete_from_db(self):
         session.delete(self)
         session.commit()

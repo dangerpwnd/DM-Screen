@@ -6,9 +6,10 @@ from models.charclass import CharClassModel as classm
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
+
 class EquipmentModel(Base):
 
-    __tablename__ = 'Equipment'
+    __tablename__ = "Equipment"
 
     # Columns
     id_equip = Column(Integer, primary_key=True)
@@ -17,29 +18,33 @@ class EquipmentModel(Base):
     equip_weight = Column(Integer, nullable=False)
 
     # Relationships
-    
-    backgrounds = relationship('BackgroundModel',
-                                  secondary=background.equip_assoc,
-                                  back_populates='equipment')
 
-    classes = relationship('ClassModel',
-                                  secondary=classm.equip_assoc,
-                                  back_populates='equipment')
+    backgrounds = relationship(
+        "BackgroundModel", secondary=background.equip_assoc, back_populates="equipment"
+    )
+
+    classes = relationship(
+        "ClassModel", secondary=classm.equip_assoc, back_populates="equipment"
+    )
 
     def __repr__(self):
         return "<Equipment (name='%s', description='%s', weight='%s')>" % (
-                                        self.equip_name,
-                                        self.equip_descrip,
-                                        self.equip_weight)
+            self.equip_name,
+            self.equip_descrip,
+            self.equip_weight,
+        )
+
     @classmethod
     def find_by_name(cls, equip_name) -> "EquipmentModel":
-        return cls.query.filter_by(equip_name=equip_name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
+        return cls.query.filter_by(
+            equip_name=equip_name
+        ).first()  # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     @classmethod
     def find_all(cls) -> List["EquipmentModel"]:
-        return cls.query.all();
+        return cls.query.all()
 
-    def save_to_db(self): # Handles insert and update
+    def save_to_db(self):  # Handles insert and update
         session.add(self)
         session.commit()
 
