@@ -34,7 +34,7 @@ Class SpellModel(Base):
                             back_populates='spells')
 
 
-    def __repr__(self):  '<Spell (name=%s, descrip=%s, damage=%s)>' %
+    def __repr__(self):  '<Spell (name="%s", descrip="%s", damage="%s")>' %
         (self.spell_name, self.spell_descrip, self.spell_amount)
 
     @classmethod

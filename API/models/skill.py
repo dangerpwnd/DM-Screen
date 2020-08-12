@@ -21,7 +21,7 @@ Class SkillModel(Base):
                                   secondary=classm.skill_assoc,
                                   back_populates='skills')
 
-    def __repr__(self):  '<skill (name=%s, descrip=%s)>' %
+    def __repr__(self):  '<skill (name="%s", descrip="%s")>' %
         (self.skill_name, self.skill_descrip)
 
     @classmethod

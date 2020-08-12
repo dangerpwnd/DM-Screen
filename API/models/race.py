@@ -50,7 +50,7 @@ class RaceModel(Base):
     )
 
     def __repr__(self):
-        return "<Race (name = %s, description = %s, age = %s-%s, height = %s-%s)>" %
+        return "<Race (name = '%s', description = '%s', age = '%s'-'%s', height = '%s'-'%s')>" %
             (self.race_name, self.race_descrip, self.race_min_age, self.race_max_age,
              self.race_min_height, self.race_max_height)
 

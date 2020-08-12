@@ -24,7 +24,7 @@ class LanuageModel(Base):
                                   secondary=classm.skill_assoc,
                                   back_populates='languages')
 
-    def __repr__(self): '<Language (name=%s, descrip=%s)>' %
+    def __repr__(self): '<Language (name="%s", descrip="%s")>' %
         (self.language_name, self.language_descrip)
 
     @classmethod

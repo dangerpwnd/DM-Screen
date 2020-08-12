@@ -16,7 +16,7 @@ Class ArmorTypeModel(Base):
     # Relationships
     armor = relationship('ArmorModel', back_populates='armor_types')
 
-    def __repr__(self): '<Armor Type (name=%s>' %
+    def __repr__(self): '<Armor Type (name="%s">' %
         (self.armortype_name)
 
     @classmethod

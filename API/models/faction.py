@@ -15,7 +15,7 @@ Class factionModel(Base):
 
     # Relationships
 
-    def __repr__(self):  '<Faction (name=%s, descrip=%s)>' %
+    def __repr__(self):  '<Faction (name="%s", descrip="%s")>' %
         (self.faction_name, self.faction_descrip)
 
     @classmethod

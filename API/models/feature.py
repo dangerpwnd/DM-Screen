@@ -47,7 +47,7 @@ class FeatureModel(Base):
 
 
 
-    def __repr__(self): '<Feature (name=%s, descrip=%s)>' %
+    def __repr__(self): '<Feature (name="%s", descrip="%s")>' %
         (self.feature_name, self.feature_descrip)
 
     @classmethod
