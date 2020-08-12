@@ -614,9 +614,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
-
-
--- -----------------------------------------------------
 -- Table `DnD`.`Attributes` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
 -- CREATE TABLE IF NOT EXISTS `DnD`.`Attributes` (
@@ -782,32 +779,32 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SpellType`
+-- Table `DnD`.`SpellType`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SpellType` (
-  `idSpellType` INT NOT NULL,
-  `SpellTypeName` VARCHAR(75) NOT NULL,
-  `SpellTypeDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSpellType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SpellType` (
+--   `idSpellType` INT NOT NULL,
+--   `SpellTypeName` VARCHAR(75) NOT NULL,
+--   `SpellTypeDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSpellType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Spells`
+-- Table `DnD`.`Spells` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Spells` (
-  `idSpells` INT NOT NULL,
-  `SpellName` VARCHAR(100) NOT NULL,
-  `SpellDescrip` VARCHAR(250) NOT NULL,
-  `SpellTypeId` INT NOT NULL,
-  PRIMARY KEY (`idSpells`),
-  INDEX `fk_Spells_SpellType1_idx` (`SpellTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Spells_SpellType1`
-    FOREIGN KEY (`SpellTypeId`)
-    REFERENCES `DnD`.`SpellType` (`idSpellType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Spells` (
+--   `idSpells` INT NOT NULL,
+--   `SpellName` VARCHAR(100) NOT NULL,
+--   `SpellDescrip` VARCHAR(250) NOT NULL,
+--   `SpellTypeId` INT NOT NULL,
+--   PRIMARY KEY (`idSpells`),
+--   INDEX `fk_Spells_SpellType1_idx` (`SpellTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Spells_SpellType1`
+--     FOREIGN KEY (`SpellTypeId`)
+--     REFERENCES `DnD`.`SpellType` (`idSpellType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------

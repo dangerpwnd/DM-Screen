@@ -5,7 +5,7 @@ class WeaponSchema(Schema):
     id_weapon = fields.Integer(dump_only=True)
     weapon_name = fields.Str()
     weapon_descrip = fields.Str()
-    weapon_damage = fields.Integer()
+    weapon_damage = fields.Str()
     weapon_weight = fields.Integer()
     weapon_type = fields.Nested(WeaponTypeSchema)
 

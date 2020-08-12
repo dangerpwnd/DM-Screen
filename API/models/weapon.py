@@ -12,7 +12,7 @@ Class WeaponModel(Base):
     id_weapon = Column(Integer, primary_key=True)
     weapon_name = Column(String(75), nullable=False, unique=True)
     weapon_descrip = Column(String(250), nullable=False)
-    weapon_damage = Column(Integer, nullable=False)
+    weapon_damage = Column(String(25), nullable=False)
     weapon_weight = Column(Integer, nullable=False)
 
     # Relationships

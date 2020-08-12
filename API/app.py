@@ -24,6 +24,8 @@ from resources.proficiency import Proficiency, ProficiencyList
 from resources.race import Race, RaceList
 from resources.size import Size, SizeList
 from resources.skin import Skin, SkinList
+from resources.spell import Spell, SpellList
+from resource.spelltype import SpellType, SpellTypeList
 from resources.subclass import SubClass, SubClassList
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
@@ -131,6 +133,14 @@ api.add_resource(SkillList, '/skills')
 # Skin Color
 api.add_resource(Skin, '/skin/<string:skin_color>')
 api.add_resource(SkinList, '/skins')
+
+# Spells
+api.add_resource(Spell, '/spell/<string:spell_name>')
+api.add_resource(SpellList, '/spells')
+
+# Spell Types
+api.add_resource(SpellType, '/spelltype/<string:spelltype_name>')
+api.add_resource(SpellTypeList, '/spelltypes')
 
 # Subclasses
 api.add_resource(SubClass, '/subclass/<string:subclass_name>')
