@@ -12,7 +12,7 @@ class SpellTypeModel(Base):
     # Columns
     id_spelltype = Column(Integer, primary_key=True)
     spelltype_name = Column(String(75), nullable=False, unique=True)
-    spell_id = Column(Integer, ForeignKey("spell.id_spell"))
+    spell_id = Column(Integer, ForeignKey("Spell.id_spell"))
 
     # Relationships
     spells = relationship("SpellModel", back_populates="spell_types")

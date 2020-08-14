@@ -22,7 +22,7 @@ class LanguageModel(Base):
     )
 
     classes = relationship(
-        "ClassModel", secondary=classm.skill_assoc, back_populates="languages"
+        "CharClassModel", secondary=classm.lang_assoc, back_populates="languages"
     )
 
     def __repr__(self):

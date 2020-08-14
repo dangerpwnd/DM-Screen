@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -16,9 +16,10 @@ class ArmorModel(Base):
     armor_ac = Column(Integer, nullable=False)
     armor_weight = Column(Integer, nullable=False)
     armor_maxdex = Column(Integer, nullable=False)
+    armortype_id = Column(Integer, ForeignKey("ArmorType.id_armortype"), nullable=False)
 
     # Relationships
-    armor_types = relationship("ArmorTypeModel", back_populates="armor")
+    armor_type = relationship("ArmorTypeModel", back_populates="armor")
 
     def __repr__(self):
         return (

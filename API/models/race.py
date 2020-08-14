@@ -17,7 +17,7 @@ class RaceModel(Base):
     race_min_height = Column(Integer, nullable=False)
     race_max_height = Column(Integer, nullable=False)
     race_speed = Column(Integer, nullable=False)
-    size_id = Column(Integer, ForeignKey("size.id_size"))
+    size_id = Column(Integer, ForeignKey("Size.id_size"))
 
     # Association tables
 

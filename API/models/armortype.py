@@ -1,24 +1,23 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 
 class ArmorTypeModel(Base):
 
-    __tablename__ = "Armortype"
+    __tablename__ = "ArmorType"
 
     # Columns
     id_armortype = Column(Integer, primary_key=True)
     armortype_name = Column(String(75), nullable=False, unique=True)
-    armor_id = Column(Integer, ForeignKey("Armor.id_armor"))
 
     # Relationships
-    armor = relationship("ArmorModel", back_populates="armor_types")
+    armor = relationship("ArmorModel", back_populates="armor_type")
 
     def __repr__(self):
-        return '<Armor Type (name="%s">' % (self.armortype_name)
+        return '<Armor Type (name="%s")>' % (self.armortype_name)
 
     @classmethod
     def find_by_name(cls, armortype_name: str) -> 'ArmorTypeModel':

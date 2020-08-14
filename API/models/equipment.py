@@ -24,7 +24,7 @@ class EquipmentModel(Base):
     )
 
     classes = relationship(
-        "ClassModel", secondary=classm.equip_assoc, back_populates="equipment"
+        "CharClassModel", secondary=classm.equip_assoc, back_populates="equipment"
     )
 
     def __repr__(self):

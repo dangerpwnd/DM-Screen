@@ -24,7 +24,7 @@ class ArmorType(Resource):
 
         armortype = armortype_schema.load(armortype_json)
         armortype.save_to_db()
-        return armortype_schema.dump(skill), 201
+        return armortype_schema.dump(armortype), 201
 
     @classmethod
     def delete(cls, armortype_name: str):

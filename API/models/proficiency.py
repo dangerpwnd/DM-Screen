@@ -34,12 +34,12 @@ class ProficiencyModel(Base):
     )
 
     classes = relationship(
-        "ClassModel", secondary=classm.prof_assoc, back_populates="proficiencies"
+        "CharClassModel", secondary=classm.prof_assoc, back_populates="proficiencies"
     )
 
     subclasses = relationship(
         "SubClassModel",
-        secondary=subclass.feature_assoc,
+        secondary=subclass.prof_assoc,
         back_populates="proficiencies",
     )
 

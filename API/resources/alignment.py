@@ -56,4 +56,4 @@ class Alignment(Resource):
 class AlignmentList(Resource):
 
     def get(cls):
-        return {'Alignments': alignment_list_schema.dump(alignmentModel.find_all())}
+        return {'Alignments': alignment_list_schema.dump(AlignmentModel.find_all())}

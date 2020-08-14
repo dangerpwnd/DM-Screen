@@ -38,7 +38,7 @@ class FeatureModel(Base):
     )
 
     classes = relationship(
-        "ClassModel", secondary=classm.feature_assoc, back_populates="features"
+        "CharClassModel", secondary=classm.feature_assoc, back_populates="features"
     )
 
     subclasses = relationship(
