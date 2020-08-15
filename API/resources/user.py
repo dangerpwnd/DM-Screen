@@ -8,6 +8,7 @@ from flask_jwt_extended import (
     jwt_required,
     get_raw_jwt,
     )
+
 from marshmallow import ValidationError
 from blacklist import BLACKLIST
 from models.user import UserModel

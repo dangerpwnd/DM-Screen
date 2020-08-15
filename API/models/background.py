@@ -1,38 +1,78 @@
-from db import db
-from models.helper import equipment_helper, tool_helper, proficiency_helper
-from models.equipment import EquipmentModel
-from models.tool import ToolModel
-from models.proficiency import ProficiencyModel
+from typing import List
+from db import Base, session
+from sqlalchemy import Column, Integer, String, Table, ForeignKey
+from sqlalchemy.orm import relationship
 
-class BackgroundModel(db.Model):
+
+class BackgroundModel(Base):
 
     # Set table name with class attribute
     __tablename__ = "Background"
 
     # Columns
-    id_background = db.Column(db.Integer, primary_key=True)
-    background_name = db.Column(db.String(50), nullable=False, unique=True)
-    background_descrip = db.Column(db.String(250), nullable=False)
-    # Relationships linked to helper tables
-    equipment = db.relationship("EquipmentModel", secondary=equipment_helper)
-    tools = db.relationship("ToolModel", secondary=tool_helper)
-    proficiencies = db.relationship(
-        "ProficiencyModel", secondary=proficiency_helper
+    id_background = Column(Integer, primary_key=True)
+    background_name = Column(String(50), nullable=False, unique=True)
+    background_descrip = Column(String(250), nullable=False)
+
+    # Association Tables
+    equip_assoc = Table(
+        "Background_has_Equipment",
+        Base.metadata,
+        Column("equip_id", Integer, ForeignKey("Equipment.id_equip"), primary_key=True),
+        Column(
+            "background_id",
+            Integer,
+            ForeignKey("Background.id_background"),
+            primary_key=True,
+        ),
     )
+
+    prof_assoc = Table(
+        "Background_has_Proficiencies",
+        Base.metadata,
+        Column(
+            "proficiency_id",
+            Integer,
+            ForeignKey("Proficiency.id_proficiency"),
+            primary_key=True,
+        ),
+        Column(
+            "background_id",
+            Integer,
+            ForeignKey("Background.id_background"),
+            primary_key=True,
+        ),
+    )
+
+    # Relationships linked to association tables
+    equipment = relationship(
+        "EquipmentModel", secondary=equip_assoc, back_populates="backgrounds"
+    )
+
+    proficiencies = relationship(
+        "ProficiencyModel", secondary=prof_assoc, back_populates="backgrounds"
+    )
+
     # Relationship to PlayerChar
 
-    @classmethod
-    def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first()
+    def __repr__(self):
+        return "<Background (name='%s', description='%s')>" % (
+            self.background_name,
+            self.background_descrip,
+        )
 
     @classmethod
-    def find_all(cls):
+    def find_by_name(cls, background_name) -> "BackgroundModel":
+        return cls.query.filter_by(background_name=background_name).first()
+
+    @classmethod
+    def find_all(cls) -> List["BackgroundModel"]:
         return cls.query.all()
 
     def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()

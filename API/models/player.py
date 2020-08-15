@@ -1,32 +1,33 @@
-from db import db
+from db import Base, session
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-class PlayerModel(db.Model):
 
-    __tablename__ = 'PlayerChar'
+class PlayerModel(Base):
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
-    descrip = db.Column(db.String(80))
+    __tablename__ = "PlayerChar"
 
-    def __init__(self, name, descrip):
-        self.name = name
-        self.descrip = descrip
+    id = Column(Integer, primary_key=True)
+    name = Column(String(80))
+    descrip = Column(String(80))
 
-    def json(self):
-        return {'name': self.name, 'descrip': self.descrip}
+    def __repr__(self):
+        return "<Player (name='%s', description='%s')>" % (self.name, self.descrip)
 
     @classmethod
     def find_by_name(cls, name):
-        return cls.query.filter_by(name=name).first() # SELECT * FROM items WHERE name=name LIMIT 1
+        return cls.query.filter_by(
+            name=name
+        ).first()  # SELECT * FROM items WHERE name=name LIMIT 1
 
     @classmethod
     def find_all(cls):
-        return cls.query.all();
+        return cls.query.all()
 
-    def save_to_db(self): # Handles insert and update
-        db.session.add(self)
-        db.session.commit()
+    def save_to_db(self):  # Handles insert and update
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()

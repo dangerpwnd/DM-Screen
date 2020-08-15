@@ -3,9 +3,9 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+-- SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+-- SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+-- SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
 -- Schema DnD
@@ -14,105 +14,105 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema DnD
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `DnD` DEFAULT CHARACTER SET utf8 ;
-USE `DnD` ;
+-- CREATE SCHEMA IF NOT EXISTS `DnD` DEFAULT CHARACTER SET utf8 ;
+-- USE `DnD` ;
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Background` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
-  `idBackground` INT NOT NULL,
-  `BackName` VARCHAR(50) NOT NULL,
-  `BackDescrip` VARCHAR(250) NOT NULL,
-  `EquipmentId` INT NULL,
-  `ToolId` INT NULL,
-  `ProficiencyId` INT NULL,
-  PRIMARY KEY (`idBackground`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background` (
+--   `idBackground` INT NOT NULL,
+--   `BackName` VARCHAR(50) NOT NULL,
+--   `BackDescrip` VARCHAR(250) NOT NULL,
+--   `EquipmentId` INT NULL,
+--   `ToolId` INT NULL,
+--   `ProficiencyId` INT NULL,
+--   PRIMARY KEY (`idBackground`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Size`
+-- Table `DnD`.`Size` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Size` (
-  `idSize` INT NOT NULL,
-  `SizeName` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idSize`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Size` (
+--   `idSize` INT NOT NULL,
+--   `SizeName` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idSize`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race`
+-- Table `DnD`.`Race` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race` (
-  `idRace` INT NOT NULL,
-  `RaceName` VARCHAR(50) NOT NULL,
-  `RaceDescrip` VARCHAR(250) NOT NULL,
-  `RaceminAge` INT NOT NULL,
-  `RacemaxAge` INT NOT NULL,
-  `RaceminHeight` INT NOT NULL,
-  `RacemaxHeight` INT NOT NULL,
-  `Size_idSize` INT NOT NULL,
-  PRIMARY KEY (`idRace`),
-  INDEX `fk_Race_Size1_idx` (`Size_idSize` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_Size1`
-    FOREIGN KEY (`Size_idSize`)
-    REFERENCES `DnD`.`Size` (`idSize`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race` (
+--   `idRace` INT NOT NULL,
+--   `RaceName` VARCHAR(50) NOT NULL,
+--   `RaceDescrip` VARCHAR(250) NOT NULL,
+--   `RaceminAge` INT NOT NULL,
+--   `RacemaxAge` INT NOT NULL,
+--   `RaceminHeight` INT NOT NULL,
+--   `RacemaxHeight` INT NOT NULL,
+--   `Size_idSize` INT NOT NULL,
+--   PRIMARY KEY (`idRace`),
+--   INDEX `fk_Race_Size1_idx` (`Size_idSize` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_Size1`
+--     FOREIGN KEY (`Size_idSize`)
+--     REFERENCES `DnD`.`Size` (`idSize`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubRace`
+-- Table `DnD`.`SubRace`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (
-  `idSubRace` INT NOT NULL,
-  `SubRaceName` VARCHAR(50) NOT NULL,
-  `SubRaceDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSubRace`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (
+--   `idSubRace` INT NOT NULL,
+--   `SubRaceName` VARCHAR(50) NOT NULL,
+--   `SubRaceDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSubRace`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Alignment`
+-- Table `DnD`.`Alignment` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (
-  `idAlignment` INT NOT NULL,
-  `AlignName` VARCHAR(50) NOT NULL,
-  `AlignDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idAlignment`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (
+--   `idAlignment` INT NOT NULL,
+--   `AlignName` VARCHAR(50) NOT NULL,
+--   `AlignDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idAlignment`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Eyes`
+-- Table `DnD`.`Eyes` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Eyes` (
-  `idEyes` INT NOT NULL,
-  `EyeColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idEyes`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Eyes` (
+--   `idEyes` INT NOT NULL,
+--   `EyeColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idEyes`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Hair`
+-- Table `DnD`.`Hair` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (
-  `idHair` INT NOT NULL,
-  `HairColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idHair`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (
+--   `idHair` INT NOT NULL,
+--   `HairColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idHair`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skin`
+-- Table `DnD`.`Skin` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (
-  `idSkin` INT NOT NULL,
-  `SkinColor` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idSkin`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (
+--   `idSkin` INT NOT NULL,
+--   `SkinColor` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idSkin`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -175,155 +175,155 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Feats`
+-- Table `DnD`.`Feats` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feats` (
-  `idFeats` INT NOT NULL,
-  `FeatName` VARCHAR(100) NOT NULL,
-  `FeatDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idFeats`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feats` (
+--   `idFeats` INT NOT NULL,
+--   `FeatName` VARCHAR(100) NOT NULL,
+--   `FeatDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idFeats`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skills`
+-- Table `DnD`.`Skills` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skills` (
-  `idSkills` INT NOT NULL,
-  `SkillName` VARCHAR(50) NULL,
-  `SkillDescrip` VARCHAR(250) NULL,
-  PRIMARY KEY (`idSkills`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skills` (
+--   `idSkills` INT NOT NULL,
+--   `SkillName` VARCHAR(50) NULL,
+--   `SkillDescrip` VARCHAR(250) NULL,
+--   PRIMARY KEY (`idSkills`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Class`
+-- Table `DnD`.`Class` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class` (
-  `idClass` INT NOT NULL,
-  `ClassName` VARCHAR(75) NOT NULL,
-  `ClassDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idClass`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class` (
+--   `idClass` INT NOT NULL,
+--   `ClassName` VARCHAR(75) NOT NULL,
+--   `ClassDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idClass`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Faction`
+-- Table `DnD`.`Faction` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Factions` (
-  `idFaction` INT NOT NULL,
-  `FactionName` VARCHAR(75) NULL,
-  `FactionDescrip` VARCHAR(250) NULL,
-  PRIMARY KEY (`idFactions`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Factions` (
+--   `idFaction` INT NOT NULL,
+--   `FactionName` VARCHAR(75) NULL,
+--   `FactionDescrip` VARCHAR(250) NULL,
+--   PRIMARY KEY (`idFactions`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Equipment` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (
-  `idEquipment` INT NOT NULL,
-  `EquipName` VARCHAR(100) NOT NULL,
-  `EquipDescrip` VARCHAR(250) NOT NULL,
-  `EquipWeight` INT NOT NULL,
-  PRIMARY KEY (`idEquipment`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (
+--   `idEquipment` INT NOT NULL,
+--   `EquipName` VARCHAR(100) NOT NULL,
+--   `EquipDescrip` VARCHAR(250) NOT NULL,
+--   `EquipWeight` INT NOT NULL,
+--   PRIMARY KEY (`idEquipment`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Proficiency` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Proficiencies` (
-  `idProficiency` INT NOT NULL,
-  `ProficiencyName` VARCHAR(100) NOT NULL,
-  `ProficiencyDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idProficiency`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Proficiencies` (
+--   `idProficiency` INT NOT NULL,
+--   `ProficiencyName` VARCHAR(100) NOT NULL,
+--   `ProficiencyDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idProficiency`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`WeaponType`
+-- Table `DnD`.`WeaponType` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`WeaponType` (
-  `idWeaponType` INT NOT NULL,
-  `WTypeName` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`idWeaponType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`WeaponType` (
+--   `idWeaponType` INT NOT NULL,
+--   `WTypeName` VARCHAR(75) NOT NULL,
+--   PRIMARY KEY (`idWeaponType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Weapons`
+-- Table `DnD`.`Weapons` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (
-  `idWeapon` INT NOT NULL,
-  `WeapName` VARCHAR(100) NOT NULL,
-  `WeapDescrip` VARCHAR(250) NOT NULL,
-  `WeapDmg` VARCHAR(75) NOT NULL,
-  `WeapDmgTypeId` INT NOT NULL,
-  `WeapWeight` INT NOT NULL,
-  PRIMARY KEY (`idWeapons`, `WeapDmgTypeId`),
-  INDEX `fk_Weapons_WeaponType1_idx` (`WeapDmgTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Weapons_WeaponType1`
-    FOREIGN KEY (`WeapDmgTypeId`)
-    REFERENCES `DnD`.`WeaponType` (`idWeaponType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (
+--   `idWeapon` INT NOT NULL,
+--   `WeapName` VARCHAR(100) NOT NULL,
+--   `WeapDescrip` VARCHAR(250) NOT NULL,
+--   `WeapDmg` VARCHAR(75) NOT NULL,
+--   `WeapDmgTypeId` INT NOT NULL,
+--   `WeapWeight` INT NOT NULL,
+--   PRIMARY KEY (`idWeapons`, `WeapDmgTypeId`),
+--   INDEX `fk_Weapons_WeaponType1_idx` (`WeapDmgTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Weapons_WeaponType1`
+--     FOREIGN KEY (`WeapDmgTypeId`)
+--     REFERENCES `DnD`.`WeaponType` (`idWeaponType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`ArmorType`
+-- Table `DnD`.`ArmorType` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`ArmorType` (
-  `idArmorType` INT NOT NULL,
-  `ATypeName` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`idArmorType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`ArmorType` (
+--   `idArmorType` INT NOT NULL,
+--   `ATypeName` VARCHAR(50) NOT NULL,
+--   PRIMARY KEY (`idArmorType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Armor`
+-- Table `DnD`.`Armor` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (
-  `idArmor` INT NOT NULL,
-  `ArmorName` VARCHAR(100) NOT NULL,
-  `ArmorDescrip` VARCHAR(45) NOT NULL,
-  `ArmorTypeId` INT NOT NULL,
-  `ArmorAC` INT NOT NULL,
-  `ArmorWeight` INT NOT NULL,
-  `ArmorMaxDex` INT NULL,
-  PRIMARY KEY (`idArmor`),
-  INDEX `fk_Armor_ArmorType1_idx` (`ArmorTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Armor_ArmorType1`
-    FOREIGN KEY (`ArmorTypeId`)
-    REFERENCES `DnD`.`ArmorType` (`idArmorType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (
+--   `idArmor` INT NOT NULL,
+--   `ArmorName` VARCHAR(100) NOT NULL,
+--   `ArmorDescrip` VARCHAR(45) NOT NULL,
+--   `ArmorTypeId` INT NOT NULL,
+--   `ArmorAC` INT NOT NULL,
+--   `ArmorWeight` INT NOT NULL,
+--   `ArmorMaxDex` INT NULL,
+--   PRIMARY KEY (`idArmor`),
+--   INDEX `fk_Armor_ArmorType1_idx` (`ArmorTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Armor_ArmorType1`
+--     FOREIGN KEY (`ArmorTypeId`)
+--     REFERENCES `DnD`.`ArmorType` (`idArmorType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `DnD`.`Tools` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (
-  `idTool` INT NOT NULL,
-  `ToolName` VARCHAR(100) NOT NULL,
-  `ToolDescrip` VARCHAR(250) NOT NULL,
-  `ToolWeight` INT NOT NULL,
-  `ToolSkill`
-  PRIMARY KEY (`idTools`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (
+--   `idTool` INT NOT NULL,
+--   `ToolName` VARCHAR(100) NOT NULL,
+--   `ToolDescrip` VARCHAR(250) NOT NULL,
+--   `ToolWeight` INT NOT NULL,
+--   `ToolSkill`
+--   PRIMARY KEY (`idTools`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass`
+-- Table `DnD`.`SubClass` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (
-  `idSubClass` INT NOT NULL,
-  `SubClassName` VARCHAR(75) NOT NULL,
-  `SubClassDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSubClass`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (
+--   `idSubClass` INT NOT NULL,
+--   `SubClassName` VARCHAR(75) NOT NULL,
+--   `SubClassDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSubClass`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -504,168 +504,124 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass_has_Proficiencies`
+-- Table `DnD`.`SubClass_has_Proficiencies` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Proficiencies` (
-  `SubClass_idSubClass` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`SubClass_idSubClass`, `Proficiencies_idProficiencies`),
-  INDEX `fk_SubClass_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_SubClass_has_Proficiencies_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  CONSTRAINT `fk_SubClass_has_Proficiencies_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubClass_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Proficiencies` (
+--   `SubClass_idSubClass` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`SubClass_idSubClass`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_SubClass_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_SubClass_has_Proficiencies_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubClass_has_Proficiencies_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubClass_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Class_has_Proficiencies`
+-- Table `DnD`.`Class_has_Proficiencies` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Proficiencies` (
-  `Class_idClass` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`Class_idClass`, `Proficiencies_idProficiencies`),
-  INDEX `fk_Class_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_Class_has_Proficiencies_Class1_idx` (`Class_idClass` ASC) VISIBLE,
-  CONSTRAINT `fk_Class_has_Proficiencies_Class1`
-    FOREIGN KEY (`Class_idClass`)
-    REFERENCES `DnD`.`Class` (`idClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Class_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Proficiencies` (
+--   `Class_idClass` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`Class_idClass`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_Class_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_Class_has_Proficiencies_Class1_idx` (`Class_idClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_Class_has_Proficiencies_Class1`
+--     FOREIGN KEY (`Class_idClass`)
+--     REFERENCES `DnD`.`Class` (`idClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Class_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race_has_Proficiencies`
+-- Table `DnD`.`Race_has_Proficiencies` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Proficiencies` (
-  `Race_idRace` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Proficiencies_idProficiencies`),
-  INDEX `fk_Race_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_Race_has_Proficiencies_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Proficiencies_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Proficiencies` (
+--   `Race_idRace` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`Race_idRace`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_Race_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_Race_has_Proficiencies_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_has_Proficiencies_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Race_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubRace_has_Proficiencies`
+-- Table `DnD`.`SubRace_has_Proficiencies`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace_has_Proficiencies` (
-  `SubRace_idSubRace` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`SubRace_idSubRace`, `Proficiencies_idProficiencies`),
-  INDEX `fk_SubRace_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_SubRace_has_Proficiencies_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
-  CONSTRAINT `fk_SubRace_has_Proficiencies_SubRace1`
-    FOREIGN KEY (`SubRace_idSubRace`)
-    REFERENCES `DnD`.`SubRace` (`idSubRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubRace_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace_has_Proficiencies` (
+--   `SubRace_idSubRace` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`SubRace_idSubRace`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_SubRace_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_SubRace_has_Proficiencies_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubRace_has_Proficiencies_SubRace1`
+--     FOREIGN KEY (`SubRace_idSubRace`)
+--     REFERENCES `DnD`.`SubRace` (`idSubRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubRace_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Background_has_Proficiencies`
+-- Table `DnD`.`Background_has_Proficiencies` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background_has_Proficiencies` (
-  `Background_idBackground` INT NOT NULL,
-  `Proficiencies_idProficiencies` INT NOT NULL,
-  PRIMARY KEY (`Background_idBackground`, `Proficiencies_idProficiencies`),
-  INDEX `fk_Background_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
-  INDEX `fk_Background_has_Proficiencies_Background1_idx` (`Background_idBackground` ASC) VISIBLE,
-  CONSTRAINT `fk_Background_has_Proficiencies_Background1`
-    FOREIGN KEY (`Background_idBackground`)
-    REFERENCES `DnD`.`Background` (`idBackground`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Background_has_Proficiencies_Proficiencies1`
-    FOREIGN KEY (`Proficiencies_idProficiencies`)
-    REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background_has_Proficiencies` (
+--   `Background_idBackground` INT NOT NULL,
+--   `Proficiencies_idProficiencies` INT NOT NULL,
+--   PRIMARY KEY (`Background_idBackground`, `Proficiencies_idProficiencies`),
+--   INDEX `fk_Background_has_Proficiencies_Proficiencies1_idx` (`Proficiencies_idProficiencies` ASC) VISIBLE,
+--   INDEX `fk_Background_has_Proficiencies_Background1_idx` (`Background_idBackground` ASC) VISIBLE,
+--   CONSTRAINT `fk_Background_has_Proficiencies_Background1`
+--     FOREIGN KEY (`Background_idBackground`)
+--     REFERENCES `DnD`.`Background` (`idBackground`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Background_has_Proficiencies_Proficiencies1`
+--     FOREIGN KEY (`Proficiencies_idProficiencies`)
+--     REFERENCES `DnD`.`Proficiencies` (`idProficiencies`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Skills_has_Class`
+-- Table `DnD`.`Attributes` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skills_has_Class` (
-  `Skills_idSkills` INT NOT NULL,
-  `Class_idClass` INT NOT NULL,
-  PRIMARY KEY (`Skills_idSkills`, `Class_idClass`),
-  INDEX `fk_Skills_has_Class_Class1_idx` (`Class_idClass` ASC) VISIBLE,
-  INDEX `fk_Skills_has_Class_Skills1_idx` (`Skills_idSkills` ASC) VISIBLE,
-  CONSTRAINT `fk_Skills_has_Class_Skills1`
-    FOREIGN KEY (`Skills_idSkills`)
-    REFERENCES `DnD`.`Skills` (`idSkills`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Skills_has_Class_Class1`
-    FOREIGN KEY (`Class_idClass`)
-    REFERENCES `DnD`.`Class` (`idClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Skills_has_SubClass`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skills_has_SubClass` (
-  `Skills_idSkills` INT NOT NULL,
-  `SubClass_idSubClass` INT NOT NULL,
-  PRIMARY KEY (`Skills_idSkills`, `SubClass_idSubClass`),
-  INDEX `fk_Skills_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  INDEX `fk_Skills_has_SubClass_Skills1_idx` (`Skills_idSkills` ASC) VISIBLE,
-  CONSTRAINT `fk_Skills_has_SubClass_Skills1`
-    FOREIGN KEY (`Skills_idSkills`)
-    REFERENCES `DnD`.`Skills` (`idSkills`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Skills_has_SubClass_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Attributes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Attributes` (
-  `idAttr` INT NOT NULL,
-  `AttrName` VARCHAR(50) NOT NULL,
-  `AttrDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idAttr`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Attributes` (
+--   `idAttr` INT NOT NULL,
+--   `AttrName` VARCHAR(50) NOT NULL,
+--   `AttrDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idAttr`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -691,14 +647,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Coins`
+-- Table `DnD`.`Coins` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Coins` (
-  `idCoins` INT NOT NULL,
-  `CoinName` VARCHAR(50) NOT NULL,
-  `CoinDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idCoins`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Coins` (
+--   `idCoins` INT NOT NULL,
+--   `CoinName` VARCHAR(50) NOT NULL,
+--   `CoinDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idCoins`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -724,668 +680,596 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features`
+-- Table `DnD`.`Features` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features` (
-  `idFeatures` INT NOT NULL,
-  `FeatureName` VARCHAR(75) NOT NULL,
-  `FeatureDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idFeatures`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features` (
+--   `idFeatures` INT NOT NULL,
+--   `FeatureName` VARCHAR(75) NOT NULL,
+--   `FeatureDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idFeatures`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_Class`
+-- Table `DnD`.`Features_has_Class` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Class` (
-  `Features_idFeatures` INT NOT NULL,
-  `Class_idClass` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `Class_idClass`),
-  INDEX `fk_Features_has_Class_Class1_idx` (`Class_idClass` ASC) VISIBLE,
-  INDEX `fk_Features_has_Class_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_Class_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_Class_Class1`
-    FOREIGN KEY (`Class_idClass`)
-    REFERENCES `DnD`.`Class` (`idClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Class` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `Class_idClass` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `Class_idClass`),
+--   INDEX `fk_Features_has_Class_Class1_idx` (`Class_idClass` ASC) VISIBLE,
+--   INDEX `fk_Features_has_Class_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_Class_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_Class_Class1`
+--     FOREIGN KEY (`Class_idClass`)
+--     REFERENCES `DnD`.`Class` (`idClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_Race`
+-- Table `DnD`.`Features_has_Race` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Race` (
-  `Features_idFeatures` INT NOT NULL,
-  `Race_idRace` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `Race_idRace`),
-  INDEX `fk_Features_has_Race_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  INDEX `fk_Features_has_Race_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_Race_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_Race_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Race` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `Race_idRace` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `Race_idRace`),
+--   INDEX `fk_Features_has_Race_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   INDEX `fk_Features_has_Race_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_Race_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_Race_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_SubClass`
+-- Table `DnD`.`Features_has_SubClass` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubClass` (
-  `Features_idFeatures` INT NOT NULL,
-  `SubClass_idSubClass` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `SubClass_idSubClass`),
-  INDEX `fk_Features_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  INDEX `fk_Features_has_SubClass_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_SubClass_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_SubClass_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubClass` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `SubClass_idSubClass` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `SubClass_idSubClass`),
+--   INDEX `fk_Features_has_SubClass_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   INDEX `fk_Features_has_SubClass_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_SubClass_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_SubClass_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_SubRace`
+-- Table `DnD`.`Features_has_SubRace`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubRace` (
-  `Features_idFeatures` INT NOT NULL,
-  `SubRace_idSubRace` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `SubRace_idSubRace`),
-  INDEX `fk_Features_has_SubRace_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
-  INDEX `fk_Features_has_SubRace_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_SubRace_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_SubRace_SubRace1`
-    FOREIGN KEY (`SubRace_idSubRace`)
-    REFERENCES `DnD`.`SubRace` (`idSubRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_SubRace` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `SubRace_idSubRace` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `SubRace_idSubRace`),
+--   INDEX `fk_Features_has_SubRace_SubRace1_idx` (`SubRace_idSubRace` ASC) VISIBLE,
+--   INDEX `fk_Features_has_SubRace_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_SubRace_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_SubRace_SubRace1`
+--     FOREIGN KEY (`SubRace_idSubRace`)
+--     REFERENCES `DnD`.`SubRace` (`idSubRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SpellType`
+-- Table `DnD`.`SpellType`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SpellType` (
-  `idSpellType` INT NOT NULL,
-  `SpellTypeName` VARCHAR(75) NOT NULL,
-  `SpellTypeDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idSpellType`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SpellType` (
+--   `idSpellType` INT NOT NULL,
+--   `SpellTypeName` VARCHAR(75) NOT NULL,
+--   `SpellTypeDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idSpellType`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Spells`
+-- Table `DnD`.`Spells` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Spells` (
-  `idSpells` INT NOT NULL,
-  `SpellName` VARCHAR(100) NOT NULL,
-  `SpellDescrip` VARCHAR(250) NOT NULL,
-  `SpellTypeId` INT NOT NULL,
-  PRIMARY KEY (`idSpells`),
-  INDEX `fk_Spells_SpellType1_idx` (`SpellTypeId` ASC) VISIBLE,
-  CONSTRAINT `fk_Spells_SpellType1`
-    FOREIGN KEY (`SpellTypeId`)
-    REFERENCES `DnD`.`SpellType` (`idSpellType`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Spells` (
+--   `idSpells` INT NOT NULL,
+--   `SpellName` VARCHAR(100) NOT NULL,
+--   `SpellDescrip` VARCHAR(250) NOT NULL,
+--   `SpellTypeId` INT NOT NULL,
+--   PRIMARY KEY (`idSpells`),
+--   INDEX `fk_Spells_SpellType1_idx` (`SpellTypeId` ASC) VISIBLE,
+--   CONSTRAINT `fk_Spells_SpellType1`
+--     FOREIGN KEY (`SpellTypeId`)
+--     REFERENCES `DnD`.`SpellType` (`idSpellType`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Features_has_Spells`
+-- Table `DnD`.`Features_has_Spells` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Spells` (
-  `Features_idFeatures` INT NOT NULL,
-  `Spells_idSpells` INT NOT NULL,
-  PRIMARY KEY (`Features_idFeatures`, `Spells_idSpells`),
-  INDEX `fk_Features_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
-  INDEX `fk_Features_has_Spells_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
-  CONSTRAINT `fk_Features_has_Spells_Features1`
-    FOREIGN KEY (`Features_idFeatures`)
-    REFERENCES `DnD`.`Features` (`idFeatures`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Features_has_Spells_Spells1`
-    FOREIGN KEY (`Spells_idSpells`)
-    REFERENCES `DnD`.`Spells` (`idSpells`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Features_has_Spells` (
+--   `Features_idFeatures` INT NOT NULL,
+--   `Spells_idSpells` INT NOT NULL,
+--   PRIMARY KEY (`Features_idFeatures`, `Spells_idSpells`),
+--   INDEX `fk_Features_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
+--   INDEX `fk_Features_has_Spells_Features1_idx` (`Features_idFeatures` ASC) VISIBLE,
+--   CONSTRAINT `fk_Features_has_Spells_Features1`
+--     FOREIGN KEY (`Features_idFeatures`)
+--     REFERENCES `DnD`.`Features` (`idFeatures`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Features_has_Spells_Spells1`
+--     FOREIGN KEY (`Spells_idSpells`)
+--     REFERENCES `DnD`.`Spells` (`idSpells`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Class_has_Spells`
+-- Table `DnD`.`Class_has_Spells` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Spells` (
-  `Class_idClass` INT NOT NULL,
-  `Spells_idSpells` INT NOT NULL,
-  PRIMARY KEY (`Class_idClass`, `Spells_idSpells`),
-  INDEX `fk_Class_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
-  INDEX `fk_Class_has_Spells_Class1_idx` (`Class_idClass` ASC) VISIBLE,
-  CONSTRAINT `fk_Class_has_Spells_Class1`
-    FOREIGN KEY (`Class_idClass`)
-    REFERENCES `DnD`.`Class` (`idClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Class_has_Spells_Spells1`
-    FOREIGN KEY (`Spells_idSpells`)
-    REFERENCES `DnD`.`Spells` (`idSpells`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Spells` (
+--   `Class_idClass` INT NOT NULL,
+--   `Spells_idSpells` INT NOT NULL,
+--   PRIMARY KEY (`Class_idClass`, `Spells_idSpells`),
+--   INDEX `fk_Class_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
+--   INDEX `fk_Class_has_Spells_Class1_idx` (`Class_idClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_Class_has_Spells_Class1`
+--     FOREIGN KEY (`Class_idClass`)
+--     REFERENCES `DnD`.`Class` (`idClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Class_has_Spells_Spells1`
+--     FOREIGN KEY (`Spells_idSpells`)
+--     REFERENCES `DnD`.`Spells` (`idSpells`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`SubClass_has_Spells`
+-- Table `DnD`.`SubClass_has_Spells` --DONE Model, Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Spells` (
-  `SubClass_idSubClass` INT NOT NULL,
-  `Spells_idSpells` INT NOT NULL,
-  PRIMARY KEY (`SubClass_idSubClass`, `Spells_idSpells`),
-  INDEX `fk_SubClass_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
-  INDEX `fk_SubClass_has_Spells_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
-  CONSTRAINT `fk_SubClass_has_Spells_SubClass1`
-    FOREIGN KEY (`SubClass_idSubClass`)
-    REFERENCES `DnD`.`SubClass` (`idSubClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_SubClass_has_Spells_Spells1`
-    FOREIGN KEY (`Spells_idSpells`)
-    REFERENCES `DnD`.`Spells` (`idSpells`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass_has_Spells` (
+--   `SubClass_idSubClass` INT NOT NULL,
+--   `Spells_idSpells` INT NOT NULL,
+--   PRIMARY KEY (`SubClass_idSubClass`, `Spells_idSpells`),
+--   INDEX `fk_SubClass_has_Spells_Spells1_idx` (`Spells_idSpells` ASC) VISIBLE,
+--   INDEX `fk_SubClass_has_Spells_SubClass1_idx` (`SubClass_idSubClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_SubClass_has_Spells_SubClass1`
+--     FOREIGN KEY (`SubClass_idSubClass`)
+--     REFERENCES `DnD`.`SubClass` (`idSubClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_SubClass_has_Spells_Spells1`
+--     FOREIGN KEY (`Spells_idSpells`)
+--     REFERENCES `DnD`.`Spells` (`idSpells`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Languages`
+-- Table `DnD`.`Languages`  --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Languages` (
-  `idLanguages` INT NOT NULL,
-  `LangName` VARCHAR(75) NOT NULL,
-  `LangDescrip` VARCHAR(250) NOT NULL,
-  PRIMARY KEY (`idLanguages`))
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Languages` (
+--   `idLanguages` INT NOT NULL,
+--   `LangName` VARCHAR(75) NOT NULL,
+--   `LangDescrip` VARCHAR(250) NOT NULL,
+--   PRIMARY KEY (`idLanguages`))
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Race_has_Languages`
+-- Table `DnD`.`Race_has_Languages` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Languages` (
-  `Race_idRace` INT NOT NULL,
-  `Languages_idLanguages` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Languages_idLanguages`),
-  INDEX `fk_Race_has_Languages1_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
-  INDEX `fk_Race_has_Languages1_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Languages1_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Languages1_Languages1`
-    FOREIGN KEY (`Languages_idLanguages`)
-    REFERENCES `DnD`.`Languages` (`idLanguages`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Languages` (
+--   `Race_idRace` INT NOT NULL,
+--   `Languages_idLanguages` INT NOT NULL,
+--   PRIMARY KEY (`Race_idRace`, `Languages_idLanguages`),
+--   INDEX `fk_Race_has_Languages1_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
+--   INDEX `fk_Race_has_Languages1_Race1_idx` (`Race_idRace` ASC) VISIBLE,
+--   CONSTRAINT `fk_Race_has_Languages1_Race1`
+--     FOREIGN KEY (`Race_idRace`)
+--     REFERENCES `DnD`.`Race` (`idRace`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Race_has_Languages1_Languages1`
+--     FOREIGN KEY (`Languages_idLanguages`)
+--     REFERENCES `DnD`.`Languages` (`idLanguages`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `DnD`.`Character_has_Languages`
+-- Table `DnD`.`Class_has_Languages` --DONE Model(Including Helper Tables), Resources, Routes
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character_has_Languages` (
-  `Character_idCharacter` INT NOT NULL,
-  `Languages_idLanguages` INT NOT NULL,
-  PRIMARY KEY (`Character_idCharacter`, `Languages_idLanguages`),
-  INDEX `fk_Character_has_Languages_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
-  INDEX `fk_Character_has_Languages_Character1_idx` (`Character_idCharacter` ASC) VISIBLE,
-  CONSTRAINT `fk_Character_has_Languages_Character1`
-    FOREIGN KEY (`Character_idCharacter`)
-    REFERENCES `DnD`.`PlayerChar` (`idCharacter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Character_has_Languages_Languages1`
-    FOREIGN KEY (`Languages_idLanguages`)
-    REFERENCES `DnD`.`Languages` (`idLanguages`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Languages` (
+--   `Class_idClass` INT NOT NULL,
+--   `Languages_idLanguages` INT NOT NULL,
+--   PRIMARY KEY (`Class_idClass`, `Languages_idLanguages`),
+--   INDEX `fk_Class_has_Languages_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
+--   INDEX `fk_Class_has_Languages_Class1_idx` (`Class_idClass` ASC) VISIBLE,
+--   CONSTRAINT `fk_Class_has_Languages_Class1`
+--     FOREIGN KEY (`Class_idClass`)
+--     REFERENCES `DnD`.`Class` (`idClass`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_Class_has_Languages_Languages1`
+--     FOREIGN KEY (`Languages_idLanguages`)
+--     REFERENCES `DnD`.`Languages` (`idLanguages`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `DnD`.`Class_has_Languages`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class_has_Languages` (
-  `Class_idClass` INT NOT NULL,
-  `Languages_idLanguages` INT NOT NULL,
-  PRIMARY KEY (`Class_idClass`, `Languages_idLanguages`),
-  INDEX `fk_Class_has_Languages_Languages1_idx` (`Languages_idLanguages` ASC) VISIBLE,
-  INDEX `fk_Class_has_Languages_Class1_idx` (`Class_idClass` ASC) VISIBLE,
-  CONSTRAINT `fk_Class_has_Languages_Class1`
-    FOREIGN KEY (`Class_idClass`)
-    REFERENCES `DnD`.`Class` (`idClass`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Class_has_Languages_Languages1`
-    FOREIGN KEY (`Languages_idLanguages`)
-    REFERENCES `DnD`.`Languages` (`idLanguages`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- Speed needs to be integer column, armor logic needs to handle if the speed
+-- drops due to heavy armor
 
 
--- -----------------------------------------------------
--- Table `DnD`.`Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Speed` (
-  `idSpeed` INT NOT NULL,
-  `SpeedAmt` INT NOT NULL,
-  `AffectByHeavyArm` TINYINT NOT NULL,
-  PRIMARY KEY (`idSpeed`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Race_has_Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race_has_Speed` (
-  `Race_idRace` INT NOT NULL,
-  `Speed_idSpeed` INT NOT NULL,
-  PRIMARY KEY (`Race_idRace`, `Speed_idSpeed`),
-  INDEX `fk_Race_has_Speed_Speed1_idx` (`Speed_idSpeed` ASC) VISIBLE,
-  INDEX `fk_Race_has_Speed_Race1_idx` (`Race_idRace` ASC) VISIBLE,
-  CONSTRAINT `fk_Race_has_Speed_Race1`
-    FOREIGN KEY (`Race_idRace`)
-    REFERENCES `DnD`.`Race` (`idRace`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Race_has_Speed_Speed1`
-    FOREIGN KEY (`Speed_idSpeed`)
-    REFERENCES `DnD`.`Speed` (`idSpeed`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `DnD`.`Character_has_Speed`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character_has_Speed` (
-  `Character_idCharacter` INT NOT NULL,
-  `Speed_idSpeed` INT NOT NULL,
-  PRIMARY KEY (`Character_idCharacter`, `Speed_idSpeed`),
-  INDEX `fk_Character_has_Speed_Speed1_idx` (`Speed_idSpeed` ASC) VISIBLE,
-  INDEX `fk_Character_has_Speed_Character1_idx` (`Character_idCharacter` ASC) VISIBLE,
-  CONSTRAINT `fk_Character_has_Speed_Character1`
-    FOREIGN KEY (`Character_idCharacter`)
-    REFERENCES `DnD`.`PlayerChar` (`idCharacter`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Character_has_Speed_Speed1`
-    FOREIGN KEY (`Speed_idSpeed`)
-    REFERENCES `DnD`.`Speed` (`idSpeed`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-USE `DnD` ;
+-- USE `DnD` ;
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Alignment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (`AlignName` INT, `AlignDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Alignment` (`AlignName` INT, `AlignDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Armor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (`ArmorName` INT, `ArmorDescrip` INT, `ArmorTypeId` INT, `ArmorAC` INT, `ArmorWeight` INT, `ArmorMaxDex` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Armor` (`ArmorName` INT, `ArmorDescrip` INT, `ArmorTypeId` INT, `ArmorAC` INT, `ArmorWeight` INT, `ArmorMaxDex` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Attribute`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Attribute` (`AttrName` INT, `AttrDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Attribute` (`AttrName` INT, `AttrDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Background`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Background` (`BackName` INT, `BackDescrip` INT, `EquipmentId` INT, `ToolId` INT, `ProficienciesId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Background` (`BackName` INT, `BackDescrip` INT, `EquipmentId` INT, `ToolId` INT, `ProficienciesId` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Character`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Character` (`CharName` INT, `CharBackgroundId` INT, `CharRaceId` INT, `CharSubRaceId` INT, `CharAlignmentId` INT, `CharEyesId` INT, `CharHairId` INT, `CharSkinId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Character` (`CharName` INT, `CharBackgroundId` INT, `CharRaceId` INT, `CharSubRaceId` INT, `CharAlignmentId` INT, `CharEyesId` INT, `CharHairId` INT, `CharSkinId` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Equipment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (`EquipName` INT, `EquipDescrip` INT, `EquipWeight` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Equipment` (`EquipName` INT, `EquipDescrip` INT, `EquipWeight` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Feat`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feat` (`FeatName` INT, `FeatDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feat` (`FeatName` INT, `FeatDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Feature`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Feature` (`FeatureName` INT, `FeatureDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Feature` (`FeatureName` INT, `FeatureDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Race`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Race` (`RaceName` INT, `RaceDescrip` INT, `RaceminAge` INT, `RacemaxAge` INT, `RaceminHeight` INT, `RacemaxHeight` INT, `Size_idSize` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Race` (`RaceName` INT, `RaceDescrip` INT, `RaceminAge` INT, `RacemaxAge` INT, `RaceminHeight` INT, `RacemaxHeight` INT, `Size_idSize` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Class`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Class` (`ClassName` INT, `ClassDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Class` (`ClassName` INT, `ClassDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Coin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Coin` (`CoinName` INT, `CoinDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Coin` (`CoinName` INT, `CoinDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Eye`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Eye` (`EyeColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Eye` (`EyeColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Faction`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Faction` (`FactionName` INT, `FactionDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Faction` (`FactionName` INT, `FactionDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Hair`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (`HairColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Hair` (`HairColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Language`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Language` (`LangName` INT, `LangDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Language` (`LangName` INT, `LangDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Proficiency`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Proficiency` (`ProficiencyName` INT, `ProficiencyDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Proficiency` (`ProficiencyName` INT, `ProficiencyDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Skill`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skill` (`SkillName` INT, `SkillDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skill` (`SkillName` INT, `SkillDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Skin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (`SkinColor` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Skin` (`SkinColor` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Spell`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Spell` (`SpellName` INT, `SpellDescrip` INT, `SpellType_idSpellType` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Spell` (`SpellName` INT, `SpellDescrip` INT, `SpellType_idSpellType` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`SubClass`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (`SubClassName` INT, `SubClassDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubClass` (`SubClassName` INT, `SubClassDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`SubRace`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (`SubRaceName` INT, `SubRaceDescrip` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`SubRace` (`SubRaceName` INT, `SubRaceDescrip` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Tool`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (`ToolName` INT, `ToolDescrip` INT, `ToolWeight` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Tool` (`ToolName` INT, `ToolDescrip` INT, `ToolWeight` INT);
 
 -- -----------------------------------------------------
 -- Placeholder table for view `DnD`.`Weapon`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (`WeapName` INT, `WeapDescrip` INT, `WeapWeight` INT, `WeapDmg` INT, `WeapDmgTypeId` INT);
+-- CREATE TABLE IF NOT EXISTS `DnD`.`Weapon` (`WeapName` INT, `WeapDescrip` INT, `WeapWeight` INT, `WeapDmg` INT, `WeapDmgTypeId` INT);
 
 -- -----------------------------------------------------
 -- View `DnD`.`Alignment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Alignment`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Alignment` AS
-Select AlignName, AlignDescrip
-FROM Alignment;
+-- DROP TABLE IF EXISTS `DnD`.`Alignment`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Alignment` AS
+-- Select AlignName, AlignDescrip
+-- FROM Alignment;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Armor`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Armor`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Armor` AS
-SELECT ArmorName, ArmorDescrip, ArmorTypeId, ArmorAC, ArmorWeight, ArmorMaxDex
-FROM Armor
-JOIN ArmorType ON Armor.ArmorTypeId = ArmorType.idArmorType;
+-- DROP TABLE IF EXISTS `DnD`.`Armor`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Armor` AS
+-- SELECT ArmorName, ArmorDescrip, ArmorTypeId, ArmorAC, ArmorWeight, ArmorMaxDex
+-- FROM Armor
+-- JOIN ArmorType ON Armor.ArmorTypeId = ArmorType.idArmorType;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Attribute`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Attribute`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Attribute` AS
-SELECT AttrName, AttrDescrip
-FROM Attributes;
+-- DROP TABLE IF EXISTS `DnD`.`Attribute`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Attribute` AS
+-- SELECT AttrName, AttrDescrip
+-- FROM Attributes;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Background`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Background`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Background` AS
-SELECT BackName, BackDescrip, EquipmentId, ToolId, ProficienciesId
-FROM Background
-JOIN Equipment ON Background.EquipmentId = Equipment.idEquipment
-JOIN Tools ON Background.ToolId = Tools.idTools
-JOIN Proficiencies ON Background.ProficienciesId = Proficiences.idProficiences;
+-- DROP TABLE IF EXISTS `DnD`.`Background`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Background` AS
+-- SELECT BackName, BackDescrip, EquipmentId, ToolId, ProficienciesId
+-- FROM Background
+-- JOIN Equipment ON Background.EquipmentId = Equipment.idEquipment
+-- JOIN Tools ON Background.ToolId = Tools.idTools
+-- JOIN Proficiencies ON Background.ProficienciesId = Proficiences.idProficiences;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Character`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Character`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Character` AS
-SELECT CharName, CharBackgroundId, CharRaceId, CharSubRaceId, CharAlignmentId, CharEyesId, CharHairId, CharSkinId
-FROM PlayerChar
-JOIN Background ON Background.idBackground = PlayerChar.CharBackgroundId
-JOIN Race ON Race.idRace = PlayerChar.CharRaceId
-JOIN SubRace ON SubRace.idSubRace = PlayerChar.CharSubRaceId
-JOIN Alignment ON Alignment.idAlignment = PlayerChar.CharAlignmentId
-JOIN Eyes ON Eyes.idEyes = PlayerChar.CharEyesId
-JOIN Hair ON Hair.idHair = PlayerChar.CharHairId
-JOIN Skin ON Skin.idSkin = PlayerChar.CharSkinId;
+-- DROP TABLE IF EXISTS `DnD`.`Character`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Character` AS
+-- SELECT CharName, CharBackgroundId, CharRaceId, CharSubRaceId, CharAlignmentId, CharEyesId, CharHairId, CharSkinId
+-- FROM PlayerChar
+-- JOIN Background ON Background.idBackground = PlayerChar.CharBackgroundId
+-- JOIN Race ON Race.idRace = PlayerChar.CharRaceId
+-- JOIN SubRace ON SubRace.idSubRace = PlayerChar.CharSubRaceId
+-- JOIN Alignment ON Alignment.idAlignment = PlayerChar.CharAlignmentId
+-- JOIN Eyes ON Eyes.idEyes = PlayerChar.CharEyesId
+-- JOIN Hair ON Hair.idHair = PlayerChar.CharHairId
+-- JOIN Skin ON Skin.idSkin = PlayerChar.CharSkinId;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Equipment`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Equipment`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Equipment` AS
-SELECT EquipName, EquipDescrip, EquipWeight
-FROM Equipment;
+-- DROP TABLE IF EXISTS `DnD`.`Equipment`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Equipment` AS
+-- SELECT EquipName, EquipDescrip, EquipWeight
+-- FROM Equipment;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Feat`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Feat`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Feat` AS
-SELECT FeatName, FeatDescrip
-FROM Feats;
+-- DROP TABLE IF EXISTS `DnD`.`Feat`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Feat` AS
+-- SELECT FeatName, FeatDescrip
+-- FROM Feats;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Feature`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Feature`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Feature` AS
-SELECT FeatureName, FeatureDescrip
-FROM Features;
+-- DROP TABLE IF EXISTS `DnD`.`Feature`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Feature` AS
+-- SELECT FeatureName, FeatureDescrip
+-- FROM Features;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Race`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Race`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Race` AS
-SELECT RaceName, RaceDescrip, RaceminAge, RacemaxAge, RaceminHeight, RacemaxHeight, Size_idSize
-FROM Race
-JOIN Size ON Race.Size_idsize = Size.idSize;
+-- DROP TABLE IF EXISTS `DnD`.`Race`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Race` AS
+-- SELECT RaceName, RaceDescrip, RaceminAge, RacemaxAge, RaceminHeight, RacemaxHeight, Size_idSize
+-- FROM Race
+-- JOIN Size ON Race.Size_idsize = Size.idSize;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Class`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Class`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Class` AS
-SELECT ClassName, ClassDescrip
-FROM Class;
+-- DROP TABLE IF EXISTS `DnD`.`Class`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Class` AS
+-- SELECT ClassName, ClassDescrip
+-- FROM Class;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Coin`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Coin`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Coin` AS
-SELECT CoinName, CoinDescrip
-FROM Coins;
+-- DROP TABLE IF EXISTS `DnD`.`Coin`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Coin` AS
+-- SELECT CoinName, CoinDescrip
+-- FROM Coins;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Eye`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Eye`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Eye` AS
-SELECT EyeColor
-FROM Eyes;
+-- DROP TABLE IF EXISTS `DnD`.`Eye`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Eye` AS
+-- SELECT EyeColor
+-- FROM Eyes;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Faction`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Faction`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Faction` AS
-SELECT FactionName, FactionDescrip
-FROM Factions;
+-- DROP TABLE IF EXISTS `DnD`.`Faction`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Faction` AS
+-- SELECT FactionName, FactionDescrip
+-- FROM Factions;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Hair`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Hair`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Hair` AS
-SELECT HairColor
-FROM Hair;
+-- DROP TABLE IF EXISTS `DnD`.`Hair`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Hair` AS
+-- SELECT HairColor
+-- FROM Hair;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Language`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Language`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Language` AS
-SELECT LangName, LangDescrip
-FROM Languages;
+-- DROP TABLE IF EXISTS `DnD`.`Language`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Language` AS
+-- SELECT LangName, LangDescrip
+-- FROM Languages;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Proficiency`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Proficiency`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Proficiency` AS
-SELECT ProficiencyName, ProficiencyDescrip
-FROM Proficiencies;
+-- DROP TABLE IF EXISTS `DnD`.`Proficiency`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Proficiency` AS
+-- SELECT ProficiencyName, ProficiencyDescrip
+-- FROM Proficiencies;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Skill`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Skill`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Skill` AS
-SELECT SkillName, SkillDescrip
-FROM Skills;
+-- DROP TABLE IF EXISTS `DnD`.`Skill`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Skill` AS
+-- SELECT SkillName, SkillDescrip
+-- FROM Skills;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Skin`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Skin`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Skin` AS
-SELECT SkinColor
-FROM Skin;
+-- DROP TABLE IF EXISTS `DnD`.`Skin`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Skin` AS
+-- SELECT SkinColor
+-- FROM Skin;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Spell`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Spell`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Spell` AS
-SELECT SpellName, SpellDescrip, SpellType_idSpellType
-FROM Spells
-JOIN Spell_Type ON Spells.SpellTypeId = SpellType.idSpellType;
+-- DROP TABLE IF EXISTS `DnD`.`Spell`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Spell` AS
+-- SELECT SpellName, SpellDescrip, SpellType_idSpellType
+-- FROM Spells
+-- JOIN Spell_Type ON Spells.SpellTypeId = SpellType.idSpellType;
 
 -- -----------------------------------------------------
 -- View `DnD`.`SubClass`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`SubClass`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `SubClass` AS
-SELECT SubClassName, SubClassDescrip
-FROM SubClass;
+-- DROP TABLE IF EXISTS `DnD`.`SubClass`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `SubClass` AS
+-- SELECT SubClassName, SubClassDescrip
+-- FROM SubClass;
 
 -- -----------------------------------------------------
 -- View `DnD`.`SubRace`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`SubRace`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `SubRace` AS
-SELECT SubRaceName, SubRaceDescrip
-FROM SubRace;
+-- DROP TABLE IF EXISTS `DnD`.`SubRace`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `SubRace` AS
+-- SELECT SubRaceName, SubRaceDescrip
+-- FROM SubRace;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Tool`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Tool`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Tool` AS
-SELECT ToolName, ToolDescrip, ToolWeight
-FROM Tools;
+-- DROP TABLE IF EXISTS `DnD`.`Tool`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Tool` AS
+-- SELECT ToolName, ToolDescrip, ToolWeight
+-- FROM Tools;
 
 -- -----------------------------------------------------
 -- View `DnD`.`Weapon`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `DnD`.`Weapon`;
-USE `DnD`;
-CREATE  OR REPLACE VIEW `Weapon` AS
-SELECT WeapName, WeapDescrip, WeapWeight, WeapDmg, WeapDmgTypeId
-FROM Weapons
-JOIN DmgType ON Weapons.WeapDmgTypeId = WeaponType.idWeaponType;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- DROP TABLE IF EXISTS `DnD`.`Weapon`;
+-- USE `DnD`;
+-- CREATE  OR REPLACE VIEW `Weapon` AS
+-- SELECT WeapName, WeapDescrip, WeapWeight, WeapDmg, WeapDmgTypeId
+-- FROM Weapons
+-- JOIN DmgType ON Weapons.WeapDmgTypeId = WeaponType.idWeaponType;
+--
+-- SET SQL_MODE=@OLD_SQL_MODE;
+-- SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+-- SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

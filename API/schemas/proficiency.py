@@ -1,9 +1,11 @@
-from marshmallow_sqlalchemy import SQLAlchemySchema, auto_field
+from marshmallow import Schema, fields, post_load
 from models.proficiency import ProficiencyModel
 
-class ProficiencySchema(SQLAlchemySchema):
-    class Meta:
-        model = ProficiencyModel
-    id_proficiency = auto_field(dump_only=True)
-    proficiency_name = auto_field()
-    proficiency_descrip = auto_field()
+class ProficiencySchema(Schema):
+    id_proficiency = fields.Integer(dump_only=True)
+    proficiency_name = fields.Str()
+    proficiency_descrip = fields.Str()
+
+    @post_load
+    def make_proficiency(self, data, **kwargs):
+        return ProficiencyModel(**data)

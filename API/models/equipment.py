@@ -1,27 +1,53 @@
-from db import db
+from typing import List
+from db import Base, session
+from models.background import BackgroundModel as background
+from models.charclass import CharClassModel as classm
 
-class EquipmentModel(db.Model):
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import relationship
 
-    __tablename__ = 'Equipment'
+
+class EquipmentModel(Base):
+
+    __tablename__ = "Equipment"
 
     # Columns
-    id_equipment = db.Column(db.Integer, primary_key=True)
-    equip_name = db.Column(db.String(100), nullable=False)
-    equip_descrip = db.Column(db.String(250), nullable=False)
-    equip_weight = db.Column(db.Integer, nullable=False)
+    id_equip = Column(Integer, primary_key=True)
+    equip_name = Column(String(100), nullable=False, unique=True)
+    equip_descrip = Column(String(250), nullable=False)
+    equip_weight = Column(Integer, nullable=False)
+
+    # Relationships
+
+    backgrounds = relationship(
+        "BackgroundModel", secondary=background.equip_assoc, back_populates="equipment"
+    )
+
+    classes = relationship(
+        "CharClassModel", secondary=classm.equip_assoc, back_populates="equipment"
+    )
+
+    def __repr__(self):
+        return "<Equipment (name='%s', description='%s', weight='%s')>" % (
+            self.equip_name,
+            self.equip_descrip,
+            self.equip_weight,
+        )
 
     @classmethod
-    def find_by_name(cls, equip_name):
-        return cls.query.filter_by(equip_name=equip_name).first() # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
+    def find_by_name(cls, equip_name) -> "EquipmentModel":
+        return cls.query.filter_by(
+            equip_name=equip_name
+        ).first()  # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     @classmethod
-    def find_all(cls):
-        return cls.query.all();
+    def find_all(cls) -> List["EquipmentModel"]:
+        return cls.query.all()
 
-    def save_to_db(self): # Handles insert and update
-        db.session.add(self)
-        db.session.commit()
+    def save_to_db(self):  # Handles insert and update
+        session.add(self)
+        session.commit()
 
     def delete_from_db(self):
-        db.session.delete(self)
-        db.session.commit()
+        session.delete(self)
+        session.commit()
