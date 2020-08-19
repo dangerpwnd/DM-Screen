@@ -15,7 +15,7 @@ class WeaponTypeModel(Base):
     weapon_id = Column(Integer, ForeignKey("Weapon.id_weapon"))
 
     # Relationships
-    weapons = relationship("WeaponModel", back_populates="weapon_types")
+    weapons = relationship("WeaponModel", back_populates="weapon_types", cascade='all, delete, delete-orphan')
 
     def __repr__(self):
         return '<Weapon Type (name="%s">' % (self.weapontype_name)

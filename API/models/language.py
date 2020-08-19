@@ -18,11 +18,11 @@ class LanguageModel(Base):
 
     # Relationships
     races = relationship(
-        "RaceModel", secondary=race.lang_assoc, back_populates="languages"
+        "RaceModel", secondary=race.lang_assoc, back_populates="languages", cascade='all, delete, delete-orphan'
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.lang_assoc, back_populates="languages"
+        "CharClassModel", secondary=classm.lang_assoc, back_populates="languages", cascade='all, delete, delete-orphan'
     )
 
     def __repr__(self):

@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
-class SubraceModel(Base):
+class SubRaceModel(Base):
 
     # Set table name with class attribute
     __tablename__ = "Subrace"
@@ -13,6 +13,7 @@ class SubraceModel(Base):
     id_subrace = Column(Integer, primary_key=True)
     subrace_name = Column(String(50), nullable=False, unique=True)
     subrace_descrip = Column(String(250), nullable=False)
+    race_id = Column(Integer, ForeignKey("Subrace.id_race"))
 
     # Association Tables
     feature_assoc = Table(
@@ -48,6 +49,9 @@ class SubraceModel(Base):
         "ProficiencyModel", secondary=prof_assoc, back_populates="subraces"
     )
 
+    races = relationship(
+        "RaceModel", back_populates="subraces", cascade='all, delete, delete-orphan'
+    )
     # Relationship to PlayerChar
 
     def __repr__(self):
@@ -57,11 +61,11 @@ class SubraceModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, subrace_name) -> "SubraceModel":
+    def find_by_name(cls, subrace_name) -> "SubRaceModel":
         return cls.query.filter_by(subrace_name=subrace_name).first()
 
     @classmethod
-    def find_all(cls) -> List["SubraceModel"]:
+    def find_all(cls) -> List["SubRSaceModel"]:
         return cls.query.all()
 
     def save_to_db(self):

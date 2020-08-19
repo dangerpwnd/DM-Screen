@@ -14,7 +14,7 @@ class ArmorTypeModel(Base):
     armortype_name = Column(String(75), nullable=False, unique=True)
 
     # Relationships
-    armor = relationship("ArmorModel", back_populates="armor_type")
+    armor = relationship("ArmorModel", back_populates="armor_type", cascade='all, delete, delete-orphan')
 
     def __repr__(self):
         return '<Armor Type (name="%s")>' % (self.armortype_name)

@@ -15,7 +15,7 @@ class SpellTypeModel(Base):
     spell_id = Column(Integer, ForeignKey("Spell.id_spell"))
 
     # Relationships
-    spells = relationship("SpellModel", back_populates="spell_types")
+    spells = relationship("SpellModel", back_populates="spell_types", cascade='all, delete, delete-orphan')
 
     def __repr__(self):
         return '<Spell Type (name="%s")>' % (self.spelltype_name)

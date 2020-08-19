@@ -23,24 +23,29 @@ class ProficiencyModel(Base):
         "BackgroundModel",
         secondary=background.prof_assoc,
         back_populates="proficiencies",
+        cascade='all, delete, delete-orphan'
     )
 
     races = relationship(
-        "RaceModel", secondary=race.prof_assoc, back_populates="proficiencies"
+        "RaceModel", secondary=race.prof_assoc, back_populates="proficiencies",
+        cascade='all, delete, delete-orphan'
     )
 
     subraces = relationship(
-        "SubraceModel", secondary=subrace.prof_assoc, back_populates="proficiencies"
+        "SubraceModel", secondary=subrace.prof_assoc, back_populates="proficiencies",
+        cascade='all, delete, delete-orphan'
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.prof_assoc, back_populates="proficiencies"
+        "CharClassModel", secondary=classm.prof_assoc, back_populates="proficiencies",
+        cascade='all, delete, delete-orphan'
     )
 
     subclasses = relationship(
         "SubClassModel",
         secondary=subclass.prof_assoc,
         back_populates="proficiencies",
+        cascade='all, delete, delete-orphan'
     )
 
     def __repr__(self):
