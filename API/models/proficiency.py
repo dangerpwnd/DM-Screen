@@ -2,7 +2,7 @@ from typing import List
 from db import Base, session
 from models.background import BackgroundModel as background
 from models.race import RaceModel as race
-from models.subrace import SubraceModel as subrace
+from models.subrace import SubRaceModel as subrace
 from models.charclass import CharClassModel as classm
 from models.subclass import SubClassModel as subclass
 
@@ -32,7 +32,7 @@ class ProficiencyModel(Base):
     )
 
     subraces = relationship(
-        "SubraceModel", secondary=subrace.prof_assoc, back_populates="proficiencies",
+        "SubRaceModel", secondary=subrace.prof_assoc, back_populates="proficiencies",
         cascade='all, delete, delete-orphan', single_parent=True,
     )
 

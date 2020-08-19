@@ -4,6 +4,7 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
+from models.armortype import ArmorTypeModel as AType
 
 class ArmorModel(Base):
 
@@ -17,9 +18,6 @@ class ArmorModel(Base):
     armor_weight = Column(Integer, nullable=False)
     armor_maxdex = Column(Integer, nullable=False)
     armortype_id = Column(Integer, ForeignKey("ArmorType.id_armortype"), nullable=False)
-
-    # Relationships
-    armor_type = relationship("ArmorTypeModel", back_populates="armor")
 
     def __repr__(self):
         return (
@@ -35,7 +33,7 @@ class ArmorModel(Base):
 
     @classmethod
     def find_by_name(cls, armor_name: str) -> "ArmorModel":
-        return cls.query.filter_by(armor_name=armor_name).first()
+        return cls.query.filter_by(armor_name=armor_name).filter(ArmorModel.armortype_id == AType.id_armortype).outerjoin(AType).first()
 
     @classmethod
     def find_all(cls) -> List["ArmorModel"]:

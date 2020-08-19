@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 from models.race import RaceModel as race
-from models.subrace import SubraceModel as subrace
+from models.subrace import SubRaceModel as subrace
 from models.charclass import CharClassModel as classm
 from models.subclass import SubClassModel as subclass
 
@@ -34,7 +34,7 @@ class FeatureModel(Base):
     )
 
     subraces = relationship(
-        "SubraceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
+        "SubRaceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     classes = relationship(

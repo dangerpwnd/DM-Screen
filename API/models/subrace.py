@@ -13,7 +13,7 @@ class SubRaceModel(Base):
     id_subrace = Column(Integer, primary_key=True)
     subrace_name = Column(String(50), nullable=False, unique=True)
     subrace_descrip = Column(String(250), nullable=False)
-    race_id = Column(Integer, ForeignKey("Subrace.id_race"))
+    race_id = Column(Integer, ForeignKey("Race.id_race"))
 
     # Association Tables
     feature_assoc = Table(

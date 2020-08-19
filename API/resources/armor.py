@@ -45,7 +45,7 @@ class Armor(Resource):
             armor.armor_ac = armor_json['armor_ac']
             armor.armor_weight = armor_json['armor_weight']
             armor.armor_maxdex = armor_json['armor_maxdex']
-            armor.armortype = armor_json['armortype']
+            armor.armortype_id = armor_json['armortype_id']
         else:
             armor_json['armor_name'] = armor_name
             armor = armor_schema.load(armor_json)
