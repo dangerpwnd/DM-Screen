@@ -50,7 +50,7 @@ class SubRaceModel(Base):
     )
 
     races = relationship(
-        "RaceModel", back_populates="subraces", cascade='all, delete, delete-orphan'
+        "RaceModel", back_populates="subraces", cascade='all, delete, delete-orphan', single_parent=True,
     )
     # Relationship to PlayerChar
 

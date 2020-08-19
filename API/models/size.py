@@ -13,7 +13,7 @@ class SizeModel(Base):
     id_size = Column(Integer, primary_key=True)
     size_name = Column(String(50), nullable=False, unique=True)
 
-    races = relationship("RaceModel", back_populates="size", cascade='all, delete, delete-orphan')
+    races = relationship("RaceModel", back_populates="size", cascade='all, delete, delete-orphan', single_parent=True,)
 
     def __repr__(self):
         return "<Size (name='%s')>" % (self.size_name)

@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify
 from flask_restful import Api
 from flask_jwt_extended import JWTManager
@@ -43,6 +44,8 @@ api = Api(app)
 
 @app.before_first_request
 def create_player_db():
+    if os.path.exists('player.db'):
+        os.remove('player.db')
     db.init_db()
 
 @app.teardown_appcontext

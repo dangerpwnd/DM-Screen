@@ -30,19 +30,19 @@ class FeatureModel(Base):
 
     # Relationships
     races = relationship(
-        "RaceModel", secondary=race.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan'
+        "RaceModel", secondary=race.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     subraces = relationship(
-        "SubraceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan'
+        "SubraceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan'
+        "CharClassModel", secondary=classm.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     subclasses = relationship(
-        "SubClassModel", secondary=subclass.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan'
+        "SubClassModel", secondary=subclass.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     spells = relationship(

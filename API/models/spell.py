@@ -23,13 +23,13 @@ class SpellModel(Base):
     # Relationships
     spell_types = relationship("SpellTypeModel", back_populates="spells")
     features = relationship(
-        "FeatureModel", secondary=feature.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan'
+        "FeatureModel", secondary=feature.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan', single_parent=True,
     )
     classes = relationship(
-        "CharClassModel", secondary=charclass.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan'
+        "CharClassModel", secondary=charclass.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan', single_parent=True,
     )
     subclasses = relationship(
-        "SubClassModel", secondary=subclass.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan'
+        "SubClassModel", secondary=subclass.spell_assoc, back_populates="spells", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     def __repr__(self):
