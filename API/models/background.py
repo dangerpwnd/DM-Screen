@@ -1,6 +1,6 @@
 from typing import List
 from db import Base, session
-from sqlalchemy import Column, Integer, String, Table, ForeignKey
+from sqlalchemy import Column, Integer, String, Array, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -13,6 +13,8 @@ class BackgroundModel(Base):
     id_background = Column(Integer, primary_key=True)
     background_name = Column(String(50), nullable=False, unique=True)
     background_descrip = Column(String(250), nullable=False)
+    equip_id = Column(Array(Integer))
+    proficiency_id = Column(Array(Integer))
 
     # Association Tables
     equip_assoc = Table(
