@@ -6,9 +6,9 @@ from sqlalchemy import Column, Integer, String
 # from sqlalchemy.orm import relationship
 
 
-class AttributeModel(Base):
+class CharAttributeModel(Base):
 
-    __tablename__ = "attribute"
+    __tablename__ = "Attribute"
 
     # Columns
     id_attribute = Column(Integer, primary_key=True)
@@ -24,11 +24,11 @@ class AttributeModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, attribute_name: str) -> 'AttributeModel':
+    def find_by_name(cls, attribute_name: str) -> 'CharAttributeModel':
         return cls.query.filter_by(attribute_name=attribute_name).first()
 
     @classmethod
-    def find_all(cls) -> List["AttributeModel"]:
+    def find_all(cls) -> List["CharAttributeModel"]:
         return cls.query.all()
 
     def save_to_db(self):

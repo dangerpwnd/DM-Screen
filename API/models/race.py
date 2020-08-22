@@ -48,6 +48,16 @@ class RaceModel(Base):
         ),
         Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
     )
+    subrace_assoc = Table (
+        "Race_has_Subraces",
+        Base.metadata,
+        Column(
+            "subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True
+        ),
+        Column(
+            "race_id", Integer, ForeignKey("Race.id_race"), primary_key=True
+        ),
+    )
 
     # Relationships
 
@@ -60,6 +70,9 @@ class RaceModel(Base):
     )
     languages = relationship(
         "LanguageModel", secondary=lang_assoc, back_populates="races"
+    )
+    subraces = relationship(
+        "SubRaceModel", secondary=subrace_assoc, back_populates="races"
     )
 
     def __repr__(self):

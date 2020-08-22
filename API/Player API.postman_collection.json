@@ -7,1104 +7,1643 @@
 	},
 	"item": [
 		{
-			"name": "/background/<background_name> ",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/background/wanderer",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"background",
-						"wanderer"
-					]
-				},
-				"description": "GET single background"
-			},
-			"response": []
-		},
-		{
-			"name": "/backgrounds",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/backgrounds",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"backgrounds"
-					]
-				},
-				"description": "GET list of all backgrounds"
-			},
-			"response": []
-		},
-		{
-			"name": "/equipment",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{url}}/equipment",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"equipment"
-					]
-				},
-				"description": "GET list of all equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/equipment/<equip_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/equipment/rope",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"equipment",
-						"rope"
-					]
-				},
-				"description": "GET single equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/proficiency/<proficiency_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/proficiency/martial_weapons",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"proficiency",
-						"martial_weapons"
-					]
-				},
-				"description": "GET single proficiency"
-			},
-			"response": []
-		},
-		{
-			"name": "/proficiencies",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/proficiencies",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"proficiencies"
-					]
-				},
-				"description": "GET list of all proficiences"
-			},
-			"response": []
-		},
-		{
-			"name": "/race/<race_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/race/dwarf",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"race",
-						"dwarf"
-					]
-				},
-				"description": "GET single race"
-			},
-			"response": []
-		},
-		{
-			"name": "/races",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/races",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"races"
-					]
-				},
-				"description": "GET list of all races"
-			},
-			"response": []
-		},
-		{
-			"name": "/size/<size_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/size/small",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"size",
-						"small"
-					]
-				},
-				"description": "GET single size"
-			},
-			"response": []
-		},
-		{
-			"name": "/sizes",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/sizes",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"sizes"
-					]
-				},
-				"description": "GET list of all sizes"
-			},
-			"response": []
-		},
-		{
-			"name": "/tool/<tool_name>",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/tool/thieves_tools",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"tool",
-						"thieves_tools"
-					]
-				},
-				"description": "GET single tool"
-			},
-			"response": []
-		},
-		{
-			"name": "/tools",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/tools",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"tools"
-					]
-				},
-				"description": "GET list of all tools"
-			},
-			"response": []
-		},
-		{
-			"name": "/user/<int:user_id>",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/user/1",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"user",
-						"1"
-					]
-				},
-				"description": "Get one user by user_id"
-			},
-			"response": []
-		},
-		{
-			"name": "/login",
-			"event": [
+			"name": "Alignment",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "70864e17-7dd2-4757-b48f-bb125a14e815",
-						"exec": [
-							"pm.test(\"Access token was not empty\", function() {",
-							"    let jsonData = pm.response.json();",
-							"    pm.expect(jsonData.access_token).not.equal(undefined);",
-							"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
-							"});",
-							"",
-							"pm.test(\"Refresh token was not empty\", function() {",
-							"    let jsonData = pm.response.json();",
-							"    pm.expect(jsonData.refresh_token).not.equal(undefined);",
-							"    pm.environment.set(\"refresh_token\", jsonData.refresh_token);",
-							"})",
-							""
+					"name": "/alignment/<alignment_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"url": {
+							"raw": "{{url}}/alignment/Chaotic_Neutral",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alignment",
+								"Chaotic_Neutral"
+							]
+						},
+						"description": "GET single alignment"
+					},
+					"response": []
+				},
+				{
+					"name": "/alignments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/alignments",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alignments"
+							]
+						},
+						"description": "GET list of all alignments"
+					},
+					"response": []
+				},
+				{
+					"name": "/alignment/<alignment_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"alignment_descrip\": \"I'm not aligned to any system of law. I will look out for me, myself, and I.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/alignment/Chaotic_Neutral",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alignment",
+								"Chaotic_Neutral"
+							]
+						},
+						"description": "POST new alignment"
+					},
+					"response": []
+				},
+				{
+					"name": "/alignment/<alignment_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/alignment/Chaotic_Neutral",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alignment",
+								"Chaotic_Neutral"
+							]
+						},
+						"description": "DEL single alignment"
+					},
+					"response": []
+				},
+				{
+					"name": "/alignment/<alignment_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alignment_descrip\": \"I'm not aligned to any system of law. I will look out for me, myself, and I.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/alignment/Chaotic_Neutral",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alignment",
+								"Chaotic_Neutral"
+							]
+						},
+						"description": "Update or create alignment"
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"username\": \"eric\",\n\t\"password\": \"P@ssword1!\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/login",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"login"
-					]
-				},
-				"description": "Authorization for JWT Token"
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "/logout",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/logout",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"logout"
-					]
-				},
-				"description": "Logout user"
-			},
-			"response": []
-		},
-		{
-			"name": "/register",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"username\": \"eric\",\n\t\"password\": \"P@ssword1!\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/register",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"register"
-					]
-				},
-				"description": "Register new users"
-			},
-			"response": []
-		},
-		{
-			"name": "/refresh",
-			"event": [
+			"name": "Armor",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "2469c4da-b410-4fd3-84d9-e5ac0a1ed9b4",
-						"exec": [
-							"pm.test(\"Access token was not empty\", function() {\r",
-							"    let jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.access_token).not.equal(undefined);\r",
-							"    pm.environment.set(\"jwt_token\", jsonData.access_token);\r",
-							"});"
+					"name": "/armor/<armor_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"url": {
+							"raw": "{{url}}/armor/Leather_Armor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armor",
+								"Leather_Armor"
+							]
+						},
+						"description": "GET single armor"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortype/<armortype_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/armortype/Light",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortype",
+								"Light"
+							]
+						},
+						"description": "GET single armortype"
+					},
+					"response": []
+				},
+				{
+					"name": "/armor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/armor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armor"
+							]
+						},
+						"description": "GET list of all armor"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/armortypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortypes"
+							]
+						},
+						"description": "GET list of all armortypes"
+					},
+					"response": []
+				},
+				{
+					"name": "/armor/<armor_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"armor_descrip\": \"Light and made for roguish types. Made from leather. Includes straps to fit form.\",\n    \"armor_ac\": 2,\n    \"armor_weight\": 10,\n    \"armor_maxdex\": 20,\n    \"armortype_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/armor/Leather_Armor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armor",
+								"Leather_Armor"
+							]
+						},
+						"description": "POST new armor"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortype/Light",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/armortype/Light",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortype",
+								"Light"
+							]
+						},
+						"description": "POST new armortype"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortype/Medium",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/armortype/Medium",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortype",
+								"Medium"
+							]
+						},
+						"description": "POST new armortype"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortype/Heavy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/armortype/Heavy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortype",
+								"Heavy"
+							]
+						},
+						"description": "POST new armortype"
+					},
+					"response": []
+				},
+				{
+					"name": "/armor/<armor_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/armor/Leather_Armor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armor",
+								"Leather_Armor"
+							]
+						},
+						"description": "DEL single armor"
+					},
+					"response": []
+				},
+				{
+					"name": "/armortype/<armortype_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/armortype/Light",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armortype",
+								"Light"
+							]
+						},
+						"description": "DEL single armortype"
+					},
+					"response": []
+				},
+				{
+					"name": "/armor/<armor_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"armor_descrip\": \"Light and made for roguish types. Made from leather. Includes straps to fit form.\",\r\n    \"armor_ac\": 2,\r\n    \"armor_weight\": 10,\r\n    \"armor_maxdex\": 20,\r\n    \"armortype\": {\r\n        \"armortype_name\" : \"Light\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/armor/Leather_Armor",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"armor",
+								"Leather_Armor"
+							]
+						},
+						"description": "Update or create armor"
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{refresh_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/refresh",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"refresh"
-					]
-				},
-				"description": "Pull refresh token"
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "/background/<background_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
+			"name": "Background",
+			"item": [
+				{
+					"name": "/background/<background_name> ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/background/wanderer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer"
+							]
+						},
+						"description": "GET single background"
 					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"background_descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"response": []
+				},
+				{
+					"name": "/backgrounds",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/backgrounds",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"backgrounds"
+							]
+						},
+						"description": "GET list of all backgrounds"
+					},
+					"response": []
+				},
+				{
+					"name": "/background/<background_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"background_descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/background/wanderer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer"
+							]
+						},
+						"description": "POST new background"
+					},
+					"response": []
+				},
+				{
+					"name": "/background/<background_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/background/wanderer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer"
+							]
+						},
+						"description": "DEL single background"
+					},
+					"response": []
+				},
+				{
+					"name": "/background/<background_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"background_descrip\": \"Not all those who wander are lost.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/background/wanderer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer"
+							]
+						},
+						"description": "Update or create background"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Equipment",
+			"item": [
+				{
+					"name": "/equipment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/equipment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment"
+							]
+						},
+						"description": "GET list of all equipment"
+					},
+					"response": []
+				},
+				{
+					"name": "/equipment/<equip_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/equipment/rope",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment",
+								"rope"
+							]
+						},
+						"description": "GET single equipment"
+					},
+					"response": []
+				},
+				{
+					"name": "/equipment/<equip_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"equip_descrip\": \"Used for tieing, safety, and a number of other uses.\",\n    \"equip_weight\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equipment/rope",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment",
+								"rope"
+							]
+						},
+						"description": "POST new equipment"
+					},
+					"response": []
+				},
+				{
+					"name": "/equipment/<equip_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/equipment/rope",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment",
+								"rope"
+							]
+						},
+						"description": "DELETE single equipment"
+					},
+					"response": []
+				},
+				{
+					"name": "/equipment/<equip_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"equip_descrip\": \"For kinky stuff.\",\r\n    \"equip_weight\": 15\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/equipment/rope",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment",
+								"rope"
+							]
+						},
+						"description": "Update or create equipment"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Proficiency",
+			"item": [
+				{
+					"name": "/proficiency/<proficiency_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/proficiency/martial_weapons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proficiency",
+								"martial_weapons"
+							]
+						},
+						"description": "GET single proficiency"
+					},
+					"response": []
+				},
+				{
+					"name": "/proficiencies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/proficiencies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proficiencies"
+							]
+						},
+						"description": "GET list of all proficiences"
+					},
+					"response": []
+				},
+				{
+					"name": "/proficiency/<proficiency_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proficiency_descrip\": \"Weapons more advanced than simple weapons.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proficiency/martial_weapons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proficiency",
+								"martial_weapons"
+							]
+						},
+						"description": "POST new proficiency"
+					},
+					"response": []
+				},
+				{
+					"name": "/proficiency/<proficiency_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proficiency/martial_weapons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proficiency",
+								"martial_weapons"
+							]
+						},
+						"description": "DELETE single proficiency"
+					},
+					"response": []
+				},
+				{
+					"name": "/proficiency/<proficiency_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proficiency_descrip\": \"A new type of weapon superior to those shitty simple weapons.\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/proficiency/martial_weapons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proficiency",
+								"martial_weapons"
+							]
+						},
+						"description": "Update or create proficiency"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Race",
+			"item": [
+				{
+					"name": "/race/<race_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/race/dwarf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"race",
+								"dwarf"
+							]
+						},
+						"description": "GET single race"
+					},
+					"response": []
+				},
+				{
+					"name": "/races",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/races",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"races"
+							]
+						},
+						"description": "GET list of all races"
+					},
+					"response": []
+				},
+				{
+					"name": "/race/<race_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"race_descrip\": \"Small, hardy, alcoholic\",\n    \"race_min_age\": 15,\n    \"race_max_age\": 280,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/race/dwarf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"race",
+								"dwarf"
+							]
+						},
+						"description": "POST new race"
+					},
+					"response": []
+				},
+				{
+					"name": "/race/<race_name> ",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/race/dwarf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"race",
+								"dwarf"
+							]
+						},
+						"description": "DELETE single race"
+					},
+					"response": []
+				},
+				{
+					"name": "/race/<race_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"race_descrip\": \"Enjoys gold, beards, and brews\",\n    \"race_min_age\": 20,\n    \"race_max_age\": 275,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/race/dwarf",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"race",
+								"dwarf"
+							]
+						},
+						"description": "Update or create race"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tool",
+			"item": [
+				{
+					"name": "/tool/<tool_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/tool/thieves_tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tool",
+								"thieves_tools"
+							]
+						},
+						"description": "GET single tool"
+					},
+					"response": []
+				},
+				{
+					"name": "/tools",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tools"
+							]
+						},
+						"description": "GET list of all tools"
+					},
+					"response": []
+				},
+				{
+					"name": "/tool/<tool_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tool_descrip\": \"Helps pick a lock in a flash!\",\n    \"tool_weight\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tool/thieves_tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tool",
+								"thieves_tools"
+							]
+						},
+						"description": "POST new tool"
+					},
+					"response": []
+				},
+				{
+					"name": "/tool/<tool_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/tool/thieves_tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tool",
+								"thieves_tools"
+							]
+						},
+						"description": "DELETE single tool"
+					},
+					"response": []
+				},
+				{
+					"name": "/tool/<tool_name>",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tool_descrip\": \"Includes lockpick set, grappling hooks, etc\",\r\n    \"tool_weight\": 12\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/tool/thieves_tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"tool",
+								"thieves_tools"
+							]
+						},
+						"description": "Update or create tool"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Size",
+			"item": [
+				{
+					"name": "/size/<size_name>",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/size/small",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"size",
+								"small"
+							]
+						},
+						"description": "GET single size"
+					},
+					"response": []
+				},
+				{
+					"name": "/sizes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/sizes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"sizes"
+							]
+						},
+						"description": "GET list of all sizes"
+					},
+					"response": []
+				},
+				{
+					"name": "/size/<size_name>",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/size/small",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"size",
+								"small"
+							]
+						},
+						"description": "POST new size"
+					},
+					"response": []
+				},
+				{
+					"name": "/size/<size_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/size/small",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"size",
+								"small"
+							]
+						},
+						"description": "DELETE single size"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/user/<int:user_id>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						},
+						"description": "Get one user by user_id"
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "70864e17-7dd2-4757-b48f-bb125a14e815",
+								"exec": [
+									"pm.test(\"Access token was not empty\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.access_token).not.equal(undefined);",
+									"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
+									"});",
+									"",
+									"pm.test(\"Refresh token was not empty\", function() {",
+									"    let jsonData = pm.response.json();",
+									"    pm.expect(jsonData.refresh_token).not.equal(undefined);",
+									"    pm.environment.set(\"refresh_token\", jsonData.refresh_token);",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/background/wanderer",
-					"host": [
-						"{{url}}"
 					],
-					"path": [
-						"background",
-						"wanderer"
-					]
-				},
-				"description": "POST new background"
-			},
-			"response": []
-		},
-		{
-			"name": "/equipment/<equip_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"eric\",\n\t\"password\": \"P@ssword1!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "Authorization for JWT Token"
 					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"equip_descrip\": \"Used for tieing, safety, and a number of other uses.\",\n    \"equip_weight\": 10\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"logout"
+							]
+						},
+						"description": "Logout user"
+					},
+					"response": []
+				},
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"eric\",\n\t\"password\": \"P@ssword1!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"register"
+							]
+						},
+						"description": "Register new users"
+					},
+					"response": []
+				},
+				{
+					"name": "/refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2469c4da-b410-4fd3-84d9-e5ac0a1ed9b4",
+								"exec": [
+									"pm.test(\"Access token was not empty\", function() {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.access_token).not.equal(undefined);\r",
+									"    pm.environment.set(\"jwt_token\", jsonData.access_token);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
 						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/equipment/rope",
-					"host": [
-						"{{url}}"
 					],
-					"path": [
-						"equipment",
-						"rope"
-					]
-				},
-				"description": "POST new equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/proficiency/<proficiency_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{refresh_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/refresh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"refresh"
+							]
+						},
+						"description": "Pull refresh token"
 					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"proficiency_descrip\": \"Weapons more advanced than simple weapons.\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"response": []
 				},
-				"url": {
-					"raw": "{{url}}/proficiency/martial_weapons",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"proficiency",
-						"martial_weapons"
-					]
-				},
-				"description": "POST new proficiency"
-			},
-			"response": []
-		},
-		{
-			"name": "/race/<race_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
+				{
+					"name": "/user/<user_id>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						},
+						"description": "Delete a single user"
 					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"race_descrip\": \"Small, hardy, alcoholic\",\n    \"race_min_age\": 15,\n    \"race_max_age\": 280,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/race/dwarf",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"race",
-						"dwarf"
-					]
-				},
-				"description": "POST new race"
-			},
-			"response": []
-		},
-		{
-			"name": "/size/<size_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [],
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/size/small",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"size",
-						"small"
-					]
-				},
-				"description": "POST new size"
-			},
-			"response": []
-		},
-		{
-			"name": "/tool/<tool_name>",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"tool_descrip\": \"Helps pick a lock in a flash!\",\n    \"tool_weight\": 12\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/tool/thieves_tools",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"tool",
-						"thieves_tools"
-					]
-				},
-				"description": "POST new tool"
-			},
-			"response": []
-		},
-		{
-			"name": "/background/<background_name>",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{jwt_token}}",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/background/wanderer",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"background",
-						"wanderer"
-					]
-				},
-				"description": "DEL single background"
-			},
-			"response": []
-		},
-		{
-			"name": "/equipment/<equip_name>",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"url": {
-					"raw": "{{url}}/equipment/rope",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"equipment",
-						"rope"
-					]
-				},
-				"description": "DELETE single equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/proficiency/<proficiency_name>",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					},
-					{
-						"key": "",
-						"type": "text",
-						"value": "",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/proficiency/martial_weapons",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"proficiency",
-						"martial_weapons"
-					]
-				},
-				"description": "DELETE single proficiency"
-			},
-			"response": []
-		},
-		{
-			"name": "/race/<race_name> ",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/race/dwarf",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"race",
-						"dwarf"
-					]
-				},
-				"description": "DELETE single race"
-			},
-			"response": []
-		},
-		{
-			"name": "/size/<size_name>",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					},
-					{
-						"key": "",
-						"type": "text",
-						"value": "",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/size/small",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"size",
-						"small"
-					]
-				},
-				"description": "DELETE single size"
-			},
-			"response": []
-		},
-		{
-			"name": "/tool/<tool_name>",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					},
-					{
-						"key": "",
-						"type": "text",
-						"value": "",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/tool/thieves_tools",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"tool",
-						"thieves_tools"
-					]
-				},
-				"description": "DELETE single tool"
-			},
-			"response": []
-		},
-		{
-			"name": "/user/<user_id>",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/user/1",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"user",
-						"1"
-					]
-				},
-				"description": "Delete a single user"
-			},
-			"response": []
-		},
-		{
-			"name": "/background/<background_name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"background_descrip\": \"Not all those who wander are lost.\"\r\n}"
-				},
-				"url": {
-					"raw": "{{url}}/background/wanderer",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"background",
-						"wanderer"
-					]
-				},
-				"description": "Update or create background"
-			},
-			"response": []
-		},
-		{
-			"name": "/equipment/<equip_name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"equip_descrip\": \"For kinky stuff.\",\r\n    \"equip_weight\": 15\r\n}"
-				},
-				"url": {
-					"raw": "{{url}}/equipment/rope",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"equipment",
-						"rope"
-					]
-				},
-				"description": "Update or create equipment"
-			},
-			"response": []
-		},
-		{
-			"name": "/proficiency/<proficiency_name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"proficiency_descrip\": \"A new type of weapon superior to those shitty simple weapons.\"\r\n}"
-				},
-				"url": {
-					"raw": "{{url}}/proficiency/martial_weapons",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"proficiency",
-						"martial_weapons"
-					]
-				},
-				"description": "Update or create proficiency"
-			},
-			"response": []
-		},
-		{
-			"name": "/race/<race_name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					},
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"race_descrip\": \"Enjoys gold, beards, and brews\",\n    \"race_min_age\": 20,\n    \"race_max_age\": 275,\n    \"race_min_height\": 36,\n    \"race_max_height\": 60,\n    \"race_speed\": 30\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{url}}/race/dwarf",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"race",
-						"dwarf"
-					]
-				},
-				"description": "Update or create race"
-			},
-			"response": []
-		},
-		{
-			"name": "/tool/<tool_name>",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"type": "text",
-						"value": "application/json"
-					},
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer {{jwt_token}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"tool_descrip\": \"Includes lockpick set, grappling hooks, etc\",\r\n    \"tool_weight\": 12\r\n}"
-				},
-				"url": {
-					"raw": "{{url}}/tool/thieves_tools",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"tool",
-						"thieves_tools"
-					]
-				},
-				"description": "Update or create tool"
-			},
-			"response": []
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

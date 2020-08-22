@@ -19,7 +19,7 @@ class SkillModel(Base):
     # Relationships
 
     classes = relationship(
-        "CharClassModel", secondary=classm.skill_assoc, back_populates="skills"
+        "CharClassModel", secondary=classm.skill_assoc, back_populates="skills", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     def __repr__(self):

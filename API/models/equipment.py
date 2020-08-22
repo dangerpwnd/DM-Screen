@@ -20,11 +20,11 @@ class EquipmentModel(Base):
     # Relationships
 
     backgrounds = relationship(
-        "BackgroundModel", secondary=background.equip_assoc, back_populates="equipment"
+        "BackgroundModel", secondary=background.equip_assoc, back_populates="equipment", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.equip_assoc, back_populates="equipment"
+        "CharClassModel", secondary=classm.equip_assoc, back_populates="equipment", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     def __repr__(self):

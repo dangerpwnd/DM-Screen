@@ -1,11 +1,11 @@
 from marshmallow import Schema, fields, post_load
-from models.attribute import AttributeModel
+from models.charattribute import CharAttributeModel
 
-class AttributeSchema(Schema):
+class CharAttributeSchema(Schema):
     id_attribute = fields.Integer(dump_only=True)
     attribute_name = fields.Str()
     attribute_descrip = fields.Str()
 
     @post_load
     def make_attribute(self, data, **kwargs):
-        return AttributeModel(**data)
+        return CharAttributeModel(**data)

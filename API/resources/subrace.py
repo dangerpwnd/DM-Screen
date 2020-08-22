@@ -45,6 +45,7 @@ class Subrace(Resource):
 
         if subrace:
             subrace.subrace_descrip = subrace_json['subrace_descrip']
+            subrace.race_id = subrace_json['race_id']
         else:
             subrace_json['subrace_name'] = subrace_name
             subrace = subrace_schema.load(subrace_json)

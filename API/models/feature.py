@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 from models.race import RaceModel as race
-from models.subrace import SubraceModel as subrace
+from models.subrace import SubRaceModel as subrace
 from models.charclass import CharClassModel as classm
 from models.subclass import SubClassModel as subclass
 
@@ -30,19 +30,19 @@ class FeatureModel(Base):
 
     # Relationships
     races = relationship(
-        "RaceModel", secondary=race.feature_assoc, back_populates="features"
+        "RaceModel", secondary=race.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     subraces = relationship(
-        "SubraceModel", secondary=subrace.feature_assoc, back_populates="features"
+        "SubRaceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.feature_assoc, back_populates="features"
+        "CharClassModel", secondary=classm.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     subclasses = relationship(
-        "SubClassModel", secondary=subclass.feature_assoc, back_populates="features"
+        "SubClassModel", secondary=subclass.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     spells = relationship(
