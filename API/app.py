@@ -10,7 +10,7 @@ from blacklist import BLACKLIST
 from resources.armor import Armor, ArmorList
 from resources.armortype import ArmorType, ArmorTypeList
 from resources.alignment import Alignment, AlignmentList
-from resources.background import Background, BackgroundList
+from resources.background import Background, BackgroundList, BackgroundHasEquipment
 from resources.coin import Coin, CoinList
 from resources.charattribute import CharAttribute, CharAttributeList
 from resources.charclass import CharClass, CharClassList
@@ -77,6 +77,7 @@ api.add_resource(AlignmentList, '/alignments')
 # Backgrounds
 api.add_resource(Background, '/background/<string:background_name>')
 api.add_resource(BackgroundList, '/backgrounds')
+api.add_resource(BackgroundHasEquipment, '/background/<int:id_background>/equipment/<int:id_equip>')
 
 # Character Attributes
 api.add_resource(CharAttribute, '/charattribute/<string:attribute_name>')

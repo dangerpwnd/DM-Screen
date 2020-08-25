@@ -41,6 +41,10 @@ class EquipmentModel(Base):
         ).first()  # SELECT * FROM Equipment WHERE name(table column)=name(find by name) LIMIT 1
 
     @classmethod
+    def find_by_id(cls, id_equip):
+        return cls.query.filter_by(id_equip=id_equip).first()
+
+    @classmethod
     def find_all(cls) -> List["EquipmentModel"]:
         return cls.query.all()
 

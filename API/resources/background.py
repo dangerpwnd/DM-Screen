@@ -1,6 +1,7 @@
 from flask_restful import Resource, request
 from models.background import BackgroundModel
 from schemas.background import BackgroundSchema
+from models.equipment import EquipmentModel
 
 background_schema = BackgroundSchema()
 background_list_schema = BackgroundSchema(many=True)
@@ -58,3 +59,17 @@ class BackgroundList(Resource):
     @classmethod
     def get(cls):
         return {'backgrounds': background_list_schema.dump(BackgroundModel.find_all())}, 200
+
+
+class BackgroundHasEquipment(Resource):
+
+    @classmethod
+    def get(cls, id_background: int, id_equip: int):
+        background = BackgroundModel.find_by_id(id_background)
+        equipment = EquipmentModel.find_by_id(id_equip)
+        if not background:
+            return { "message" : "Background not found."}, 404
+        if not equipment:
+            return { "message" : "Equipment not found."}, 404
+
+        return {"message": "Background '{}' and Equipment '{}' found.".format(background.background_name, equipment.equip_name)}, 200
