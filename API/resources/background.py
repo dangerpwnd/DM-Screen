@@ -73,3 +73,7 @@ class BackgroundHasEquipment(Resource):
             return { "message" : "Equipment not found."}, 404
 
         return {"message": "Background '{}' and Equipment '{}' found.".format(background.background_name, equipment.equip_name)}, 200
+
+    @classmethod
+    def post(cls, id_background:int, id_equip: int):
+        

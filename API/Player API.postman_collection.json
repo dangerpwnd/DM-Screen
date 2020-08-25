@@ -652,6 +652,27 @@
 						"description": "Update or create background"
 					},
 					"response": []
+				},
+				{
+					"name": "/background/<int:id_background>/equipment/<int:id_equipment>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/background/1/equipment/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"1",
+								"equipment",
+								"1"
+							]
+						},
+						"description": "Query for background and equipment for association table post"
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
