@@ -23,29 +23,40 @@ class ProficiencyModel(Base):
         "BackgroundModel",
         secondary=background.prof_assoc,
         back_populates="proficiencies",
-        cascade='all, delete, delete-orphan', single_parent=True,
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     races = relationship(
-        "RaceModel", secondary=race.prof_assoc, back_populates="proficiencies",
-        cascade='all, delete, delete-orphan', single_parent=True,
+        "RaceModel",
+        secondary=race.prof_assoc,
+        back_populates="proficiencies",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     subraces = relationship(
-        "SubRaceModel", secondary=subrace.prof_assoc, back_populates="proficiencies",
-        cascade='all, delete, delete-orphan', single_parent=True,
+        "SubRaceModel",
+        secondary=subrace.prof_assoc,
+        back_populates="proficiencies",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.prof_assoc, back_populates="proficiencies",
-        cascade='all, delete, delete-orphan', single_parent=True,
+        "CharClassModel",
+        secondary=classm.prof_assoc,
+        back_populates="proficiencies",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     subclasses = relationship(
         "SubClassModel",
         secondary=subclass.prof_assoc,
         back_populates="proficiencies",
-        cascade='all, delete, delete-orphan', single_parent=True,
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     def __repr__(self):
@@ -59,6 +70,10 @@ class ProficiencyModel(Base):
         return cls.query.filter_by(
             proficiency_name=proficiency_name
         ).first()  # SELECT * FROM Equipment WHERE name=name LIMIT 1
+
+    @classmethod
+    def find_by_id(cls, id_proficiency):
+        return cls.query.filter_by(id_proficiency=id_proficiency).first()
 
     @classmethod
     def find_all(cls) -> List["ProficiencyModel"]:
