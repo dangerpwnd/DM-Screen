@@ -17,9 +17,9 @@ class BackgroundModel(Base):
 
     # Relationships linked to association tables
 
-    equipment = relationship("EquipmentModel", back_populates="equip_backgrounds")
+    equipment = relationship("EquipAssocModel", back_populates="equip_backgrounds")
     proficiencies = relationship(
-        "ProficiencyModel", back_populates="proficiency_backgrounds"
+        "ProficiencyAssocModel", back_populates="proficiency_backgrounds"
     )
 
     # Relationship to PlayerChar
@@ -32,7 +32,7 @@ class BackgroundModel(Base):
 
     @classmethod
     def find_by_name(cls, background_name) -> "BackgroundModel":
-        return cls.query.filter_by(background_name=background_name).first()
+        return cls.query.filter_by(background_name=background_name)
 
     @classmethod
     def find_by_id(cls, id_background):
@@ -53,10 +53,9 @@ class BackgroundModel(Base):
 
 # Association Objects
 
-
 class EquipAssocModel(Base):
 
-    __table__ = "Background_has_Equipment"
+    __tablename__ = "Background_has_Equipment"
 
     # Columns
     equip_id = Column(Integer, ForeignKey("Equipment.id_equip"), primary_key=True)
@@ -64,8 +63,15 @@ class EquipAssocModel(Base):
         Integer, ForeignKey("Background.id_background"), primary_key=True
     )
 
+    def __repr__(self):
+        return "<EquipAssocModel (equip id='%s', background id='%s')>" % (
+            self.equip_id,
+            self.background_id,
+        )
+
     # Relationships
     equip_backgrounds = relationship("BackgroundModel", back_populates="equipment")
+    backgrounds_equip = relationship("EquipmentModel", back_populates="backgrounds")
 
     def save_to_db(self):
         session.add(self)
@@ -78,7 +84,7 @@ class EquipAssocModel(Base):
 
 class ProficiencyAssocModel(Base):
 
-    __table__ = "Background_has_Proficiencies"
+    __tablename__ = "Background_has_Proficiencies"
 
     # Columns
     proficiency_id = Column(
@@ -92,6 +98,7 @@ class ProficiencyAssocModel(Base):
     proficiency_backgrounds = relationship(
         "BackgroundModel", back_populates="proficiencies"
     )
+    backgrounds_proficiency = relationship("ProficiencyModel", back_populates="backgrounds")
 
     def save_to_db(self):
         session.add(self)

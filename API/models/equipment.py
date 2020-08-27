@@ -1,6 +1,5 @@
 from typing import List
 from db import Base, session
-from models.background import BackgroundModel as background
 from models.charclass import CharClassModel as classm
 
 from sqlalchemy import Column, Integer, String
@@ -20,7 +19,7 @@ class EquipmentModel(Base):
     # Relationships
 
     backgrounds = relationship(
-        "BackgroundModel", secondary=background.equip_assoc, back_populates="equipment", cascade='all, delete, delete-orphan', single_parent=True,
+        "EquipAssocModel", back_populates="backgrounds_equip", cascade='all, delete, delete-orphan', single_parent=True,
     )
 
     classes = relationship(

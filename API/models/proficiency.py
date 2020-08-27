@@ -1,6 +1,5 @@
 from typing import List
 from db import Base, session
-from models.background import BackgroundModel as background
 from models.race import RaceModel as race
 from models.subrace import SubRaceModel as subrace
 from models.charclass import CharClassModel as classm
@@ -20,9 +19,8 @@ class ProficiencyModel(Base):
     proficiency_descrip = Column(String(250), nullable=False)
 
     backgrounds = relationship(
-        "BackgroundModel",
-        secondary=background.prof_assoc,
-        back_populates="proficiencies",
+        "ProficiencyAssocModel",
+        back_populates="backgrounds_proficiency",
         cascade="all, delete, delete-orphan",
         single_parent=True,
     )

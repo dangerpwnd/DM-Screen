@@ -101,11 +101,13 @@ class BackgroundHasEquipment(Resource):
         if not equipment:
             return {"message": "Equipment not found."}, 404
 
-        background_equipment = EquipAssocModel(id_background, id_equip)
+        background_equipment = EquipAssocModel()
+        background_equipment.background_id = id_background
+        background_equipment.equip_id = id_equip
         background_equipment.save_to_db()
         return (
             {
-                "message": "Equipment '{}' added to background '{}' and  found.".format(
+                "message": "Equipment '{}' added to background '{}'.".format(
                     equipment.equip_name, background.background_name
                 )
             },
