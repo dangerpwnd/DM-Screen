@@ -18,10 +18,6 @@ class EquipmentModel(Base):
 
     # Relationships
 
-    backgrounds = relationship(
-        "EquipAssocModel", back_populates="backgrounds_equip", cascade='all, delete, delete-orphan', single_parent=True,
-    )
-
     classes = relationship(
         "CharClassModel", secondary=classm.equip_assoc, back_populates="equipment", cascade='all, delete, delete-orphan', single_parent=True,
     )

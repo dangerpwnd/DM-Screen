@@ -1,8 +1,10 @@
 from typing import List
 from db import Base, session
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy.orm import relationship, backref
 
+from models.equipment import EquipmentModel as equipm
 
 class BackgroundModel(Base):
 
@@ -15,9 +17,10 @@ class BackgroundModel(Base):
     background_name = Column(String(50), nullable=False, unique=True)
     background_descrip = Column(String(250), nullable=False)
 
-    # Relationships linked to association tables
+    # Association Proxies of equipment collection to "equipment" attribute
+    # and proficiency collection to "proficiencies" attribute
 
-    equipment = relationship("EquipAssocModel", back_populates="equip_backgrounds")
+    equipment = association_proxy("background_equipment", "equipment")
     proficiencies = relationship(
         "ProficiencyAssocModel", back_populates="proficiency_backgrounds"
     )
@@ -32,7 +35,7 @@ class BackgroundModel(Base):
 
     @classmethod
     def find_by_name(cls, background_name) -> "BackgroundModel":
-        return cls.query.filter_by(background_name=background_name)
+        return cls.query.filter_by(background_name=background_name).first()
 
     @classmethod
     def find_by_id(cls, id_background):
@@ -63,15 +66,15 @@ class EquipAssocModel(Base):
         Integer, ForeignKey("Background.id_background"), primary_key=True
     )
 
-    def __repr__(self):
-        return "<EquipAssocModel (equip id='%s', background id='%s')>" % (
-            self.equip_id,
-            self.background_id,
-        )
+    def __init__(self, background=None, equipment=None):
+        self.background = background
+        self.equipment = equipment
 
-    # Relationships
-    equip_backgrounds = relationship("BackgroundModel", back_populates="equipment")
-    backgrounds_equip = relationship("EquipmentModel", back_populates="backgrounds")
+    # bidirectional attribute/collection of "BackgroundModel"/"background_equipment"
+    background = relationship("BackgroundModel", backref=backref("background_equipment", cascade="all, delete-orphan"))
+
+    # reference to the "EquipmentModel" object
+    equipment = relationship("EquipmentModel")
 
     def save_to_db(self):
         session.add(self)
