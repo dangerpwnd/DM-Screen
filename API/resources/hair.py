@@ -19,10 +19,8 @@ class Hair(Resource):
         if HairModel.find_by_color(hair_color):
             return {"message": "Hair with color '{}' already exists.".format(hair_color)}
 
-        hair_json = request.get_json()
-        hair_json["hair_color"] = hair_color
-
-        hair = hair_schema.load(hair_json)
+        hair = HairModel()
+        hair.hair_color = hair_color
 
         hair.save_to_db()
 

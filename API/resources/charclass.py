@@ -58,3 +58,12 @@ class CharClassList(Resource):
     @classmethod
     def get(cls):
         return {'Character classes': charclass_list_schema.dump(CharClassModel.find_all())}, 200
+
+
+# TODO
+# ClassHasEquipment
+# ClassHasFeatures
+# ClassHasProficiencies
+# ClassHasSkills
+# ClassHasSpells
+# ClassHasLanguages

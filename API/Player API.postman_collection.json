@@ -654,27 +654,170 @@
 					"response": []
 				},
 				{
-					"name": "/background/<int:id_background>/equipment/<int:id_equipment>",
+					"name": "/background/<str:background_name>/equipment/<str:equip_name>",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/background/1/equipment/1",
+							"raw": "{{url}}/background/wanderer/equipment/rope",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"background",
-								"1",
+								"wanderer",
 								"equipment",
-								"1"
+								"rope"
 							]
 						},
-						"description": "Query for background and equipment for association table post"
+						"description": "POST background and equipment for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/background/<str:background_name>/equipment/<str:equip_name> 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/background/wanderer/equipment/crowbar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer",
+								"equipment",
+								"crowbar"
+							]
+						},
+						"description": "POST background and equipment for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/background/<str:background_name>/proficiency/<str:proficiency_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/background/wanderer/proficiency/martial_weapons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"background",
+								"wanderer",
+								"proficiency",
+								"martial_weapons"
+							]
+						},
+						"description": "POST background and equipment for association table"
 					},
 					"response": []
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Character Attributes",
+			"item": [
+				{
+					"name": "/charattribute/<str:attribute_name>",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/charattribute/Strength",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"charattribute",
+								"Strength"
+							]
+						},
+						"description": "GET character attribute by name"
+					},
+					"response": []
+				},
+				{
+					"name": "/charattribute/<str:attribute_name>",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/charattribute/Strength",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"charattribute",
+								"Strength"
+							]
+						},
+						"description": "DELETE character attribute by name"
+					},
+					"response": []
+				},
+				{
+					"name": "/charattribute/<str:attribute_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attribute_descrip\": \"Deals with melee damange & chance to hit as well as tests of physical prowess.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/charattribute/Strength",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"charattribute",
+								"Strength"
+							]
+						},
+						"description": "POST character attribute"
+					},
+					"response": []
+				},
+				{
+					"name": "/charattribute/<str:attribute_name>",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"attribute_descrip\": \"Determines if you can win a strong man contest.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/charattribute/Strength",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"charattribute",
+								"Strength"
+							]
+						},
+						"description": "PUT character attribute"
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD operations for character attributes",
 			"protocolProfileBehavior": {}
 		},
 		{
@@ -769,6 +912,45 @@
 							"path": [
 								"equipment",
 								"rope"
+							]
+						},
+						"description": "POST new equipment"
+					},
+					"response": []
+				},
+				{
+					"name": "/equipment/<equip_name> 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{jwt_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"equip_descrip\": \"Used for prying, breaking, and possibly beating.\",\n    \"equip_weight\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/equipment/crowbar",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"equipment",
+								"crowbar"
 							]
 						},
 						"description": "POST new equipment"

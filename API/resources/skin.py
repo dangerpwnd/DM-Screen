@@ -19,10 +19,8 @@ class Skin(Resource):
         if SkinModel.find_by_color(skin_color):
             return {"message": "Skin with color '{}' already exists.".format(skin_color)}
 
-        skin_json = request.get_json()
-        skin_json["skin_color"] = skin_color
-
-        skin = skin_schema.load(skin_json)
+        skin = SkinModel()
+        skin.skin_color = skin_color
 
         skin.save_to_db()
 

@@ -19,10 +19,8 @@ class Size(Resource):
         if SizeModel.find_by_name(size_name):
             return {"message": "Size with name '{}' already exists.".format(size_name)}
 
-        size_json = request.get_json()
-        size_json["size_name"] = size_name
-
-        size = size_schema.load(size_json)
+        size = SizeModel()
+        size.size_name = size_name
 
         size.save_to_db()
 

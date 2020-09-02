@@ -19,10 +19,8 @@ class Eye(Resource):
         if EyeModel.find_by_color(eye_color):
             return {"message": "Eye with color '{}' already exists.".format(eye_color)}
 
-        eye_json = request.get_json()
-        eye_json["eye_color"] = eye_color
-
-        eye = eye_schema.load(eye_json)
+        eye = EyeModel()
+        eye.eye_color = eye_color
 
         eye.save_to_db()
 
@@ -30,7 +28,7 @@ class Eye(Resource):
 
     @classmethod
     def delete(cls, eye_color: str):
-        eye = eyeModel.find_by_color(eye_color)
+        eye = EyeModel.find_by_color(eye_color)
 
         if eye:
             eye.delete_from_db()
