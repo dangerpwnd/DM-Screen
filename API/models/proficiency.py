@@ -18,13 +18,6 @@ class ProficiencyModel(Base):
     proficiency_name = Column(String(100), nullable=False, unique=True)
     proficiency_descrip = Column(String(250), nullable=False)
 
-    backgrounds = relationship(
-        "ProficiencyAssocModel",
-        back_populates="backgrounds_proficiency",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
     races = relationship(
         "RaceModel",
         secondary=race.prof_assoc,
