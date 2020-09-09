@@ -3,31 +3,25 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
-    # Association Tables
-    subrace_has_features = Table(
-        "Subrace_has_Features",
-        Base.metadata,
-        Column(
-            "feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True
-        ),
-        Column(
-            "subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True
-        ),
-    )
+# Association Tables
+subrace_has_features = Table(
+    "Subrace_has_Features",
+    Base.metadata,
+    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
+    Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
+)
 
-    subrace_has_proficiencies = Table(
-        "Subrace_has_Proficiencies",
-        Base.metadata,
-        Column(
-            "proficiency_id",
-            Integer,
-            ForeignKey("Proficiency.id_proficiency"),
-            primary_key=True,
-        ),
-        Column(
-            "subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True
-        ),
-    )
+subrace_has_proficiencies = Table(
+    "Subrace_has_Proficiencies",
+    Base.metadata,
+    Column(
+        "proficiency_id",
+        Integer,
+        ForeignKey("Proficiency.id_proficiency"),
+        primary_key=True,
+    ),
+    Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
+)
 
 
 class SubRaceModel(Base):
@@ -42,9 +36,7 @@ class SubRaceModel(Base):
     race_id = Column(Integer, ForeignKey("Race.id_race"))
 
     # Relationships
-    features = relationship(
-        "FeatureModel", secondary=lambda: subrace_has_features
-    )
+    features = relationship("FeatureModel", secondary=lambda: subrace_has_features)
     proficiencies = relationship(
         "ProficiencyModel", secondary=lambda: subrace_has_proficiencies
     )
@@ -55,7 +47,7 @@ class SubRaceModel(Base):
         cascade="all, delete, delete-orphan",
         single_parent=True,
     )
-    
+
     # Relationship to PlayerChar
 
     def __repr__(self):

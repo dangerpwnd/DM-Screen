@@ -4,41 +4,40 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
-    # Association Tables
+# Association Tables
 
-    subclass_has_proficiences = Table(
-        "Subclass_has_Proficiencies",
-        Base.metadata,
-        Column(
-            "proficiency_id",
-            Integer,
-            ForeignKey("Proficiency.id_proficiency"),
-            primary_key=True,
-        ),
-        Column(
-            "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
-        ),
-    )
+subclass_has_proficiences = Table(
+    "Subclass_has_Proficiencies",
+    Base.metadata,
+    Column(
+        "proficiency_id",
+        Integer,
+        ForeignKey("Proficiency.id_proficiency"),
+        primary_key=True,
+    ),
+    Column(
+        "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
+    ),
+)
 
-    subclass_has_features = Table(
-        "Subclass_has_Features",
-        Base.metadata,
-        Column(
-            "feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True
-        ),
-        Column(
-            "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
-        ),
-    )
+subclass_has_features = Table(
+    "Subclass_has_Features",
+    Base.metadata,
+    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
+    Column(
+        "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
+    ),
+)
 
-    subclass_has_spells = Table(
-        "Subclass_has_Spells",
-        Base.metadata,
-        Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
-        Column(
-            "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
-        ),
-    )
+subclass_has_spells = Table(
+    "Subclass_has_Spells",
+    Base.metadata,
+    Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
+    Column(
+        "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
+    ),
+)
+
 
 class SubClassModel(Base):
 
@@ -50,7 +49,6 @@ class SubClassModel(Base):
     subclass_name = Column(String(75), nullable=False, unique=True)
     subclass_descrip = Column(String(250), nullable=False)
     class_id = Column(Integer, ForeignKey("Class.id_class"))
-
 
     # Relationships
 
@@ -65,13 +63,9 @@ class SubClassModel(Base):
         "ProficiencyModel", secondary=lambda: subclass_has_proficiences
     )
 
-    features = relationship(
-        "FeatureModel", secondary=lambda: subclass_has_features
-    )
+    features = relationship("FeatureModel", secondary=lambda: subclass_has_features)
 
-    spells = relationship(
-        "SpellModel", secondary=lambda: subclass_has_spells
-    )
+    spells = relationship("SpellModel", secondary=lambda: subclass_has_spells)
 
     # Relationship to PlayerChar
 

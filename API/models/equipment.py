@@ -17,7 +17,6 @@ class EquipmentModel(Base):
 
     # Relationships
 
-
     def __repr__(self):
         return "<Equipment (name='%s', description='%s', weight='%s')>" % (
             self.equip_name,
