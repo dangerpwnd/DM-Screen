@@ -1,7 +1,5 @@
 from typing import List
 from db import Base, session
-from models.race import RaceModel as race
-from models.charclass import CharClassModel as classm
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -17,21 +15,6 @@ class LanguageModel(Base):
     language_descrip = Column(String(250), nullable=False)
 
     # Relationships
-    races = relationship(
-        "RaceModel",
-        secondary=race.lang_assoc,
-        back_populates="languages",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
-    classes = relationship(
-        "CharClassModel",
-        secondary=classm.lang_assoc,
-        back_populates="languages",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
 
     def __repr__(self):
         return '<Language (name="%s", descrip="%s")>' % (
