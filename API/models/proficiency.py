@@ -1,9 +1,5 @@
 from typing import List
 from db import Base, session
-from models.race import RaceModel as race
-from models.subrace import SubRaceModel as subrace
-from models.charclass import CharClassModel as classm
-from models.subclass import SubClassModel as subclass
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -17,38 +13,6 @@ class ProficiencyModel(Base):
     id_proficiency = Column(Integer, primary_key=True)
     proficiency_name = Column(String(100), nullable=False, unique=True)
     proficiency_descrip = Column(String(250), nullable=False)
-
-    races = relationship(
-        "RaceModel",
-        secondary=race.prof_assoc,
-        back_populates="proficiencies",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
-    subraces = relationship(
-        "SubRaceModel",
-        secondary=subrace.prof_assoc,
-        back_populates="proficiencies",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
-    classes = relationship(
-        "CharClassModel",
-        secondary=classm.prof_assoc,
-        back_populates="proficiencies",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
-    subclasses = relationship(
-        "SubClassModel",
-        secondary=subclass.prof_assoc,
-        back_populates="proficiencies",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
 
     def __repr__(self):
         return "<Proficiency (name='%s', description='%s')>" % (
