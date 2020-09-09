@@ -3,20 +3,8 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
-
-class SubRaceModel(Base):
-
-    # Set table name with class attribute
-    __tablename__ = "Subrace"
-
-    # Columns
-    id_subrace = Column(Integer, primary_key=True)
-    subrace_name = Column(String(50), nullable=False, unique=True)
-    subrace_descrip = Column(String(250), nullable=False)
-    race_id = Column(Integer, ForeignKey("Race.id_race"))
-
     # Association Tables
-    feature_assoc = Table(
+    subrace_has_features = Table(
         "Subrace_has_Features",
         Base.metadata,
         Column(
@@ -27,7 +15,7 @@ class SubRaceModel(Base):
         ),
     )
 
-    prof_assoc = Table(
+    subrace_has_proficiencies = Table(
         "Subrace_has_Proficiencies",
         Base.metadata,
         Column(
@@ -41,12 +29,24 @@ class SubRaceModel(Base):
         ),
     )
 
-    # Relationships linked to association tables
+
+class SubRaceModel(Base):
+
+    # Set table name with class attribute
+    __tablename__ = "Subrace"
+
+    # Columns
+    id_subrace = Column(Integer, primary_key=True)
+    subrace_name = Column(String(50), nullable=False, unique=True)
+    subrace_descrip = Column(String(250), nullable=False)
+    race_id = Column(Integer, ForeignKey("Race.id_race"))
+
+    # Relationships
     features = relationship(
-        "FeatureModel", secondary=feature_assoc, back_populates="subraces"
+        "FeatureModel", secondary=lambda: subrace_has_features
     )
     proficiencies = relationship(
-        "ProficiencyModel", secondary=prof_assoc, back_populates="subraces"
+        "ProficiencyModel", secondary=lambda: subrace_has_proficiencies
     )
 
     races = relationship(
@@ -55,6 +55,7 @@ class SubRaceModel(Base):
         cascade="all, delete, delete-orphan",
         single_parent=True,
     )
+    
     # Relationship to PlayerChar
 
     def __repr__(self):

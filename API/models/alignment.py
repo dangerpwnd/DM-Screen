@@ -14,6 +14,10 @@ class AlignmentModel(Base):
     alignment_name = Column(String(50), nullable=False, unique=True)
     alignment_descrip = Column(String(250), nullable=False)
 
+    # Relationships
+
+    player = relationship("PlayerModel", backref="alignment")
+
     def __repr__(self):
         return "<Alignment (name='%s', description='%s')>" % (
             self.alignment_name,

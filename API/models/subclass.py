@@ -4,20 +4,9 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
-class SubClassModel(Base):
-
-    # Set table name with class attribute
-    __tablename__ = "Subclass"
-
-    # Columns
-    id_subclass = Column(Integer, primary_key=True)
-    subclass_name = Column(String(75), nullable=False, unique=True)
-    subclass_descrip = Column(String(250), nullable=False)
-    class_id = Column(Integer, ForeignKey("Class.id_class"))
-
     # Association Tables
 
-    prof_assoc = Table(
+    subclass_has_proficiences = Table(
         "Subclass_has_Proficiencies",
         Base.metadata,
         Column(
@@ -31,7 +20,7 @@ class SubClassModel(Base):
         ),
     )
 
-    feature_assoc = Table(
+    subclass_has_features = Table(
         "Subclass_has_Features",
         Base.metadata,
         Column(
@@ -42,7 +31,7 @@ class SubClassModel(Base):
         ),
     )
 
-    spell_assoc = Table(
+    subclass_has_spells = Table(
         "Subclass_has_Spells",
         Base.metadata,
         Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
@@ -51,7 +40,19 @@ class SubClassModel(Base):
         ),
     )
 
-    # Relationships linked to association tables
+class SubClassModel(Base):
+
+    # Set table name with class attribute
+    __tablename__ = "Subclass"
+
+    # Columns
+    id_subclass = Column(Integer, primary_key=True)
+    subclass_name = Column(String(75), nullable=False, unique=True)
+    subclass_descrip = Column(String(250), nullable=False)
+    class_id = Column(Integer, ForeignKey("Class.id_class"))
+
+
+    # Relationships
 
     charclass = relationship(
         "CharClassModel",
@@ -61,15 +62,15 @@ class SubClassModel(Base):
     )
 
     proficiencies = relationship(
-        "ProficiencyModel", secondary=prof_assoc, back_populates="subclasses"
+        "ProficiencyModel", secondary=lambda: subclass_has_proficiences
     )
 
     features = relationship(
-        "FeatureModel", secondary=feature_assoc, back_populates="subclasses"
+        "FeatureModel", secondary=lambda: subclass_has_features
     )
 
     spells = relationship(
-        "SpellModel", secondary=spell_assoc, back_populates="subclasses"
+        "SpellModel", secondary=lambda: subclass_has_spells
     )
 
     # Relationship to PlayerChar

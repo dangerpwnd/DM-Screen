@@ -4,6 +4,41 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
+# Association tables
+
+race_has_proficiencies = Table(
+    "Race_has_Proficiencies",
+    Base.metadata,
+    Column(
+        "proficiency_id",
+        Integer,
+        ForeignKey("Proficiency.id_proficiency"),
+        primary_key=True,
+    ),
+    Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
+)
+race_has_features = Table(
+    "Race_has_Features",
+    Base.metadata,
+    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
+    Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
+)
+race_has_languages = Table(
+    "Race_has_Languages",
+    Base.metadata,
+    Column(
+        "language_id", Integer, ForeignKey("Language.id_language"), primary_key=True
+    ),
+    Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
+)
+race_has_subraces = Table(
+    "Race_has_Subraces",
+    Base.metadata,
+    Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
+    Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
+)
+
+
 class RaceModel(Base):
 
     __tablename__ = "Race"
@@ -19,59 +54,16 @@ class RaceModel(Base):
     race_speed = Column(Integer, nullable=False)
     size_id = Column(Integer, ForeignKey("Size.id_size"))
 
-    # Association tables
-
-    prof_assoc = Table(
-        "Race_has_Proficiencies",
-        Base.metadata,
-        Column(
-            "proficiency_id",
-            Integer,
-            ForeignKey("Proficiency.id_proficiency"),
-            primary_key=True,
-        ),
-        Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
-    )
-    feature_assoc = Table(
-        "Race_has_Features",
-        Base.metadata,
-        Column(
-            "feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True
-        ),
-        Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
-    )
-    lang_assoc = Table(
-        "Race_has_Languages",
-        Base.metadata,
-        Column(
-            "language_id", Integer, ForeignKey("Language.id_language"), primary_key=True
-        ),
-        Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
-    )
-    subrace_assoc = Table(
-        "Race_has_Subraces",
-        Base.metadata,
-        Column(
-            "subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True
-        ),
-        Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
-    )
-
     # Relationships
 
     size = relationship("SizeModel", back_populates="races")
+
     proficiencies = relationship(
-        "ProficiencyModel", secondary=prof_assoc, back_populates="races"
+        "ProficiencyModel", secondary=lambda: race_has_proficiencies
     )
-    features = relationship(
-        "FeatureModel", secondary=feature_assoc, back_populates="races"
-    )
-    languages = relationship(
-        "LanguageModel", secondary=lang_assoc, back_populates="races"
-    )
-    subraces = relationship(
-        "SubRaceModel", secondary=subrace_assoc, back_populates="races"
-    )
+    features = relationship("FeatureModel", secondary=lambda: race_has_features)
+    languages = relationship("LanguageModel", secondary=lambda: race_has_languages)
+    subraces = relationship("SubRaceModel", secondary=lambda: race_has_subraces)
 
     def __repr__(self):
         return (

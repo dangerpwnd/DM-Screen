@@ -3,8 +3,6 @@ from db import Base, session
 
 from sqlalchemy import Column, Integer, String
 
-# from sqlalchemy.orm import relationship
-
 
 class FeatModel(Base):
 
@@ -14,8 +12,6 @@ class FeatModel(Base):
     id_feat = Column(Integer, primary_key=True)
     feat_name = Column(String(75), nullable=False, unique=True)
     feat_descrip = Column(String(250), nullable=False)
-
-    # Relationships
 
     def __repr__(self):
         return '<Feat (name="%s", descrip="%s")>' % (self.feat_name, self.feat_descrip)
