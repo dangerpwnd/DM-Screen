@@ -53,7 +53,12 @@ class SubClassModel(Base):
 
     # Relationships linked to association tables
 
-    charclass = relationship("CharClassModel", back_populates="subclasses", cascade='all, delete, delete-orphan', single_parent=True,)
+    charclass = relationship(
+        "CharClassModel",
+        back_populates="subclasses",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
+    )
 
     proficiencies = relationship(
         "ProficiencyModel", secondary=prof_assoc, back_populates="subclasses"

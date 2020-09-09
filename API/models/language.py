@@ -18,11 +18,19 @@ class LanguageModel(Base):
 
     # Relationships
     races = relationship(
-        "RaceModel", secondary=race.lang_assoc, back_populates="languages", cascade='all, delete, delete-orphan', single_parent=True,
+        "RaceModel",
+        secondary=race.lang_assoc,
+        back_populates="languages",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.lang_assoc, back_populates="languages", cascade='all, delete, delete-orphan', single_parent=True,
+        "CharClassModel",
+        secondary=classm.lang_assoc,
+        back_populates="languages",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     def __repr__(self):
@@ -32,7 +40,7 @@ class LanguageModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, language_name: str) -> 'LanguageModel':
+    def find_by_name(cls, language_name: str) -> "LanguageModel":
         return cls.query.filter_by(language_name=language_name).first()
 
     @classmethod

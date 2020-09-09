@@ -24,7 +24,7 @@ class CharAttributeModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, attribute_name: str) -> 'CharAttributeModel':
+    def find_by_name(cls, attribute_name: str) -> "CharAttributeModel":
         return cls.query.filter_by(attribute_name=attribute_name).first()
 
     @classmethod

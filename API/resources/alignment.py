@@ -5,8 +5,8 @@ from schemas.alignment import AlignmentSchema
 alignment_schema = AlignmentSchema()
 alignment_list_schema = AlignmentSchema(many=True)
 
-class Alignment(Resource):
 
+class Alignment(Resource):
     @classmethod
     def get(cls, alignment_name: str):
         alignment = AlignmentModel.find_by_name(alignment_name)
@@ -17,7 +17,11 @@ class Alignment(Resource):
     @classmethod
     def post(cls, alignment_name: str):
         if AlignmentModel.find_by_name(alignment_name):
-            return {"message": "Alignment with name '{}' already exists.".format(alignment_name)}
+            return {
+                "message": "Alignment with name '{}' already exists.".format(
+                    alignment_name
+                )
+            }
 
         alignment_json = request.get_json()
         alignment_json["alignment_name"] = alignment_name
@@ -44,16 +48,16 @@ class Alignment(Resource):
         alignment = AlignmentModel.find_by_name(alignment_name)
 
         if alignment:
-            alignment.alignment_descrip = alignment_json['alignment_descrip']
+            alignment.alignment_descrip = alignment_json["alignment_descrip"]
         else:
-            alignment_json['alignment_name'] = alignment_name
+            alignment_json["alignment_name"] = alignment_name
             alignment = alignment_schema.load(alignment_json)
 
         alignment.save_to_db()
 
         return alignment_schema.dump(alignment), 200
 
-class AlignmentList(Resource):
 
+class AlignmentList(Resource):
     def get(cls):
-        return {'Alignments': alignment_list_schema.dump(AlignmentModel.find_all())}
+        return {"Alignments": alignment_list_schema.dump(AlignmentModel.find_all())}

@@ -5,8 +5,8 @@ from schemas.hair import HairSchema
 hair_schema = HairSchema()
 hair_list_schema = HairSchema(many=True)
 
-class Hair(Resource):
 
+class Hair(Resource):
     @classmethod
     def get(cls, hair_color: str):
         hair = HairModel.find_by_color(hair_color)
@@ -17,7 +17,9 @@ class Hair(Resource):
     @classmethod
     def post(cls, hair_color: str):
         if HairModel.find_by_color(hair_color):
-            return {"message": "Hair with color '{}' already exists.".format(hair_color)}
+            return {
+                "message": "Hair with color '{}' already exists.".format(hair_color)
+            }
 
         hair = HairModel()
         hair.hair_color = hair_color
@@ -38,7 +40,7 @@ class Hair(Resource):
 
     # put method not required as only one attribute
 
-class HairList(Resource):
 
+class HairList(Resource):
     def get(cls):
-        return {'Hair colors': hair_list_schema.dump(HairModel.find_all())}
+        return {"Hair colors": hair_list_schema.dump(HairModel.find_all())}

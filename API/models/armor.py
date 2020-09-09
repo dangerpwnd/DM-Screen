@@ -6,6 +6,7 @@ from sqlalchemy.orm import relationship
 
 from models.armortype import ArmorTypeModel as AType
 
+
 class ArmorModel(Base):
 
     __tablename__ = "Armor"
@@ -33,7 +34,12 @@ class ArmorModel(Base):
 
     @classmethod
     def find_by_name(cls, armor_name: str) -> "ArmorModel":
-        return cls.query.filter_by(armor_name=armor_name).filter(ArmorModel.armortype_id == AType.id_armortype).outerjoin(AType).first()
+        return (
+            cls.query.filter_by(armor_name=armor_name)
+            .filter(ArmorModel.armortype_id == AType.id_armortype)
+            .outerjoin(AType)
+            .first()
+        )
 
     @classmethod
     def find_all(cls) -> List["ArmorModel"]:

@@ -5,8 +5,8 @@ from schemas.proficiency import ProficiencySchema
 proficiency_schema = ProficiencySchema()
 proficiency_list_schema = ProficiencySchema(many=True)
 
-class Proficiency(Resource):
 
+class Proficiency(Resource):
     @classmethod
     def get(cls, proficiency_name: str):
         proficiency = ProficiencyModel.find_by_name(proficiency_name)
@@ -18,7 +18,11 @@ class Proficiency(Resource):
     def post(cls, proficiency_name: str):
 
         if ProficiencyModel.find_by_name(proficiency_name):
-            return {"message": "Proficiency with name '{}' already exists.".format(proficiency_name)}
+            return {
+                "message": "Proficiency with name '{}' already exists.".format(
+                    proficiency_name
+                )
+            }
 
         proficiency_json = request.get_json()
         proficiency_json["proficiency_name"] = proficiency_name
@@ -47,17 +51,19 @@ class Proficiency(Resource):
         proficiency = ProficiencyModel.find_by_name(proficiency_name)
 
         if proficiency:
-            proficiency.proficiency_descrip = proficiency_json['proficiency_descrip']
+            proficiency.proficiency_descrip = proficiency_json["proficiency_descrip"]
         else:
-            proficiency_json['proficiency_name'] = proficiency_name
+            proficiency_json["proficiency_name"] = proficiency_name
             proficiency = proficiency_schema.load(proficiency_json)
 
         proficiency.save_to_db()
 
         return proficiency_schema.dump(proficiency), 200
 
-class ProficiencyList(Resource):
 
+class ProficiencyList(Resource):
     @classmethod
     def get(cls):
-        return {'Proficiencies': proficiency_list_schema.dump(ProficiencyModel.find_all())}
+        return {
+            "Proficiencies": proficiency_list_schema.dump(ProficiencyModel.find_all())
+        }

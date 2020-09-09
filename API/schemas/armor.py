@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load
 from models.armor import ArmorModel
 
+
 class ArmorSchema(Schema):
     id_armor = fields.Integer(dump_only=True)
     armor_name = fields.Str()
@@ -9,7 +10,7 @@ class ArmorSchema(Schema):
     armor_weight = fields.Integer()
     armor_maxdex = fields.Integer()
     armortype_id = fields.Integer()
-    armortype = fields.Nested('ArmorTypeSchema')
+    armortype = fields.Nested("ArmorTypeSchema")
 
     @post_load
     def make_armor(self, data, **kwargs):

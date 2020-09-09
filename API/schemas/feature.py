@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load
 from models.feature import FeatureModel
 
+
 class FeatureSchema(Schema):
     id_feature = fields.Integer(dump_only=True)
     feature_name = fields.Str()

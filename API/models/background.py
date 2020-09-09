@@ -3,6 +3,7 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship
 
+
 class BackgroundModel(Base):
 
     # Set table name with class attribute
@@ -15,8 +16,12 @@ class BackgroundModel(Base):
     background_descrip = Column(String(250), nullable=False)
 
     # Relationships
-    equipment = relationship("EquipmentModel", secondary=lambda: background_has_equipment)
-    proficiencies = relationship("ProficiencyModel", secondary=lambda: background_has_proficiencies)
+    equipment = relationship(
+        "EquipmentModel", secondary=lambda: background_has_equipment
+    )
+    proficiencies = relationship(
+        "ProficiencyModel", secondary=lambda: background_has_proficiencies
+    )
 
     # Relationship to PlayerChar
 
@@ -46,12 +51,34 @@ class BackgroundModel(Base):
         session.delete(self)
         session.commit()
 
+
 # Association Tables
 
-background_has_equipment = Table("Background_has_Equipment", Base.metadata,
+background_has_equipment = Table(
+    "Background_has_Equipment",
+    Base.metadata,
     Column("equip_id", Integer, ForeignKey("Equipment.id_equip"), primary_key=True),
-    Column("background_id", Integer, ForeignKey("Background.id_background"), primary_key=True))
+    Column(
+        "background_id",
+        Integer,
+        ForeignKey("Background.id_background"),
+        primary_key=True,
+    ),
+)
 
-background_has_proficiencies = Table("Background_has_Proficiencies", Base.metadata,
-    Column("proficiency_id", Integer, ForeignKey("Proficiency.id_proficiency"), primary_key=True),
-    Column("background_id", Integer, ForeignKey("Background.id_background"), primary_key=True))
+background_has_proficiencies = Table(
+    "Background_has_Proficiencies",
+    Base.metadata,
+    Column(
+        "proficiency_id",
+        Integer,
+        ForeignKey("Proficiency.id_proficiency"),
+        primary_key=True,
+    ),
+    Column(
+        "background_id",
+        Integer,
+        ForeignKey("Background.id_background"),
+        primary_key=True,
+    ),
+)

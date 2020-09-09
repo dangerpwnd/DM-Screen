@@ -24,7 +24,7 @@ class FactionModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, faction_name: str) -> 'FactionModel':
+    def find_by_name(cls, faction_name: str) -> "FactionModel":
         return cls.query.filter_by(faction_name=faction_name).first()
 
     @classmethod

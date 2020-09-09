@@ -3,6 +3,7 @@ from db import Base, session
 
 from sqlalchemy import Column, Integer, String
 
+
 class ToolModel(Base):
 
     # Set table name with class Attribute

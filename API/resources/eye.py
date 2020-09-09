@@ -5,8 +5,8 @@ from schemas.eye import EyeSchema
 eye_schema = EyeSchema()
 eye_list_schema = EyeSchema(many=True)
 
-class Eye(Resource):
 
+class Eye(Resource):
     @classmethod
     def get(cls, eye_color: str):
         eye = EyeModel.find_by_color(eye_color)
@@ -38,7 +38,7 @@ class Eye(Resource):
 
     # put method not required as only one attribute
 
-class EyeList(Resource):
 
+class EyeList(Resource):
     def get(cls):
-        return {'Eyes': eye_list_schema.dump(EyeModel.find_all())}
+        return {"Eyes": eye_list_schema.dump(EyeModel.find_all())}

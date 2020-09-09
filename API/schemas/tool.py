@@ -1,5 +1,6 @@
-from marshmallow import Schema, fields,post_load
+from marshmallow import Schema, fields, post_load
 from models.tool import ToolModel
+
 
 class ToolSchema(Schema):
     id_tool = fields.Integer(dump_only=True)

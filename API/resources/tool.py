@@ -5,8 +5,8 @@ from schemas.tool import ToolSchema
 tool_schema = ToolSchema()
 tool_list_schema = ToolSchema(many=True)
 
-class Tool(Resource):
 
+class Tool(Resource):
     @classmethod
     def get(cls, tool_name: str):
         tool = ToolModel.find_by_name(tool_name)
@@ -47,8 +47,8 @@ class Tool(Resource):
         tool = ToolModel.find_by_name(tool_name)
 
         if tool:
-            tool.tool_descrip = tool_json['tool_descrip']
-            tool.tool_weight = tool_json['tool_weight']
+            tool.tool_descrip = tool_json["tool_descrip"]
+            tool.tool_weight = tool_json["tool_weight"]
         else:
             tool_json["tool_name"] = tool_name
             tool = tool_schema.load(tool_json)
@@ -57,8 +57,8 @@ class Tool(Resource):
 
         return tool_schema.dump(tool), 200
 
-class ToolList(Resource):
 
+class ToolList(Resource):
     @classmethod
     def get(cls):
-        return {'Tools': tool_list_schema.dump(ToolModel.find_all())}
+        return {"Tools": tool_list_schema.dump(ToolModel.find_all())}

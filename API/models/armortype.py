@@ -14,13 +14,18 @@ class ArmorTypeModel(Base):
     armortype_name = Column(String(75), nullable=False, unique=True)
 
     # Relationships
-    armor = relationship("ArmorModel", backref='armortype', cascade='all, delete, delete-orphan', single_parent=True,)
+    armor = relationship(
+        "ArmorModel",
+        backref="armortype",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
+    )
 
     def __repr__(self):
         return '<Armor Type (name="%s")>' % (self.armortype_name)
 
     @classmethod
-    def find_by_name(cls, armortype_name: str) -> 'ArmorTypeModel':
+    def find_by_name(cls, armortype_name: str) -> "ArmorTypeModel":
         return cls.query.filter_by(armortype_name=armortype_name).first()
 
     @classmethod

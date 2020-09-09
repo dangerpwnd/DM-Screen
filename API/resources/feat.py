@@ -5,22 +5,22 @@ from schemas.feat import FeatSchema
 feat_schema = FeatSchema()
 feat_list_schema = FeatSchema(many=True)
 
-class Feat(Resource):
 
+class Feat(Resource):
     @classmethod
     def get(cls, feat_name: str):
         feat = FeatModel.find_by_name(feat_name)
         if not feat:
-            return {'message': 'Feat not found.'}, 404
+            return {"message": "Feat not found."}, 404
         return feat_schema.dump(feat), 200
 
     @classmethod
     def post(cls, feat_name: str):
         if FeatModel.find_by_name(feat_name):
-            return {'message': 'Feat with name "{}" already exists.'.format(feat_name)}
+            return {"message": 'Feat with name "{}" already exists.'.format(feat_name)}
 
         feat_json = request.get_json()
-        feat_json['feat_name'] = feat_name
+        feat_json["feat_name"] = feat_name
 
         feat = feat_schema.load(feat_json)
         feat.save_to_db()
@@ -31,9 +31,9 @@ class Feat(Resource):
         feat = FeatModel.find_by_name(feat_name)
         if feat:
             feat.delete_from_db()
-            return {'message': 'Feat deleted.'}, 200
+            return {"message": "Feat deleted."}, 200
 
-        return {'message': 'Feat not found.'}, 404
+        return {"message": "Feat not found."}, 404
 
     @classmethod
     def put(cls, feat_name: str):
@@ -41,17 +41,17 @@ class Feat(Resource):
         feat = FeatModel.find_by_name(feat_name)
 
         if feat:
-            feat.feat_descrip = feat_json['feat_descrip']
+            feat.feat_descrip = feat_json["feat_descrip"]
         else:
-            feat_json['feat_name'] = feat_name
+            feat_json["feat_name"] = feat_name
             feat = feat_schema.load(feat_json)
 
         feat.save_to_db()
 
         return feat_schema.dump(feat), 200
 
-class FeatList(Resource):
 
+class FeatList(Resource):
     @classmethod
     def get(cls):
-        return {'Feats': feat_list_schema.dump(FeatModel.find_all())}
+        return {"Feats": feat_list_schema.dump(FeatModel.find_all())}

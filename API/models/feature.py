@@ -30,19 +30,35 @@ class FeatureModel(Base):
 
     # Relationships
     races = relationship(
-        "RaceModel", secondary=race.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
+        "RaceModel",
+        secondary=race.feature_assoc,
+        back_populates="features",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     subraces = relationship(
-        "SubRaceModel", secondary=subrace.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
+        "SubRaceModel",
+        secondary=subrace.feature_assoc,
+        back_populates="features",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     classes = relationship(
-        "CharClassModel", secondary=classm.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
+        "CharClassModel",
+        secondary=classm.feature_assoc,
+        back_populates="features",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     subclasses = relationship(
-        "SubClassModel", secondary=subclass.feature_assoc, back_populates="features", cascade='all, delete, delete-orphan', single_parent=True,
+        "SubClassModel",
+        secondary=subclass.feature_assoc,
+        back_populates="features",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
     )
 
     spells = relationship(
@@ -56,7 +72,7 @@ class FeatureModel(Base):
         )
 
     @classmethod
-    def find_by_name(cls, feature_name: str) -> 'FeatureModel':
+    def find_by_name(cls, feature_name: str) -> "FeatureModel":
         return cls.query.filter_by(feature_name=feature_name).first()
 
     @classmethod

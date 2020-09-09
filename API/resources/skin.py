@@ -5,8 +5,8 @@ from schemas.skin import SkinSchema
 skin_schema = SkinSchema()
 skin_list_schema = SkinSchema(many=True)
 
-class Skin(Resource):
 
+class Skin(Resource):
     @classmethod
     def get(cls, skin_color: str):
         skin = SkinModel.find_by_color(skin_color)
@@ -17,7 +17,9 @@ class Skin(Resource):
     @classmethod
     def post(cls, skin_color: str):
         if SkinModel.find_by_color(skin_color):
-            return {"message": "Skin with color '{}' already exists.".format(skin_color)}
+            return {
+                "message": "Skin with color '{}' already exists.".format(skin_color)
+            }
 
         skin = SkinModel()
         skin.skin_color = skin_color
@@ -38,7 +40,7 @@ class Skin(Resource):
 
     # put method not required as only one attribute
 
-class SkinList(Resource):
 
+class SkinList(Resource):
     def get(cls):
-        return {'Skins': skin_list_schema.dump(SkinModel.find_all())}
+        return {"Skins": skin_list_schema.dump(SkinModel.find_all())}

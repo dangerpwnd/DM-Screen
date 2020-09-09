@@ -5,8 +5,8 @@ from schemas.size import SizeSchema
 size_schema = SizeSchema()
 size_list_schema = SizeSchema(many=True)
 
-class Size(Resource):
 
+class Size(Resource):
     @classmethod
     def get(cls, size_name: str):
         size = SizeModel.find_by_name(size_name)
@@ -38,7 +38,7 @@ class Size(Resource):
 
     # put method not required as only one attribute
 
-class SizeList(Resource):
 
+class SizeList(Resource):
     def get(cls):
-        return {'Sizes': size_list_schema.dump(SizeModel.find_all())}
+        return {"Sizes": size_list_schema.dump(SizeModel.find_all())}

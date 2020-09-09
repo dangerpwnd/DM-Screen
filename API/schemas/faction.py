@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load
 from models.faction import FactionModel
 
+
 class FactionSchema(Schema):
     id_faction = fields.Integer(dump_only=True)
     faction_name = fields.Str()

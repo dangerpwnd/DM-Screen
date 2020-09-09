@@ -15,13 +15,18 @@ class WeaponTypeModel(Base):
     weapon_id = Column(Integer, ForeignKey("Weapon.id_weapon"))
 
     # Relationships
-    weapons = relationship("WeaponModel", back_populates="weapon_types", cascade='all, delete, delete-orphan', single_parent=True,)
+    weapons = relationship(
+        "WeaponModel",
+        back_populates="weapon_types",
+        cascade="all, delete, delete-orphan",
+        single_parent=True,
+    )
 
     def __repr__(self):
         return '<Weapon Type (name="%s">' % (self.weapontype_name)
 
     @classmethod
-    def find_by_name(cls, weapontype_name: str) -> 'WeaponTypeModel':
+    def find_by_name(cls, weapontype_name: str) -> "WeaponTypeModel":
         return cls.query.filter_by(weapontype_name=weapontype_name).first()
 
     @classmethod

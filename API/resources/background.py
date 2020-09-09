@@ -73,7 +73,6 @@ class BackgroundList(Resource):
 
 
 class BackgroundHasEquipment(Resource):
-
     @classmethod
     def post(cls, background_name: str, equip_name: str):
         equipment = EquipmentModel.find_by_name(equip_name)
@@ -85,11 +84,7 @@ class BackgroundHasEquipment(Resource):
         background.equipment.append(equipment)
         background.save_to_db()
         return (
-            {
-                "message": "Equipment '{}' added.".format(
-                    equipment.equip_name
-                )
-            },
+            {"message": "Equipment '{}' added.".format(equipment.equip_name)},
             200,
         )
 
@@ -106,10 +101,6 @@ class BackgroundHasProficiencies(Resource):
         background.proficiencies.append(proficiency)
         background.save_to_db()
         return (
-            {
-                "message": "Proficiency '{}' added.".format(
-                    proficiency.proficiency_name
-                )
-            },
+            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
             200,
         )
