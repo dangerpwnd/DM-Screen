@@ -1,6 +1,5 @@
 from typing import List
 from db import Base, session
-from models.charclass import CharClassModel as classm
 
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
@@ -18,13 +17,6 @@ class EquipmentModel(Base):
 
     # Relationships
 
-    classes = relationship(
-        "CharClassModel",
-        secondary=classm.equip_assoc,
-        back_populates="equipment",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
 
     def __repr__(self):
         return "<Equipment (name='%s', description='%s', weight='%s')>" % (
