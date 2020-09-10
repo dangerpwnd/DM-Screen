@@ -13,6 +13,9 @@ class EyeModel(Base):
     id_eye = Column(Integer, primary_key=True)
     eye_color = Column(String(50), nullable=False, unique=True)
 
+    # Relationships
+    player = relationship("PlayerModel", backref="eye_color")
+
     def __repr__(self):
         return "<Eye (color='%s')>" % (self.eye_color)
 

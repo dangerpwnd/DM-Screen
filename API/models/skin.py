@@ -13,6 +13,9 @@ class SkinModel(Base):
     id_skin = Column(Integer, primary_key=True)
     skin_color = Column(String(50), nullable=False, unique=True)
 
+    # Relationships
+    player = relationship("PlayerModel", backref="skin_color")
+
     def __repr__(self):
         return "<Skin (color='%s')>" % (self.skin_color)
 

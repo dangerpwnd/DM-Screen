@@ -13,6 +13,9 @@ class HairModel(Base):
     id_hair = Column(Integer, primary_key=True)
     hair_color = Column(String(50), nullable=False, unique=True)
 
+    # Relationships
+    player = relationship("PlayerModel", backref="hair_color")
+
     def __repr__(self):
         return "<Hair (color='%s')>" % (self.hair_color)
 
