@@ -55,3 +55,19 @@ class FeatList(Resource):
     @classmethod
     def get(cls):
         return {"Feats": feat_list_schema.dump(FeatModel.find_all())}
+
+class FeatHasProficiencies(Resource):
+    @classmethod
+    def post(cls, feat_name: str, proficiency_name: str):
+        feat = FeatModel.find_by_name(feat_name)
+        proficiency = ProficiencyModel.find_by_name(proficiency_name)
+        if not feat:
+            return {"message": "Feat not found."}, 404
+        if not proficiency:
+            return {"message": "Proficiency not found."}, 404
+        feat.proficiencies.append(proficiency)
+        feat.save_to_db()
+        return (
+            {"message": "Proficiency '{}' added.".format(proficiency.equip_name)},
+            200,
+        )

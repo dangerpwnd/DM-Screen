@@ -1,8 +1,17 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Table, ForeignKey
+from sqlalchemy.orm import relationship
 
+# Assocation Tables
+
+feat_has_proficiencies = Table(
+    "Feat_has_Proficiencies",
+    Base.metadata,
+    Column("feat_id", Integer, ForeignKey("Feat.id_feat")),
+    Column("proficiency_id", Integer, ForeignKey("Proficiency.id_proficiency"))
+)
 
 class FeatModel(Base):
 
@@ -12,6 +21,11 @@ class FeatModel(Base):
     id_feat = Column(Integer, primary_key=True)
     feat_name = Column(String(75), nullable=False, unique=True)
     feat_descrip = Column(String(250), nullable=False)
+
+    # Relationships
+    proficiencies = relationship(
+        "ProficiencyModel", secondary=lambda:feat_has_proficiencies
+    )
 
     def __repr__(self):
         return '<Feat (name="%s", descrip="%s")>' % (self.feat_name, self.feat_descrip)

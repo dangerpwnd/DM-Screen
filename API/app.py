@@ -30,7 +30,7 @@ from resources.charclass import (
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
 from resources.faction import Faction, FactionList
-from resources.feat import Feat, FeatList
+from resources.feat import Feat, FeatList, FeatHasProficiencies
 from resources.feature import Feature, FeatureList
 from resources.hair import Hair, HairList
 from resources.language import Language, LanguageList
@@ -147,6 +147,7 @@ api.add_resource(FactionList, "/factions")
 # Feats
 api.add_resource(Feat, "/feat/<string:feat_name>")
 api.add_resource(FeatList, "/feats")
+api.add_resource(FeatHasProficiencies, "/feat/<string:feat_name>/proficiency/<string:proficiency_name>")
 
 # Features
 api.add_resource(Feature, "/feature/<string:feature_name>")
