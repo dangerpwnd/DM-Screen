@@ -48,7 +48,13 @@ from resources.skill import Skill, SkillList
 from resources.skin import Skin, SkinList
 from resources.spell import Spell, SpellList
 from resources.spelltype import SpellType, SpellTypeList
-from resources.subclass import SubClass, SubClassList
+from resources.subclass import (
+    SubClass,
+    SubClassList,
+    SubClassHasFeatures,
+    SubClassHasProficiencies,
+    SubClassHasSpells,
+)
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 from resources.weapon import Weapon, WeaponList
@@ -215,6 +221,17 @@ api.add_resource(SpellTypeList, "/spelltypes")
 # Subclasses
 api.add_resource(SubClass, "/subclass/<string:subclass_name>")
 api.add_resource(SubClassList, "/subclasses")
+api.add_resource(
+    SubClassHasFeatures,
+    "/subclass/<string:subclass_name>/feature/<string:feature_name>",
+)
+api.add_resource(
+    SubClassHasProficiencies,
+    "/subclass/<string:subclass_name>/proficiency/<string:proficiency_name>",
+)
+api.add_resource(
+    SubClassHasSpells, "/subclass/<string:subclass_name>/spell/<string:spell_name>"
+)
 
 # Tools
 api.add_resource(Tool, "/tool/<string:tool_name>")

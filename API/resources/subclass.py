@@ -65,3 +65,54 @@ class SubClassList(Resource):
     @classmethod
     def get(cls):
         return {"Subclasses": subclass_list_schema.dump(SubClassModel.find_all())}, 200
+
+
+class SubClassHasFeatures(Resource):
+    @classmethod
+    def post(cls, subclass_name: str, feature_name: str):
+        subclass = SubClassModel.find_by_name(subclass_name)
+        feature = FeatureModel.find_by_name(feature_name)
+        if not subclass:
+            return {"message": "Subclass not found."}, 404
+        if not feature:
+            return {"message": "Feature not found."}, 404
+        subclass.features.append(feature)
+        subclass.save_to_db()
+        return (
+            {"message": "Feature '{}' added.".format(feature.feature_name)},
+            200,
+        )
+
+
+class SubClassHasProficiencies(Resource):
+    @classmethod
+    def post(cls, subclass_name: str, proficiency_name: str):
+        subclass = SubClassModel.find_by_name(subclass_name)
+        proficiency = ProficiencyModel.find_by_name(proficiency_name)
+        if not subclass:
+            return {"message": "Subclass not found."}, 404
+        if not proficiency:
+            return {"message": "Proficiency not found."}, 404
+        subclass.proficiencies.append(proficiency)
+        subclass.save_to_db()
+        return (
+            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
+            200,
+        )
+
+
+class SubClassHasSpells(Resource):
+    @classmethod
+    def post(cls, subclass_name: str, spell_name: str):
+        subclass = SubClassModel.find_by_name(subclass_name)
+        spell = SpellModel.find_by_name(spell_name)
+        if not subclass:
+            return {"message": "Subclass not found."}, 404
+        if not spell:
+            return {"message": "Spell not found."}, 404
+        subclass.spells.append(spell)
+        subclass.save_to_db()
+        return (
+            {"message": "Spell '{}' added.".format(spell.spell_name)},
+            200,
+        )
