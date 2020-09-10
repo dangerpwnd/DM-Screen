@@ -3,6 +3,7 @@ from db import Base, session
 
 from sqlalchemy import Column, Integer, String
 
+
 class CharAttributeModel(Base):
 
     __tablename__ = "Attribute"

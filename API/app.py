@@ -55,7 +55,12 @@ from resources.subclass import (
     SubClassHasProficiencies,
     SubClassHasSpells,
 )
-from resources.subrace import (SubRace, SubRaceList, SubRaceHasFeatures, SubRaceHasProficiencies)
+from resources.subrace import (
+    SubRace,
+    SubRaceList,
+    SubRaceHasFeatures,
+    SubRaceHasProficiencies,
+)
 from resources.tool import Tool, ToolList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 from resources.weapon import Weapon, WeaponList
@@ -234,12 +239,11 @@ api.add_resource(
     SubClassHasSpells, "/subclass/<string:subclass_name>/spell/<string:spell_name>"
 )
 
-#Subraces
+# Subraces
 api.add_resource(SubRace, "/subrace/<string:subrace_name>")
 api.add_resource(SubRaceList, "/subraces")
 api.add_resource(
-    SubRaceHasFeatures,
-    "/subrace/<string:subrace_name>/feature/<string:feature_name>",
+    SubRaceHasFeatures, "/subrace/<string:subrace_name>/feature/<string:feature_name>",
 )
 api.add_resource(
     SubRaceHasProficiencies,

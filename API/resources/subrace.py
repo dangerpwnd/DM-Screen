@@ -67,6 +67,7 @@ class SubRaceList(Resource):
     def get(cls):
         return {"Subraces": subrace_list_schema.dump(SubraceModel.find_all())}, 200
 
+
 class SubRaceHasFeatures(Resource):
     @classmethod
     def post(cls, subrace_name: str, feature_name: str):

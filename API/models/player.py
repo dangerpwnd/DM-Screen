@@ -61,7 +61,9 @@ player_has_feats = Table(
 player_has_subclasses = Table(
     "Player_has_Subclasses",
     Base.metadata,
-    Column("subclass_id", Integer, ForeignKey("SubClass.id_subclass"), primary_key=True),
+    Column(
+        "subclass_id", Integer, ForeignKey("SubClass.id_subclass"), primary_key=True
+    ),
     Column("player_id", Integer, ForeignKey("PlayerChar.id_player"), primary_key=True),
 )
 
@@ -86,6 +88,7 @@ player_has_weapons = Table(
     Column("player_id", Integer, ForeignKey("PlayerChar.id_player"), primary_key=True),
 )
 
+
 class PlayerModel(Base):
 
     __tablename__ = "PlayerChar"
@@ -105,46 +108,28 @@ class PlayerModel(Base):
         "CharAttributeModel", secondary=lambda: player_has_attributes
     )
     # many to many charclass - DONE
-    classes = relationship(
-        "CharClassModel", secondary=lambda: player_has_classes
-    )
+    classes = relationship("CharClassModel", secondary=lambda: player_has_classes)
     # many to many coin - DONE
-    coins = relationship(
-        "CoinModel", secondary=lambda: player_has_coins
-    )
+    coins = relationship("CoinModel", secondary=lambda: player_has_coins)
     # many to many equipment - DONE
-    equipment = relationship(
-        "EquipmentModel", secondary=lambda: player_has_equipment
-    )
+    equipment = relationship("EquipmentModel", secondary=lambda: player_has_equipment)
     # many to one eye color - DONE
     # many to many faction - DONE
-    factions = relationship(
-        "FactionModel", secondary=lambda: player_has_factions
-    )
+    factions = relationship("FactionModel", secondary=lambda: player_has_factions)
     # many to many feat - DONE
-    feats = relationship(
-        "FeatModel", secondary=lambda: player_has_feats
-    )
+    feats = relationship("FeatModel", secondary=lambda: player_has_feats)
     # many to one hair color - DONE
     # many to one race - DONE
     # many to one skin color - DONE
     # many to many subclass - DONE
-    subclasses = relationship(
-        "SubClassModel", secondary=lambda: player_has_subclasses
-    )
+    subclasses = relationship("SubClassModel", secondary=lambda: player_has_subclasses)
     # many to one subrace - DONE
     # many to many tool - DONE
-    tools = relationship(
-        "ToolModel", secondary=lambda: player_has_tools
-    )
+    tools = relationship("ToolModel", secondary=lambda: player_has_tools)
     # many to many user - DONE
-    users = relationship(
-        "UserModel", secondary=lambda: player_has_users
-    )
+    users = relationship("UserModel", secondary=lambda: player_has_users)
     # many to many weapon - DONE
-    weapons = relationship(
-        "WeaponModel", secondary=lambda: player_has_weapons
-    )
+    weapons = relationship("WeaponModel", secondary=lambda: player_has_weapons)
 
     def __repr__(self):
         return "<Player (name='%s', description='%s')>" % (self.name, self.descrip)
