@@ -3,9 +3,6 @@ from db import Base, session
 
 from sqlalchemy import Column, Integer, String
 
-# from sqlalchemy.orm import relationship
-
-
 class CharAttributeModel(Base):
 
     __tablename__ = "Attribute"
@@ -14,8 +11,6 @@ class CharAttributeModel(Base):
     id_attribute = Column(Integer, primary_key=True)
     attribute_name = Column(String(75), nullable=False, unique=True)
     attribute_descrip = Column(String(250), nullable=False)
-
-    # Relationships
 
     def __repr__(self):
         return '<Attribute (name="%s", descrip="%s")>' % (
