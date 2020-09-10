@@ -4,6 +4,57 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 
+# Association Tables
+class_has_equipment = Table(
+    "Class_has_Equipment",
+    Base.metadata,
+    Column("equip_id", Integer, ForeignKey("Equipment.id_equip"), primary_key=True),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+class_has_proficiencies = Table(
+    "Class_has_Proficiencies",
+    Base.metadata,
+    Column(
+        "proficiency_id",
+        Integer,
+        ForeignKey("Proficiency.id_proficiency"),
+        primary_key=True,
+    ),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+class_has_features = Table(
+    "Class_has_Features",
+    Base.metadata,
+    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+class_has_skills = Table(
+    "Class_has_Skills",
+    Base.metadata,
+    Column("skill_id", Integer, ForeignKey("Skill.id_skill"), primary_key=True),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+class_has_spells = Table(
+    "Class_has_Spells",
+    Base.metadata,
+    Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+class_has_languages = Table(
+    "Class_has_Languages",
+    Base.metadata,
+    Column(
+        "language_id", Integer, ForeignKey("Language.id_language"), primary_key=True
+    ),
+    Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
+)
+
+
 class CharClassModel(Base):
 
     # Set table name with class attribute
@@ -13,58 +64,6 @@ class CharClassModel(Base):
     id_class = Column(Integer, primary_key=True)
     class_name = Column(String(75), nullable=False, unique=True)
     class_descrip = Column(String(250), nullable=False)
-
-    # Association Tables
-    class_has_equipment = Table(
-        "Class_has_Equipment",
-        Base.metadata,
-        Column("equip_id", Integer, ForeignKey("Equipment.id_equip"), primary_key=True),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
-
-    class_has_proficiencies = Table(
-        "Class_has_Proficiencies",
-        Base.metadata,
-        Column(
-            "proficiency_id",
-            Integer,
-            ForeignKey("Proficiency.id_proficiency"),
-            primary_key=True,
-        ),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
-
-    class_has_features = Table(
-        "Class_has_Features",
-        Base.metadata,
-        Column(
-            "feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True
-        ),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
-
-    class_has_skills = Table(
-        "Class_has_Skills",
-        Base.metadata,
-        Column("skill_id", Integer, ForeignKey("Skill.id_skill"), primary_key=True),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
-
-    class_has_spells = Table(
-        "Class_has_Spells",
-        Base.metadata,
-        Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
-
-    class_has_languages = Table(
-        "Class_has_Languages",
-        Base.metadata,
-        Column(
-            "language_id", Integer, ForeignKey("Language.id_language"), primary_key=True
-        ),
-        Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    )
 
     # Relationships
     subclasses = relationship("SubClassModel", back_populates="charclass")

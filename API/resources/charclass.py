@@ -74,10 +74,104 @@ class CharClassList(Resource):
         )
 
 
-# TODO
-# ClassHasEquipment
-# ClassHasFeatures
-# ClassHasProficiencies
-# ClassHasSkills
-# ClassHasSpells
+class ClassHasEquipment(Resource):
+    @classmethod
+    def post(cls, class_name: str, equip_name: str):
+        equipment = EquipmentModel.find_by_name(equip_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not equipment:
+            return {"message": "Equipment not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.equipment.append(equipment)
+        charclass.save_to_db()
+        return (
+            {"message": "Equipment '{}' added.".format(equipment.equip_name)},
+            200,
+        )
+
+
+class ClassHasFeatures(Resource):
+    @classmethod
+    def post(cls, feature_name: str, class_name: str):
+        feature = FeatureModel.find_by_name(feature_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not feature:
+            return {"message": "Feature not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.features.append(feature)
+        charclass.save_to_db()
+        return (
+            {"message": "Feature '{}' added.".format(feature.feature_name)},
+            200,
+        )
+
+
+class ClassHasProficiencies(Resource):
+    @classmethod
+    def post(cls, proficiency_name: str, class_name: str):
+        proficiency = ProficiencyModel.find_by_name(proficiency_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not proficiency:
+            return {"message": "Proficiency not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.proficiencies.append(proficiency)
+        charclass.save_to_db()
+        return (
+            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
+            200,
+        )
+
+
+class ClassHasSkills(Resource):
+    @classmethod
+    def post(cls, skill_name: str, class_name: str):
+        skill = SkillModel.find_by_name(skill_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not skill:
+            return {"message": "Skill not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.skills.append(skill)
+        charclass.save_to_db()
+        return (
+            {"message": "Skill '{}' added.".format(skill.skill_name)},
+            200,
+        )
+
+
+class ClassHasSpells(Resource):
+    @classmethod
+    def post(cls, spell_name: str, class_name: str):
+        spell = SpellModel.find_by_name(spell_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not spell:
+            return {"message": "Spell not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.spells.append(spell)
+        charclass.save_to_db()
+        return (
+            {"message": "Spell '{}' added.".format(spell.spell_name)},
+            200,
+        )
+
+
 # ClassHasLanguages
+class ClassHasLanguages(Resource):
+    @classmethod
+    def post(cls, language_name: str, class_name: str):
+        language = LanguageModel.find_by_name(language_name)
+        charclass = CharClassModel.find_by_name(class_name)
+        if not language:
+            return {"message": "Language not found."}, 404
+        if not charclass:
+            return {"message": "Class not found."}, 404
+        charclass.languages.append(language)
+        charclass.save_to_db()
+        return (
+            {"message": "Language '{}' added.".format(language.language_name)},
+            200,
+        )

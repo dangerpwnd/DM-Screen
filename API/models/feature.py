@@ -4,15 +4,14 @@ from db import Base, session
 from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
-    # Association tables
+# Association tables
 feature_has_spells = Table(
-        "Feature_has_Spells",
-        Base.metadata,
-        Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
-        Column(
-            "feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True
-        ),
-    )
+    "Feature_has_Spells",
+    Base.metadata,
+    Column("spell_id", Integer, ForeignKey("Spell.id_spell"), primary_key=True),
+    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
+)
+
 
 class FeatureModel(Base):
 
@@ -23,12 +22,9 @@ class FeatureModel(Base):
     feature_name = Column(String(75), nullable=False, unique=True)
     feature_descrip = Column(String(250), nullable=False)
 
-
     # Relationships
 
-    spells = relationship(
-        "SpellModel", secondary=lambda:feature_has_spells
-    )
+    spells = relationship("SpellModel", secondary=lambda: feature_has_spells)
 
     def __repr__(self):
         return '<Feature (name="%s", descrip="%s")>' % (

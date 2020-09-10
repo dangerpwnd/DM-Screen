@@ -18,7 +18,15 @@ from resources.background import (
 )
 from resources.coin import Coin, CoinList
 from resources.charattribute import CharAttribute, CharAttributeList
-from resources.charclass import CharClass, CharClassList
+from resources.charclass import (
+    CharClass,
+    CharClassList,
+    ClassHasEquipment,
+    ClassHasFeatures,
+    ClassHasSkills,
+    ClassHasSpells,
+    ClassHasLanguages,
+)
 from resources.equipment import Equipment, EquipmentList
 from resources.eye import Eye, EyeList
 from resources.faction import Faction, FactionList
@@ -104,12 +112,21 @@ api.add_resource(CharAttributeList, "/charattributes")
 # Character Classes
 api.add_resource(CharClass, "/charclass/<string:class_name>")
 api.add_resource(CharClassList, "/charclasses")
-# api.add_resource(ClassHasEquipment, '/class/<string:class_name>/equipment/<string:equip_name>')
-# api.add_resource(ClassHasFeatures, '/class/<string:class_name>/feature/<string:feature_name>')
-# api.add_resource(ClassHasLanguages, '/class/<string:class_name>/language/<string:language_name>')
-# api.add_resource(ClassHasProficiencies, '/class/<string:class_name>/proficiency/<string:proficiency_name>')
-# api.add_resource(ClassHasSkills, '/class/<string:class_name>/skill/<string:skill_name>')
-# api.add_resource(ClassHasSpells, '/class/<string:class_name>/spell/<string:spell_name>')
+api.add_resource(
+    ClassHasEquipment, "/class/<string:class_name>/equipment/<string:equip_name>"
+)
+api.add_resource(
+    ClassHasFeatures, "/class/<string:class_name>/feature/<string:feature_name>"
+)
+api.add_resource(
+    ClassHasLanguages, "/class/<string:class_name>/language/<string:language_name>"
+)
+api.add_resource(
+    ClassHasProficiencies,
+    "/class/<string:class_name>/proficiency/<string:proficiency_name>",
+)
+api.add_resource(ClassHasSkills, "/class/<string:class_name>/skill/<string:skill_name>")
+api.add_resource(ClassHasSpells, "/class/<string:class_name>/spell/<string:spell_name>")
 
 # Coins
 api.add_resource(Coin, "/coin/<string:coin_name>")
