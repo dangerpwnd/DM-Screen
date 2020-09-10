@@ -66,3 +66,71 @@ class RaceList(Resource):
     @classmethod
     def get(cls):
         return {"races": race_list_schema.dump(RaceModel.find_all())}, 200
+
+
+class RaceHasFeatures(Resource):
+    @classmethod
+    def post(cls, race_name: str, feature_name: str):
+        race = RaceModel.find_by_name(race_name)
+        feature = FeatureModel.find_by_name(feature_name)
+        if not race:
+            return {"message": "Race not found."}, 404
+        if not feature:
+            return {"message": "Feature not found."}, 404
+        race.features.append(feature)
+        race.save_to_db()
+        return (
+            {"message": "Feature '{}' added.".format(feature.feature_name)},
+            200,
+        )
+
+
+class RaceHasLanguages(Resource):
+    @classmethod
+    def post(cls, race_name: str, language_name: str):
+        race = RaceModel.find_by_name(race_name)
+        language = LanguageModel.find_by_name(language_name)
+        if not race:
+            return {"message": "Race not found."}, 404
+        if not language:
+            return {"message": "Language not found."}, 404
+        race.languages.append(language)
+        race.save_to_db()
+        return (
+            {"message": "Language '{}' added.".format(feature.language_name)},
+            200,
+        )
+
+
+class RaceHasProficiencies(Resource):
+    @classmethod
+    def post(cls, race_name: str, proficiency_name: str):
+        race = RaceModel.find_by_name(race_name)
+        proficiency = ProficiencyModel.find_by_name(proficiency_name)
+        if not race:
+            return {"message": "Race not found."}, 404
+        if not proficiency:
+            return {"message": "Proficiency not found."}, 404
+        race.proficiencies.append(proficiency)
+        race.save_to_db()
+        return (
+            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
+            200,
+        )
+
+
+class RaceHasSubraces(Resource):
+    @classmethod
+    def post(cls, race_name: str, subrace_name: str):
+        race = RaceModel.find_by_name(race_name)
+        subrace = SubRaceModel.find_by_name(subrace_name)
+        if not race:
+            return {"message": "Race not found."}, 404
+        if not subrace:
+            return {"message": "Subrace not found."}, 404
+        race.subraces.append(subrace)
+        race.save_to_db()
+        return (
+            {"message": "Subrace '{}' added.".format(subrace.subrace_name)},
+            200,
+        )

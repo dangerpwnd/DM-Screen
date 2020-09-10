@@ -56,6 +56,7 @@ class FeatList(Resource):
     def get(cls):
         return {"Feats": feat_list_schema.dump(FeatModel.find_all())}
 
+
 class FeatHasProficiencies(Resource):
     @classmethod
     def post(cls, feat_name: str, proficiency_name: str):

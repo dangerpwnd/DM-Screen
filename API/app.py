@@ -35,7 +35,14 @@ from resources.feature import Feature, FeatureList
 from resources.hair import Hair, HairList
 from resources.language import Language, LanguageList
 from resources.proficiency import Proficiency, ProficiencyList
-from resources.race import Race, RaceList
+from resources.race import (
+    Race,
+    RaceList,
+    RaceHasFeatures,
+    RaceHasLanguages,
+    RaceHasProficiencies,
+    RaceHasSubraces,
+)
 from resources.size import Size, SizeList
 from resources.skill import Skill, SkillList
 from resources.skin import Skin, SkinList
@@ -147,7 +154,10 @@ api.add_resource(FactionList, "/factions")
 # Feats
 api.add_resource(Feat, "/feat/<string:feat_name>")
 api.add_resource(FeatList, "/feats")
-api.add_resource(FeatHasProficiencies, "/feat/<string:feat_name>/proficiency/<string:proficiency_name>")
+api.add_resource(
+    FeatHasProficiencies,
+    "/feat/<string:feat_name>/proficiency/<string:proficiency_name>",
+)
 
 # Features
 api.add_resource(Feature, "/feature/<string:feature_name>")
@@ -168,6 +178,19 @@ api.add_resource(ProficiencyList, "/proficiencies")
 # Races
 api.add_resource(Race, "/race/<string:race_name>")
 api.add_resource(RaceList, "/races")
+api.add_resource(
+    RaceHasFeatures, "/race/<string:race_name>/feature/<string:feature_name>"
+)
+api.add_resource(
+    RaceHasLanguages, "/race/<string:race_name>/language/<string:language_name>"
+)
+api.add_resource(
+    RaceHasProficiencies,
+    "/race/<string:race_name>/proficiency/<string:proficiency_name>",
+)
+api.add_resource(
+    RaceHasSubraces, "/race/<string:race_name>/subrace/<string:subrace_name>",
+)
 
 # Size
 api.add_resource(Size, "/size/<string:size_name>")

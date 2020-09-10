@@ -10,8 +10,9 @@ feat_has_proficiencies = Table(
     "Feat_has_Proficiencies",
     Base.metadata,
     Column("feat_id", Integer, ForeignKey("Feat.id_feat")),
-    Column("proficiency_id", Integer, ForeignKey("Proficiency.id_proficiency"))
+    Column("proficiency_id", Integer, ForeignKey("Proficiency.id_proficiency")),
 )
+
 
 class FeatModel(Base):
 
@@ -24,7 +25,7 @@ class FeatModel(Base):
 
     # Relationships
     proficiencies = relationship(
-        "ProficiencyModel", secondary=lambda:feat_has_proficiencies
+        "ProficiencyModel", secondary=lambda: feat_has_proficiencies
     )
 
     def __repr__(self):
