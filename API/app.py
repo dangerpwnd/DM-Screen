@@ -17,7 +17,7 @@ from resources.background import (
     BackgroundHasProficiencies,
 )
 from resources.coin import Coin, CoinList
-from resources.character import Character, CharacterList
+from resources.character import Character, CharacterList, CharacterHasArmor, CharacterHasAttributes, CharacterHasClasses, CharacterHasCoins, CharacterHasEquipment, CharacterHasFactions, CharacterHasFeats, CharacterHasSubclasses, CharacterHasTools, CharacterHasWeapons
 from resources.charattribute import CharAttribute, CharAttributeList
 from resources.charclass import (
     CharClass,
@@ -128,6 +128,47 @@ api.add_resource(
 # Characters
 api.add_resource(Character, "/character/<string:character_name>")
 api.add_resource(CharacterList, "/characters")
+api.add_resource(
+    CharacterHasArmor,
+    "/character/<string:character_name>/armor/<string:armor_name>",
+)
+api.add_resource(
+    CharacterHasAttributes,
+    "/character/<string:character_name>/attribute/<string:attribute_name>",
+)
+api.add_resource(
+    CharacterHasClasses,
+    "/character/<string:character_name>/class/<string:class_name>",
+)
+api.add_resource(
+    CharacterHasCoins,
+    "/character/<string:character_name>/coin/<string:coin_name>",
+)
+api.add_resource(
+    CharacterHasEquipment,
+    "/character/<string:character_name>/equipment/<string:equip_name>",
+)
+api.add_resource(
+    CharacterHasFactions,
+    "/character/<string:character_name>/faction/<string:faction_name>",
+)
+api.add_resource(
+    CharacterHasFeats,
+    "/character/<string:character_name>/feat/<string:feat_name>",
+)
+api.add_resource(
+    CharacterHasSubclasses,
+    "/character/<string:character_name>/subclass/<string:subclass_name>",
+)
+api.add_resource(
+    CharacterHasTools,
+    "/character/<string:character_name>/tool/<string:tool_name>",
+)
+api.add_resource(
+    CharacterHasWeapons,
+    "/character/<string:character_name>/weapon/<string:weapon_name>",
+)
+
 
 # Character Attributes
 api.add_resource(CharAttribute, "/charattribute/<string:attribute_name>")

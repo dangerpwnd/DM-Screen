@@ -93,12 +93,19 @@ class CharacterModel(Base):
 
     __tablename__ = "Character"
 
+    # Columns
     id_character = Column(Integer, primary_key=True)
     character_name = Column(String(80))
     character_descrip = Column(String(80))
+    alignment_id = Column(Integer, ForeignKey("Alignment.id_alignment"), nullable=False)
+    background_id = Column(Integer, ForeignKey("Background.id_background"), nullable=False)
+    eye_id = Column(Integer, ForeignKey("Eye.id_eye"), nullable=False)
+    hair_id = Column(Integer, ForeignKey("Hair.id_hair"), nullable=False)
+    race_id = Column(Integer, ForeignKey("Race.id_race"), nullable=False)
+    skin_id = Column(Integer, ForeignKey("Skin.id_skin"), nullable=False)
+    subrace_id = Column(Integer, ForeignKey("Subrace.id_subrace"), nullable=False)
 
     # relationships
-
     # many to one alignment - DONE
     # many to many armor - DONE
     armor = relationship("ArmorModel", secondary=lambda: character_has_armor)
@@ -126,8 +133,6 @@ class CharacterModel(Base):
     # many to one subrace - DONE
     # many to many tool - DONE
     tools = relationship("ToolModel", secondary=lambda: character_has_tools)
-    # many to many user - DONE
-    users = relationship("UserModel", secondary=lambda: character_has_users)
     # many to many weapon - DONE
     weapons = relationship("WeaponModel", secondary=lambda: character_has_weapons)
 
@@ -135,13 +140,17 @@ class CharacterModel(Base):
         return "<Character (name='%s', description='%s')>" % (self.name, self.descrip)
 
     @classmethod
-    def find_by_name(cls, name):
+    def find_by_name(cls, character_name) -> "CharacterModel":
         return cls.query.filter_by(
-            name=name
+            character_name=character_name
         ).first()  # SELECT * FROM items WHERE name=name LIMIT 1
 
     @classmethod
-    def find_all(cls):
+        def find_by_id(cls, id_character):
+            return cls.query.filter_by(id_character=id_character).first()
+
+    @classmethod
+    def find_all(cls) -> List["CharacterModel"]:
         return cls.query.all()
 
     def save_to_db(self):  # Handles insert and update
