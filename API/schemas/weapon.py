@@ -8,7 +8,8 @@ class WeaponSchema(Schema):
     weapon_descrip = fields.Str()
     weapon_damage = fields.Str()
     weapon_weight = fields.Integer()
-    weapon_type = fields.Nested("WeaponTypeSchema")
+    weapontype_id = fields.Integer()
+    weapontype = fields.Nested("WeaponTypeSchema")
 
     @post_load
     def make_weapon(self, data, **kwargs):

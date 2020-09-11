@@ -28,7 +28,7 @@ class SpellType(Resource):
 
         spelltype = spelltype_schema.load(spelltype_json)
         spelltype.save_to_db()
-        return spelltype_schema.dump(skill), 201
+        return spelltype_schema.dump(spelltype), 201
 
     @classmethod
     def delete(cls, spelltype_name: str):

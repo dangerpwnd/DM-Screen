@@ -12,15 +12,9 @@ class SpellTypeModel(Base):
     # Columns
     id_spelltype = Column(Integer, primary_key=True)
     spelltype_name = Column(String(75), nullable=False, unique=True)
-    spell_id = Column(Integer, ForeignKey("Spell.id_spell"))
 
     # Relationships
-    spells = relationship(
-        "SpellModel",
-        back_populates="spell_types",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
+    spells = relationship("SpellModel", backref="spelltype")
 
     def __repr__(self):
         return '<Spell Type (name="%s")>' % (self.spelltype_name)

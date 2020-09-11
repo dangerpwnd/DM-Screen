@@ -1,5 +1,6 @@
 from flask_restful import Resource, request
 from models.feat import FeatModel
+from models.proficiency import ProficiencyModel
 from schemas.feat import FeatSchema
 
 feat_schema = FeatSchema()

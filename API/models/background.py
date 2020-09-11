@@ -55,7 +55,7 @@ class BackgroundModel(Base):
         "ProficiencyModel", secondary=lambda: background_has_proficiencies
     )
 
-    character = relationship("PlayerModel", backref="background")
+    character = relationship("CharacterModel", backref="background")
 
     def __repr__(self):
         return "<Background (name='%s', description='%s')>" % (

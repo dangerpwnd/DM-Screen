@@ -82,8 +82,6 @@ class CharClassModel(Base):
 
     languages = relationship("LanguageModel", secondary=lambda: class_has_languages)
 
-    # Relationship to PlayerChar
-
     def __repr__(self):
         return "<Class (name='%s', description='%s')>" % (
             self.class_name,

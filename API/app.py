@@ -114,6 +114,9 @@ jwt = JWTManager(app)
 def check_if_token_in_blacklist(decrypted_token):
     return decrypted_token["jti"] in BLACKLIST
 
+# Alignments
+api.add_resource(Alignment, "/alignment/<string:alignment_name>")
+api.add_resource(AlignmentList, "/alignments")
 
 # Armor
 api.add_resource(Armor, "/armor/<string:armor_name>")
@@ -122,10 +125,6 @@ api.add_resource(ArmorList, "/armor")
 # Armor Types
 api.add_resource(ArmorType, "/armortype/<string:armortype_name>")
 api.add_resource(ArmorTypeList, "/armortypes")
-
-# Alignments
-api.add_resource(Alignment, "/alignment/<string:alignment_name>")
-api.add_resource(AlignmentList, "/alignments")
 
 # Backgrounds
 api.add_resource(Background, "/background/<string:background_name>")
@@ -186,24 +185,26 @@ api.add_resource(CharAttributeList, "/charattributes")
 api.add_resource(CharClass, "/charclass/<string:class_name>")
 api.add_resource(CharClassList, "/charclasses")
 api.add_resource(
-    ClassHasEquipment, "/class/<string:class_name>/equipment/<string:equip_name>"
+    ClassHasEquipment, "/charclass/<string:class_name>/equipment/<string:equip_name>"
 )
 api.add_resource(
-    ClassHasFeatures, "/class/<string:class_name>/feature/<string:feature_name>"
+    ClassHasFeatures, "/charclass/<string:class_name>/feature/<string:feature_name>"
 )
 api.add_resource(
-    ClassHasLanguages, "/class/<string:class_name>/language/<string:language_name>"
+    ClassHasLanguages, "/charclass/<string:class_name>/language/<string:language_name>"
 )
 api.add_resource(
     ClassHasProficiencies,
-    "/class/<string:class_name>/proficiency/<string:proficiency_name>",
+    "/charclass/<string:class_name>/proficiency/<string:proficiency_name>",
 )
-api.add_resource(ClassHasSkills, "/class/<string:class_name>/skill/<string:skill_name>")
-api.add_resource(ClassHasSpells, "/class/<string:class_name>/spell/<string:spell_name>")
+api.add_resource(ClassHasSkills, "/charclass/<string:class_name>/skill/<string:skill_name>")
+api.add_resource(ClassHasSpells, "/charclass/<string:class_name>/spell/<string:spell_name>")
 
 # Coins
 api.add_resource(Coin, "/coin/<string:coin_name>")
 api.add_resource(CoinList, "/coins")
+
+# NEED TO ADD Damage Type
 
 # Equipment
 api.add_resource(Equipment, "/equipment/<string:equip_name>")

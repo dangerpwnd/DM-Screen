@@ -1,5 +1,9 @@
 from flask_restful import Resource, request
 from models.race import RaceModel
+from models.feature import FeatureModel
+from models.language import LanguageModel
+from models.proficiency import ProficiencyModel
+from models.subrace import SubRaceModel
 from schemas.race import RaceSchema
 
 race_schema = RaceSchema()

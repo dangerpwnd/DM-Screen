@@ -1,5 +1,8 @@
 from flask_restful import Resource, request
 from models.subclass import SubClassModel
+from models.feature import FeatureModel
+from models.proficiency import ProficiencyModel
+from models.spell import SpellModel
 from schemas.subclass import SubClassSchema
 
 subclass_schema = SubClassSchema()

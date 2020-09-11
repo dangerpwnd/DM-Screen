@@ -48,7 +48,7 @@ class SubRaceModel(Base):
         single_parent=True,
     )
 
-    character = relationship("PlayerModel", backref="subrace")
+    character = relationship("CharacterModel", backref="subrace")
 
     def __repr__(self):
         return "<Subrace (name='%s', description='%s')>" % (

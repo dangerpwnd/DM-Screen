@@ -1,5 +1,11 @@
 from flask_restful import Resource, request
 from models.charclass import CharClassModel
+from models.equipment import EquipmentModel
+from models.feature import FeatureModel
+from models.language import LanguageModel
+from models.proficiency import ProficiencyModel
+from models.skill import SkillModel
+from models.spell import SpellModel
 from schemas.charclass import CharClassSchema
 
 charclass_schema = CharClassSchema()

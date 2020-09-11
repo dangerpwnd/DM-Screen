@@ -28,7 +28,7 @@ class WeaponType(Resource):
 
         weapontype = weapontype_schema.load(weapontype_json)
         weapontype.save_to_db()
-        return weapontype_schema.dump(skill), 201
+        return weapontype_schema.dump(weapontype), 201
 
     @classmethod
     def delete(cls, weapontype_name: str):

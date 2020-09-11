@@ -13,4 +13,4 @@ class SubRaceSchema(Schema):
 
     @post_load
     def make_subrace(self, data, **kwargs):
-        return SubraceModel(**data)
+        return SubRaceModel(**data)

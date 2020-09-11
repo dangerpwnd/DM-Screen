@@ -26,7 +26,7 @@ class Spell(Resource):
 
         spell = spell_schema.load(spell_json)
         spell.save_to_db()
-        return spell_schema.dump(skill), 201
+        return spell_schema.dump(spell), 201
 
     @classmethod
     def delete(cls, spell_name: str):
@@ -40,12 +40,12 @@ class Spell(Resource):
     @classmethod
     def put(cls, spell_name: str):
         spell_json = request.get_json()
-        skill = SpellModel.find_by_name(spell_name)
+        spell = SpellModel.find_by_name(spell_name)
 
         if spell:
             spell.spell_descrip = spell_json["spell_descrip"]
             spell.spell_amount = spell_json["spell_amount"]
-            spell.is_racial = spell_json["is_racial"]
+            spell.spelltype_id = spell_json["spelltype_id"]
         else:
             spell_json["spell_name"] = spell_name
             spell = spell_schema.load(spell_json)

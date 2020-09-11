@@ -14,9 +14,10 @@ def init_db():
     import models.armortype
     import models.alignment
     import models.background
-    import models.coin
+    import models.character
     import models.charattribute
     import models.charclass
+    import models.coin
     import models.equipment
     import models.eye
     import models.faction
@@ -24,7 +25,6 @@ def init_db():
     import models.feature
     import models.hair
     import models.language
-    import models.player
     import models.proficiency
     import models.race
     import models.size

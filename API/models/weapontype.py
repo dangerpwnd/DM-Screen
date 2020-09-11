@@ -1,7 +1,7 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 
 
@@ -12,14 +12,11 @@ class WeaponTypeModel(Base):
     # Columns
     id_weapontype = Column(Integer, primary_key=True)
     weapontype_name = Column(String(75), nullable=False, unique=True)
-    weapon_id = Column(Integer, ForeignKey("Weapon.id_weapon"))
 
     # Relationships
     weapons = relationship(
         "WeaponModel",
-        back_populates="weapon_types",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
+        backref="weapontype"
     )
 
     def __repr__(self):

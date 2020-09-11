@@ -26,7 +26,7 @@ class Weapon(Resource):
 
         weapon = weapon_schema.load(weapon_json)
         weapon.save_to_db()
-        return weapon_schema.dump(skill), 201
+        return weapon_schema.dump(weapon), 201
 
     @classmethod
     def delete(cls, weapon_name: str):
@@ -40,12 +40,13 @@ class Weapon(Resource):
     @classmethod
     def put(cls, weapon_name: str):
         weapon_json = request.get_json()
-        skill = WeaponModel.find_by_name(weapon_name)
+        weapon = WeaponModel.find_by_name(weapon_name)
 
         if weapon:
             weapon.weapon_descrip = weapon_json["weapon_descrip"]
             weapon.weapon_damage = weapon_json["weapon_damage"]
             weapon.weapon_weight = weapon_json["weapon_weight"]
+            weapon.weapontype_id = weapon_json["weapontype_id"]
         else:
             weapon_json["weapon_name"] = weapon_name
             weapon = weapon_schema.load(weapon_json)

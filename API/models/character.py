@@ -77,7 +77,7 @@ character_has_subclasses = Table(
     "Character_has_Subclasses",
     Base.metadata,
     Column(
-        "subclass_id", Integer, ForeignKey("SubClass.id_subclass"), primary_key=True
+        "subclass_id", Integer, ForeignKey("Subclass.id_subclass"), primary_key=True
     ),
     Column(
         "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
@@ -88,15 +88,6 @@ character_has_tools = Table(
     "Character_has_Tools",
     Base.metadata,
     Column("tool_id", Integer, ForeignKey("Tool.id_tool"), primary_key=True),
-    Column(
-        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
-    ),
-)
-
-character_has_users = Table(
-    "Character_has_Users",
-    Base.metadata,
-    Column("user_id", Integer, ForeignKey("User.id"), primary_key=True),
     Column(
         "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
     ),

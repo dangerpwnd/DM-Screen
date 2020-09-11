@@ -16,7 +16,7 @@ class AlignmentModel(Base):
 
     # Relationships
 
-    character = relationship("PlayerModel", backref="alignment")
+    character = relationship("CharacterModel", backref="alignment")
 
     def __repr__(self):
         return "<Alignment (name='%s', description='%s')>" % (

@@ -1,8 +1,10 @@
 from typing import List
 from db import Base, session
 
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
+
+from models.spelltype import SpellTypeModel as SType
 
 
 class SpellModel(Base):
@@ -14,9 +16,7 @@ class SpellModel(Base):
     spell_name = Column(String(75), nullable=False, unique=True)
     spell_descrip = Column(String(250), nullable=False)
     spell_amount = Column(String(25), nullable=False)
-
-    # Relationships
-    spell_types = relationship("SpellTypeModel", back_populates="spells")
+    spelltype_id = Column(Integer, ForeignKey("SpellType.id_spelltype"), nullable=False)
 
     def __repr__(self):
         return '<Spell (name="%s", descrip="%s", damage="%s")>' % (
@@ -27,7 +27,12 @@ class SpellModel(Base):
 
     @classmethod
     def find_by_name(cls, spell_name: str) -> "SpellModel":
-        return cls.query.filter_by(spell_name=spell_name).first()
+        return (
+            cls.query.filter_by(spell_name=spell_name)
+            .filter(SpellModel.spelltype_id == SType.id_spelltype)
+            .outerjoin(SType)
+            .first()
+        )
 
     @classmethod
     def find_all(cls) -> List["SpellModel"]:
