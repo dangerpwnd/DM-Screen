@@ -1,9 +1,9 @@
 from flask_restful import Resource, request
-from models.subrace import SubraceModel
-from schemas.subrace import SubraceSchema
+from models.subrace import SubRaceModel
+from schemas.subrace import SubRaceSchema
 
-subrace_schema = SubraceSchema()
-subrace_list_schema = SubraceSchema(many=True)
+subrace_schema = SubRaceSchema()
+subrace_list_schema = SubRaceSchema(many=True)
 
 
 class SubRace(Resource):

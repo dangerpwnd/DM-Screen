@@ -1,8 +1,16 @@
 from flask_restful import Resource, request
-from models.background import CharacterModel
+from models.character import CharacterModel
+from models.armor import ArmorModel
+from models.charattribute import CharAttributeModel
+from models.charclass import CharClassModel
+from models.coin import CoinModel
 from models.equipment import EquipmentModel
-from models.proficiency import ProficiencyModel
-from schemas.background import CharacterSchema
+from models.faction import FactionModel
+from models.feat import FeatModel
+from models.subclass import SubClassModel
+from models.tool import ToolModel
+from models.weapon import WeaponModel
+from schemas.character import CharacterSchema
 
 character_schema = CharacterSchema()
 character_list_schema = CharacterSchema(many=True)
@@ -198,7 +206,7 @@ class CharacterHasFeats(Resource):
         )
 
 
-class CharacterHaSubclasses(Resource):
+class CharacterHasSubclasses(Resource):
     @classmethod
     def post(cls, character_name: str, subclass_name: str):
         character = CharacterModel.find_by_name(character_name)

@@ -1,5 +1,5 @@
 from marshmallow import Schema, fields, post_load
-from models.subrace import SubraceModel
+from models.subrace import SubRaceModel
 
 
 class SubRaceSchema(Schema):

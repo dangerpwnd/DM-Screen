@@ -37,6 +37,7 @@ from resources.charclass import (
     CharClassList,
     ClassHasEquipment,
     ClassHasFeatures,
+    ClassHasProficiencies,
     ClassHasSkills,
     ClassHasSpells,
     ClassHasLanguages,
@@ -176,7 +177,6 @@ api.add_resource(
     CharacterHasWeapons,
     "/character/<string:character_name>/weapon/<string:weapon_name>",
 )
-
 
 # Character Attributes
 api.add_resource(CharAttribute, "/charattribute/<string:attribute_name>")

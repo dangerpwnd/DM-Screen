@@ -1,3 +1,4 @@
+from typing import List
 from db import Base, session
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship
