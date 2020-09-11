@@ -15,9 +15,7 @@ class SizeModel(Base):
 
     races = relationship(
         "RaceModel",
-        back_populates="size",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
+        backref="size"
     )
 
     def __repr__(self):

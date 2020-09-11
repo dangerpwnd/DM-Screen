@@ -6,6 +6,7 @@ class FeatSchema(Schema):
     id_feat = fields.Integer(dump_only=True)
     feat_name = fields.Str()
     feat_descrip = fields.Str()
+    proficiencies = fields.Nested("ProficiencySchema", many=True)
 
     @post_load
     def make_feat(self, data, **kwargs):

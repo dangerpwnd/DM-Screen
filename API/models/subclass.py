@@ -50,15 +50,6 @@ class SubClassModel(Base):
     subclass_descrip = Column(String(250), nullable=False)
     class_id = Column(Integer, ForeignKey("Class.id_class"))
 
-    # Relationships
-
-    charclass = relationship(
-        "CharClassModel",
-        back_populates="subclasses",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
-    )
-
     proficiencies = relationship(
         "ProficiencyModel", secondary=lambda: subclass_has_proficiences
     )

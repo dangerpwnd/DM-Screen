@@ -6,6 +6,7 @@ class CharClassSchema(Schema):
     id_class = fields.Integer(dump_only=True)
     class_name = fields.Str()
     class_descrip = fields.Str()
+    subclasses = fields.Nested("SubClassSchema", many=True)
     equipment = fields.Nested("EquipmentSchema", many=True)
     proficiencies = fields.Nested("ProficiencySchema", many=True)
     features = fields.Nested("FeatureSchema", many=True)

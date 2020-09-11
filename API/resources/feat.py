@@ -70,6 +70,6 @@ class FeatHasProficiencies(Resource):
         feat.proficiencies.append(proficiency)
         feat.save_to_db()
         return (
-            {"message": "Proficiency '{}' added.".format(proficiency.equip_name)},
+            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
             200,
         )

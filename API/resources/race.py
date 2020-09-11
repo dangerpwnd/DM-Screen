@@ -57,6 +57,7 @@ class Race(Resource):
             race.race_min_height = race_json["race_min_height"]
             race.race_max_height = race_json["race_max_height"]
             race.race_speed = race_json["race_speed"]
+            race.size_id = race_json["size_id"]
         else:
             race_json["race_name"] = race_name
             race = race_schema.load(race_json)
@@ -101,7 +102,7 @@ class RaceHasLanguages(Resource):
         race.languages.append(language)
         race.save_to_db()
         return (
-            {"message": "Language '{}' added.".format(feature.language_name)},
+            {"message": "Language '{}' added.".format(language.language_name)},
             200,
         )
 

@@ -56,8 +56,7 @@ class RaceModel(Base):
 
     # Relationships
 
-    size = relationship("SizeModel", back_populates="races")
-    character = relationship("CharacterModel", backref="races")
+    character = relationship("CharacterModel", backref="race")
 
     proficiencies = relationship(
         "ProficiencyModel", secondary=lambda: race_has_proficiencies

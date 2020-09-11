@@ -66,7 +66,7 @@ class CharClassModel(Base):
     class_descrip = Column(String(250), nullable=False)
 
     # Relationships
-    subclasses = relationship("SubClassModel", back_populates="charclass")
+    subclasses = relationship("SubClassModel", backref="charclass")
 
     equipment = relationship("EquipmentModel", secondary=lambda: class_has_equipment)
 

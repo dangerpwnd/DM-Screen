@@ -11,10 +11,12 @@ class RaceSchema(Schema):
     race_min_height = fields.Integer()
     race_max_height = fields.Integer()
     race_speed = fields.Integer()
+    size_id = fields.Integer()
     size = fields.Nested("SizeSchema")
     proficiencies = fields.Nested("ProficiencySchema", many=True)
     features = fields.Nested("FeatureSchema", many=True)
     languages = fields.Nested("LanguageSchema", many=True)
+    subraces = fields.Nested("SubRaceSchema", many=True)
 
     @post_load
     def make_race(self, data, **kwargs):

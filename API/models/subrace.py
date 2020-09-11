@@ -33,19 +33,11 @@ class SubRaceModel(Base):
     id_subrace = Column(Integer, primary_key=True)
     subrace_name = Column(String(50), nullable=False, unique=True)
     subrace_descrip = Column(String(250), nullable=False)
-    race_id = Column(Integer, ForeignKey("Race.id_race"))
 
     # Relationships
     features = relationship("FeatureModel", secondary=lambda: subrace_has_features)
     proficiencies = relationship(
         "ProficiencyModel", secondary=lambda: subrace_has_proficiencies
-    )
-
-    races = relationship(
-        "RaceModel",
-        back_populates="subraces",
-        cascade="all, delete, delete-orphan",
-        single_parent=True,
     )
 
     character = relationship("CharacterModel", backref="subrace")
