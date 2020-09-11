@@ -1,6 +1,7 @@
 from marshmallow import Schema, fields, post_load
 from models.character import CharacterModel
 
+
 class CharacterSchema(Schema):
     id_character = fields.Integer(dump_only=True)
     character_name = fields.Str()
@@ -28,6 +29,7 @@ class CharacterSchema(Schema):
     subclasses = fields.Nested("SubClassSchema", many=True)
     tools = fields.Nested("ToolSchema", many=True)
     weapons = fields.Nested("WeaponSchema", many=True)
+
 
 @post_load
 def make_character(self, data, **kwargs):

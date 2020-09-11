@@ -8,7 +8,9 @@ character_has_armor = Table(
     "Character_has_Armor",
     Base.metadata,
     Column("armor_id", Integer, ForeignKey("Armor.id_armor"), primary_key=True,),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_attributes = Table(
@@ -20,42 +22,54 @@ character_has_attributes = Table(
         ForeignKey("Attribute.id_attribute"),
         primary_key=True,
     ),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_classes = Table(
     "Character_has_Classes",
     Base.metadata,
     Column("class_id", Integer, ForeignKey("Class.id_class"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_coins = Table(
     "Character_has_Coins",
     Base.metadata,
     Column("coin_id", Integer, ForeignKey("Coin.id_coin"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_equipment = Table(
     "Character_has_Equipment",
     Base.metadata,
     Column("equip_id", Integer, ForeignKey("Equipment.id_equip"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_factions = Table(
     "Character_has_Factions",
     Base.metadata,
     Column("faction_id", Integer, ForeignKey("Faction.id_faction"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_feats = Table(
     "Character_has_Feats",
     Base.metadata,
     Column("feat_id", Integer, ForeignKey("Feat.id_feat"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_subclasses = Table(
@@ -64,28 +78,36 @@ character_has_subclasses = Table(
     Column(
         "subclass_id", Integer, ForeignKey("SubClass.id_subclass"), primary_key=True
     ),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_tools = Table(
     "Character_has_Tools",
     Base.metadata,
     Column("tool_id", Integer, ForeignKey("Tool.id_tool"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_users = Table(
     "Character_has_Users",
     Base.metadata,
     Column("user_id", Integer, ForeignKey("User.id"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 character_has_weapons = Table(
     "Character_has_Weapons",
     Base.metadata,
     Column("weapon_id", Integer, ForeignKey("Weapon.id_weapon"), primary_key=True),
-    Column("character_id", Integer, ForeignKey("Character.id_character"), primary_key=True),
+    Column(
+        "character_id", Integer, ForeignKey("Character.id_character"), primary_key=True
+    ),
 )
 
 
@@ -98,7 +120,9 @@ class CharacterModel(Base):
     character_name = Column(String(80))
     character_descrip = Column(String(80))
     alignment_id = Column(Integer, ForeignKey("Alignment.id_alignment"), nullable=False)
-    background_id = Column(Integer, ForeignKey("Background.id_background"), nullable=False)
+    background_id = Column(
+        Integer, ForeignKey("Background.id_background"), nullable=False
+    )
     eye_id = Column(Integer, ForeignKey("Eye.id_eye"), nullable=False)
     hair_id = Column(Integer, ForeignKey("Hair.id_hair"), nullable=False)
     race_id = Column(Integer, ForeignKey("Race.id_race"), nullable=False)
@@ -119,7 +143,9 @@ class CharacterModel(Base):
     # many to many coin - DONE
     coins = relationship("CoinModel", secondary=lambda: character_has_coins)
     # many to many equipment - DONE
-    equipment = relationship("EquipmentModel", secondary=lambda: character_has_equipment)
+    equipment = relationship(
+        "EquipmentModel", secondary=lambda: character_has_equipment
+    )
     # many to one eye color - DONE
     # many to many faction - DONE
     factions = relationship("FactionModel", secondary=lambda: character_has_factions)
@@ -129,7 +155,9 @@ class CharacterModel(Base):
     # many to one race - DONE
     # many to one skin color - DONE
     # many to many subclass - DONE
-    subclasses = relationship("SubClassModel", secondary=lambda: character_has_subclasses)
+    subclasses = relationship(
+        "SubClassModel", secondary=lambda: character_has_subclasses
+    )
     # many to one subrace - DONE
     # many to many tool - DONE
     tools = relationship("ToolModel", secondary=lambda: character_has_tools)
@@ -146,8 +174,8 @@ class CharacterModel(Base):
         ).first()  # SELECT * FROM items WHERE name=name LIMIT 1
 
     @classmethod
-        def find_by_id(cls, id_character):
-            return cls.query.filter_by(id_character=id_character).first()
+    def find_by_id(cls, id_character):
+        return cls.query.filter_by(id_character=id_character).first()
 
     @classmethod
     def find_all(cls) -> List["CharacterModel"]:

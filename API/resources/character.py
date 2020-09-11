@@ -7,6 +7,7 @@ from schemas.background import CharacterSchema
 character_schema = CharacterSchema()
 character_list_schema = CharacterSchema(many=True)
 
+
 class Character(Resource):
     @classmethod
     def get(cls, character_name: str):
@@ -111,6 +112,7 @@ class CharacterHasAttributes(Resource):
             200,
         )
 
+
 class CharacterHasClasses(Resource):
     @classmethod
     def post(cls, character_name: str, class_name: str):
@@ -126,6 +128,7 @@ class CharacterHasClasses(Resource):
             {"message": "Character class '{}' added.".format(charclass.class_name)},
             200,
         )
+
 
 class CharacterHasCoins(Resource):
     @classmethod
@@ -143,6 +146,7 @@ class CharacterHasCoins(Resource):
             200,
         )
 
+
 class CharacterHasEquipment(Resource):
     @classmethod
     def post(cls, character_name: str, equip_name: str):
@@ -158,6 +162,7 @@ class CharacterHasEquipment(Resource):
             {"message": "Equipment '{}' added.".format(equipment.equip_name)},
             200,
         )
+
 
 class CharacterHasFactions(Resource):
     @classmethod
@@ -175,6 +180,7 @@ class CharacterHasFactions(Resource):
             200,
         )
 
+
 class CharacterHasFeats(Resource):
     @classmethod
     def post(cls, character_name: str, feat_name: str):
@@ -190,6 +196,7 @@ class CharacterHasFeats(Resource):
             {"message": "Feat '{}' added.".format(feat.feat_name)},
             200,
         )
+
 
 class CharacterHaSubclasses(Resource):
     @classmethod
@@ -207,6 +214,7 @@ class CharacterHaSubclasses(Resource):
             200,
         )
 
+
 class CharacterHasTools(Resource):
     @classmethod
     def post(cls, character_name: str, tool_name: str):
@@ -222,6 +230,7 @@ class CharacterHasTools(Resource):
             {"message": "Tool '{}' added.".format(tool.tool_name)},
             200,
         )
+
 
 class CharacterHasWeapons(Resource):
     @classmethod
