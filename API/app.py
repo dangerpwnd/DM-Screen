@@ -17,6 +17,7 @@ from resources.background import (
     BackgroundHasProficiencies,
 )
 from resources.coin import Coin, CoinList
+from resources.character import Character, CharacterList
 from resources.charattribute import CharAttribute, CharAttributeList
 from resources.charclass import (
     CharClass,
@@ -123,6 +124,10 @@ api.add_resource(
     BackgroundHasProficiencies,
     "/background/<string:background_name>/proficiency/<string:proficiency_name>",
 )
+
+# Characters
+api.add_resource(Character, "/character/<string:character_name>")
+api.add_resource(CharacterList, "/characters")
 
 # Character Attributes
 api.add_resource(CharAttribute, "/charattribute/<string:attribute_name>")
