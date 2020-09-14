@@ -621,7 +621,7 @@
 			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "Character - FINISH LAST",
+			"name": "Character",
 			"item": [
 				{
 					"name": "/character/<character_name> ",
@@ -635,13 +635,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/character/BartosDonadarion",
+							"raw": "{{url}}/character/Bartos_Donadarian",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
 								"character",
-								"BartosDonadarion"
+								"Bartos_Donadarian"
 							]
 						},
 						"description": "GET single character"
@@ -649,7 +649,7 @@
 					"response": []
 				},
 				{
-					"name": "/backgrounds",
+					"name": "/characters",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -660,20 +660,20 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/backgrounds",
+							"raw": "{{url}}/characters",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"backgrounds"
+								"characters"
 							]
 						},
-						"description": "GET list of all backgrounds"
+						"description": "GET list of all characters"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<background_name>",
+					"name": "/character/<str:character_name>",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -690,7 +690,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"background_descrip\": \"Looking for something they can't quite put their finger on.\"\n}",
+							"raw": "{\n    \"character_descrip\": \"A hexblade trained it the subtle arts of espionage.\",\n    \"alignment_id\": 1,\n    \"background_id\": 1,\n    \"eye_id\": 1,\n    \"hair_id\": 1,\n    \"race_id\": 1,\n    \"skin_id\": 1,\n    \"subrace_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -698,21 +698,21 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/background/wanderer",
+							"raw": "{{url}}/character/Bartos_Donadarian",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer"
+								"character",
+								"Bartos_Donadarian"
 							]
 						},
-						"description": "POST new background"
+						"description": "POST new character"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<background_name>",
+					"name": "/character/<str:character_name>",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -723,21 +723,21 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/background/wanderer",
+							"raw": "{{url}}/character/Bartos_Donadarian",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer"
+								"character",
+								"Bartos_Donadarian"
 							]
 						},
-						"description": "DEL single background"
+						"description": "DEL single character"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<background_name>",
+					"name": "/character/<str:character_name>",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -754,82 +754,229 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"background_descrip\": \"Not all those who wander are lost.\"\r\n}"
+							"raw": "{\r\n    \"character_descrip\": \"A hexblade trained it the subtle arts of espionage.\",\r\n    \"alignment_id\": 1,\r\n    \"background_id\": 1,\r\n    \"eye_id\": 1,\r\n    \"hair_id\": 1,\r\n    \"race_id\": 1,\r\n    \"skin_id\": 1,\r\n    \"subrace_id\": 1\r\n}"
 						},
 						"url": {
-							"raw": "{{url}}/background/wanderer",
+							"raw": "{{url}}/character/Bartos_Donadarian",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer"
+								"character",
+								"Bartos_Donadarian"
 							]
 						},
-						"description": "Update or create background"
+						"description": "Update or create character"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<str:background_name>/equipment/<str:equip_name>",
+					"name": "/character/<string:character_name>/armor/<string:armor_name>",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/background/wanderer/equipment/rope",
+							"raw": "{{url}}/character/Bartos_Donadarian/armor/leather_armor",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer",
+								"character",
+								"Bartos_Donadarian",
+								"armor",
+								"leather_armor"
+							]
+						},
+						"description": "POST character and armor for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/attribute/<string:attribute_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/attribute/Strength",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"attribute",
+								"Strength"
+							]
+						},
+						"description": "POST character and attribute for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/class/<string:class_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/class/barbarian",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"class",
+								"barbarian"
+							]
+						},
+						"description": "POST character and class for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/coin/<string:coin_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/coin/gold",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"coin",
+								"gold"
+							]
+						},
+						"description": "POST character and coin for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/equipment/<string:equip_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/equipment/rope",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
 								"equipment",
 								"rope"
 							]
 						},
-						"description": "POST background and equipment for association table"
+						"description": "POST character and equipment for association table"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<str:background_name>/equipment/<str:equip_name> 2",
+					"name": "/character/<string:character_name>/faction/<string:faction_name>",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/background/wanderer/equipment/crowbar",
+							"raw": "{{url}}/character/Bartos_Donadarian/faction/harpers",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer",
-								"equipment",
-								"crowbar"
+								"character",
+								"Bartos_Donadarian",
+								"faction",
+								"harpers"
 							]
 						},
-						"description": "POST background and equipment for association table"
+						"description": "POST character and faction for association table"
 					},
 					"response": []
 				},
 				{
-					"name": "/background/<str:background_name>/proficiency/<str:proficiency_name>",
+					"name": "/character/<string:character_name>/feat/<string:feat_name>",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/background/wanderer/proficiency/martial_weapons",
+							"raw": "{{url}}/character/Bartos_Donadarian/feat/grappler",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"background",
-								"wanderer",
-								"proficiency",
-								"martial_weapons"
+								"character",
+								"Bartos_Donadarian",
+								"feat",
+								"grappler"
 							]
 						},
-						"description": "POST background and equipment for association table"
+						"description": "POST character and feat for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/subclass/<string:subclass_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/subclass/beserker",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"subclass",
+								"beserker"
+							]
+						},
+						"description": "POST character and sub class for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/tool/<string:tool_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/tool/thieves_tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"tool",
+								"thieves_tools"
+							]
+						},
+						"description": "POST character and tool for association table"
+					},
+					"response": []
+				},
+				{
+					"name": "/character/<string:character_name>/weapon/<string:weapon_name>",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/character/Bartos_Donadarian/weapon/light_axe",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"character",
+								"Bartos_Donadarian",
+								"weapon",
+								"light_axe"
+							]
+						},
+						"description": "POST character and weapon for association table"
 					},
 					"response": []
 				}

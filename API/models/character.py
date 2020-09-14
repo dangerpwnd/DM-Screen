@@ -166,7 +166,7 @@ class CharacterModel(Base):
         ).first()  # SELECT * FROM items WHERE name=name LIMIT 1
 
     @classmethod
-    def find_by_id(cls, id_character):
+    def find_by_id(cls, id_character) -> "CharacterModel":
         return cls.query.filter_by(id_character=id_character).first()
 
     @classmethod

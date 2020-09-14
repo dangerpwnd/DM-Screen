@@ -18,7 +18,8 @@ class CharacterSchema(Schema):
     race = fields.Nested("RaceSchema")
     skin_id = fields.Integer()
     skin = fields.Nested("SkinSchema")
-    subrace_id = fields.Nested("SubRaceSchema")
+    subrace_id = fields.Integer()
+    subrace = fields.Nested("SubRaceSchema")
     armor = fields.Nested("ArmorSchema", many=True)
     attributes = fields.Nested("CharAttributeSchema", many=True)
     classes = fields.Nested("CharClassSchema", many=True)
@@ -31,6 +32,6 @@ class CharacterSchema(Schema):
     weapons = fields.Nested("WeaponSchema", many=True)
 
 
-@post_load
-def make_character(self, data, **kwargs):
-    return CharacterModel(**data)
+    @post_load
+    def make_character(self, data, **kwargs):
+        return CharacterModel(**data)
