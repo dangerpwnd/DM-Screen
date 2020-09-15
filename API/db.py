@@ -2,11 +2,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-engine = create_engine("sqlite:///player.db", convert_unicode=True)
+engine = create_engine("postgres://dm:Test123$@localhost:5432/dnd5e")
 session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine))
 Base = declarative_base()
 Base.query = session.query_property()
-
 
 def init_db():
     # Import all models first before creation to register properly on the metadata
@@ -33,9 +32,11 @@ def init_db():
     import models.spell
     import models.spelltype
     import models.subclass
+    import models.subrace
     import models.tool
     import models.user
     import models.weapon
     import models.weapontype
+    Base.metadata.create_all(engine)
 
-    Base.metadata.create_all(bind=engine)
+metadata = init_db()

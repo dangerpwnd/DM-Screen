@@ -82,33 +82,32 @@ from resources.weapon import Weapon, WeaponList
 from resources.weapontype import WeaponType, WeaponTypeList
 
 app = Flask(__name__)
+app.config["DEBUG"] = True
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get(
+    "DATABASE_URI", "sqlite:///player.db"
+)
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["PROPAGATE_EXCEPTIONS"] = True
 app.secret_key = "DMRules"  # app.config['JWT_SECRET_KEY']
 app.config["JWT_BLACKLIST_ENABLED"] = True
 app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = ["access", "refresh"]
 
 api = Api(app)
+jwt = JWTManager(app)
 
-
-@app.before_first_request
-def create_player_db():
-    if os.path.exists("player.db"):
-        os.remove("player.db")
-    db.init_db()
-
+# @app.before_first_request
+# def create_player_db():
+#    if os.path.exists("player.db"):
+#        os.remove("player.db")
+#    db.init_db()
 
 @app.teardown_appcontext
 def shutdown_session(exception=None):
     db.session.remove()
 
-
 @app.errorhandler(ValidationError)
 def handle_marshmallow_validation(err):
     return jsonify(err.messages), 400
-
-
-jwt = JWTManager(app)
-
 
 @jwt.token_in_blacklist_loader
 def check_if_token_in_blacklist(decrypted_token):
