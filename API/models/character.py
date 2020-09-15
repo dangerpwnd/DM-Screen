@@ -111,15 +111,14 @@ class CharacterModel(Base):
     id_character = Column(Integer, primary_key=True)
     character_name = Column(String(80))
     character_descrip = Column(String(80))
-    alignment_id = Column(Integer, ForeignKey("Alignment.id_alignment"), nullable=False)
+    alignment_id = Column(Integer, ForeignKey("Alignment.id_alignment"))
     background_id = Column(
-        Integer, ForeignKey("Background.id_background"), nullable=False
-    )
-    eye_id = Column(Integer, ForeignKey("Eye.id_eye"), nullable=False)
-    hair_id = Column(Integer, ForeignKey("Hair.id_hair"), nullable=False)
-    race_id = Column(Integer, ForeignKey("Race.id_race"), nullable=False)
-    skin_id = Column(Integer, ForeignKey("Skin.id_skin"), nullable=False)
-    subrace_id = Column(Integer, ForeignKey("Subrace.id_subrace"), nullable=False)
+        Integer, ForeignKey("Background.id_background"))
+    eye_id = Column(Integer, ForeignKey("Eye.id_eye"))
+    hair_id = Column(Integer, ForeignKey("Hair.id_hair"))
+    race_id = Column(Integer, ForeignKey("Race.id_race"))
+    skin_id = Column(Integer, ForeignKey("Skin.id_skin"))
+    subrace_id = Column(Integer, ForeignKey("Subrace.id_subrace"))
 
     # relationships
     # many to one alignment - DONE

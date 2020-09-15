@@ -18,7 +18,7 @@ class ArmorModel(Base):
     armor_ac = Column(Integer, nullable=False)
     armor_weight = Column(Integer, nullable=False)
     armor_maxdex = Column(Integer, nullable=False)
-    armortype_id = Column(Integer, ForeignKey("ArmorType.id_armortype"), nullable=False)
+    armortype_id = Column(Integer, ForeignKey("ArmorType.id_armortype"))
 
     def __repr__(self):
         return (

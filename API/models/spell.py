@@ -16,7 +16,7 @@ class SpellModel(Base):
     spell_name = Column(String(75), nullable=False, unique=True)
     spell_descrip = Column(String(250), nullable=False)
     spell_amount = Column(String(25), nullable=False)
-    spelltype_id = Column(Integer, ForeignKey("SpellType.id_spelltype"), nullable=False)
+    spelltype_id = Column(Integer, ForeignKey("SpellType.id_spelltype"))
 
     def __repr__(self):
         return '<Spell (name="%s", descrip="%s", damage="%s")>' % (

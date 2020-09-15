@@ -13,7 +13,7 @@ class WeaponModel(Base):
     weapon_descrip = Column(String(250), nullable=False)
     weapon_damage = Column(String(25), nullable=False)
     weapon_weight = Column(Integer, nullable=False)
-    weapontype_id = Column(Integer, ForeignKey("WeaponType.id_weapontype"), nullable=False)
+    weapontype_id = Column(Integer, ForeignKey("WeaponType.id_weapontype"))
 
     def __repr__(self):
         return '<Weapon (name="%s", descrip="%s", damage="%s", weight="%s")>' % (
