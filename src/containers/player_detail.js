@@ -14,6 +14,17 @@ import characteristics from "../components/characteristics";
 import charNotes from "../components/char_notes";
 
 class PlayerDetail extends Component {
+
+    state = {
+        ac: {
+            base: 10,
+            nat: 0,
+            dex: 0,
+            armor: 0,
+            magic: 0
+        }
+    }
+
     render() {
         return(
             <div>
