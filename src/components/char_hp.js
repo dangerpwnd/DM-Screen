@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharHp = () => {
+const charHp = () => {
     return(
         <div className="playerHpGrid">
             <div className="border playerFlexRow">
@@ -11,6 +11,6 @@ const CharHp = () => {
             
         </div>
     )
-}
+};
 
-export default CharHp
+export default charHp;

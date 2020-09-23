@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharDeathSave = () => {
+const charDeathSave = () => {
     return(
         <div className="playerSaveGrid">
             <div className="border playerFlexRow">
@@ -16,6 +16,6 @@ const CharDeathSave = () => {
             
         </div>
     )
-}
+};
 
-export default CharDeathSave
+export default charDeathSave;

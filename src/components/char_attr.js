@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharAttr = () => {
+const charAttr = () => {
     return(
         <div className="playerAttrGrid">
             <div className="border">
@@ -13,6 +13,6 @@ const CharAttr = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharAttr
+export default charAttr;

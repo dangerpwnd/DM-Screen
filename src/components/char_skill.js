@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharSkill = () => {
+const charSkill = () => {
     return(
         <div className="playerStatGrid">
             <div className="border">
@@ -11,6 +11,6 @@ const CharSkill = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharSkill
+export default charSkill;

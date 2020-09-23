@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharEquip = () => {
+const charEquip = () => {
     return(
         <div className="playerItemGrid playerFlexCol">
             <div className="border">
@@ -10,6 +10,6 @@ const CharEquip = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharEquip
+export default charEquip;

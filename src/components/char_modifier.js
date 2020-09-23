@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharModifier = () => {
+const charModifier = () => {
     return(
         <div className="playerModGrid">
             <div className="border playerFlexRow">
@@ -10,6 +10,6 @@ const CharModifier = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharModifier
+export default charModifier;

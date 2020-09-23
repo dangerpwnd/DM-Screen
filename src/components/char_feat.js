@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharFeat = () => {
+const charFeat = () => {
     return(
         <div className="playerFeatGrid playerFlexCol">
             <div className="border">
@@ -10,6 +10,6 @@ const CharFeat = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharFeat
+export default charFeat;

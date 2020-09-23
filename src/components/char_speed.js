@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharSpeed = () => {
+const charSpeed = () => {
     return(
         <div>
             <div className="border playerFlexRow">
@@ -9,6 +9,6 @@ const CharSpeed = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharSpeed
+export default charSpeed;

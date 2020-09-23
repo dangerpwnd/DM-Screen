@@ -1,16 +1,16 @@
-import React from "react"
-import Char_Weapon from "./char_weapon"
+import React from "react";
+import char_Weapon from "./char_weapon";
 
-const CharAttack = () => {
+const charAttack = () => {
     return(
         <div className="playerAttackGrid playerFlexCol">
             <div className="border">
-                <Char_Weapon />
-                <Char_Weapon />
-                <Char_Weapon />
+                <char_Weapon />
+                <char_Weapon />
+                <char_Weapon />
             </div>
         </div>
     )
-}
+};
 
-export default CharAttack
+export default charAttack;

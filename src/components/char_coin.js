@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharCoin = () => {
+const charCoin = () => {
     return(
         <div className="playerCoinGrid">
             <div className="border playerFlexRow">
@@ -11,6 +11,6 @@ const CharCoin = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharCoin
+export default charCoin;

@@ -1,10 +1,10 @@
-import React from "react"
-import image from "../assets/img/AYBase.jpg"
+import React from "react";
+import image from "../assets/img/AYBase.jpg";
 
-const CharImg = () => {
+const charImg = () => {
     return(
         <img className="playerImgGrid" src={image} />
     )
-}
+};
 
-export default CharImg
+export default charImg;

@@ -1,17 +1,17 @@
-import React from "react"
-import CharClass from "./char_class"
-import CharSpeed from "./char_speed"
-import CharAc from "./char_ac"
+import React from "react";
+import charClass from "./char_class";
+import charSpeed from "./char_speed";
+import charAc from "./char_ac";
 
-const CharMain = () => {
+const charMain = () => {
     return(
             <div className="playerMainGrid">
                     <h1 className="border">Bartos Donadarion</h1>
-                    <CharClass />
-                    <CharSpeed />
-                    <CharAc />
+                    <charClass />
+                    <charSpeed />
+                    <charAc />
             </div>
     )
-}
+};
 
-export default CharMain
+export default charMain;

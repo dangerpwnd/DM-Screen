@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const Characteristics = () => {
+const characteristics = () => {
     return(
         <div className="playerCharGrid playerFlexCol">
             <div className="border">
@@ -13,6 +13,6 @@ const Characteristics = () => {
             </div>
         </div>
     )
-}
+};
 
-export default Characteristics
+export default characteristics;

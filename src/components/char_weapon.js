@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharWeapon = () => {
+const charWeapon = () => {
     return(
         <div>
             <div className="border playerFlexRow">
@@ -10,6 +10,6 @@ const CharWeapon = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharWeapon
+export default charWeapon;

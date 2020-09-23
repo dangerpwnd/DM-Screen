@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharNotes = () => {
+const charNotes = () => {
     return(
         <div className="playerNoteGrid playerFlexCol">
             <div className="border">
@@ -13,6 +13,6 @@ const CharNotes = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharNotes
+export default charNotes;

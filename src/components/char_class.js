@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-const CharClass = () => {
+const charClass = () => {
     return(
         <div>
             <div className="border playerFlexRow">
@@ -9,6 +9,6 @@ const CharClass = () => {
             </div>
         </div>
     )
-}
+};
 
-export default CharClass
+export default charClass;
