@@ -53,9 +53,8 @@ from resources.proficiency import Proficiency, ProficiencyList
 from resources.race import (
     Race,
     RaceList,
-    RaceHasFeatures,
     RaceHasLanguages,
-    RaceHasProficiencies,
+    RaceHasTraits,
     RaceHasSubraces,
 )
 from resources.size import Size, SizeList
@@ -73,10 +72,10 @@ from resources.subclass import (
 from resources.subrace import (
     SubRace,
     SubRaceList,
-    SubRaceHasFeatures,
-    SubRaceHasProficiencies,
+    SubRaceHasTraits
 )
 from resources.tool import Tool, ToolList
+from resources..trait import Trait, TraitList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 from resources.weapon import Weapon, WeaponList
 from resources.weapontype import WeaponType, WeaponTypeList
@@ -245,14 +244,11 @@ api.add_resource(ProficiencyList, "/proficiencies")
 api.add_resource(Race, "/race/<string:race_name>")
 api.add_resource(RaceList, "/races")
 api.add_resource(
-    RaceHasFeatures, "/race/<string:race_name>/feature/<string:feature_name>"
-)
-api.add_resource(
     RaceHasLanguages, "/race/<string:race_name>/language/<string:language_name>"
 )
 api.add_resource(
-    RaceHasProficiencies,
-    "/race/<string:race_name>/proficiency/<string:proficiency_name>",
+    RaceHasTraits,
+    "/race/<string:race_name>/trait/<string:trait_name>",
 )
 api.add_resource(
     RaceHasSubraces, "/race/<string:race_name>/subrace/<string:subrace_name>",
@@ -297,16 +293,16 @@ api.add_resource(
 api.add_resource(SubRace, "/subrace/<string:subrace_name>")
 api.add_resource(SubRaceList, "/subraces")
 api.add_resource(
-    SubRaceHasFeatures, "/subrace/<string:subrace_name>/feature/<string:feature_name>",
-)
-api.add_resource(
-    SubRaceHasProficiencies,
-    "/subrace/<string:subrace_name>/proficiency/<string:proficiency_name>",
+    SubRaceHasTraits, "/subrace/<string:subrace_name>/trait/<string:trait_name>",
 )
 
 # Tools
 api.add_resource(Tool, "/tool/<string:tool_name>")
 api.add_resource(ToolList, "/tools")
+
+# Traits
+api.add_resource(Trait, "/trait/<string:trait_name>")
+api.add_resource(TraitList, "/traits")
 
 # User Registration
 api.add_resource(UserRegister, "/register")

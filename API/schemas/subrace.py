@@ -7,8 +7,7 @@ class SubRaceSchema(Schema):
     subrace_name = fields.Str()
     subrace_descrip = fields.Str()
     race = fields.Nested("RaceSchema")
-    features = fields.Nested("FeatureSchema", many=True)
-    proficiencies = fields.Nested("ProficiencySchema", many=True)
+    traits = fields.Nested("TraitSchema", many=True)
 
     @post_load
     def make_subrace(self, data, **kwargs):

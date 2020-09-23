@@ -4,20 +4,14 @@ from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 
 # Association Tables
-subrace_has_features = Table(
-    "Subrace_has_Features",
-    Base.metadata,
-    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
-    Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
-)
 
 subrace_has_proficiencies = Table(
-    "Subrace_has_Proficiencies",
+    "Subrace_has_Traits",
     Base.metadata,
     Column(
-        "proficiency_id",
+        "trait_id",
         Integer,
-        ForeignKey("Proficiency.id_proficiency"),
+        ForeignKey("Trait.id_trait"),
         primary_key=True,
     ),
     Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
@@ -35,9 +29,8 @@ class SubRaceModel(Base):
     subrace_descrip = Column(String(250), nullable=False)
 
     # Relationships
-    features = relationship("FeatureModel", secondary=lambda: subrace_has_features)
-    proficiencies = relationship(
-        "ProficiencyModel", secondary=lambda: subrace_has_proficiencies
+    traits = relationship(
+        "TraitModel", secondary=lambda: subrace_has_traits
     )
 
     character = relationship("CharacterModel", backref="subrace")
@@ -53,7 +46,7 @@ class SubRaceModel(Base):
         return cls.query.filter_by(subrace_name=subrace_name).first()
 
     @classmethod
-    def find_all(cls) -> List["SubRSaceModel"]:
+    def find_all(cls) -> List["SubRaceModel"]:
         return cls.query.all()
 
     def save_to_db(self):

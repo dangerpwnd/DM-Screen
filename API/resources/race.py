@@ -73,23 +73,6 @@ class RaceList(Resource):
         return {"races": race_list_schema.dump(RaceModel.find_all())}, 200
 
 
-class RaceHasFeatures(Resource):
-    @classmethod
-    def post(cls, race_name: str, feature_name: str):
-        race = RaceModel.find_by_name(race_name)
-        feature = FeatureModel.find_by_name(feature_name)
-        if not race:
-            return {"message": "Race not found."}, 404
-        if not feature:
-            return {"message": "Feature not found."}, 404
-        race.features.append(feature)
-        race.save_to_db()
-        return (
-            {"message": "Feature '{}' added.".format(feature.feature_name)},
-            200,
-        )
-
-
 class RaceHasLanguages(Resource):
     @classmethod
     def post(cls, race_name: str, language_name: str):
@@ -107,23 +90,6 @@ class RaceHasLanguages(Resource):
         )
 
 
-class RaceHasProficiencies(Resource):
-    @classmethod
-    def post(cls, race_name: str, proficiency_name: str):
-        race = RaceModel.find_by_name(race_name)
-        proficiency = ProficiencyModel.find_by_name(proficiency_name)
-        if not race:
-            return {"message": "Race not found."}, 404
-        if not proficiency:
-            return {"message": "Proficiency not found."}, 404
-        race.proficiencies.append(proficiency)
-        race.save_to_db()
-        return (
-            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
-            200,
-        )
-
-
 class RaceHasSubraces(Resource):
     @classmethod
     def post(cls, race_name: str, subrace_name: str):
@@ -137,5 +103,21 @@ class RaceHasSubraces(Resource):
         race.save_to_db()
         return (
             {"message": "Subrace '{}' added.".format(subrace.subrace_name)},
+            200,
+        )
+
+class RaceHasTraits(Resource):
+    @classmethod
+    def post(cls, race_name: str, trait_name: str):
+        race = RaceModel.find_by_name(race_name)
+        trait = TraitModel.find_by_name(trait_name)
+        if not race:
+            return {"message": "Race not found."}, 404
+        if not trait:
+            return {"message": "Trait not found."}, 404
+        race.proficiencies.append(trait)
+        race.save_to_db()
+        return (
+            {"message": "Trait '{}' added.".format(trait.trait_name)},
             200,
         )

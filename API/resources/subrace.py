@@ -70,35 +70,18 @@ class SubRaceList(Resource):
         return {"Subraces": subrace_list_schema.dump(SubRaceModel.find_all())}, 200
 
 
-class SubRaceHasFeatures(Resource):
+class SubRaceHasTraits(Resource):
     @classmethod
-    def post(cls, subrace_name: str, feature_name: str):
+    def post(cls, subrace_name: str, trait_name: str):
         subrace = SubRaceModel.find_by_name(subrace_name)
-        feature = FeatureModel.find_by_name(feature_name)
+        trait = TraitModel.find_by_name(trait_name)
         if not subrace:
             return {"message": "Sub race not found."}, 404
-        if not feature:
-            return {"message": "Feature not found."}, 404
-        subrace.features.append(feature)
+        if not trait:
+            return {"message": "Trait not found."}, 404
+        subrace.proficiencies.append(trait)
         subrace.save_to_db()
         return (
-            {"message": "Feature '{}' added.".format(feature.feature_name)},
-            200,
-        )
-
-
-class SubRaceHasProficiencies(Resource):
-    @classmethod
-    def post(cls, subrace_name: str, proficiency_name: str):
-        subrace = SubRaceModel.find_by_name(subrace_name)
-        proficiency = ProficiencyModel.find_by_name(proficiency_name)
-        if not subrace:
-            return {"message": "Sub race not found."}, 404
-        if not proficiency:
-            return {"message": "Proficiency not found."}, 404
-        subrace.proficiencies.append(proficiency)
-        subrace.save_to_db()
-        return (
-            {"message": "Proficiency '{}' added.".format(proficiency.proficiency_name)},
+            {"message": "Trait '{}' added.".format(trait.trait_name)},
             200,
         )

@@ -13,8 +13,7 @@ class RaceSchema(Schema):
     race_speed = fields.Integer()
     size_id = fields.Integer()
     size = fields.Nested("SizeSchema")
-    proficiencies = fields.Nested("ProficiencySchema", many=True)
-    features = fields.Nested("FeatureSchema", many=True)
+    traits = fields.Nested("TraitSchema", many=True)
     languages = fields.Nested("LanguageSchema", many=True)
     subraces = fields.Nested("SubRaceSchema", many=True)
 

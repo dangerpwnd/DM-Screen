@@ -6,21 +6,15 @@ from sqlalchemy.orm import relationship
 
 # Association tables
 
-race_has_proficiencies = Table(
-    "Race_has_Proficiencies",
+race_has_traits = Table(
+    "Race_has_Traits",
     Base.metadata,
     Column(
-        "proficiency_id",
+        "trait_id",
         Integer,
-        ForeignKey("Proficiency.id_proficiency"),
+        ForeignKey("Trait.id_trait"),
         primary_key=True,
     ),
-    Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
-)
-race_has_features = Table(
-    "Race_has_Features",
-    Base.metadata,
-    Column("feature_id", Integer, ForeignKey("Feature.id_feature"), primary_key=True),
     Column("race_id", Integer, ForeignKey("Race.id_race"), primary_key=True),
 )
 race_has_languages = Table(
@@ -58,10 +52,9 @@ class RaceModel(Base):
 
     character = relationship("CharacterModel", backref="race")
 
-    proficiencies = relationship(
-        "ProficiencyModel", secondary=lambda: race_has_proficiencies
+    traits = relationship(
+        "TraitModel", secondary=lambda: race_has_traits
     )
-    features = relationship("FeatureModel", secondary=lambda: race_has_features)
     languages = relationship("LanguageModel", secondary=lambda: race_has_languages)
     subraces = relationship("SubRaceModel", secondary=lambda: race_has_subraces)
 
