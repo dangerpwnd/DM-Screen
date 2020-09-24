@@ -1,13 +1,13 @@
 import React from "react";
-import char_Weapon from "./char_weapon";
+import Char_Weapon from "./char_weapon";
 
 const charAttack = () => {
     return(
         <div className="playerAttackGrid playerFlexCol">
             <div className="border">
-                <char_Weapon />
-                <char_Weapon />
-                <char_Weapon />
+                <Char_Weapon />
+                <Char_Weapon />
+                <Char_Weapon />
             </div>
         </div>
     )
