@@ -42,6 +42,26 @@ class PlayerDetail extends Component {
             int: 0,
             wis: 0,
             char: 0
+        },
+        skill: {
+            Acrobatics: 0,
+            Animal: 0,
+            Arcana: 0,
+            Athletics: 0,
+            Deception: 0,
+            History: 0,
+            Insight: 0,
+            Intimidation: 0,
+            Investigation: 0,
+            Medicine: 0,
+            Nature: 0,
+            Perception: 0,
+            Performance: 0,
+            Persuasion: 0,
+            Religion: 0,
+            Sleight: 0,
+            Stealth: 0,
+            Survival: 0
         }
     }
 
@@ -55,7 +75,7 @@ class PlayerDetail extends Component {
                     <CharHp hp={this.state.hp}/>
                     <CharDeathSave />
                     <CharModifier attr_mod={this.state.attr_mod}/>
-                    <CharSkill />
+                    <CharSkill skill={this.state.skill}/>
                     <CharAttack />
                     <CharFeat />
                     <CharEquip />
