@@ -33,7 +33,11 @@ class PlayerDetail extends Component {
         },
         hp: {
             current: 1,
-            max: 1
+            max: 1,
+            hdice: 1
+        },
+        level: {
+            current: 1
         },
         attr_mod: {
             str: 0,
@@ -44,24 +48,24 @@ class PlayerDetail extends Component {
             char: 0
         },
         skill: {
-            Acrobatics: 0,
-            Animal: 0,
-            Arcana: 0,
-            Athletics: 0,
-            Deception: 0,
-            History: 0,
-            Insight: 0,
-            Intimidation: 0,
-            Investigation: 0,
-            Medicine: 0,
-            Nature: 0,
-            Perception: 0,
-            Performance: 0,
-            Persuasion: 0,
-            Religion: 0,
-            Sleight: 0,
-            Stealth: 0,
-            Survival: 0
+            acrobatics: 0,
+            animal: 0,
+            arcana: 0,
+            athletics: 0,
+            deception: 0,
+            history: 0,
+            insight: 0,
+            intimidation: 0,
+            investigation: 0,
+            medicine: 0,
+            nature: 0,
+            perception: 0,
+            performance: 0,
+            persuasion: 0,
+            religion: 0,
+            sleight: 0,
+            stealth: 0,
+            survival: 0
         }
     }
 
