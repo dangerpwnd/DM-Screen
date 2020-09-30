@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import PlayerDetail from './containers/player_detail';
+import PlayerDetail from './containers/player/player_detail';
+import Layout from './containers/layout/layout';
 
 
 function App() {
