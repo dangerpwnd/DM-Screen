@@ -75,7 +75,7 @@ from resources.subrace import (
     SubRaceHasTraits
 )
 from resources.tool import Tool, ToolList
-from resources..trait import Trait, TraitList
+from resources.trait import Trait, TraitList
 from resources.user import UserRegister, User, UserLogin, UserLogout, TokenRefresh
 from resources.weapon import Weapon, WeaponList
 from resources.weapontype import WeaponType, WeaponTypeList
@@ -93,12 +93,6 @@ app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = ["access", "refresh"]
 
 api = Api(app)
 jwt = JWTManager(app)
-
-# @app.before_first_request
-# def create_player_db():
-#    if os.path.exists("player.db"):
-#        os.remove("player.db")
-#    db.init_db()
 
 @app.teardown_appcontext
 def shutdown_session(exception=None):

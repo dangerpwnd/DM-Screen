@@ -5,7 +5,7 @@ from sqlalchemy.orm import relationship
 
 # Association Tables
 
-subrace_has_proficiencies = Table(
+subrace_has_traits = Table(
     "Subrace_has_Traits",
     Base.metadata,
     Column(
@@ -16,7 +16,6 @@ subrace_has_proficiencies = Table(
     ),
     Column("subrace_id", Integer, ForeignKey("Subrace.id_subrace"), primary_key=True),
 )
-
 
 class SubRaceModel(Base):
 

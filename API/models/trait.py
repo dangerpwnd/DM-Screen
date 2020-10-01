@@ -2,7 +2,6 @@ from typing import List
 from db import Base, session
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import relationship
 
 
 class TraitModel(Base):
