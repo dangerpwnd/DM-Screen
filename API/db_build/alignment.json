@@ -1,0 +1,38 @@
+[
+    {
+        "alignment_name": "Lawful good",
+        "alignment_descrip": "Lawful good creatures can be counted on to do the right thing as expected by society."
+    },
+    {
+        "alignment_name": "Neutral good",
+        "alignment_descrip": "Neutral good folk do the best they can to help others according to their needs."
+    },
+    {
+        "alignment_name": "Chaotic good",
+        "alignment_descrip": "Chaotic good creatures act as their conscience directs, with little regard for what others expect."
+    },
+    {
+        "alignment_name": "Lawful neutral",
+        "alignment_descrip": "Lawful neutral individuals act in accordance with law, tradition, or personal codes."
+    },
+    {
+        "alignment_name": "Neutral",
+        "alignment_descrip": "Neutral is the alignment of those who prefer to steer clear of moral questions and don't take sides, doing what seems best at the time."
+    },
+    {
+        "alignment_name": "Chaotic Neutral",
+        "alignment_descrip": "Chaotic neutral creatures follow their whims, holding their personal freedom above all else."
+    },
+    {
+        "alignment_name": "Lawful Evil",
+        "alignment_descrip": "Lawful evil creatures methodically take what they want, within the limits of a code of tradition, loyalty, or order."
+    },
+    {
+        "alignment_name": "Neutral Evil",
+        "alignment_descrip": "Neutral evil is the alignment of those who do whatever they can get away with, without compassion or qualms."
+    },
+    {
+        "alignment_name": "Chaotic Evil",
+        "alignment_descrip": "Chaotic evil creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust."
+    }
+]

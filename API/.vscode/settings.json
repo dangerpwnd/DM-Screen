@@ -1,8 +1,12 @@
 {
     "python.formatting.provider": "black",
     "cSpell.ignoreWords": [
+        "alignment",
+        "alignment descrip",
         "armor",
         "armor maxdex",
+        "bloodlust",
+        "descrip",
         "jsonify",
         "maxdex",
         "mysqldb"

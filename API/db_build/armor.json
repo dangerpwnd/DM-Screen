@@ -1,0 +1,12 @@
+[
+    {
+        "armor_name": "Padded",
+        "armor_descrip": "",
+        "armor_ac": 1,
+        "armor_weight": 8,
+        "armor_cost": "5 gp",
+        "armor_minstr": 0,
+        "armor_maxdex": null,
+        "armortype_id": 1
+    }
+]
