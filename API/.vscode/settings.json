@@ -1,6 +1,10 @@
 {
     "python.formatting.provider": "black",
     "cSpell.ignoreWords": [
-        "jsonify"
+        "armor",
+        "armor maxdex",
+        "jsonify",
+        "maxdex",
+        "mysqldb"
     ]
 }

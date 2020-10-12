@@ -30,3 +30,4 @@ API/dm-env
 
 # DB Migrations
 API/migrations
+API/.env
