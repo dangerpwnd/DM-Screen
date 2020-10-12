@@ -17,18 +17,22 @@ class ArmorModel(Base):
     armor_descrip = Column(String(250), nullable=False)
     armor_ac = Column(Integer, nullable=False)
     armor_weight = Column(Integer, nullable=False)
-    armor_maxdex = Column(Integer, nullable=False)
+    armor_cost = Column(String(50), nullable=False)
+    armor_minstr = Column(Integer, nullable=True)
+    armor_maxdex = Column(Integer, nullable=True)
     armortype_id = Column(Integer, ForeignKey("ArmorType.id_armortype"))
 
     def __repr__(self):
         return (
-            "<Armor (name='%s', descrip='%s', AC='%s', weight='%s', Max Dex='%s')>"
+            "<Armor (name='%s', descrip='%s', AC='%s', weight='%s', cost='%s', Min Str='%s', Max Dex='%s')>"
             % (
                 self.armor_name,
                 self.armor_descrip,
                 self.armor_ac,
                 self.armor_weight,
-                self.armor_maxdex,
+                self.armor_cost,
+                self.armor_minstr,
+                self.armor_maxdex
             )
         )
 

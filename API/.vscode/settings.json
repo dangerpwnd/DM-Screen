@@ -5,10 +5,15 @@
         "alignment descrip",
         "armor",
         "armor maxdex",
+        "armor minstr",
+        "armortype",
+        "armortype id",
         "bloodlust",
         "descrip",
+        "id",
         "jsonify",
         "maxdex",
+        "minstr",
         "mysqldb"
     ]
 }
