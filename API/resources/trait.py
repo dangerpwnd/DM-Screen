@@ -19,7 +19,7 @@ class Trait(Resource):
 
         if TraitModel.find_by_name(trait_name):
             return {
-                "message": "Proficiency with name '{}' already exists.".format(
+                "message": "Trait with name '{}' already exists.".format(
                     trait_name
                 )
             }
@@ -61,9 +61,9 @@ class Trait(Resource):
         return trait_schema.dump(trait), 200
 
 
-class ProficiencyList(Resource):
+class TraitList(Resource):
     @classmethod
     def get(cls):
         return {
-            "Proficiencies": trait_list_schema.dump(TraitModel.find_all())
+            "Traits": trait_list_schema.dump(TraitModel.find_all())
         }
