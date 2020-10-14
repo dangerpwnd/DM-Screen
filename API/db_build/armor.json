@@ -1,12 +1,145 @@
 [
     {
         "armor_name": "Padded",
-        "armor_descrip": "",
+        "armor_descrip": "Padded armor consists of quilted layers of cloth and batting.",
         "armor_ac": 1,
-        "armor_weight": 8,
+        "armor_weight": "8 lb",
         "armor_cost": "5 gp",
         "armor_minstr": null,
         "armor_maxdex": null,
+        "armor_stealthdis": true,
+        "armortype_id": 1
+    },
+    {
+        "armor_name": "Leather",
+        "armor_descrip": "The breastplate and shoulder protectors of this arm or are made of leather that has been stiffened by being boiled in oil. The rest of the armor is made of softer and more flexible materials.",
+        "armor_ac":  1,
+        "armor_weight": "",
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex":  ,
+        "armor_stealthdis": false,
+        "armortype_id": 1
+    },
+    {
+        "armor_name": "Studded Leather",
+        "armor_descrip": "Made from tough but flexible leather, studded leather is reinforced with close-set rivets or spikes.",
+        "armor_ac":  2,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex":  ,
+        "armor_stealthdis": false,
+        "armortype_id": 1
+    },
+    {
+        "armor_name": "Hide",
+        "armor_descrip": "This crude armor consists of thick furs and pelts. It is commonly worn by barbarian tribes, evil humanoids, and other folk who lack access to the tools and materials needed to create better armor.",
+        "armor_ac": 2,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex": 2,
+        "armor_stealthdis": false,
+        "armortype_id": 2
+    },
+    {
+        "armor_name": "Chain Shirt",
+        "armor_descrip": "",
+        "armor_ac": 3,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex": 2,
+        "armor_stealthdis": false,
+        "armortype_id": 2
+    },
+    {
+        "armor_name": "Scale Mail",
+        "armor_descrip": "",
+        "armor_ac": 4,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex": 2,
+        "armor_stealthdis": true,
+        "armortype_id": 2
+    },
+    {
+        "armor_name": "Breastplate",
+        "armor_descrip": "",
+        "armor_ac":  4,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex": 2,
+        "armor_stealthdis": false,
+        "armortype_id": 2
+    },
+    {
+        "armor_name": "Half Plate",
+        "armor_descrip": "",
+        "armor_ac":  5,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":   ,
+        "armor_maxdex": 2,
+        "armor_stealthdis": true,
+        "armortype_id": 2
+    },
+    {
+        "armor_name": "Ring Mail",
+        "armor_descrip": "",
+        "armor_ac": 4,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr": null,
+        "armor_maxdex": null,
+        "armor_stealthdis": true,
+        "armortype_id": 3
+    },
+    {
+        "armor_name": "Chain Mail",
+        "armor_descrip": "",
+        "armor_ac": 6,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr": 13,
+        "armor_maxdex": null,
+        "armor_stealthdis": true,
+        "armortype_id": 3
+    },
+    {
+        "armor_name": "Splint",
+        "armor_descrip": "",
+        "armor_ac":  7,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":  15,
+        "armor_maxdex": null,
+        "armor_stealthdis": true,
+        "armortype_id": 3
+    },
+    {
+        "armor_name": "Plate",
+        "armor_descrip": "",
+        "armor_ac": 8,
+        "armor_weight":  ,
+        "armor_cost": "",
+        "armor_minstr":  15,
+        "armor_maxdex": null,
+        "armor_stealthdis": true,
+        "armortype_id": 3
+    },
+    {
+        "armor_name": "Shield",
+        "armor_descrip": "A shield is made from wood or metal and is carried in one hand. Wielding a shield increases your Armor Class by 2. You can benefit from only one shield at a time.",
+        "armor_ac": 2,
+        "armor_weight": "6 lb",
+        "armor_cost": "10 gp",
+        "armor_minstr": null,
+        "armor_maxdex": null,
+        "armor_stealthdis": false,
         "armortype_id": 1
     }
 ]
