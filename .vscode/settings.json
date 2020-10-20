@@ -1,10 +1,23 @@
 {
     "cSpell.ignoreWords": [
+        "alignment",
+        "alignment descrip",
+        "armor",
+        "armor maxdex",
+        "armor minstr",
+        "armor stealthdis",
+        "armortype",
+        "armortype id",
         "bartos",
         "char",
         "char deathsave",
         "deathsave",
+        "descrip",
         "donadarion",
-        "hdice"
+        "hdice",
+        "id",
+        "maxdex",
+        "minstr",
+        "stealthdis"
     ]
 }
