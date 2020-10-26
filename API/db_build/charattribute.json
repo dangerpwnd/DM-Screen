@@ -1,0 +1,26 @@
+[
+    {
+        "attribute_name": "Strength",
+        "attribute_descrip" : "Strength measures bodily power,athletic training, and the extent for which you can exert raw physical force."
+    },
+    {
+        "attribute_name": "Dexterity",
+        "attribute_descrip" : "Dexterity measure agilty, reflexes, and balance. measures bodily power,athletic training, and the extent for which you can exert raw physical force."
+    },
+    {
+        "attribute_name": "Constitution",
+        "attribute_descrip" : "Constitution measures health, stamina, and vital force."
+    },
+    {
+        "attribute_name": "Intelligence",
+        "attribute_descrip" : "Inteliigence measures mental acuity, accurracy of recall, and the ability to reason."
+    },
+    {
+        "attribute_name": "Wisdom",
+        "attribute_descrip" : "Wisdom reflects how attuned you are to the world around you and represents perceptiveness and intuition."
+    },
+    {
+        "attribute_name": "Charisma",
+        "attribute_descrip" : "Charisma measure your ability to effectively interact with others."
+    },
+]
