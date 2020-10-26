@@ -20,9 +20,9 @@ class PlayerDetail extends Component {
         ac: {
             base: 10,
             nat: 0,
-            dex: 2,
-            armor: 2,
-            magic: 1
+            dex: 0,
+            armor: 0,
+            magic: 0
         },
         attr: {
             str: 10,
@@ -73,8 +73,8 @@ class PlayerDetail extends Component {
     componentDidMount() {
         axios.get()
             .then(response => {
-                this.setState({skill: response.data})
                 console.log(response);
+                this.setState({skill: response.data})
             });
     }
 
