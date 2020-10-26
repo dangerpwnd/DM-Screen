@@ -56,6 +56,7 @@ class Equipment(Resource):
         if equipment:
             equipment.equip_descrip = equipment_json["equip_descrip"]
             equipment.equip_weight = equipment_json["equip_weight"]
+            equipment.equip_cost = equipment_json["equip_cost"]
         else:
             equipment_json["equip_name"] = equip_name
             equipment = equipment_schema.load(equipment_json)

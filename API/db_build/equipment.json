@@ -1,0 +1,134 @@
+[
+    {
+        "equip_name": "Abacus",
+        "equip_descrip": "",
+        "equip_weight": "2 lb",
+        "equip_cost": "2 gp"
+    },
+    {
+        "equip_name": "Acid (Vial)",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "25 gp"
+    },
+    {
+        "equip_name": "Alchemist's Fire (Flask)",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "50gp"
+    },
+    {
+        "equip_name": "Ammunition - Arrows (20)",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "1 gp"
+    },
+    {
+        "equip_name": "Ammunition - Blowgun needles (50)",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "1 gp"
+    },
+    {
+        "equip_name": "Ammunition - Crossbow Bolts (20)",
+        "equip_descrip": "",
+        "equip_weight": "1.5 lb",
+        "equip_cost": "1 gp"
+    },
+    {
+        "equip_name": "Ammunition - Sling Bullets (20)",
+        "equip_descrip": "",
+        "equip_weight": "1.5 lb",
+        "equip_cost": "4 cp"
+    },
+    {
+        "equip_name": "Antitoxin (Vial) ",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "50 gp"
+    },
+    {
+        "equip_name": "Arcane Focus - Crystal",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "10 gp"
+    },
+    {
+        "equip_name": "Arcane Focus - Orb",
+        "equip_descrip": "",
+        "equip_weight": "3 lb",
+        "equip_cost": "20 gp"
+    },
+    {
+        "equip_name": "Arcane Focus - Rod",
+        "equip_descrip": "",
+        "equip_weight": "2 lb",
+        "equip_cost": "10 gp"
+    },
+    {
+        "equip_name": "Arcane Focus - Staff",
+        "equip_descrip": "",
+        "equip_weight": "4 lb",
+        "equip_cost": "5 gp"
+    },
+    {
+        "equip_name": "Arcane Focus - Wand",
+        "equip_descrip": "",
+        "equip_weight": "1 lb",
+        "equip_cost": "10 gp"
+    },
+    {
+        "equip_name": "Backpack",
+        "equip_descrip": "",
+        "equip_weight": "5 lb",
+        "equip_cost": "2 gp"
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    },
+    {
+        "equip_name": "",
+        "equip_descrip": "",
+        "equip_weight": "",
+        "equip_cost": ""
+    }
+]

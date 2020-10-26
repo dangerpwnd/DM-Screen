@@ -13,7 +13,8 @@ class EquipmentModel(Base):
     id_equip = Column(Integer, primary_key=True)
     equip_name = Column(String(100), nullable=False, unique=True)
     equip_descrip = Column(String(250), nullable=False)
-    equip_weight = Column(Integer, nullable=False)
+    equip_weight = Column(String(30), nullable=False)
+    equip_cost = Column(String(30), nullable=False)
 
     # Relationships
 
