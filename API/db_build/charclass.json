@@ -1,0 +1,50 @@
+[
+    {
+        "class_name": "Barbarian",
+        "class_descrip": "A fierce warrior of primative background who can enter into a battle rage."
+    },
+    {
+        "class_name": "Bard",
+        "class_descrip": "An inspiring magician whose power echoes the music of creation."
+    },
+    {
+        "class_name": "Cleric",
+        "class_descrip": "A priestly champion who wields divine magic in service of a higher power."
+    },
+    {
+        "class_name": "Druid",
+        "class_descrip": "A priest of the Old Faith, wielding the powers of nature - moonlight and plant growth, fire and lightning - and adopting animal forms."
+    },
+    {
+        "class_name": "Fighter",
+        "class_descrip": "A master of martial combat, skilled with a variety of weapons and armor."
+    },
+    {
+        "class_name": "Monk",
+        "class_descrip": "A master of the martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection."
+    },
+    {
+        "class_name": "Paladin",
+        "class_descrip": "A holy warrior bound to a sacred oath."
+    },
+    {
+        "class_name": "Ranger",
+        "class_descrip": "A warrior who uses martial prowess and nature magic to combat threats on the edge of civilization."
+    },
+    {
+        "class_name": "Rogue",
+        "class_descrip": "A scoundrel who uses stealth and trickery to overcome obstacles and enemies."
+    },
+    {
+        "class_name": "Sorcerer",
+        "class_descrip": "A spellcaster who draws on inherent magic from a gift or bloodline."
+    },
+    {
+        "class_name": "Warlock",
+        "class_descrip": "A wielder of magic that is derived from a bargain with an extraplanar entity."
+    },
+    {
+        "class_name": "Wizard",
+        "class_descrip": "A scholarly magic-user capabale of manipulating the structures of reality."
+    },
+]
