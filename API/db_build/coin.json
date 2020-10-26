@@ -1,0 +1,18 @@
+[
+    {
+        "coin_name": "Platinum Piece",
+        "coin_descrip": "PP"
+    },
+    {
+        "coin_name": "Gold Piece",
+        "coin_descrip": "GP"
+    },
+    {
+        "coin_name": "Silver Piece",
+        "coin_descrip": "SP"
+    },
+    {
+        "coin_name": "Copper Piece",
+        "coin_descrip": "CP"
+    },
+]
