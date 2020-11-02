@@ -1,596 +1,590 @@
 [
-    {
-        "equip_name": "Abacus",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Acid (Vial)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "25 gp"
-    },
-    {
-        "equip_name": "Alchemist's Fire (Flask)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "50gp"
-    },
-    {
-        "equip_name": "Ammunition - Arrows (20)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Ammunition - Blowgun needles (50)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Ammunition - Crossbow Bolts (20)",
-        "equip_descrip": "",
-        "equip_weight": "1.5 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Ammunition - Sling Bullets (20)",
-        "equip_descrip": "",
-        "equip_weight": "1.5 lb",
-        "equip_cost": "4 cp"
-    },
-    {
-        "equip_name": "Antitoxin (Vial) ",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "50 gp"
-    },
-    {
-        "equip_name": "Arcane Focus - Crystal",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Arcane Focus - Orb",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "20 gp"
-    },
-    {
-        "equip_name": "Arcane Focus - Rod",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Arcane Focus - Staff",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Arcane Focus - Wand",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Backpack",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Ball bearings (1000)",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Barrel",
-        "equip_descrip": "",
-        "equip_weight": "70 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Basket",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "4 sp"
-    },
-    {
-        "equip_name": "Bedroll",
-        "equip_descrip": "",
-        "equip_weight": "7 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Bell",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Blanket",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Block and tackle",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Book",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "25 lb"
-    },
-    {
-        "equip_name": "",
-        "equip_descrip": "",
-        "equip_weight": "",
-        "equip_cost": ""
-    },
-    {
-        "equip_name": "Bottle, glass",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Bucket",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "5 cp"
-    },
-    {
-        "equip_name": "Caltrops (20)",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Candle",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 cp"
-    },
-    {
-        "equip_name": "Case, crossbow bolt",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Case, map or scroll",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Chain (10 ft)",
-        "equip_descrip": "",
-        "equip_weight": "10 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Chalk",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 cp"
-    },
-    {
-        "equip_name": "Chest",
-        "equip_descrip": "",
-        "equip_weight": "25 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Climber's Kit",
-        "equip_descrip": "",
-        "equip_weight": "12 lb",
-        "equip_cost": "25 gp"
-    },
-    {
-        "equip_name": "Clothes, Common",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Clothes, Costume",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Clothes, Fine",
-        "equip_descrip": "",
-        "equip_weight": "6 lb",
-        "equip_cost": "15 gp"
-    },
-    {
-        "equip_name": "Clothes, Traveler's",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Component Pouch",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "25 gp"
-    },
-    {
-        "equip_name": "Crowbar",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Druidic Focus - Sprig of Mistletoe",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Druidic Focus - Totem",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Druidic Focus - Wooden Staff",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Druidic Focus - Yew Wand",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Fishing Tackle",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Grappling Hook",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Hammer",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Hammer, Sledge",
-        "equip_descrip": "",
-        "equip_weight": "10 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Healer's Kit",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Holy Symbol - Amulet",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Holy Symbol - Emblem",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Holy Symbol - Reliquary",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Holy water (Flask)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "25 gp"
-    },
-    {
-        "equip_name": "Hourglass",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "25 gp"
-    },
-    {
-        "equip_name": "Hunting Trap",
-        "equip_descrip": "",
-        "equip_weight": "25 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Ink (1 oz bottle)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Ink pen",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "2 cp"
-    },
-    {
-        "equip_name": "Jug or pitcher",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "2 cp"
-    },
-    {
-        "equip_name": "Ladder (10 ft)",
-        "equip_descrip": "",
-        "equip_weight": "25 lb",
-        "equip_cost": "1 sp"
-    },
-    {
-        "equip_name": "Lamp",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Lantern, Bullseye",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Lantern, Hooded",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Lock",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Magnifying Glass",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "100 gp"
-    },
-    {
-        "equip_name": "Manacles",
-        "equip_descrip": "",
-        "equip_weight": "6 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Mess Kit",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "2 sp"
-    },
-    {
-        "equip_name": "Mirror, Steel",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Oil (Flask)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 sp"
-    },
-    {
-        "equip_name": "Paper (One sheet)",
-        "equip_descrip": "",
-        "equip_weight": "0.1 lb",
-        "equip_cost": "2 sp"
-    },
-    {
-        "equip_name": "Parchment (One sheet)",
-        "equip_descrip": "",
-        "equip_weight": "0.1 lb",
-        "equip_cost": "1 sp"
-    },
-    {
-        "equip_name": "Perfume (Vial)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Pick, Miner's",
-        "equip_descrip": "",
-        "equip_weight": "10 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Piton",
-        "equip_descrip": "",
-        "equip_weight": "0.25 lb",
-        "equip_cost": "5 cp"
-    },
-    {
-        "equip_name": "Poison, Basic (Vial)",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "100 gp"
-    },
-    {
-        "equip_name": "Pole (10 ft)",
-        "equip_descrip": "",
-        "equip_weight": "7 lb",
-        "equip_cost": "5 cp"
-    },
-    {
-        "equip_name": "Pot, Iron",
-        "equip_descrip": "",
-        "equip_weight": "10 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Potion of Healing",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "50 gp"
-    },
-    {
-        "equip_name": "Pouch",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Quiver",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Ram, Portable",
-        "equip_descrip": "",
-        "equip_weight": "35 lb",
-        "equip_cost": "4 gp"
-    },
-    {
-        "equip_name": "Rations (1 day)",
-        "equip_descrip": "",
-        "equip_weight": "2 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Robes",
-        "equip_descrip": "",
-        "equip_weight": "4 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Rope, Hempen (50 ft)",
-        "equip_descrip": "",
-        "equip_weight": "10 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Rope, Silk (50 ft)",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "10 gp"
-    },
-    {
-        "equip_name": "Sack",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "1 cp"
-    },
-    {
-        "equip_name": "Scale, Merchant's",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Sealing Wax",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Shovel",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Signal Whistle",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "5 cp"
-    },
-    {
-        "equip_name": "Signet Ring",
-        "equip_descrip": "",
-        "equip_weight": "0.5 lb",
-        "equip_cost": "5 gp"
-    },
-    {
-        "equip_name": "Soap",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "2 cp"
-    },
-    {
-        "equip_name": "Spellbook",
-        "equip_descrip": "",
-        "equip_weight": "3 lb",
-        "equip_cost": "50 gp"
-    },
-    {
-        "equip_name": "Spikes, Iron (10)",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Spyglass",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1000 gp"
-    },
-    {
-        "equip_name": "Tent, 2 person",
-        "equip_descrip": "",
-        "equip_weight": "20 lb",
-        "equip_cost": "2 gp"
-    },
-    {
-        "equip_name": "Tinderbox",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "5 sp"
-    },
-    {
-        "equip_name": "Torch",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 cp"
-    },
-    {
-        "equip_name": "Vial",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 gp"
-    },
-    {
-        "equip_name": "Waterskin",
-        "equip_descrip": "",
-        "equip_weight": "5 lb",
-        "equip_cost": "2 sp"
-    },
-    {
-        "equip_name": "Whetstone",
-        "equip_descrip": "",
-        "equip_weight": "1 lb",
-        "equip_cost": "1 cp"
-    }
+  {
+    "equip_name": "Abacus",
+    "equip_descrip": "An oblong frame with rows of wires or grooves along which beads are slid, used for calculating.",
+    "equip_weight": "2 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Acid (Vial)",
+    "equip_descrip": "As an action, you can splash the contents of this vial onto a creature within 5 ft of you or throw the vial up to 20 ft, shattering it on impact. In either case, make a ranged attack against a creature or object, treating the acid as an improvised weapon. On a hit, the target takes 2d6 acid damage.",
+    "equip_weight": "1 lb",
+    "equip_cost": "25 gp"
+  },
+  {
+    "equip_name": "Alchemist's Fire (Flask)",
+    "equip_descrip": "This sticky, adhesive fluid ignites when exposed to air. As an action, you can throw this flask up to 20 ft, shattering it on impact. Make a ranged attack against a creature or object, treating the alchemist's fire as an improvised weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dex check to extinguish the flames.",
+    "equip_weight": "1 lb",
+    "equip_cost": "50gp"
+  },
+  {
+    "equip_name": "Ammunition - Arrows (20)",
+    "equip_descrip": "20 regular arrows to fill your quiver.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Ammunition - Blowgun needles (50)",
+    "equip_descrip": "50 regular blowgun needles",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Ammunition - Crossbow Bolts (20)",
+    "equip_descrip": "20 regular crossbow bolts",
+    "equip_weight": "1.5 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Ammunition - Sling Bullets (20)",
+    "equip_descrip": "20 regular sling bullets",
+    "equip_weight": "1.5 lb",
+    "equip_cost": "4 cp"
+  },
+  {
+    "equip_name": "Antitoxin (Vial) ",
+    "equip_descrip": "A creature that drinks this vial of liquid gains advantage on saving throws against poison for 1 hour. It confers no benefit to undead or constructs.",
+    "equip_weight": "1 lb",
+    "equip_cost": "50 gp"
+  },
+  {
+    "equip_name": "Arcane Focus - Crystal",
+    "equip_descrip": "An arcane focus is a special item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.",
+    "equip_weight": "1 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Arcane Focus - Orb",
+    "equip_descrip": "An arcane focus is a special item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.",
+    "equip_weight": "3 lb",
+    "equip_cost": "20 gp"
+  },
+  {
+    "equip_name": "Arcane Focus - Rod",
+    "equip_descrip": "An arcane focus is a special item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.",
+    "equip_weight": "2 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Arcane Focus - Staff",
+    "equip_descrip": "An arcane focus is a special item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.",
+    "equip_weight": "4 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Arcane Focus - Wand",
+    "equip_descrip": "An arcane focus is a special item designed to channel the power of arcane spells. A sorcerer, warlock, or wizard can use such an item as a spellcasting focus.",
+    "equip_weight": "1 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Backpack",
+    "equip_descrip": "A bag with shoulder straps that allow it to be carried on one's back. Carries 1 cubic foot/30 lbs of gear.",
+    "equip_weight": "5 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Ball bearings (1000)",
+    "equip_descrip": "As an action, you can spill these tiny metal balls from their pouch to cover a level area 10 ft sq. A creature moving across the covered area must succeed on a DC 10 Dex saving throw or fall prone. A creature moving thru the area at half speed doesn't need to make the saving throw.",
+    "equip_weight": "2 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Barrel",
+    "equip_descrip": "A cylindrical container bulging out in the middle, traditionally made of wooden staves with metal hoops around them. Carries 40 gal liquid, 4 cubic feet of solid",
+    "equip_weight": "70 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Basket",
+    "equip_descrip": "A container for holding or carrying things. Carries 2 cubic feet/40 pounds of gear.",
+    "equip_weight": "2 lb",
+    "equip_cost": "4 sp"
+  },
+  {
+    "equip_name": "Bedroll",
+    "equip_descrip": "A sleeping bag or other bedding rolled into a bundle.",
+    "equip_weight": "7 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Bell",
+    "equip_descrip": "A hollow object, typically made of metal and having the shape of a deep inverted cup widening at the lip, that sounds a clear musical note when struck, typically by means of a clapper inside.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Blanket",
+    "equip_descrip": "A large piece of woolen or similar material used as a bed covering or other covering for warmth",
+    "equip_weight": "3 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Block and tackle",
+    "equip_descrip": "A set of pulleys with a cable threaded thru them and a hook to attach to objects, a block and tackle allows you to hoist up to four times the weight you can normally lift.",
+    "equip_weight": "5 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Book",
+    "equip_descrip": "A book might contain poetry, historical accounts, information pertaining to a particular field of lore, diagrams and notes on gnomish contraptions, or just about anything else that can be represented using text or pictures. A book of spells is a spellbook.",
+    "equip_weight": "5 lb",
+    "equip_cost": "25 lb"
+  },
+  {
+    "equip_name": "Bottle, glass",
+    "equip_descrip": "A container, made of glass and with a narrow neck, used for storing drinks or other liquids. Carries 1 1/2 pints liquid.",
+    "equip_weight": "2 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Bucket",
+    "equip_descrip": "A roughly cylindrical open container, typically made of metal or plastic, with a handle, used to hold and carry liquids or other material. Carries 3 gal liquid, 1/2 cubic foot solid",
+    "equip_weight": "2 lb",
+    "equip_cost": "5 cp"
+  },
+  {
+    "equip_name": "Caltrops (20)",
+    "equip_descrip": "As an action, you can spread a single bag of caltrops to cover a 5 ft square area. Any creature that enters the area must succeed on a DC 15 Dex saving throw or stop moving and take 1 piercing damage. Until the creature regains at least 1 HP, its walking speed is reduced by 10 ft. A creature moving thru the area at half speed doesn't need to make the saving throw.",
+    "equip_weight": "2 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Candle",
+    "equip_descrip": "For 1 hour, a candle sheds bright light in a 5 ft radius and dim light for an additional 5 ft.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 cp"
+  },
+  {
+    "equip_name": "Case, crossbow bolt",
+    "equip_descrip": "This wooden case can hold up to twenty crossbow bolts.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Case, map or scroll",
+    "equip_descrip": "This cylindrical leather case can hold up to 10 rolled up sheets of paper or five rolled up sheets of parchment.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Chain (10 ft)",
+    "equip_descrip": "A chain has 10 HP. It can be burst with a successful DC 20 Str check.",
+    "equip_weight": "10 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Chalk",
+    "equip_descrip": "A soft white limestone (calcium carbonate) formed from the skeletal remains of sea creatures",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 cp"
+  },
+  {
+    "equip_name": "Chest",
+    "equip_descrip": "A large strong box, typically made of wood and used for storage or shipping. Carries 12 cubic ft/ 300 lbs of gear.",
+    "equip_weight": "25 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Climber's Kit",
+    "equip_descrip": "A climber's kit includes special pitons, boot tips, gloves, and a harness. You can use the climber's kit as an action to anchor yourself; when you do, you can't fall more than 25 ft from the point where you anchored yourself, and you can't climb more than 25 ft away from that point without undoing the anchor.",
+    "equip_weight": "12 lb",
+    "equip_cost": "25 gp"
+  },
+  {
+    "equip_name": "Clothes, Common",
+    "equip_descrip": "Clothing of most commoners.",
+    "equip_weight": "3 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Clothes, Costume",
+    "equip_descrip": "Clothing for a specific costume.",
+    "equip_weight": "4 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Clothes, Fine",
+    "equip_descrip": "Clothing of royals or nobility.",
+    "equip_weight": "6 lb",
+    "equip_cost": "15 gp"
+  },
+  {
+    "equip_name": "Clothes, Traveler's",
+    "equip_descrip": "Clothing made comfortable for travelers.",
+    "equip_weight": "4 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Component Pouch",
+    "equip_descrip": "A component pouch is a small watertight leather belt pouch that has compartments to hold all the material components and other special items you need to cast your spells, except for those components that have a specific cost.",
+    "equip_weight": "2 lb",
+    "equip_cost": "25 gp"
+  },
+  {
+    "equip_name": "Crowbar",
+    "equip_descrip": "Using a crowbar grants advantage to Str checks where the crowbar's leverage can be applied.",
+    "equip_weight": "5 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Druidic Focus - Sprig of Mistletoe",
+    "equip_descrip": "A druidic focus, a spring of mistletoe, can be used as a spellcasting focus by Druids.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Druidic Focus - Totem",
+    "equip_descrip": "A druidic focus, a totem object incorporating feathers, fur, bones and teeth of a sacred animal, can be used as a spellcasting focus by Druids.",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Druidic Focus - Wooden Staff",
+    "equip_descrip": "A druidic focus, a staff drawn whole out of a living tree, can be used as a spellcasting focus by Druids.",
+    "equip_weight": "4 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Druidic Focus - Yew Wand",
+    "equip_descrip": "A druidic focus, a wand made of yew, can be used as a spellcasting focus by Druids.",
+    "equip_weight": "1 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Fishing Tackle",
+    "equip_descrip": "This kit inlcudes a wooden rod, silken line, corkwood bobbers, steel hooks, lead sinkers, velvet lures, and narrow netting.",
+    "equip_weight": "4 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Grappling Hook",
+    "equip_descrip": "",
+    "equip_weight": "4 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Hammer",
+    "equip_descrip": "",
+    "equip_weight": "3 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Hammer, Sledge",
+    "equip_descrip": "",
+    "equip_weight": "10 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Healer's Kit",
+    "equip_descrip": "",
+    "equip_weight": "3 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Holy Symbol - Amulet",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Holy Symbol - Emblem",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Holy Symbol - Reliquary",
+    "equip_descrip": "",
+    "equip_weight": "2 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Holy water (Flask)",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "25 gp"
+  },
+  {
+    "equip_name": "Hourglass",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "25 gp"
+  },
+  {
+    "equip_name": "Hunting Trap",
+    "equip_descrip": "",
+    "equip_weight": "25 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Ink (1 oz bottle)",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Ink pen",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "2 cp"
+  },
+  {
+    "equip_name": "Jug or pitcher",
+    "equip_descrip": "",
+    "equip_weight": "4 lb",
+    "equip_cost": "2 cp"
+  },
+  {
+    "equip_name": "Ladder (10 ft)",
+    "equip_descrip": "",
+    "equip_weight": "25 lb",
+    "equip_cost": "1 sp"
+  },
+  {
+    "equip_name": "Lamp",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Lantern, Bullseye",
+    "equip_descrip": "",
+    "equip_weight": "2 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Lantern, Hooded",
+    "equip_descrip": "",
+    "equip_weight": "2 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Lock",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Magnifying Glass",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "100 gp"
+  },
+  {
+    "equip_name": "Manacles",
+    "equip_descrip": "",
+    "equip_weight": "6 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Mess Kit",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "2 sp"
+  },
+  {
+    "equip_name": "Mirror, Steel",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Oil (Flask)",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 sp"
+  },
+  {
+    "equip_name": "Paper (One sheet)",
+    "equip_descrip": "",
+    "equip_weight": "0.1 lb",
+    "equip_cost": "2 sp"
+  },
+  {
+    "equip_name": "Parchment (One sheet)",
+    "equip_descrip": "",
+    "equip_weight": "0.1 lb",
+    "equip_cost": "1 sp"
+  },
+  {
+    "equip_name": "Perfume (Vial)",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Pick, Miner's",
+    "equip_descrip": "",
+    "equip_weight": "10 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Piton",
+    "equip_descrip": "",
+    "equip_weight": "0.25 lb",
+    "equip_cost": "5 cp"
+  },
+  {
+    "equip_name": "Poison, Basic (Vial)",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "100 gp"
+  },
+  {
+    "equip_name": "Pole (10 ft)",
+    "equip_descrip": "",
+    "equip_weight": "7 lb",
+    "equip_cost": "5 cp"
+  },
+  {
+    "equip_name": "Pot, Iron",
+    "equip_descrip": "",
+    "equip_weight": "10 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Potion of Healing",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "50 gp"
+  },
+  {
+    "equip_name": "Pouch",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Quiver",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Ram, Portable",
+    "equip_descrip": "",
+    "equip_weight": "35 lb",
+    "equip_cost": "4 gp"
+  },
+  {
+    "equip_name": "Rations (1 day)",
+    "equip_descrip": "",
+    "equip_weight": "2 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Robes",
+    "equip_descrip": "",
+    "equip_weight": "4 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Rope, Hempen (50 ft)",
+    "equip_descrip": "",
+    "equip_weight": "10 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Rope, Silk (50 ft)",
+    "equip_descrip": "",
+    "equip_weight": "5 lb",
+    "equip_cost": "10 gp"
+  },
+  {
+    "equip_name": "Sack",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "1 cp"
+  },
+  {
+    "equip_name": "Scale, Merchant's",
+    "equip_descrip": "",
+    "equip_weight": "3 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Sealing Wax",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Shovel",
+    "equip_descrip": "",
+    "equip_weight": "5 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Signal Whistle",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "5 cp"
+  },
+  {
+    "equip_name": "Signet Ring",
+    "equip_descrip": "",
+    "equip_weight": "0.5 lb",
+    "equip_cost": "5 gp"
+  },
+  {
+    "equip_name": "Soap",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "2 cp"
+  },
+  {
+    "equip_name": "Spellbook",
+    "equip_descrip": "",
+    "equip_weight": "3 lb",
+    "equip_cost": "50 gp"
+  },
+  {
+    "equip_name": "Spikes, Iron (10)",
+    "equip_descrip": "",
+    "equip_weight": "5 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Spyglass",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1000 gp"
+  },
+  {
+    "equip_name": "Tent, 2 person",
+    "equip_descrip": "",
+    "equip_weight": "20 lb",
+    "equip_cost": "2 gp"
+  },
+  {
+    "equip_name": "Tinderbox",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "5 sp"
+  },
+  {
+    "equip_name": "Torch",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 cp"
+  },
+  {
+    "equip_name": "Vial",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 gp"
+  },
+  {
+    "equip_name": "Waterskin",
+    "equip_descrip": "",
+    "equip_weight": "5 lb",
+    "equip_cost": "2 sp"
+  },
+  {
+    "equip_name": "Whetstone",
+    "equip_descrip": "",
+    "equip_weight": "1 lb",
+    "equip_cost": "1 cp"
+  }
 ]
