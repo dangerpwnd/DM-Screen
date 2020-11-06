@@ -259,55 +259,55 @@
   },
   {
     "equip_name": "Grappling Hook",
-    "equip_descrip": "",
+    "equip_descrip": "A device with iron claws, attached to a rope and used for dragging or grasping.",
     "equip_weight": "4 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Hammer",
-    "equip_descrip": "",
+    "equip_descrip": "A tool with a heavy metal head mounted at right angles at the end of a handle, used for jobs such as breaking things and driving in nails.",
     "equip_weight": "3 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Hammer, Sledge",
-    "equip_descrip": "",
+    "equip_descrip": "A large, heavy hammer used for such jobs as breaking rocks or doors. Your choice.",
     "equip_weight": "10 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Healer's Kit",
-    "equip_descrip": "",
+    "equip_descrip": "This kit is a leather pouch containing bandages, salves, and splints. The kit has 10 uses. As an action, you can expend one use of the kit to stabilize a creature that has 0 HP, without needing to make a Wisdom(Medicine) check.",
     "equip_weight": "3 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Holy Symbol - Amulet",
-    "equip_descrip": "",
+    "equip_descrip": "A holy symbol is a representation of a god or pantheon. An amulet depicting a symbol representing a deity. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.",
     "equip_weight": "1 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Holy Symbol - Emblem",
-    "equip_descrip": "",
+    "equip_descrip": "A holy symbol is a representation of a god or pantheon. Symbol representing a deity engraved or inlaid as an emblem on a shield. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.",
     "equip_weight": "1 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Holy Symbol - Reliquary",
-    "equip_descrip": "",
+    "equip_descrip": "A holy symbol is a representation of a god or pantheon. A tiny box holding a fragment of a sacred relic. A cleric or paladin can use a holy symbol as a spellcasting focus. To use the symbol in this way, the caster must hold it in hand, wear it visibly, or bear it on a shield.",
     "equip_weight": "2 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Holy water (Flask)",
-    "equip_descrip": "",
+    "equip_descrip": "As an action, you can splash the contents of this flask onto a creature within 5 ft of you or throw it up to 20 ft, shattering it on impact. In either case, make a ranged attack against a target creature, treating the holy water as an improvised weapon. If the target is a fiend or undead, it takes 2d6 radiant damage. A cleric or paladin may create holy water by performing a special ritual. The ritual takes 1 hr to perform, uses 25 gp worth of powdered silver, and requires the caster to expend a 1st level spell slot.",
     "equip_weight": "1 lb",
     "equip_cost": "25 gp"
   },
   {
     "equip_name": "Hourglass",
-    "equip_descrip": "",
+    "equip_descrip": "An invertible device with two connected glass bulbs containing sand that takes an hour to pass from the upper to the lower bulb",
     "equip_weight": "1 lb",
     "equip_cost": "25 gp"
   },
