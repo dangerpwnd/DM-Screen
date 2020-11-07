@@ -15,63 +15,64 @@ import Characteristics from "../../components/player/characteristics";
 import CharNotes from "../../components/player/char_notes";
 
 class PlayerDetail extends Component {
-
-    state = {
-        ac: {
-            base: 10,
-            nat: 0,
-            dex: 0,
-            armor: 0,
-            magic: 0
-        },
-        attr: {
-            str: 10,
-            dex: 10,
-            con: 10,
-            int: 10,
-            wis: 10,
-            cha: 10
-        },
-        hp: {
-            current: 1,
-            max: 1,
-            hdice: 1
-        },
-        level: {
-            current: 1
-        },
-        attr_mod: {
-            str: 0,
-            dex: 0,
-            con: 0,
-            int: 0,
-            wis: 0,
-            char: 0
-        },
-        skill: {
-            acrobatics: 0,
-            animal: 0,
-            arcana: 0,
-            athletics: 0,
-            deception: 0,
-            history: 0,
-            insight: 0,
-            intimidation: 0,
-            investigation: 0,
-            medicine: 0,
-            nature: 0,
-            perception: 0,
-            performance: 0,
-            persuasion: 0,
-            religion: 0,
-            sleight: 0,
-            stealth: 0,
-            survival: 0
+    constructor (props){
+        super(props);
+        this.state = {
+            ac: {
+                base: 10,
+                nat: 2,
+                dex: 2,
+                armor: 4,
+                magic: 1
+            },
+            attr: {
+                str: 10,
+                dex: 10,
+                con: 10,
+                int: 10,
+                wis: 10,
+                cha: 10
+            },
+            hp: {
+                current: 1,
+                max: 1
+            },
+            char_class: {
+                class_name: "Barbarian",
+                level: 1,
+                class_speed: "30 ft",
+                prof_bonus: 2,
+                hit_dice: "d12"
+    
+            },
+            char_name: {
+                name : "Bartos Donadarion"
+            },
+            skill: {
+                acrobatics: 0,
+                animal: 0,
+                arcana: 0,
+                athletics: 0,
+                deception: 0,
+                history: 0,
+                insight: 0,
+                intimidation: 0,
+                investigation: 0,
+                medicine: 0,
+                nature: 0,
+                perception: 0,
+                performance: 0,
+                persuasion: 0,
+                religion: 0,
+                sleight: 0,
+                stealth: 0,
+                survival: 0
+            }
         }
     }
 
     componentDidMount() {
-        axios.get()
+        axios.get('https://localhost:')
             .then(response => {
                 console.log(response);
                 this.setState({skill: response.data})
@@ -83,7 +84,10 @@ class PlayerDetail extends Component {
             <div>
                 <div className="playerDetailGrid">
                     <CharImg />
-                    <CharMain ac={this.state.ac}/>
+                    <CharMain 
+                        ac={this.state.ac}
+                        char_class={this.state.char_class}
+                        />
                     <CharAttr attr={this.state.attr}/>
                     <CharHp hp={this.state.hp}/>
                     <CharDeathSave />
