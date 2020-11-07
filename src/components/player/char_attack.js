@@ -1,5 +1,5 @@
 import React from "react";
-import CharWeapon from "./char_weapon";
+import CharWeapon from "../../containers/player/char_weapon";
 
 const charAttack = () => {
     return(
