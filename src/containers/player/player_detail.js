@@ -71,14 +71,6 @@ class PlayerDetail extends Component {
         }
     }
 
-    componentDidMount() {
-        axios.get('https://localhost:')
-            .then(response => {
-                console.log(response);
-                this.setState({skill: response.data})
-            });
-    }
-
     render() {
         return(
             <div>
