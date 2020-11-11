@@ -1,16 +1,24 @@
-import React from "react";
-import CharWeapon from "../../containers/player/char_weapon";
+import React, {useState} from "react";
+import CharWeapon from "./char_weapon";
 
-const charAttack = () => {
+const CharAttack = (props) => {
+
+    const [weapon, setWeapon] = useState({
+        weapon_name: "Scimitar",
+        damage : "1d8",
+        dmg_type : "Slashing",
+        critical: "x2"
+    })
+
     return(
         <div className="playerAttackGrid playerFlexCol">
             <div className="border">
-                <CharWeapon />
-                <CharWeapon />
-                <CharWeapon />
+                <CharWeapon weapon={weapon} />
+                <CharWeapon weapon={weapon} />
+                <CharWeapon weapon={weapon} />
             </div>
         </div>
     )
 };
 
-export default charAttack;
+export default CharAttack;
