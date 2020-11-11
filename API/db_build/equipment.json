@@ -313,277 +313,277 @@
   },
   {
     "equip_name": "Hunting Trap",
-    "equip_descrip": "",
+    "equip_descrip": "When you use your action to set it, this trap forms a saw-toothed steel ring that snaps shut when a creature steps on a pressure plate in the center. The trap is affixed by a heavy chain to an immobile object, such as a tree or a spike driven into the ground. A creature that steps on the plate must succeed on a DC 13 Dexterity saving throw or take 1d4 piercing damage and stop moving. Thereafter, until the creature breaks free of the trap, its movement is limited by the length of the chain (typically 3 feet long). A creature can use its action to make a DC 13 Strength check, freeing itself or another creature within its reach on a success. Each failed check deals 1 piercing damage to the trapped creature.",
     "equip_weight": "25 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Ink (1 oz bottle)",
-    "equip_descrip": "",
+    "equip_descrip": "Ink is typically used with an ink pen to write",
     "equip_weight": "1 lb",
     "equip_cost": "10 gp"
   },
   {
     "equip_name": "Ink pen",
-    "equip_descrip": "",
+    "equip_descrip": "An ink pen is a wooden stick with a special tip on the end. The tip draws ink in when dipped in a vial and leaves an ink trail when drawn across a surface.",
     "equip_weight": "1 lb",
     "equip_cost": "2 cp"
   },
   {
     "equip_name": "Jug or pitcher",
-    "equip_descrip": "",
+    "equip_descrip": "A jug or pitcher can hold 1 gallon of liquid.",
     "equip_weight": "4 lb",
     "equip_cost": "2 cp"
   },
   {
     "equip_name": "Ladder (10 ft)",
-    "equip_descrip": "",
+    "equip_descrip": "This item is a straight, simple wooden ladder",
     "equip_weight": "25 lb",
     "equip_cost": "1 sp"
   },
   {
     "equip_name": "Lamp",
-    "equip_descrip": "",
+    "equip_descrip": "A lamp casts bright light in a 15-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.",
     "equip_weight": "1 lb",
     "equip_cost": "5 sp"
   },
   {
     "equip_name": "Lantern, Bullseye",
-    "equip_descrip": "",
+    "equip_descrip": "A bullseye lantern casts bright light in a 60-foot cone and dim light for an additional 60 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil.",
     "equip_weight": "2 lb",
     "equip_cost": "10 gp"
   },
   {
     "equip_name": "Lantern, Hooded",
-    "equip_descrip": "",
+    "equip_descrip": "A hooded lantern casts bright light in a 30-foot radius and dim light for an additional 30 feet. Once lit, it burns for 6 hours on a flask (1 pint) of oil. As an action, you can lower the hood, reducing the light to dim light in a 5-foot radius.",
     "equip_weight": "2 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Lock",
-    "equip_descrip": "",
+    "equip_descrip": "A key is provided with the lock. Without the key, a creature proficient with thieves' tools can pick this lock with a successful DC 15 Dexterity check. Your DM may decide that better locks are available for higher prices.",
     "equip_weight": "1 lb",
     "equip_cost": "10 gp"
   },
   {
     "equip_name": "Magnifying Glass",
-    "equip_descrip": "",
+    "equip_descrip": "This lens allows a closer look at small objects. It is also useful as a substitute for flint and steel when starting fires. Lighting a fire with a magnifying glass requires light as bright as sunlight to focus, tinder to ignite, and about 5 minutes for the fire to ignite. A magnifying glass grants advantage on any ability check made to appraise or inspect an item that is small or highly detailed.",
     "equip_weight": "1 lb",
     "equip_cost": "100 gp"
   },
   {
     "equip_name": "Manacles",
-    "equip_descrip": "",
+    "equip_descrip": "These metal restraints can bind a Small or Medium creature. Escaping the manacles requires a successful DC 20 Dexterity check. Breaking them requires a successful DC 20 Strength check. Each set of manacles comes with one key. Without the key, a creature proficient with thieves' tools can pick the manacles' lock with a successful DC 15 Dexterity check. Manacles have 15 hit points.",
     "equip_weight": "6 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Mess Kit",
-    "equip_descrip": "",
+    "equip_descrip": "This tin box contains a cup and simple cutlery. The box clamps together, and one side can be used as a cooking pan and the other as a plate or shallow bowl.",
     "equip_weight": "1 lb",
     "equip_cost": "2 sp"
   },
   {
     "equip_name": "Mirror, Steel",
-    "equip_descrip": "",
+    "equip_descrip": "A steel mirror is handy when you want to look around corners, signal friends with reflected sunlight, keep an eye on a medusa, make sure that you look good enough to present yourself to the queen, or examine wounds that you’ve received on hard-to-see parts of your body.",
     "equip_weight": "0.5 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Oil (Flask)",
-    "equip_descrip": "",
+    "equip_descrip": "Oil usually comes in a clay flask that holds 1 pint. As an action, you can splash the oil in this flask onto a creature within 5 feet of you or throw it up to 20 feet, shattering it on impact. Make a ranged attack against a target creature or object, treating the oil as an improvised weapon. On a hit, the target is covered in oil. If the target takes any fire damage before the oil dries (after 1 minute), the target takes an additional 5 fire damage from the burning oil. You can also pour a flask of oil on the ground to cover a 5-foot-square area, provided that the surface is level. If lit, the oil burns for 2 rounds and deals 5 fire damage to any creature that enters the area or ends its turn in the area. A creature can take this damage only once per turn.",
     "equip_weight": "1 lb",
     "equip_cost": "1 sp"
   },
   {
     "equip_name": "Paper (One sheet)",
-    "equip_descrip": "",
+    "equip_descrip": "A sheet of standard paper is made from cloth fibers.",
     "equip_weight": "0.1 lb",
     "equip_cost": "2 sp"
   },
   {
     "equip_name": "Parchment (One sheet)",
-    "equip_descrip": "",
+    "equip_descrip": "A sheet of parchment is a piece of goat hide or sheepskin that has been prepared for writing on.",
     "equip_weight": "0.1 lb",
     "equip_cost": "1 sp"
   },
   {
     "equip_name": "Perfume (Vial)",
-    "equip_descrip": "",
+    "equip_descrip": "A fragrant commodity typically used by the wealthy.",
     "equip_weight": "1 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Pick, Miner's",
-    "equip_descrip": "",
+    "equip_descrip": "A miner's pick is designed to concentrate the force of its blow on a small area.",
     "equip_weight": "10 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Piton",
-    "equip_descrip": "",
+    "equip_descrip": "When a wall doesn’t offer handholds and footholds, you can make your own. A piton is a steel spike with an eye through which you can loop a rope.",
     "equip_weight": "0.25 lb",
     "equip_cost": "5 cp"
   },
   {
     "equip_name": "Poison, Basic (Vial)",
-    "equip_descrip": "",
+    "equip_descrip": "You can use the poison in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the poison takes an action. A creature hit by the poisoned weapon or ammunition must make a DC 10 Constitution saving throw or take 1d4 poison damage. Once applied, the poison retains potency for 1 minute before drying.",
     "equip_weight": "1 lb",
     "equip_cost": "100 gp"
   },
   {
     "equip_name": "Pole (10 ft)",
-    "equip_descrip": "",
+    "equip_descrip": "When you suspect a trap, you can put the end of your 10-foot pole through that hole in the wall instead of reaching in with your hand.",
     "equip_weight": "7 lb",
     "equip_cost": "5 cp"
   },
   {
     "equip_name": "Pot, Iron",
-    "equip_descrip": "",
+    "equip_descrip": "An iron pot can hold 1 gallon of liquid.",
     "equip_weight": "10 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Potion of Healing",
-    "equip_descrip": "",
+    "equip_descrip": "A character who drinks the magical red fluid in this vial regains 2d4 + 2 hit points. Drinking or administering a potion takes an action.",
     "equip_weight": "0.5 lb",
     "equip_cost": "50 gp"
   },
   {
     "equip_name": "Pouch",
-    "equip_descrip": "",
+    "equip_descrip": "A cloth or leather pouch can hold 1/5 cubic foot/ 6 pounds of gear - or up to 20 sling bullets or 50 blowgun needles, among other things. A compartmentalized pouch for holding spell components is called a component pouch.",
     "equip_weight": "1 lb",
     "equip_cost": "5 sp"
   },
   {
     "equip_name": "Quiver",
-    "equip_descrip": "",
+    "equip_descrip": "A quiver can hold up to 20 arrows.",
     "equip_weight": "1 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Ram, Portable",
-    "equip_descrip": "",
+    "equip_descrip": "You can use a portable ram to break down doors. When doing so, you gain a +4 bonus on the Strength check. One other character can help you use the ram, giving you advantage on this check.",
     "equip_weight": "35 lb",
     "equip_cost": "4 gp"
   },
   {
     "equip_name": "Rations (1 day)",
-    "equip_descrip": "",
+    "equip_descrip": "Rations consist of dry foods suitable for extended travel, including jerky, dried fruit, hardtack, and nuts.",
     "equip_weight": "2 lb",
     "equip_cost": "5 sp"
   },
   {
     "equip_name": "Robes",
-    "equip_descrip": "",
+    "equip_descrip": "A standard set of robes.",
     "equip_weight": "4 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Rope, Hempen (50 ft)",
-    "equip_descrip": "",
+    "equip_descrip": "Rope, has 2 hit points and can be burst with a DC 17 Strength check.",
     "equip_weight": "10 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Rope, Silk (50 ft)",
-    "equip_descrip": "",
+    "equip_descrip": "Rope, has 2 hit points and can be burst with a DC 17 Strength check.",
     "equip_weight": "5 lb",
     "equip_cost": "10 gp"
   },
   {
     "equip_name": "Sack",
-    "equip_descrip": "",
+    "equip_descrip": "A sack can hold 1 cubic foot/ 30 pounds of gear.",
     "equip_weight": "0.5 lb",
     "equip_cost": "1 cp"
   },
   {
     "equip_name": "Scale, Merchant's",
-    "equip_descrip": "",
+    "equip_descrip": "A scale includes a small balance, pans, and a suitable assortment of weights up to 2 pounds. With it, you can measure the exact weight of small objects, such as raw precious metals or trade goods, to help determine their worth.",
     "equip_weight": "3 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Sealing Wax",
-    "equip_descrip": "",
+    "equip_descrip": "When you press a signet ring into warm sealing wax, you leave an identifying mark.",
     "equip_weight": "0.5 lb",
     "equip_cost": "5 sp"
   },
   {
     "equip_name": "Shovel",
-    "equip_descrip": "",
+    "equip_descrip": "A standard shovel used for digging.",
     "equip_weight": "5 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Signal Whistle",
-    "equip_descrip": "",
+    "equip_descrip": "A small whistle used for signaling.",
     "equip_weight": "0.5 lb",
     "equip_cost": "5 cp"
   },
   {
     "equip_name": "Signet Ring",
-    "equip_descrip": "",
+    "equip_descrip": "Each signet ring has a distinctive design carved into it. When you press this ring into warm sealing wax, you leave an identifying mark.",
     "equip_weight": "0.5 lb",
     "equip_cost": "5 gp"
   },
   {
     "equip_name": "Soap",
-    "equip_descrip": "",
+    "equip_descrip": "A commodity used for bathing.",
     "equip_weight": "1 lb",
     "equip_cost": "2 cp"
   },
   {
     "equip_name": "Spellbook",
-    "equip_descrip": "",
+    "equip_descrip": "Essential for wizards, a spellbook is a leather-bound tome with 100 blank vellum pages suitable for recording spells.",
     "equip_weight": "3 lb",
     "equip_cost": "50 gp"
   },
   {
     "equip_name": "Spikes, Iron (10)",
-    "equip_descrip": "",
+    "equip_descrip": "Standard iron spikes typically used with a hammer.",
     "equip_weight": "5 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Spyglass",
-    "equip_descrip": "",
+    "equip_descrip": "Objects viewed through a spyglass are magnified to twice their size.",
     "equip_weight": "1 lb",
     "equip_cost": "1000 gp"
   },
   {
     "equip_name": "Tent, 2 person",
-    "equip_descrip": "",
+    "equip_descrip": "A simple and portable canvas shelter, a tent sleeps two.",
     "equip_weight": "20 lb",
     "equip_cost": "2 gp"
   },
   {
     "equip_name": "Tinderbox",
-    "equip_descrip": "",
+    "equip_descrip": "This small container holds flint, fire steel, and tinder (usually dry cloth soaked in light oil) used to kindle a fire. Using it to light a torch -- or anything else with abundant, exposed fuel -- takes an action. Lighting any other fire takes 1 minute.",
     "equip_weight": "1 lb",
     "equip_cost": "5 sp"
   },
   {
     "equip_name": "Torch",
-    "equip_descrip": "",
+    "equip_descrip": "A torch burns for 1 hour, providing bright light in a 20-foot radius and dim light for an additional 20 feet. If you make a melee attack with a burning torch and hit, it deals 1 fire damage.",
     "equip_weight": "1 lb",
     "equip_cost": "1 cp"
   },
   {
     "equip_name": "Vial",
-    "equip_descrip": "",
+    "equip_descrip": "A vial can hold 4 ounces of liquid.",
     "equip_weight": "1 lb",
     "equip_cost": "1 gp"
   },
   {
     "equip_name": "Waterskin",
-    "equip_descrip": "",
+    "equip_descrip": "A waterskin can hold 4 pints of liquid.",
     "equip_weight": "5 lb",
     "equip_cost": "2 sp"
   },
   {
     "equip_name": "Whetstone",
-    "equip_descrip": "",
+    "equip_descrip": "A standard whetstone used to sharpen blades.",
     "equip_weight": "1 lb",
     "equip_cost": "1 cp"
   }
