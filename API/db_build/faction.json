@@ -1,0 +1,22 @@
+[
+    {
+        "faction_name": "The Harpers",
+        "faction_descrip": "An old organization that has risen, been shattered, and risen again several times. Its longevity and resilience are largely due to its decentralized, grassroots, secretive nature, and the near-autonomy of many of its members. "  
+    },
+    {
+        "faction_name": "The Order of the Gauntlet",
+        "faction_descrip": "Many paladins and clerics of Tyr, Helm, Torm, and Hoar have joined this new organization, seeing it as—finally—a way of making common cause against the evils abroad in the world. "  
+    },
+    {
+        "faction_name": "The Emerald Enclave",
+        "faction_descrip": "A far-ranging group that opposes threats to the natural world and helps others survive the many perils of the wild. Members of the Emerald Enclave are spread far and wide, and usually operate in isolation."
+    },
+    {
+        "faction_name": "The Lord's Alliance",
+        "faction_descrip": "A coalition of rulers from cities across Faerûn, who collectively agree that some solidarity is needed to keep evil at bay. The rulers of Waterdeep, Silverymoon, Neverwinter, and other free cities in the region dominate the Alliance. "  
+    },
+    {
+        "faction_name": "The Zhentarim",
+        "faction_descrip": "The Zhentarim seeks to become omnipresent and inescapable, more wealthy and powerful, and most importantly, untouchable. Everyone should fear to cross them. "  
+    }
+]
