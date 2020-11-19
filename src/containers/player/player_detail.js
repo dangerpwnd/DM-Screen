@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import CharImg from "../../components/player/char_img";
 import CharMain from "../../components/player/char_main";
@@ -14,87 +14,29 @@ import CharCoin from "../../components/player/char_coin";
 import Characteristics from "../../components/player/characteristics";
 import CharNotes from "../../components/player/char_notes";
 
-class PlayerDetail extends Component {
-    constructor (props){
-        super(props);
-        this.state = {
-            ac: {
-                base: 10,
-                nat: 2,
-                dex: 2,
-                armor: 4,
-                magic: 1
-            },
-            attr: {
-                str: 10,
-                dex: 10,
-                con: 10,
-                int: 10,
-                wis: 10,
-                cha: 10
-            },
-            hp: {
-                current: 1,
-                max: 1
-            },
-            char_class: {
-                class_name: "Barbarian",
-                level: 1,
-                class_speed: "30 ft",
-                prof_bonus: 2,
-                hit_dice: "d12"
+const PlayerDetail = props => {
     
-            },
-            char_name: {
-                name : "Bartos Donadarion"
-            },
-            skill: {
-                acrobatics: 0,
-                animal: 0,
-                arcana: 0,
-                athletics: 0,
-                deception: 0,
-                history: 0,
-                insight: 0,
-                intimidation: 0,
-                investigation: 0,
-                medicine: 0,
-                nature: 0,
-                perception: 0,
-                performance: 0,
-                persuasion: 0,
-                religion: 0,
-                sleight: 0,
-                stealth: 0,
-                survival: 0
-            }
-        }
-    }
+    const [player, setPlayer] = useState(0);
 
-    render() {
         return(
             <div>
                 <div className="playerDetailGrid">
                     <CharImg />
-                    <CharMain 
-                        ac={this.state.ac}
-                        char_class={this.state.char_class}
-                        />
-                    <CharAttr attr={this.state.attr}/>
-                    <CharHp hp={this.state.hp}/>
+                    <CharMain playerId={player} />
+                    <CharAttr playerId={player} />
+                    <CharHp playerId={player} />
                     <CharDeathSave />
-                    <CharModifier attr_mod={this.state.attr_mod}/>
-                    <CharSkill skill={this.state.skill}/>
+                    <CharModifier playerId={player}/>
+                    <CharSkill playerId={player}/>
                     <CharAttack />
-                    <CharFeat />
-                    <CharEquip />
-                    <CharCoin />
-                    <Characteristics />
-                    <CharNotes />
+                    <CharFeat playerId={player} />
+                    <CharEquip playerId={player} />
+                    <CharCoin playerId={player} />
+                    <Characteristics playerId={player} />
+                    <CharNotes playerId={player} />
                 </div>
             </div>
         )
-    }
 }
 
 export default PlayerDetail;
