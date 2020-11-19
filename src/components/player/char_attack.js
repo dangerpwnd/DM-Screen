@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import CharWeapon from "./char_weapon";
 
-const CharAttack = (props) => {
+const CharAttack = props => {
+
+    const player = props.playerId;
 
     const [weapon, setWeapon] = useState({
         weapon_name: "Scimitar",
