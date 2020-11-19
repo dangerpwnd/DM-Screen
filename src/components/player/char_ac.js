@@ -1,6 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
-const charAc = (props) => {
+const charAc = props => {
+
+    const player = props.playerId
+
+    const [armorClass, setArmorClass] = setState(0);
+
+
     const ac = props.ac;
     const reg = ac.base + ac.nat + ac.dex + ac.armor + ac.magic;
     const flatFoot = ac.base + ac.nat + ac.armor + ac.magic;
