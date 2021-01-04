@@ -1,12 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 
-const charAc = (props) => {
+const charAc = props => {
+
+    const player = props.playerId
+
+    const [armorClass, setArmorClass] = setState(0);
+
+
+    const ac = props.ac;
+    const reg = ac.base + ac.nat + ac.dex + ac.armor + ac.magic;
+    const flatFoot = ac.base + ac.nat + ac.armor + ac.magic;
+    const touch = ac.base + ac.nat + ac.dex + ac.magic;
+
     return(
         <div>
             <div className="border playerFlexRow">
-                <h3>Regular: {props.ac.base}</h3>
-                <h3>Flat-footed: {props.ac.base}+{props.ac.armor}</h3>
-                <h3>Touch: 12</h3>
+                <h3>Regular: {reg}</h3>
+                <h3>Flat-footed: {flatFoot}</h3>
+                <h3>Touch: {touch}</h3>
             </div>
         </div>
     )

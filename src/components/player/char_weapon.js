@@ -1,15 +1,16 @@
 import React from "react";
 
-const charWeapon = () => {
-    return(
-        <div>
-            <div className="border playerFlexRow">
-                <h4>Name:Scimitar</h4>
-                <h4>Damage/Critical:1d8+2/x2</h4>
-                <h4>Type:Slashing</h4>
-            </div>
-        </div>
-    )
-};
+const CharWeapon = (props) => {
 
-export default charWeapon;
+        return(
+            <div>
+                <div className="border playerFlexRow">
+                    <h4>{props.weapon.weapon_name}</h4>
+                    <h4>{props.weapon.damage}/{props.weapon.critical}</h4>
+                    <h4>{props.weapon.dmg_type}</h4>
+                </div>
+            </div>
+        )
+    };
+
+export default CharWeapon;

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import axios from "axios";
 import CharImg from "../../components/player/char_img";
 import CharMain from "../../components/player/char_main";
@@ -14,91 +14,29 @@ import CharCoin from "../../components/player/char_coin";
 import Characteristics from "../../components/player/characteristics";
 import CharNotes from "../../components/player/char_notes";
 
-class PlayerDetail extends Component {
+const PlayerDetail = props => {
+    
+    const [player, setPlayer] = useState(0);
 
-    state = {
-        ac: {
-            base: 10,
-            nat: 0,
-            dex: 0,
-            armor: 0,
-            magic: 0
-        },
-        attr: {
-            str: 10,
-            dex: 10,
-            con: 10,
-            int: 10,
-            wis: 10,
-            cha: 10
-        },
-        hp: {
-            current: 1,
-            max: 1,
-            hdice: 1
-        },
-        level: {
-            current: 1
-        },
-        attr_mod: {
-            str: 0,
-            dex: 0,
-            con: 0,
-            int: 0,
-            wis: 0,
-            char: 0
-        },
-        skill: {
-            acrobatics: 0,
-            animal: 0,
-            arcana: 0,
-            athletics: 0,
-            deception: 0,
-            history: 0,
-            insight: 0,
-            intimidation: 0,
-            investigation: 0,
-            medicine: 0,
-            nature: 0,
-            perception: 0,
-            performance: 0,
-            persuasion: 0,
-            religion: 0,
-            sleight: 0,
-            stealth: 0,
-            survival: 0
-        }
-    }
-
-    componentDidMount() {
-        axios.get()
-            .then(response => {
-                console.log(response);
-                this.setState({skill: response.data})
-            });
-    }
-
-    render() {
         return(
             <div>
                 <div className="playerDetailGrid">
                     <CharImg />
-                    <CharMain ac={this.state.ac}/>
-                    <CharAttr attr={this.state.attr}/>
-                    <CharHp hp={this.state.hp}/>
+                    <CharMain playerId={player} />
+                    <CharAttr playerId={player} />
+                    <CharHp playerId={player} />
                     <CharDeathSave />
-                    <CharModifier attr_mod={this.state.attr_mod}/>
-                    <CharSkill skill={this.state.skill}/>
+                    <CharModifier playerId={player}/>
+                    <CharSkill playerId={player}/>
                     <CharAttack />
-                    <CharFeat />
-                    <CharEquip />
-                    <CharCoin />
-                    <Characteristics />
-                    <CharNotes />
+                    <CharFeat playerId={player} />
+                    <CharEquip playerId={player} />
+                    <CharCoin playerId={player} />
+                    <Characteristics playerId={player} />
+                    <CharNotes playerId={player} />
                 </div>
             </div>
         )
-    }
 }
 
 export default PlayerDetail;
