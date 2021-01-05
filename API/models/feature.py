@@ -21,15 +21,17 @@ class FeatureModel(Base):
     id_feature = Column(Integer, primary_key=True)
     feature_name = Column(String(75), nullable=False, unique=True)
     feature_descrip = Column(String(250), nullable=False)
+    feature_customvalue = Column(String(250))
 
     # Relationships
 
     spells = relationship("SpellModel", secondary=lambda: feature_has_spells)
 
     def __repr__(self):
-        return '<Feature (name="%s", descrip="%s")>' % (
+        return '<Feature (name="%s", descrip="%s", customvalue="%s")>' % (
             self.feature_name,
             self.feature_descrip,
+            self.feature_customvalue
         )
 
     @classmethod
