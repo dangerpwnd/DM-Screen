@@ -11,9 +11,11 @@
         "bartos",
         "char",
         "char deathsave",
+        "customvalue",
         "deathsave",
         "descrip",
         "donadarion",
+        "feature",
         "hdice",
         "id",
         "maxdex",
@@ -22,5 +24,6 @@
     ],
     "python.linting.pylintEnabled": true,
     "python.linting.flake8Enabled": false,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "python.pythonPath": "C:\\Users\\eric.m\\AppData\\Local\\Programs\\Python\\Python39\\python.exe"
 }

@@ -1,0 +1,262 @@
+[
+    {
+        "feature_name": "Light Armor Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Medium Armor Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Heavy Armor Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Shield Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Simple Weapons Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Martial Weapons Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Single Weapon Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Single Tool Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Single Language Proficiency",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Strength",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Dexterity",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Constitution",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Intelligence",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Wisdom",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Attribute-Charisma",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Athletics",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Acrobatics",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Sleight of Hand",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Stealth",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Arcana",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-History",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Investigation",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Nature",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Religion",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Animal Handling",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Insight",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Medicine",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Perception",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Survival",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Deception",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Intimidation",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Performance",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Skill-Persuasion",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Darkvision 60 ft",
+        "feature_descrip": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dwarven Resilience",
+        "feature_descrip": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dwarven Combat Training",
+        "feature_descrip": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Tool Proficiency - Dwarf",
+        "feature_descrip": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Stonecutting",
+        "feature_descrip": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dwarven Toughness",
+        "feature_descrip": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dwarven Armor Training",
+        "feature_descrip": "You have proficiency with light and medium armor.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Black",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Blue",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Brass",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Bronze",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Copper",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Gold",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Green",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Red",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - Silver",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Draconic Ancestry - White",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "Dragonborn Damage Resistance",
+        "feature_descrip": "You have resistance to the damage type associated with your ancestry.",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    }
+]
