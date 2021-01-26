@@ -290,16 +290,6 @@
         "feature_customvalue": "High"
     },
     {
-        "feature_name": "Cantrip - Wisdom",
-        "feature_descrip": "",
-        "feature_customvalue": ""
-    },
-    {
-        "feature_name": "Cantrip - Charisma",
-        "feature_descrip": "",
-        "feature_customvalue": ""
-    },
-    {
         "feature_name": "Fleet of Foot",
         "feature_descrip": "Your base walking speed increases to 35 feet",
         "feature_customvalue": "Wood"
@@ -690,26 +680,161 @@
         "feature_customvalue": "Valor 14"
     },
     {
-        "feature_name": "",
+        "feature_name": "Spellcasting - Cleric",
+        "feature_descrip": "As a conduit for divine power, you can cast Cleric Spells. At 1st level, you know three Cantrips of your choice from the Cleric spell list. You learn additional Cleric Cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table. The Cleric table shows how many Spell Slots you have to cast your Spells of 1st level and higher. To cast one of these Spells, you must expend a slot of the spell's level or higher. You regain all expended Spell Slots when you finish a Long Rest. You prepare the list of Cleric Spells that are available for you to cast, choosing from the Cleric spell list. When you do so, choose a number of Cleric Spells equal to your Wisdom modifier + your Cleric level (minimum of one spell). The Spells must be of a level for which you have Spell Slots. For example, if you are a 3rd-level Cleric, you have four 1st-level and two 2nd-level Spell Slots. With a Wisdom of 16, your list of prepared Spells can include six Spells of 1st or 2nd Level, in any combination. If you prepare the 1st-level spell Cure Wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared Spells. You can change your list of prepared Spells when you finish a Long Rest. Preparing a new list of Cleric Spells requires time spent in prayer and meditation: at least 1 minute per Spell Level for each spell on your list.Wisdom is your Spellcasting Ability for your Cleric Spells. The power of your Spells comes from your devotion to your deity. You use your Wisdom whenever a Cleric spell refers to your Spellcasting Ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a Cleric spell you cast and when Making an Attack roll with one. Spell save DC = 8 + your Proficiency Bonus + your Wisdom modifier Spell Attack modifier = your Proficiency Bonus + your Wisdom modifier",
+        "feature_customvalue": "Cleric 1"
+    },
+    {
+        "feature_name": "Divine Domain",
+        "feature_descrip": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Your choice grants you domain Spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd Level, and additional benefits at 6th, 8th, and 17th levels.",
+        "feature_customvalue": "Cleric 1, "
+    },
+    {
+        "feature_name": "Channel Divinity",
+        "feature_descrip": "At 2nd Level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical Effects. You start with two such effects: Turn Undead and an Effect determined by your domain. When you use your Channel Divinity, you choose which Effect to create. You must then finish a short or Long Rest to use your Channel Divinity again. Some Channel Divinity Effects require Saving Throws. When you use such an Effect from this class, the DC equals your Cleric spell save DC. Beginning at 6th level, you can use your Channel Divinity twice between rests, and Beginning at 18th level, you can use it three times between rests. When you finish a short or Long Rest, you regain your expended uses.",
+        "feature_customvalue": "Cleric 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Turn Undead",
+        "feature_descrip": "As an action, you present your holy Symbol and speak a prayer censuring the Undead. Each Undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take Reactions. For its action, it can use only the Dash action or try to Escape from an Effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.",
+        "feature_customvalue": "Cleric 2"
+    },
+    {
+        "feature_name": "Destroy Undead",
+        "feature_descrip": "Starting at 5th Level, when an Undead of CR 1/2 or lower fails its saving throw against Your Turn Undead feature, the creature is instantly destroyed.",
+        "feature_customvalue": "Cleric 5"
+    },
+    {
+        "feature_name": "Divine Intervention",
+        "feature_descrip": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your Cleric level, your deity intervenes. The DM chooses the Nature of the intervention; the Effect of any Cleric spell or Cleric domain spell would be appropriate. If your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a Long Rest. At 20th level, your call for intervention succeeds automatically, no roll required.",
+        "feature_customvalue": "Cleric 10, Cleric 20"
+    },
+    {
+        "feature_name": "Knowledge Domain",
         "feature_descrip": "",
-        "feature_customvalue": ""
+        "feature_customvalue": "Knowledge 1"
+    },
+    {
+        "feature_name": "Knowledge Domain - Blessings of Knowledge",
+        "feature_descrip": "",
+        "feature_customvalue": "Knowledge 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Knowledge of the Ages",
+        "feature_descrip": "",
+        "feature_customvalue": "Knowledge 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Read Thoughts",
+        "feature_descrip": "",
+        "feature_customvalue": "Knowledge 6"
+    },
+    {
+        "feature_name": "Channel Divinity - Potent Spellcasting",
+        "feature_descrip": "",
+        "feature_customvalue": "Knowledge 8, Light 8"
+    },
+    {
+        "feature_name": "Channel Divinity - Visions of the Past",
+        "feature_descrip": "",
+        "feature_customvalue": "Knowledge 17"
+    },
+    {
+        "feature_name": "Life Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 1"
+    },
+    {
+        "feature_name": "Life Domain - Disciple of Life",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Preserve Life",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Blessed Healer",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 6"
+    },
+    {
+        "feature_name": "Channel Divinity - Divine Strike",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 8, Life 14"
+    },
+    {
+        "feature_name": "Channel Divinity - Supreme Healing",
+        "feature_descrip": "",
+        "feature_customvalue": "Life 17"
+    },
+    {
+        "feature_name": "Light Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Light 1"
+    },
+    {
+        "feature_name": "Warding Flare",
+        "feature_descrip": "",
+        "feature_customvalue": "Light 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Radiance of the Dawn",
+        "feature_descrip": "",
+        "feature_customvalue": "Light 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Improved Flare",
+        "feature_descrip": "",
+        "feature_customvalue": "Light 6"
+    },
+    {
+        "feature_name": "Channel Divinity - Corona of Light",
+        "feature_descrip": "",
+        "feature_customvalue": "Light 17"
+    },
+    {
+        "feature_name": "Nature Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 1"
+    },
+    {
+        "feature_name": "Acolyte of Nature",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Charm Animals and Plants",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Dampen Elements",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 6"
+    },
+    {
+        "feature_name": "Channel Divinity - Divine Strike",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 8, Nature 14"
+    },
+    {
+        "feature_name": "Channel Divinity - Master of Nature",
+        "feature_descrip": "",
+        "feature_customvalue": "Nature 17"
+    },
+    {
+        "feature_name": "Tempest Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Tempest 1"
     },
     {
         "feature_name": "",
         "feature_descrip": "",
         "feature_customvalue": ""
     },
-    {
-        "feature_name": "",
-        "feature_descrip": "",
-        "feature_customvalue": ""
-    },
-    {
-        "feature_name": "",
-        "feature_descrip": "",
-        "feature_customvalue": ""
-    },
-    {
+        {
         "feature_name": "",
         "feature_descrip": "",
         "feature_customvalue": ""
