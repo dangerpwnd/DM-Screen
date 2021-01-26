@@ -167,127 +167,127 @@
     {
         "feature_name": "Darkvision 60 ft",
         "feature_descrip": "You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dwarf, Elf, Half-Elf, Gnome, Half-Orc, Tiefling"
     },
     {
         "feature_name": "Superior Darkvision",
         "feature_descrip": "Your darkvision has a radius of 120 feet.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Drow"
     },
     {
         "feature_name": "Dwarven Resilience",
         "feature_descrip": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dwarf"
     },
     {
         "feature_name": "Dwarven Combat Training",
         "feature_descrip": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dwarf"
     },
     {
         "feature_name": "Tool Proficiency - Dwarf",
         "feature_descrip": "You gain proficiency with the artisan's tools of your choice: smith's tools, brewer's supplies, or mason's tools.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dwarf"
     },
     {
         "feature_name": "Stonecutting",
         "feature_descrip": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check, instead of your normal proficiency bonus.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dwarf"
     },
     {
         "feature_name": "Dwarven Toughness",
         "feature_descrip": "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Hill"
     },
     {
         "feature_name": "Dwarven Armor Training",
         "feature_descrip": "You have proficiency with light and medium armor.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Mountain"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Black",
-        "feature_descrip": "Acid",
-        "feature_customvalue": "5 by 30 ft. line (Dex. save)"
+        "feature_descrip": "Acid 5 by 30 ft. line (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Blue",
-        "feature_descrip": "Lightning",
-        "feature_customvalue": "5 by 30 ft. line (Dex. save)"
+        "feature_descrip": "Lightning 5 by 30 ft. line (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Brass",
-        "feature_descrip": "Fire",
-        "feature_customvalue": "5 by 30 ft. line (Dex. save)"
+        "feature_descrip": "Fire 5 by 30 ft. line (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Bronze",
-        "feature_descrip": "Lightning",
-        "feature_customvalue": "5 by 30 ft. line (Dex. save)"
+        "feature_descrip": "Lightning 5 by 30 ft. line (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Copper",
-        "feature_descrip": "Acid",
-        "feature_customvalue": "5 by 30 ft. line (Dex. save)"
+        "feature_descrip": "Acid 5 by 30 ft. line (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Gold",
-        "feature_descrip": "Fire",
-        "feature_customvalue": "15 ft. cone (Dex. save)"
+        "feature_descrip": "Fire 15 ft. cone (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Green",
-        "feature_descrip": "Poison",
-        "feature_customvalue": "15 ft. cone (Con. save)"
+        "feature_descrip": "Poison 15 ft. cone (Con. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Red",
-        "feature_descrip": "Fire",
-        "feature_customvalue": "15 ft. cone (Dex. save)"
+        "feature_descrip": "Fire 15 ft. cone (Dex. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - Silver",
-        "feature_descrip": "Cold",
-        "feature_customvalue": "15 ft. cone (Con. save)"
+        "feature_descrip": "Cold 15 ft. cone (Con. save)",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Draconic Ancestry - White",
-        "feature_descrip": "Cold",
-        "feature_customvalue": "15 ft. cone (Con. save)"
+        "feature_descrip": "Cold 15 ft. cone (Con. save), ",
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Damage Resistance",
         "feature_descrip": "You have resistance to the damage type associated with your ancestry.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Dragonborn Breath Weapon",
         "feature_descrip": " You can use your action to exhale destructive energy. Your Draconic ancestry determines the size, shape, and damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw, the type of which is determined by your Draconic ancestry. The DC for this saving throw equals 8 + your Constitution modifier + your Proficiency Bonus. A creature takes 2d6 damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level. After you use your breath weapon, you can’t use it again until you complete a short or Long Rest.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Dragonborn"
     },
     {
         "feature_name": "Keen Senses",
         "feature_descrip": "You have proficiency in the Perception skill.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Elf"
     },
     {
         "feature_name": "Fey Ancestry",
         "feature_descrip": "You have advantage on Saving Throws against being Charmed, and magic can’t put you to sleep.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Elf, Half-Elf"
     },
     {
         "feature_name": "Trance",
         "feature_descrip": "Elves don’t need to sleep. Instead, they meditate deeply, remaining semiconscious, for 4 hours a day. (The Common word for such meditation is “trance.”) While meditating, you can dream after a fashion; such dreams are actually mental exercises that have become reflexive through years of practice. After Resting in this way, you gain the same benefit that a human does from 8 hours of sleep.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Elf"
     },
     {
         "feature_name": "Elf Weapon Training",
         "feature_descrip": "You have proficiency with the Longsword, Shortsword, Shortbow, and Longbow.",
-        "feature_customvalue": ""
+        "feature_customvalue": "High, Wood"
     },
     {
         "feature_name": "Cantrip - Intelligence",
         "feature_descrip": "You know one cantrip of your choice from the Wizard spell list. Intelligence is your Spellcasting Ability for it.",
-        "feature_customvalue": ""
+        "feature_customvalue": "High"
     },
     {
         "feature_name": "Cantrip - Wisdom",
@@ -302,296 +302,471 @@
     {
         "feature_name": "Fleet of Foot",
         "feature_descrip": "Your base walking speed increases to 35 feet",
-        "feature_customvalue": ""
+        "feature_customvalue": "Wood"
     },
     {
         "feature_name": "Mask of the Wild",
         "feature_descrip": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena",
-        "feature_customvalue": ""
+        "feature_customvalue": "Wood"
     },
     {
         "feature_name": "Sunlight Sensitivity",
         "feature_descrip": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Drow"
     },
     {
         "feature_name": "Drow Magic",
         "feature_descrip": "You know the dancing lights cantrip. When you reach 3rd level, you can cast faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Drow"
     },
     {
         "feature_name": "Drow Weapon Training",
         "feature_descrip": "You have proficiency with rapiers, shortswords, and hand crossbows.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Drow"
     },
     {
         "feature_name": "Gnome Cunning",
         "feature_descrip": "You have advantage on all Intelligence, Wisdom, and Charisma Saving Throws against magic.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Gnome"
     },
     {
         "feature_name": "Artificer's Lore",
         "feature_descrip": "Whenever you make an Intelligence (History) check related to Magic Items, alchemical Objects, or technological devices, you can add twice your Proficiency Bonus, instead of any Proficiency Bonus you normally apply.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Rock"
     },
     {
         "feature_name": "Tinker",
         "feature_descrip": "You have proficiency with artisan’s tools (tinker’s tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to Construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours (unless you spend 1 hour repairing it to keep the device functioning), or when you use your action to dismantle it; at that time, you can reclaim the materials used to create it. You can have up to three such devices active at a time. When you create a device, choose one of the following options:",
-        "feature_customvalue": ""
+        "feature_customvalue": "Rock"
     },
     {
         "feature_name": "Tinker - Clockwork Toy",
         "feature_descrip": "This toy is a clockwork animal, monster, or person, such as a frog, mouse, bird, Dragon, or Soldier. When placed on the ground, the toy moves 5 feet across the ground on each of your turns in a random direction. It makes Noises as appropriate to the creature it represents.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Rock Clock"
     },
     {
         "feature_name": "Tinker - Fire Starter",
         "feature_descrip": "The device produces a miniature flame, which you can use to light a Candle, torch, or campfire. Using the device requires your action.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Rock Fire"
     },
     {
         "feature_name": "Tinker - Music Box",
         "feature_descrip": "When opened, this music box plays a single song at a moderate volume. The box stops playing when it reaches the song’s end or when it is closed.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Rock Music"
     },
     {
         "feature_name": "Natural Illusionist",
         "feature_descrip": "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Forest"
     },
     {
         "feature_name": "Speak with Small Beasts",
         "feature_descrip": "Through sounds and gestures, you can communicate simple ideas with Small or smaller beasts. Forest gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures as beloved pets.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Gnome"
     },
     {
         "feature_name": "Skill Versatility",
         "feature_descrip": "You gain proficiency in two skills of your choice.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Half-Elf"
     },
     {
         "feature_name": "Lucky",
         "feature_descrip": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Halfling"
     },
     {
         "feature_name": "Brave",
         "feature_descrip": "You have advantage on saving throws against being frightened.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Halfling"
     },
     {
         "feature_name": "Halfling Nimbleness",
         "feature_descrip": "You can move through the space of any creature that is of a size larger than yours.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Halfling"
     },
     {
         "feature_name": "Naturally Stealthy",
         "feature_descrip": "You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Lightfoot"
     },
     {
         "feature_name": "Stout Resilience",
         "feature_descrip": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Stout"
     },
     {
         "feature_name": "Menacing",
         "feature_descrip": "You gain proficiency in the Intimidation skill.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Half-orc"
     },
     {
         "feature_name": "Relentless Endurance",
         "feature_descrip": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a long rest.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Half-orc"
     },
     {
         "feature_name": "Savage Attacks",
         "feature_descrip": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Half-orc"
     },
     {
         "feature_name": "Hellish Resistance",
         "feature_descrip": "You have resistance to fire damage.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Tiefling"
     },
     {
         "feature_name": "Infernal Legacy",
         "feature_descrip": "You know the thaumaturgy cantrip. When you reach 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the darkness spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Tiefling"
     },
     {
         "feature_name": "Rage",
         "feature_descrip": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.While raging, you gain the following benefits if you aren’t wearing heavy armor: You have advantage on Strength checks and Strength saving throws.        When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table. You have resistance to bludgeoning, piercing, and slashing damage. If you are able to cast spells, you can’t cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven’t attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 1"
     },
     {
         "feature_name": "Unarmored Defense",
         "feature_descrip": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 1"
     },
     {
         "feature_name": "Reckless Attack",
         "feature_descrip": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 2"
     },
     {
         "feature_name": "Danger Sense",
         "feature_descrip": "At 2nd level, you gain an uncanny sense of when things nearby aren’t as they should be, giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can’t be blinded, deafened, or incapacitated.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 2"
     },
     {
         "feature_name": "Primal Path",
         "feature_descrip": "At 3rd level, you choose a path that shapes the nature of your rage. The Path of the Berserker is detailed at the end of the class description, and additional primal paths are available in other sources. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 3"
     },
     {
         "feature_name": "Primal Path - Path of the Berserker",
         "feature_descrip": "For some barbarians, rage is a means to an end—that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker’s rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 3, Berserker 3"
     },
     {
         "feature_name": "Primal Path - Path of the Totem Warrior",
         "feature_descrip": "The Path of the Totem Warrior is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle, your totem spirit fills you with supernatural might, adding magical fuel to your barbarian rage. Most barbarian tribes consider a totem animal to be kin to a particular clan. In such cases, it is unusual for an individual to have more than one totem animal spirit, though exceptions exist.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 3, Totem 3"
     },
     {
-        "feature_name": "Extra Attack",
+        "feature_name": "Extra Attack - Barbarian",
         "feature_descrip": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 5"
     },
     {
         "feature_name": "Fast Movement",
         "feature_descrip": "Starting at 5th level, your speed increases by 10 feet while you aren’t wearing heavy armor.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 5"
     },
     {
         "feature_name": "Feral Instinct",
         "feature_descrip": "By 7th level, your instincts are so honed that you have advantage on initiative rolls. Additionally, if you are surprised at the beginning of combat and aren’t incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 7"
     },
     {
         "feature_name": "Brutal Critical",
         "feature_descrip": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack. This increases to two additional dice at 13th level and three additional dice at 17th level.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 9, Barbarian 13, Barbarian 17"
     },
     {
         "feature_name": "Relentless Rage",
         "feature_descrip": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you’re raging and don’t die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead. Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 11"
     },
     {
         "feature_name": "Persistent Rage",
         "feature_descrip": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 15"
     },
     {
         "feature_name": "Brutal Critical",
         "feature_descrip": "At 17th level, you can roll three additional weapon damage dice when determining the extra damage for a critical hit with a melee attack.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 17"
     },
     {
         "feature_name": "Indomitable Might",
         "feature_descrip": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total.",
-        "feature_customvalue": ""
-    },
-    {
-        "feature_name": "Primal Champion",
-        "feature_descrip": "",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 18"
     },
     {
         "feature_name": "Primal Champion",
         "feature_descrip": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Barbarian 20"
     },
     {
         "feature_name": "Frenzy",
         "feature_descrip": "Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Berserker 3"
     },
     {
         "feature_name": "Mindless Rage",
         "feature_descrip": "Beginning at 6th level, you can’t be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Berserker 6"
     },
     {
         "feature_name": "Intimidating Presence",
         "feature_descrip": "Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you. If the creature succeeds on its saving throw, you can’t use this feature on that creature again for 24 hours.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Berserker 10"
     },
     {
         "feature_name": "Retaliation",
         "feature_descrip": "Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Berserker 14"
     },
     {
         "feature_name": "Spirit Seeker",
         "feature_descrip": "Yours is a path that seeks attunement with the natural world, giving you a kinship with beasts. At 3rd level when you adopt this path, you gain the ability to cast the Beast Sense and Speak with Animals spells, but only as rituals.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 3"
     },
     {
         "feature_name": "Totem Spirit",
         "feature_descrip": "At 3rd level, when you adopt this path, you choose a totem spirit and gain its feature. You must make or acquire a physical totem object – an amulet or similar adornment – that incorporates fur or feathers, claws, teeth, or bones of the totem animal. At your option, you also gain minor physical attributes that are reminiscent of your totem spirit. For example, if you have a bear totem spirit, you might be unusually hairy and thick-skinned, or if your totem is the eagle, your eyes turn bright yellow. Your totem animal might be an animal related to those listed here but more appropriate to your homeland. For example, you could choose a hawk or vulture in place of an eagle.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 3, Barbarian 3"
     },
     {
         "feature_name": "Totem Spirit - Bear",
         "feature_descrip": "While raging, you have resistance to all damage except psychic damage. The spirit of the bear makes you tough enough to stand up to any punishment.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 3"
     },
     {
         "feature_name": "Totem Spirit - Eagle",
         "feature_descrip": "While you're raging and aren't wearing heavy armor, other creatures have disadvantage on opportunity attack rolls against you, and you can use the Dash action as a bonus action on your turn. The spirit of the eagle makes you into a predator who can weave through the fray with ease.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 3"
     },
     {
         "feature_name": "Totem Spirit - Wolf",
-        "feature_descrip": "",
-        "feature_customvalue": "While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you. The spirit of the wolf makes you a leader of hunters."
+        "feature_descrip": "While you're raging, your friends have advantage on melee attack rolls against any creature within 5 feet of you that is hostile to you. The spirit of the wolf makes you a leader of hunters.",
+        "feature_customvalue": "Totem 3"
     },
         {
         "feature_name": "Aspect of the Beast",
         "feature_descrip": "At 6th level, you gain a magical benefit based on the totem animal of your choice. You can choose the same animal you selected at 3rd level or a different one.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 6"
     },
     {
         "feature_name": "Aspect of the Beast - Bear",
         "feature_descrip": " You gain the might of a bear. Your carrying capacity (including maximum load and maximum lift) is doubled, and you have advantage on Strength checks made to push, pull, lift, or break objects.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 6"
     },
     {
         "feature_name": "Aspect of the Beast - Eagle",
         "feature_descrip": "You gain the eyesight of an eagle. You can see up to 1 mile away with no difficulty, able to discern even fine details as though looking at something no more than 100 feet away from you. Additionally, dim light doesn't impose disadvantage on your Wisdom (Perception) checks.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 6"
     },
     {
         "feature_name": "Aspect of the Beast - Wolf",
         "feature_descrip": "You gain the hunting sensibilities of a wolf. You can track other creatures while traveling at a fast pace, and you can move stealthily while traveling at a normal pace.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 6"
     },
     {
         "feature_name": "Spirit Walker",
         "feature_descrip": "At 10th level, you can cast the Commune with Nature spell, but only as a ritual. When you do so, a spiritual version of one of the animals you chose for Totem Spirit or Aspect of the Beast appears to you to convey the information you seek.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 10"
     },
     {
         "feature_name": "Totemic Attunement",
         "feature_descrip": "At 14th level, you gain a magical benefit based on a totem animal of your choice. You can choose the same animal you selected previously or a different one.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 14"
     },
     {
         "feature_name": "Totemic Attunement - Bear",
         "feature_descrip": "While you're raging, any creature within 5 feet of you that's hostile to you has disadvantage on attack rolls against targets other than you or another character with this feature. An enemy is immune to this effect if it can't see or hear you or if it can't be frightened.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 14"
     },
     {
         "feature_name": "Totemic Attunement - Eagle",
         "feature_descrip": "While raging, you have a flying speed equal to your current walking speed. This benefit works only in short bursts; you fall if you end your turn in the air and nothing else is holding you aloft.",
-        "feature_customvalue": ""
+        "feature_customvalue": "Totem 14"
     },
     {
         "feature_name": "Totemic Attunement - Wolf",
         "feature_descrip": "While you're raging, you can use a bonus action on your turn to knock a Large or smaller creature prone when you hit it with melee weapon attack.",
+        "feature_customvalue": "Totem 14"
+    },
+    {
+        "feature_name": "Spellcasting - Bard",
+        "feature_descrip": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your Spells are part of your vast repertoire, magic that you can tune to different situations. Charisma is your Spellcasting Ability for your Bard Spells. Your magic comes from the heart and soul you pour into the Performance of your music or oration. You use your Charisma whenever a spell refers to your Spellcasting Ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when Making an Attack roll with one. Spell save DC = 8 + your Proficiency Bonus + your Charisma modifier Spell Attack modifier = your Proficiency Bonus + your Charisma modifier",
+        "feature_customvalue": "Bard 1"
+    },
+    {
+        "feature_name": "Bardic Inspiration",
+        "feature_descrip": "You can inspire others through stirring words or music. To do so, you use a Bonus Action on Your Turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, Attack roll, or saving throw it makes. The creature can wait until after it rolls The D20 before deciding to use the Bardic Inspiration die, but must decide before the DM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time. You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a Long Rest. Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th Level, a d10 at 10th level, and a d12 at 15th level.",
+        "feature_customvalue": "Bard 1, Bard 5, Bard 10, Bard 15"
+    },
+    {
+        "feature_name": "Jack of All Trades",
+        "feature_descrip": "Starting at 2nd Level, you can add half your Proficiency Bonus, rounded down, to any ability check you make that doesn't already include your Proficiency Bonus.",
+        "feature_customvalue": "Bard 2"
+    },
+    {
+        "feature_name": "Song of Rest",
+        "feature_descrip": "Beginning at 2nd Level, you can use soothing music or oration to help Revitalize your wounded allies during a Short Rest. If you or any friendly creatures who can hear your Performance regain Hit Points by spending Hit Dice at the end of the Short Rest, each of those creatures regains an extra 1d6 Hit Points. The extra Hit Points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level.",
+        "feature_customvalue": "Bard 2, "
+    },
+    {
+        "feature_name": "Bard College",
+        "feature_descrip": "At 3rd Level, you delve into the advanced Techniques of a Bard College of your choice, such as the College of Lore. Your choice grants you features at 3rd Level and again at 6th and 14th level.",
+        "feature_customvalue": "Bard 3"
+    },
+    {
+        "feature_name": "Bard College - College of Lore",
+        "feature_descrip": "Bards of the College of Lore know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. Whether singing folk ballads in taverns or elaborate compositions in royal courts, these bards use their gifts to hold audiences spellbound. When the applause dies down, the audience members might find themselves questioning everything they held to be true, from their faith in the priesthood of the local temple to their loyalty to the king. The loyalty of these bards lies in the pursuit of beauty and truth, not in fealty to a monarch or following the tenets of a deity. A noble who keeps such a bard as a herald or advisor knows that the bard would rather be honest than politic. The college’s members gather in libraries and sometimes in actual colleges, complete with classrooms and dormitories, to share their lore with one another. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important figures of authority.",
+        "feature_customvalue": "Lore 3, Bard 3"
+    },
+    {
+        "feature_name": "Bard College - College of Valor",
+        "feature_descrip": "Bards of the College of Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes. These bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present. They travel the land to witness great events firsthand and to ensure that the memory of those events doesn't pass from the world. With their songs, they inspire others to reach the same heights of accomplishment as the heroes of old.",
+        "feature_customvalue": "Valor 3, Bard 3"
+    },
+    {
+        "feature_name": "Expertise",
+        "feature_descrip": "At 3rd Level, choose two of your skill Proficiencies. Your Proficiency Bonus is doubled for any ability check you make that uses either of the chosen Proficiencies. At 10th level, you can choose another two skill Proficiencies to gain this benefit.",
+        "feature_customvalue": "Bard 3, Bard 10"
+    },
+    {
+        "feature_name": "Font of Inspiration",
+        "feature_descrip": "Beginning when you reach 5th Level, you regain all of your expended uses of Bardic Inspiration when you finish a short or Long Rest.",
+        "feature_customvalue": "Bard 5"
+    },
+    {
+        "feature_name": "Countercharm",
+        "feature_descrip": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing Effects. As an action, you can start a Performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on Saving Throws against being Frightened or Charmed. A creature must be able to hear you to gain this benefit. The Performance ends early if you are Incapacitated or silenced or if you voluntarily end it (no action required).",
+        "feature_customvalue": "Bard 6"
+    },
+    {
+        "feature_name": "Magical Secrets",
+        "feature_descrip": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two Spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen Spells count as Bard Spells for you and are included in the number in the Spells Known column of the Bard table. You learn two additional Spells from any class at 14th level and again at 18th level.",
+        "feature_customvalue": "Bard 10, Bard 14, Bard 18"
+    },
+    {
+        "feature_name": "Superior Inspiration",
+        "feature_descrip": "At 20th level, when you roll Initiative and have no uses of Bardic Inspiration left, you regain one use.",
+        "feature_customvalue": "Bard 20"
+    },
+    {
+        "feature_name": "College of Lore - Bonus Proficiencies",
+        "feature_descrip": "When you join the College of Lore at 3rd Level, you gain proficiency with three Skills of your choice.",
+        "feature_customvalue": "Lore 3"
+    },
+    {
+        "feature_name": "College of Lore - Cutting Words",
+        "feature_descrip": "Also at 3rd Level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an Attack roll, an ability check, or a damage roll, you can use your Reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature’s roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the Attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can’t hear you or if it’s immune to being Charmed.",
+        "feature_customvalue": "Lore 3"
+    },
+    {
+        "feature_name": "College of Lore - Additional Magical Secrets",
+        "feature_descrip": "At 6th level, you learn two Spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen Spells count as Bard Spells for you but don’t count against the number of Bard Spells you know.",
+        "feature_customvalue": "Lore 6"
+    },
+    {
+        "feature_name": "College of Lore - Peerless Skill",
+        "feature_descrip": "Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.",
+        "feature_customvalue": "Lore 14"
+    },
+    {
+        "feature_name": "College of Valor - Bonus Proficiencies",
+        "feature_descrip": "When you join the College of Valor at 3rd level, you gain proficiency with medium armor, shields, and martial weapons.",
+        "feature_customvalue": "Valor 3"
+    },
+    {
+        "feature_name": "College of Valor - Combat Inspiration",
+        "feature_descrip": "Also at 3rd level, you learn to inspire others in battle. A creature that has a Bardic Inspiration die from you can roll that die and add the number rolled to a weapon damage roll it just made. Alternatively, when an attack roll is made against the creature, it can use its reaction to roll the Bardic Inspiration die and add the number rolled to its AC against that attack, after seeing the roll but before knowing whether it hits or misses.",
+        "feature_customvalue": "Valor 3"
+    },
+    {
+        "feature_name": "College of Valor - Extra Attack",
+        "feature_descrip": "Starting at 6th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.",
+        "feature_customvalue": "Valor 6"
+    },
+    {
+        "feature_name": "College of Valor - Battle Magic",
+        "feature_descrip": "At 14th level, you have mastered the art of weaving spellcasting and weapon use into a single harmonious act. When you use your action to cast a bard spell, you can make one weapon attack as a bonus action.",
+        "feature_customvalue": "Valor 14"
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
         "feature_customvalue": ""
     },
     {
