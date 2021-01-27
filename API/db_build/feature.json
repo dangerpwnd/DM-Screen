@@ -712,7 +712,7 @@
     {
         "feature_name": "Knowledge Domain",
         "feature_descrip": "",
-        "feature_customvalue": "Knowledge 1"
+        "feature_customvalue": "Cleric 1"
     },
     {
         "feature_name": "Knowledge Domain - Blessings of Knowledge",
@@ -730,19 +730,19 @@
         "feature_customvalue": "Knowledge 6"
     },
     {
-        "feature_name": "Channel Divinity - Potent Spellcasting",
+        "feature_name": "Potent Spellcasting",
         "feature_descrip": "",
         "feature_customvalue": "Knowledge 8, Light 8"
     },
     {
-        "feature_name": "Channel Divinity - Visions of the Past",
+        "feature_name": "Visions of the Past",
         "feature_descrip": "",
         "feature_customvalue": "Knowledge 17"
     },
     {
         "feature_name": "Life Domain",
         "feature_descrip": "",
-        "feature_customvalue": "Life 1"
+        "feature_customvalue": "Cleric 1"
     },
     {
         "feature_name": "Life Domain - Disciple of Life",
@@ -755,17 +755,17 @@
         "feature_customvalue": "Life 2"
     },
     {
-        "feature_name": "Channel Divinity - Blessed Healer",
+        "feature_name": "Blessed Healer",
         "feature_descrip": "",
         "feature_customvalue": "Life 6"
     },
     {
-        "feature_name": "Channel Divinity - Divine Strike",
+        "feature_name": "Divine Strike",
         "feature_descrip": "",
-        "feature_customvalue": "Life 8, Life 14"
+        "feature_customvalue": "Life 8"
     },
     {
-        "feature_name": "Channel Divinity - Supreme Healing",
+        "feature_name": "Supreme Healing",
         "feature_descrip": "",
         "feature_customvalue": "Life 17"
     },
@@ -785,19 +785,19 @@
         "feature_customvalue": "Light 2"
     },
     {
-        "feature_name": "Channel Divinity - Improved Flare",
+        "feature_name": "Improved Flare",
         "feature_descrip": "",
         "feature_customvalue": "Light 6"
     },
     {
-        "feature_name": "Channel Divinity - Corona of Light",
+        "feature_name": "Corona of Light",
         "feature_descrip": "",
         "feature_customvalue": "Light 17"
     },
     {
         "feature_name": "Nature Domain",
         "feature_descrip": "",
-        "feature_customvalue": "Nature 1"
+        "feature_customvalue": "Cleric 1"
     },
     {
         "feature_name": "Acolyte of Nature",
@@ -810,31 +810,131 @@
         "feature_customvalue": "Nature 2"
     },
     {
-        "feature_name": "Channel Divinity - Dampen Elements",
+        "feature_name": "Dampen Elements",
         "feature_descrip": "",
         "feature_customvalue": "Nature 6"
     },
     {
-        "feature_name": "Channel Divinity - Divine Strike",
+        "feature_name": "Divine Strike - Nature",
         "feature_descrip": "",
-        "feature_customvalue": "Nature 8, Nature 14"
+        "feature_customvalue": "Nature 8"
     },
     {
-        "feature_name": "Channel Divinity - Master of Nature",
+        "feature_name": "Master of Nature",
         "feature_descrip": "",
         "feature_customvalue": "Nature 17"
     },
     {
         "feature_name": "Tempest Domain",
         "feature_descrip": "",
+        "feature_customvalue": "Cleric 1"
+    },
+    {
+        "feature_name": "Wrath of the Storm",
+        "feature_descrip": "",
         "feature_customvalue": "Tempest 1"
+    },
+        {
+        "feature_name": "Channel Divinity - Destructive Wrath",
+        "feature_descrip": "",
+        "feature_customvalue": "Tempest 2"
+    },
+    {
+        "feature_name": "Thunderbolt Strike",
+        "feature_descrip": "",
+        "feature_customvalue": "Tempest 6"
+    },
+    {
+        "feature_name": "Divine Strike - Tempest",
+        "feature_descrip": "",
+        "feature_customvalue": "Tempest 8"
+    },
+    {
+        "feature_name": "Stormborn",
+        "feature_descrip": "",
+        "feature_customvalue": "Tempest 17"
+    },
+    {
+        "feature_name": "Trickery Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Cleric 1"
+    },
+    {
+        "feature_name": "Blessing of the Trickster",
+        "feature_descrip": "",
+        "feature_customvalue": "Trickery 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Invoke Duplicity",
+        "feature_descrip": "",
+        "feature_customvalue": "Trickery 2"
+    },
+    {
+        "feature_name": "Channel Divinity - Cloak of Shadows",
+        "feature_descrip": "",
+        "feature_customvalue": "Trickery 6"
+    },
+    {
+        "feature_name": "Divine Strike - Trickery",
+        "feature_descrip": "",
+        "feature_customvalue": "Trickery 8"
+    },
+    {
+        "feature_name": "Improved Duplicity",
+        "feature_descrip": "",
+        "feature_customvalue": "Trickery 17"
+    },
+    {
+        "feature_name": "War Domain",
+        "feature_descrip": "",
+        "feature_customvalue": "Cleric 1"
+    },
+    {
+        "feature_name": "War Priest",
+        "feature_descrip": "",
+        "feature_customvalue": "War 1"
+    },
+    {
+        "feature_name": "Channel Divinity - Guided Strike",
+        "feature_descrip": "",
+        "feature_customvalue": "War 2"
+    },
+    {
+        "feature_name": "Channel Divinity - War God's Blessing",
+        "feature_descrip": "",
+        "feature_customvalue": "War 6"
+    },
+    {
+        "feature_name": "Divine Strike - War",
+        "feature_descrip": "",
+        "feature_customvalue": "War 8"
+    },
+    {
+        "feature_name": "Avatar of Battle",
+        "feature_descrip": "",
+        "feature_customvalue": "War 17"
     },
     {
         "feature_name": "",
         "feature_descrip": "",
         "feature_customvalue": ""
     },
-        {
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
+        "feature_name": "",
+        "feature_descrip": "",
+        "feature_customvalue": ""
+    },
+    {
         "feature_name": "",
         "feature_descrip": "",
         "feature_customvalue": ""
