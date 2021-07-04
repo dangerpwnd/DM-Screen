@@ -1,12 +1,15 @@
 import React from "react";
 
-const charModifier = () => {
+const charModifier = (props) => {
+
+    const { profBonus, attrMod, attrSave} = props;
+
     return(
         <div className="playerModGrid">
             <div className="border playerFlexRow">
-                <h3>Prof Bonus: 2</h3>
-                <h3>Attr Modifier: 2</h3>
-                <h3>Attr Save: 5</h3>
+                <h3>Prof Bonus: {profBonus}</h3>
+                <h3>Attr Modifier: {attrMod}</h3>
+                <h3>Attr Save: {attrSave}</h3>
             </div>
         </div>
     )

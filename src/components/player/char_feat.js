@@ -1,5 +1,7 @@
 import React from "react";
 
+const feats = [];
+
 const charFeat = () => {
     return(
         <div className="playerFeatGrid playerFlexCol">

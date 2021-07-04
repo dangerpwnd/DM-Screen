@@ -1,5 +1,7 @@
 import React from "react";
 
+const weapons = [];
+
 const charEquip = () => {
     return(
         <div className="playerItemGrid playerFlexCol">
