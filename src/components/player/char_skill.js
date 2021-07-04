@@ -3,9 +3,9 @@ import React from "react";
 const charSkill = (props) => {
 
     const { acrobatics, animal, arcana, athletics, deception, 
-                history, insight, intimidation, medicine, nature,
-                perception, performance, persuasion, religion,
-                sleight, stealth, survival    
+                history, insight, intimidation, investigation, medicine, 
+                nature, perception, performance, persuasion,
+                religion, sleight, stealth, survival    
             } = props;
 
     return(
