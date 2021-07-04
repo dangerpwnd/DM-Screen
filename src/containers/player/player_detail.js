@@ -14,7 +14,7 @@ import CharCoin from "../../components/player/char_coin";
 import Characteristics from "../../components/player/characteristics";
 import CharNotes from "../../components/player/char_notes";
 
-const PlayerDetail = props => {
+const PlayerDetail =() => {
     
     const [player, setPlayer] = useState(0);
 
