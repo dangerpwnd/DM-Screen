@@ -1,8 +1,6 @@
-import React, {useState} from "react";
+import React from "react";
 
 const charAc = (props) => {
-
-    const [armorClass, setArmorClass] = useState(0);
 
     const { base, nat, dex, armor, magic} =  props;
     const reg = base + nat + dex + armor + magic;
